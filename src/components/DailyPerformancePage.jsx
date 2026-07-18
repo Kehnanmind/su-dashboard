@@ -875,9 +875,6 @@ function DailyPerformancePage({
                     Streamer{sortMark("streamer")}
                   </th>
                   <th>Group</th>
-                  <th onClick={() => changeTableSort("broadcasts")}>
-                    Streams{sortMark("broadcasts")}
-                  </th>
                   <th onClick={() => changeTableSort("hours_streamed")}>
                     Hours streamed{sortMark("hours_streamed")}
                   </th>
@@ -937,7 +934,6 @@ function DailyPerformancePage({
                         {row.group || "—"}
                       </span>
                     </td>
-                    <td>{formatNumber(metricValue(row, "broadcasts"))}</td>
                     <td>
                       {formatNumber(
                         metricValue(row, "hours_streamed"),
@@ -961,7 +957,7 @@ function DailyPerformancePage({
 
                 {tableRows.length === 0 && (
                   <tr>
-                    <td colSpan="9" className="daily-empty">
+                    <td colSpan="8" className="daily-empty">
                       No daily records match the current filters.
                     </td>
                   </tr>
