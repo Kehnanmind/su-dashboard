@@ -69,6 +69,10 @@ function nameOf(row) {
   return valueOf(row, "display_name", "streamer") || "Unknown";
 }
 
+function streamerKeyOf(row) {
+  return valueOf(row, "streamer", "channel", "display_name") || "";
+}
+
 function formatNumber(value, decimals = 0) {
   const number = Number(value);
   if (!Number.isFinite(number)) return "—";
@@ -279,6 +283,35 @@ function App() {
   const [error, setError] = useState("");
   const [activePage, setActivePage] = useState("overview");
 
+  const dailyPeakByStreamer = useMemo(() => {
+    const peaks = new Map();
+
+    for (const row of streamerDaily) {
+      const key = streamerKeyOf(row);
+      if (!key) continue;
+
+      const peak = numberOf(row, "peak_viewers", "daily_peak_viewers");
+      peaks.set(key, Math.max(peaks.get(key) || 0, peak));
+    }
+
+    return peaks;
+  }, [streamerDaily]);
+
+  const summaryWithDailyPeaks = useMemo(() => {
+    return summary.map((row) => {
+      const key = streamerKeyOf(row);
+      const dailyPeak = key ? dailyPeakByStreamer.get(key) : null;
+
+      return {
+        ...row,
+        during_peak_viewers:
+          dailyPeak !== null && dailyPeak !== undefined
+            ? dailyPeak
+            : numberOf(row, "during_peak_viewers"),
+      };
+    });
+  }, [summary, dailyPeakByStreamer]);
+
   useEffect(() => {
     async function loadDashboard() {
       try {
@@ -390,14 +423,14 @@ function App() {
 
   const availableGroups = useMemo(() => {
     const found = [
-      ...new Set(summary.map((row) => row.group).filter(Boolean)),
+      ...new Set(summaryWithDailyPeaks.map((row) => row.group).filter(Boolean)),
     ].filter((group) => !EXCLUDED_GROUPS.has(group));
 
     return [
       ...GROUP_ORDER.filter((group) => found.includes(group)),
       ...found.filter((group) => !GROUP_ORDER.includes(group)),
     ];
-  }, [summary]);
+  }, [summaryWithDailyPeaks]);
 
   const availableDays = useMemo(() => {
     return [
@@ -413,7 +446,7 @@ function App() {
 
   const availableSizeTiers = useMemo(() => {
     const found = [
-      ...new Set(summary.map((row) => valueOf(row, "size_tier")).filter(Boolean)),
+      ...new Set(summaryWithDailyPeaks.map((row) => valueOf(row, "size_tier")).filter(Boolean)),
     ];
 
     const ordered = [
@@ -422,12 +455,12 @@ function App() {
     ];
 
     return ordered.filter((tier, index, list) => list.indexOf(tier) === index);
-  }, [summary, metadata]);
+  }, [summaryWithDailyPeaks, metadata]);
 
   const filteredSummary = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
 
-    return summary.filter((row) => {
+    return summaryWithDailyPeaks.filter((row) => {
       const groupMatches = selectedGroups.includes(row.group);
       const sizeTierMatches = selectedSizeTiers.includes(row.size_tier);
       const searchMatches =
@@ -437,7 +470,7 @@ function App() {
 
       return groupMatches && sizeTierMatches && searchMatches;
     });
-  }, [summary, selectedGroups, selectedSizeTiers, search]);
+  }, [summaryWithDailyPeaks, selectedGroups, selectedSizeTiers, search]);
 
   const filteredDaily = useMemo(() => {
     return daily.filter((row) => {
@@ -733,10 +766,10 @@ function App() {
 
       <main className="main-content">
         {activeView === "leaderboard" ? (
-          <LeaderboardPage streamers={summary} groups={availableGroups} />
+            <LeaderboardPage streamers={summaryWithDailyPeaks} groups={availableGroups} />
         ) : activeView === "streamers" ? (
           <StreamersPage
-            streamers={summary}
+            streamers={summaryWithDailyPeaks}
             groups={availableGroups}
             streamerDaily={streamerDaily}
             eventStreams={eventStreams}
@@ -744,7 +777,7 @@ function App() {
         ) : activeView === "daily" ? (
           <DailyPerformancePage
             groups={availableGroups}
-            streamerSummary={summary}
+            streamerSummary={summaryWithDailyPeaks}
           />
         ) : activeView === "information" ? (
           <InformationPage />
