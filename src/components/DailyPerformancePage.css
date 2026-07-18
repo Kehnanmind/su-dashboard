@@ -25,7 +25,7 @@
 
 .daily-filter-bar {
   display: grid;
-  grid-template-columns: 205px 190px 230px 120px;
+  grid-template-columns: 205px 170px 210px 230px 120px;
   gap: 10px;
   margin-bottom: 14px;
 }
@@ -64,6 +64,78 @@
 
 .daily-control select option {
   background: var(--bg-surface);
+}
+
+.daily-multi-select {
+  position: relative;
+}
+
+.daily-multi-select > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 58px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.daily-multi-select small {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.daily-multi-select strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.daily-multi-menu {
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 6px);
+  width: 240px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-surface);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.daily-multi-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.daily-multi-actions button {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid var(--accent-burgundy);
+  border-radius: 5px;
+  background: var(--accent-burgundy);
+  color: var(--text-primary);
+  font-size: 11px;
+}
+
+.daily-multi-menu label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: var(--text-primary);
+  font-size: 12px;
 }
 
 .daily-search input::placeholder {

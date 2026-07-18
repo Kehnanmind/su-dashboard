@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -23,6 +23,15 @@ const GROUP_COLORS = {
   Janitor: "#a3e635",
   Librarian: "#22d3ee",
 };
+
+const SIZE_TIER_ORDER = [
+  "Micro (<50)",
+  "Small (50-199)",
+  "Medium (200-999)",
+  "Large (1,000-4,999)",
+  "Very Large (5,000+)",
+  "No pre-SU baseline",
+];
 
 const METRICS = [
   {
@@ -226,6 +235,71 @@ function CustomTooltip({ active, payload, label, metric }) {
   );
 }
 
+function MultiSelectFilter({ label, options, selected, onChange }) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  function toggle(option) {
+    onChange(
+      selected.includes(option)
+        ? selected.filter((item) => item !== option)
+        : [...selected, option]
+    );
+  }
+
+  const text =
+    selected.length === options.length
+      ? `All (${options.length})`
+      : selected.length === 0
+        ? "None"
+        : selected.length === 1
+          ? selected[0]
+          : `${selected.length} selected`;
+
+  return (
+    <div className="daily-multi-select" ref={wrapperRef}>
+      <button type="button" onClick={() => setOpen((current) => !current)}>
+        <span>
+          <small>{label}</small>
+          <strong>{text}</strong>
+        </span>
+        <span>⌄</span>
+      </button>
+
+      {open && (
+        <div className="daily-multi-menu">
+          <div className="daily-multi-actions">
+            <button type="button" onClick={() => onChange(options)}>All</button>
+            <button type="button" onClick={() => onChange([])}>Clear</button>
+          </div>
+
+          {options.map((option) => (
+            <label key={option}>
+              <input
+                type="checkbox"
+                checked={selected.includes(option)}
+                onChange={() => toggle(option)}
+              />
+              {option}
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function DailyPerformancePage({
   groups = [],
   streamerSummary = [],
@@ -234,9 +308,11 @@ function DailyPerformancePage({
   const [streamerDaily, setStreamerDaily] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
+  const sizeTierInitializedRef = useRef(false);
 
   const [metric, setMetric] = useState("followers_gained");
   const [group, setGroup] = useState("Student");
+  const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [streamer, setStreamer] = useState("All");
   const [search, setSearch] = useState("");
   const [tableSortKey, setTableSortKey] = useState("followers_gained");
@@ -303,6 +379,63 @@ function DailyPerformancePage({
       .sort((a, b) => a.label.localeCompare(b.label));
   }, [streamerSummary, streamerDaily]);
 
+  const streamerSizeTierMap = useMemo(() => {
+    const found = new Map();
+
+    for (const row of streamerSummary) {
+      const tier = valueOf(row, "size_tier");
+      if (!tier) continue;
+
+      const streamerKey = valueOf(row, "streamer", "channel");
+      const displayName = valueOf(row, "display_name", "streamer");
+
+      if (streamerKey) found.set(streamerKey, tier);
+      if (displayName) found.set(displayName, tier);
+    }
+
+    for (const row of streamerDaily) {
+      const tier = valueOf(row, "size_tier");
+      if (!tier) continue;
+
+      const streamerKey = valueOf(row, "streamer", "channel");
+      const displayName = valueOf(row, "display_name", "streamer");
+
+      if (streamerKey) found.set(streamerKey, tier);
+      if (displayName) found.set(displayName, tier);
+    }
+
+    return found;
+  }, [streamerSummary, streamerDaily]);
+
+  const availableSizeTiers = useMemo(() => {
+    const found = [
+      ...new Set([...streamerSizeTierMap.values()].filter(Boolean)),
+    ];
+
+    return [
+      ...SIZE_TIER_ORDER.filter((tier) => found.includes(tier)),
+      ...found.filter((tier) => !SIZE_TIER_ORDER.includes(tier)),
+    ];
+  }, [streamerSizeTierMap]);
+
+  useEffect(() => {
+    if (!availableSizeTiers.length) return;
+
+    if (!sizeTierInitializedRef.current) {
+      setSelectedSizeTiers(availableSizeTiers);
+      sizeTierInitializedRef.current = true;
+      return;
+    }
+
+    setSelectedSizeTiers((current) =>
+      current.filter((tier) => availableSizeTiers.includes(tier))
+    );
+  }, [availableSizeTiers]);
+
+  const allSizeTiersSelected =
+    availableSizeTiers.length === 0 ||
+    selectedSizeTiers.length === availableSizeTiers.length;
+
   const filteredStreamerDaily = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
 
@@ -311,18 +444,32 @@ function DailyPerformancePage({
       const streamerKey = valueOf(row, "streamer", "channel");
       const streamerMatches =
         streamer === "All" || streamerKey === streamer;
+      const resolvedSizeTier =
+        valueOf(row, "size_tier") ||
+        streamerSizeTierMap.get(streamerKey) ||
+        streamerSizeTierMap.get(nameOf(row));
+      const sizeTierMatches =
+        selectedSizeTiers.length === 0 ||
+        selectedSizeTiers.includes(resolvedSizeTier);
 
       const searchMatches =
         !normalizedSearch ||
         nameOf(row).toLowerCase().includes(normalizedSearch) ||
         String(streamerKey || "").toLowerCase().includes(normalizedSearch);
 
-      return groupMatches && streamerMatches && searchMatches;
+      return groupMatches && streamerMatches && sizeTierMatches && searchMatches;
     });
-  }, [streamerDaily, group, streamer, search]);
+  }, [
+    streamerDaily,
+    group,
+    streamer,
+    selectedSizeTiers,
+    search,
+    streamerSizeTierMap,
+  ]);
 
   const eventChartData = useMemo(() => {
-    if (group === "All" && streamer === "All" && !search.trim()) {
+    if (group === "All" && allSizeTiersSelected && streamer === "All" && !search.trim()) {
       const byDay = new Map();
 
       for (const row of eventDaily) {
@@ -457,6 +604,7 @@ function DailyPerformancePage({
     eventDaily,
     filteredStreamerDaily,
     group,
+    allSizeTiersSelected,
     streamer,
     search,
   ]);
@@ -563,6 +711,7 @@ function DailyPerformancePage({
   function resetFilters() {
     setMetric("followers_gained");
     setGroup(groups.includes("Student") ? "Student" : groups[0] || "All");
+    setSelectedSizeTiers(availableSizeTiers);
     setStreamer("All");
     setSearch("");
     setTableSortKey("followers_gained");
@@ -629,6 +778,13 @@ function DailyPerformancePage({
             ))}
           </select>
         </label>
+
+        <MultiSelectFilter
+          label="Streamer size"
+          options={availableSizeTiers}
+          selected={selectedSizeTiers}
+          onChange={setSelectedSizeTiers}
+        />
 
         <label className="daily-control daily-search">
           <small>Search streamer</small>
@@ -771,6 +927,16 @@ function DailyPerformancePage({
                   formatter={(value) =>
                     formatMetric(value, metricConfig.format, metric)
                   }
+                  contentStyle={{
+                    background: "var(--bg-card)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "6px",
+                  }}
+                  labelStyle={{
+                    color: "var(--text-primary)",
+                    fontWeight: 700,
+                  }}
+                  itemStyle={{ color: "var(--text-secondary)" }}
                 />
                 <Bar
                   dataKey="total"

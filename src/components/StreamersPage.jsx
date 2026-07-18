@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   CartesianGrid,
   Line,
@@ -103,7 +103,12 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
   const [sortKey, setSortKey] = useState("during_followers_gained");
   const [sortDirection, setSortDirection] = useState("desc");
   const [selectedStreamer, setSelectedStreamer] = useState(null);
-  const [chartMetric, setChartMetric] = useState("followers_gained");
+  const [chartMetric, setChartMetric] = useState("average_viewers");
+
+  useEffect(() => {
+    if (!selectedStreamer) return;
+    setChartMetric("average_viewers");
+  }, [selectedStreamer]);
 
   const rows = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
