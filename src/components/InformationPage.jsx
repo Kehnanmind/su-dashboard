@@ -13,13 +13,13 @@ function InformationPage() {
       <article className="info-card">
         <h3>Data Source And Scope</h3>
         <ul>
-          <li>All data in this dashboard is sourced from SullyGnome.</li>
+          <li>All data in this dashboard is sourced from <strong>SullyGnome</strong>.</li>
           <li>
-            This includes Twitch streamers only. YouTube, Kick, and other
+            This includes <strong>Twitch</strong> streamers only. YouTube, Kick, and other
             platforms are not included.
           </li>
           <li>
-            SullyGnome and TwitchTracker can differ slightly, so you may see
+            <strong>SullyGnome</strong> and <strong>TwitchTracker</strong> can differ slightly, so you may see
             discrepancies when comparing numbers.
           </li>
         </ul>
@@ -30,7 +30,7 @@ function InformationPage() {
         <p>
           Some streams run across multiple days (for example, a 50-hour stream).
           In these cases, per-day followers gained is not directly available.
-          Only the total followers gained for the full stream is available.
+          We only have the total followers gained for the full stream.
         </p>
         <p>
           To estimate per-day followers gained, each day gets a proportional
@@ -64,8 +64,8 @@ function InformationPage() {
       <article className="info-card info-note">
         <h3>Project Note</h3>
         <p>
-          This is a small project and may contain errors. Treat it as
-          experimental and avoid sharing it publicly as a source of truth.
+          This is a small personal project and may contain errors. Treat it as
+          experimental and avoid sharing it publicly as a formal analysis :)
         </p>
       </article>
     </section>

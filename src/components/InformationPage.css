@@ -7,34 +7,34 @@
 .info-page-heading h2 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 28px;
+  font-size: 34px;
 }
 
 .info-page-heading p {
   margin: 8px 0 0;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .info-card {
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 14px 16px;
+  padding: 18px 20px;
   background: var(--bg-surface);
 }
 
 .info-card h3 {
   margin: 0 0 9px;
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: 18px;
   text-transform: uppercase;
 }
 
 .info-card p {
   margin: 0 0 10px;
   color: var(--text-secondary);
-  font-size: 12px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 .info-card p:last-child {
@@ -43,14 +43,14 @@
 
 .info-card ul {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 22px;
   color: var(--text-secondary);
-  font-size: 12px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 .info-card li + li {
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .info-card pre {
@@ -60,7 +60,7 @@
   border-radius: 6px;
   background: var(--bg-card);
   color: #dbe8f2;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.45;
   overflow-x: auto;
 }
