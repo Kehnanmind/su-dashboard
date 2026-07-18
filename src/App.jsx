@@ -698,14 +698,17 @@ function App() {
           >
             <span>↗</span> Daily Performance
           </button>
+        </nav>
+
+        <div className="sidebar-secondary-nav">
           <button
-            className={`nav-item ${activeView === "information" ? "active" : ""}`}
+            className={`nav-item nav-item-secondary ${activeView === "information" ? "active" : ""}`}
             type="button"
             onClick={() => setActiveView("information")}
           >
             <span>ℹ</span> Information
           </button>
-        </nav>
+        </div>
 
         <div className="sidebar-groups">
           <h3>Groups</h3>
@@ -724,9 +727,7 @@ function App() {
         <div className="sidebar-footer">
           Streamer University
           <br />
-          Analytics Project
-          <br />
-          v1.0
+          v1.0a
         </div>
       </aside>
 

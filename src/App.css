@@ -126,6 +126,16 @@ button {
   background: var(--accent-gold);
 }
 
+.sidebar-secondary-nav {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.nav-item-secondary {
+  color: #c0ceda;
+}
+
 .sidebar-groups {
   margin-top: auto;
   padding: 12px;

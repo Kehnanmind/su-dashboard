@@ -50,6 +50,7 @@ function InformationPage() {
       <article className="info-card">
         <h3>Definitions</h3>
         <ul>
+
           <li>
             Marathon streamer: streamed at least 80% of all available hours
             during Streamer University.
@@ -57,6 +58,10 @@ function InformationPage() {
           <li>
             Pre-SU metrics are based on the 30 days before Streamer University
             started.
+          </li>
+          <li>
+            SU dates are <strong>July 15 to July 20</strong>. "During SU"
+            means stats from streams that occurred on those dates only.
           </li>
         </ul>
       </article>
