@@ -228,11 +228,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
       during: numberOf(drawerStreamer, "during_weighted_average_viewers", "during_average_viewers"),
     },
     {
-      label: "Hours streamed",
-      pre: numberOf(drawerStreamer, "pre_total_hours_streamed"),
-      during: numberOf(drawerStreamer, "during_total_hours_streamed"),
-    },
-    {
       label: "Followers gained",
       pre: numberOf(drawerStreamer, "pre_followers_gained"),
       during: numberOf(drawerStreamer, "during_followers_gained"),
@@ -508,14 +503,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
             </div>
 
             <div className="streamers-drawer-summary">
-              <article>
-                <span>Pre-SU streams</span>
-                <strong>{formatNumber(numberOf(drawerStreamer, "pre_broadcasts"))}</strong>
-              </article>
-              <article>
-                <span>SU streams</span>
-                <strong>{formatNumber(numberOf(drawerStreamer, "during_broadcasts"))}</strong>
-              </article>
               <article>
                 <span>Viewer growth</span>
                 <strong>{formatPercent(valueOf(drawerStreamer, "viewer_growth_pct"))}</strong>

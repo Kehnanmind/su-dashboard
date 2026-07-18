@@ -121,9 +121,16 @@
 }
 
 .lb-reset {
+  border: 1px solid var(--accent-burgundy);
+  border-radius: 7px;
   background: var(--accent-burgundy);
   color: var(--text-primary);
   font-size: 12px;
+}
+
+.lb-reset:hover {
+  background: #6d1a22;
+  color: var(--text-primary);
 }
 
 .lb-kpis {
