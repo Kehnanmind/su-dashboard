@@ -203,23 +203,25 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
         day: valueOf(row, "event_day", "stream_date") || "",
         followers_gained: numberOf(row, "followers_gained"),
         average_viewers: numberOf(row, "average_viewers"),
+        peak_viewers: numberOf(row, "peak_viewers", "daily_peak_viewers"),
         hours_streamed: numberOf(row, "hours_streamed"),
         hours_watched: numberOf(row, "hours_watched"),
       }))
       .sort((a, b) => String(a.day).localeCompare(String(b.day)));
   }, [drawerStreamer]);
 
-  const drawerBestStream = useMemo(() => {
+  const drawerBestDay = useMemo(() => {
     if (!drawerStreamer) return null;
 
-    const streamRows = (eventStreams || []).filter(
-      (row) => row.streamer === drawerStreamer.streamer || row.display_name === drawerStreamer.display_name
-    );
+    const dayRows = (drawerDailyData || []).filter((row) => row.day);
+    if (!dayRows.length) return null;
 
-    if (!streamRows.length) return null;
-
-    return [...streamRows].sort((a, b) => numberOf(b, "average_viewers") - numberOf(a, "average_viewers"))[0];
-  }, [drawerStreamer]);
+    return [...dayRows].sort(
+      (a, b) =>
+        numberOf(b, "average_viewers") - numberOf(a, "average_viewers") ||
+        numberOf(b, "peak_viewers") - numberOf(a, "peak_viewers")
+    )[0];
+  }, [drawerDailyData, drawerStreamer]);
 
   const drawerComparisonRows = [
     {
@@ -586,26 +588,26 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
               </div>
             </div>
 
-            {drawerBestStream ? (
+            {drawerBestDay ? (
               <div className="streamers-drawer-section">
                 <div className="streamers-drawer-section-title">
-                  <h4>Best stream</h4>
+                  <h4>Best day</h4>
                 </div>
                 <div className="streamers-drawer-best-stream">
                   <div>
-                    <strong>{drawerBestStream.event_day || "—"}</strong>
-                    <span>{formatNumber(numberOf(drawerBestStream, "stream_hours"), 1)} hours</span>
+                    <strong>{drawerBestDay.day || "—"}</strong>
+                    <span>{formatNumber(numberOf(drawerBestDay, "hours_streamed"), 1)} hours</span>
                   </div>
                   <div>
-                    <strong>{formatNumber(numberOf(drawerBestStream, "average_viewers"))}</strong>
+                    <strong>{formatNumber(numberOf(drawerBestDay, "average_viewers"))}</strong>
                     <span>Avg viewers</span>
                   </div>
                   <div>
-                    <strong>{formatNumber(numberOf(drawerBestStream, "peak_viewers"))}</strong>
+                    <strong>{formatNumber(numberOf(drawerBestDay, "peak_viewers"))}</strong>
                     <span>Peak viewers</span>
                   </div>
                   <div>
-                    <strong>{formatNumber(numberOf(drawerBestStream, "followers_gained"))}</strong>
+                    <strong>{formatNumber(numberOf(drawerBestDay, "followers_gained"))}</strong>
                     <span>Followers gained</span>
                   </div>
                 </div>

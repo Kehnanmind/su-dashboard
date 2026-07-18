@@ -29,21 +29,17 @@ function InformationPage() {
         <h3>Long Stream Day Splitting</h3>
         <p>
           Some streams run across multiple days (for example, a 50-hour stream).
-          In these cases, per-day followers gained is not directly available.
-          We only have the total followers gained for the full stream.
-        </p>
-        <p>
-          To estimate per-day followers gained, each day gets a proportional
-          share of the stream's total followers gained based on how many hours
-          were streamed on that day.
+          The updated data files already split those streams into day-by-day
+          pieces, so the daily stats shown in the app are now calculated per day
+          instead of being reused from the full stream.
         </p>
         <p>
           <strong>Formula:</strong> Daily followers gained = Total followers
           gained x (Daily hours streamed / Total stream hours)
         </p>
         <p>
-          Average viewers is duplicated across each split day for that same
-          stream.
+          Average viewers and peak viewers are now represented per day as part
+          of the updated split data.
         </p>
       </article>
 

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./LeaderboardPage.css";
 
 const METRICS = [
@@ -97,6 +97,18 @@ function getStreamBucket(value) {
 
 function MultiSelect({ label, options, selected, onChange }) {
   const [open, setOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
 
   function toggle(option) {
     onChange(
@@ -116,7 +128,7 @@ function MultiSelect({ label, options, selected, onChange }) {
           : `${selected.length} selected`;
 
   return (
-    <div className="lb-multi-select">
+    <div className="lb-multi-select" ref={wrapperRef}>
       <button type="button" onClick={() => setOpen((current) => !current)}>
         <span>
           <small>{label}</small>
