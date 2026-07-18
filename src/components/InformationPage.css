@@ -1,0 +1,74 @@
+.info-page {
+  display: grid;
+  gap: 12px;
+  padding: 8px 0 4px;
+}
+
+.info-page-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 28px;
+}
+
+.info-page-heading p {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.info-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: var(--bg-surface);
+}
+
+.info-card h3 {
+  margin: 0 0 9px;
+  color: var(--text-primary);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.info-card p {
+  margin: 0 0 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.info-card li + li {
+  margin-top: 7px;
+}
+
+.info-card pre {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: #dbe8f2;
+  font-size: 11px;
+  line-height: 1.45;
+  overflow-x: auto;
+}
+
+.info-card code {
+  font-family: "Cascadia Code", Consolas, Monaco, "Courier New", monospace;
+}
+
+.info-note {
+  border-color: rgba(201, 164, 77, 0.35);
+}

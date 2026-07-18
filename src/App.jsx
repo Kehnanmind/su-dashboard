@@ -17,6 +17,7 @@ import "./App.css";
 import LeaderboardPage from "./components/LeaderboardPage";
 import StreamersPage from "./components/StreamersPage";
 import DailyPerformancePage from "./components/DailyPerformancePage";
+import InformationPage from "./components/InformationPage";
 
 const GROUP_ORDER = [
   "Student",
@@ -26,8 +27,9 @@ const GROUP_ORDER = [
   "Guidance Counselor",
   "Janitor",
   "Librarian",
-  "Control",
 ];
+
+const EXCLUDED_GROUPS = new Set(["Control"]);
 
 const GROUP_COLORS = {
   Student: "#36d17a",
@@ -37,7 +39,6 @@ const GROUP_COLORS = {
   "Guidance Counselor": "#ec4899",
   Janitor: "#a3e635",
   Librarian: "#22d3ee",
-  Control: "#8b98a8",
 };
 
 const METRIC_OPTIONS = [
@@ -309,11 +310,27 @@ function App() {
           responses[0].headers.get("last-modified") ||
           "";
 
-        setSummary(Array.isArray(summaryData) ? summaryData : []);
-        setDaily(Array.isArray(dailyData) ? dailyData : []);
-        setStreamerDaily(Array.isArray(streamerDailyData) ? streamerDailyData : []);
-        setEventStreams(Array.isArray(eventStreamsData) ? eventStreamsData : []);
-        setGroupSummary(Array.isArray(groupData) ? groupData : []);
+        const filteredSummary = (Array.isArray(summaryData) ? summaryData : []).filter(
+          (row) => !EXCLUDED_GROUPS.has(row.group)
+        );
+        const filteredDaily = (Array.isArray(dailyData) ? dailyData : []).filter(
+          (row) => !EXCLUDED_GROUPS.has(row.group)
+        );
+        const filteredStreamerDaily = (Array.isArray(streamerDailyData) ? streamerDailyData : []).filter(
+          (row) => !EXCLUDED_GROUPS.has(row.group)
+        );
+        const filteredEventStreams = (Array.isArray(eventStreamsData) ? eventStreamsData : []).filter(
+          (row) => !EXCLUDED_GROUPS.has(row.group)
+        );
+        const filteredGroupSummary = (Array.isArray(groupData) ? groupData : []).filter(
+          (row) => !EXCLUDED_GROUPS.has(row.group)
+        );
+
+        setSummary(filteredSummary);
+        setDaily(filteredDaily);
+        setStreamerDaily(filteredStreamerDaily);
+        setEventStreams(filteredEventStreams);
+        setGroupSummary(filteredGroupSummary);
         setMetadata(metadataData || null);
         setUpdatedAt(
           lastModified
@@ -330,28 +347,28 @@ function App() {
         );
 
         const groups = GROUP_ORDER.filter((group) =>
-          summaryData.some((row) => row.group === group)
+          filteredSummary.some((row) => row.group === group)
         );
 
         const extraGroups = [
-          ...new Set(summaryData.map((row) => row.group).filter(Boolean)),
-        ].filter((group) => !groups.includes(group));
+          ...new Set(filteredSummary.map((row) => row.group).filter(Boolean)),
+        ].filter((group) => !groups.includes(group) && !EXCLUDED_GROUPS.has(group));
 
         setSelectedGroups([...groups, ...extraGroups]);
 
         const sizeTierOrder = metadataData?.filters?.size_tiers || [];
         const matchedSizeTiers = sizeTierOrder.filter((tier) =>
-          summaryData.some((row) => row.size_tier === tier)
+          filteredSummary.some((row) => row.size_tier === tier)
         );
         const extraSizeTiers = [
-          ...new Set(summaryData.map((row) => row.size_tier).filter(Boolean)),
+          ...new Set(filteredSummary.map((row) => row.size_tier).filter(Boolean)),
         ].filter((tier) => !matchedSizeTiers.includes(tier));
 
         setSelectedSizeTiers([...matchedSizeTiers, ...extraSizeTiers]);
 
         const days = [
           ...new Set(
-            dailyData
+            filteredDaily
               .map((row) => valueOf(row, "event_day", "stream_date"))
               .filter(Boolean)
           ),
@@ -374,7 +391,7 @@ function App() {
   const availableGroups = useMemo(() => {
     const found = [
       ...new Set(summary.map((row) => row.group).filter(Boolean)),
-    ];
+    ].filter((group) => !EXCLUDED_GROUPS.has(group));
 
     return [
       ...GROUP_ORDER.filter((group) => found.includes(group)),
@@ -681,6 +698,13 @@ function App() {
           >
             <span>↗</span> Daily Performance
           </button>
+          <button
+            className={`nav-item ${activeView === "information" ? "active" : ""}`}
+            type="button"
+            onClick={() => setActiveView("information")}
+          >
+            <span>ℹ</span> Information
+          </button>
         </nav>
 
         <div className="sidebar-groups">
@@ -721,6 +745,8 @@ function App() {
             groups={availableGroups}
             streamerSummary={summary}
           />
+        ) : activeView === "information" ? (
+          <InformationPage />
         ) : (
           <>
             <header className="top-header">

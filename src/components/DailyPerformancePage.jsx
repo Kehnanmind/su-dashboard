@@ -22,7 +22,6 @@ const GROUP_COLORS = {
   "Guidance Counselor": "#ec4899",
   Janitor: "#a3e635",
   Librarian: "#22d3ee",
-  Control: "#8b98a8",
 };
 
 const METRICS = [
@@ -237,7 +236,7 @@ function DailyPerformancePage({
   const [loadError, setLoadError] = useState("");
 
   const [metric, setMetric] = useState("followers_gained");
-  const [group, setGroup] = useState("All");
+  const [group, setGroup] = useState("Student");
   const [streamer, setStreamer] = useState("All");
   const [search, setSearch] = useState("");
   const [tableSortKey, setTableSortKey] = useState("followers_gained");
@@ -272,6 +271,18 @@ function DailyPerformancePage({
 
     loadDailyData();
   }, []);
+
+  useEffect(() => {
+    if (group === "All") return;
+    if (groups.includes(group)) return;
+
+    if (groups.includes("Student")) {
+      setGroup("Student");
+      return;
+    }
+
+    setGroup(groups.length ? groups[0] : "All");
+  }, [groups, group]);
 
   const streamerNames = useMemo(() => {
     const found = new Map();
@@ -551,7 +562,7 @@ function DailyPerformancePage({
 
   function resetFilters() {
     setMetric("followers_gained");
-    setGroup("All");
+    setGroup(groups.includes("Student") ? "Student" : groups[0] || "All");
     setStreamer("All");
     setSearch("");
     setTableSortKey("followers_gained");

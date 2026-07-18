@@ -30,7 +30,6 @@ const GROUP_COLORS = {
   "Guidance Counselor": "#ec4899",
   Janitor: "#a3e635",
   Librarian: "#22d3ee",
-  Control: "#8b98a8",
 };
 
 function valueOf(row, ...keys) {
