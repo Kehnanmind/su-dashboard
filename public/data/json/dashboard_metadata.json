@@ -1,0 +1,53 @@
+{
+  "project": {
+    "name": "Streamer University Analytics",
+    "unofficial": true,
+    "generated_at_utc": "2026-07-18T08:36:17.571471+00:00"
+  },
+  "event": {
+    "start_date": "2026-07-15",
+    "end_date": "2026-07-20",
+    "event_days": 6,
+    "pre_event_days": 30
+  },
+  "filters": {
+    "groups": [
+      "Student",
+      "Club Director",
+      "Professor",
+      "Campus Police",
+      "Guidance Counselor",
+      "Janitor",
+      "Librarian",
+      "Control"
+    ],
+    "size_tiers": [
+      "Micro (<50)",
+      "Small (50-199)",
+      "Medium (200-999)",
+      "Large (1,000-4,999)",
+      "Very Large (5,000+)",
+      "No pre-SU baseline"
+    ]
+  },
+  "marathon_definition": {
+    "restart_gap_minutes": 90,
+    "minimum_event_hours_share": 0.85,
+    "explanation": "A creator is marked as a marathon streamer when a reconstructed session lasts at least 24 hours or their total event streaming time is at least 75% of all possible event hours. Broadcasts restarted within 90 minutes are treated as one logical session."
+  },
+  "metric_definitions": {
+    "average_viewers": "Arithmetic mean of the average-viewer value across broadcasts.",
+    "weighted_average_viewers": "Average viewers weighted by broadcast duration; especially useful for marathon creators.",
+    "effort_ratio": "During-SU hours streamed per calendar day divided by pre-SU hours streamed per calendar day.",
+    "viewer_growth_pct": "Percentage change from pre-SU average viewers to During-SU average viewers.",
+    "expected_followers_during_su": "Pre-SU followers gained per calendar day multiplied by the number of event days.",
+    "follower_uplift_absolute": "During-SU followers gained minus the amount expected from the pre-SU daily rate.",
+    "size_tier": "Size tier based on pre-SU average viewers."
+  },
+  "methodology_notes": [
+    "Comparisons describe performance during the event relative to a 30-day baseline and do not prove causation.",
+    "Creators with no pre-SU streams remain visible, but comparison metrics are null rather than zero.",
+    "Group summaries use medians for creator-level comparison because Twitch data is highly skewed.",
+    "Control creators were not part of Streamer University."
+  ]
+}

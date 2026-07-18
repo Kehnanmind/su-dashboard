@@ -1,0 +1,346 @@
+.daily-page {
+  width: 100%;
+}
+
+.daily-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 2px 0 18px;
+}
+
+.daily-page-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 30px;
+}
+
+.daily-page-heading p {
+  max-width: 800px;
+  margin: 7px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.daily-filter-bar {
+  display: grid;
+  grid-template-columns: 205px 190px 230px 120px;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.daily-control {
+  display: flex;
+  min-width: 0;
+  height: 58px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+}
+
+.daily-control small {
+  margin-bottom: 4px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.daily-control input,
+.daily-control select {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 12px;
+}
+
+.daily-control select option {
+  background: var(--bg-surface);
+}
+
+.daily-search input::placeholder {
+  color: rgba(163, 173, 184, 0.65);
+}
+
+.daily-reset {
+  border: 1px solid var(--accent-burgundy);
+  border-radius: 6px;
+  background: rgba(122, 30, 36, 0.16);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.daily-reset:hover {
+  background: rgba(122, 30, 36, 0.28);
+}
+
+.daily-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-surface);
+}
+
+.daily-kpis article {
+  min-height: 110px;
+  padding: 20px 22px;
+  border-right: 1px solid var(--border);
+}
+
+.daily-kpis article:last-child {
+  border-right: 0;
+}
+
+.daily-kpis span,
+.daily-kpis strong,
+.daily-kpis small {
+  display: block;
+}
+
+.daily-kpis span {
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.daily-kpis strong {
+  margin-top: 10px;
+  color: var(--text-primary);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.daily-kpis small {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.daily-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(390px, 0.65fr);
+  gap: 12px;
+}
+
+.daily-panel {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-surface);
+}
+
+.daily-panel-heading {
+  display: flex;
+  min-height: 67px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.daily-panel-heading h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.daily-panel-heading span {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.daily-chart-box {
+  height: 380px;
+  padding: 18px 12px 12px;
+}
+
+.daily-activity-panel {
+  grid-column: 1 / -1;
+}
+
+.daily-activity-panel .daily-chart-box {
+  height: 330px;
+}
+
+.daily-table-panel {
+  grid-column: 1 / -1;
+}
+
+.daily-chart-tooltip {
+  min-width: 170px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.daily-chart-tooltip strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+.daily-chart-tooltip div {
+  display: grid;
+  grid-template-columns: 7px 1fr auto;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.daily-chart-tooltip i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+}
+
+.daily-chart-tooltip b {
+  color: var(--text-primary);
+}
+
+.daily-table-wrap {
+  max-height: 720px;
+  overflow: auto;
+}
+
+.daily-table {
+  width: 100%;
+  min-width: 1240px;
+  border-collapse: collapse;
+}
+
+.daily-table thead {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  background: var(--bg-surface);
+}
+
+.daily-table th,
+.daily-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.daily-table th {
+  color: var(--text-secondary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+.daily-table th:first-child,
+.daily-table th:nth-child(2),
+.daily-table th:nth-child(3),
+.daily-table td:first-child,
+.daily-table td:nth-child(2),
+.daily-table td:nth-child(3) {
+  text-align: left;
+}
+
+.daily-table tbody tr:hover {
+  background: rgba(99, 69, 151, 0.1);
+}
+
+.daily-streamer-name strong,
+.daily-streamer-name small {
+  display: block;
+}
+
+.daily-streamer-name strong {
+  color: #eff5f8;
+  font-size: 12px;
+}
+
+.daily-streamer-name small {
+  margin-top: 4px;
+  color: #6f8291;
+  font-size: 9px;
+}
+
+.daily-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+}
+
+.daily-group i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+}
+
+.daily-empty {
+  height: 160px;
+  color: var(--text-secondary) !important;
+  text-align: center !important;
+}
+
+.daily-state {
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  color: var(--text-secondary);
+}
+
+.daily-error {
+  align-content: center;
+  text-align: center;
+}
+
+.daily-error h2 {
+  margin: 0 0 8px;
+  color: #f0f5f8;
+}
+
+.daily-error p {
+  margin: 0;
+}
+
+@media (max-width: 1500px) {
+  .daily-filter-bar {
+    grid-template-columns: repeat(3, minmax(190px, 1fr));
+  }
+
+  .daily-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .daily-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-activity-panel,
+  .daily-table-panel {
+    grid-column: auto;
+  }
+}
