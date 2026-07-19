@@ -49,6 +49,39 @@ const METRIC_OPTIONS = [
   { value: "during_peak_viewers", label: "Peak viewers" },
 ];
 
+function metricNumber(row, metricKey) {
+  const aliases = {
+    during_followers_gained: [
+      "during_followers_gained",
+      "rolling_followers_gained",
+      "followers_gained",
+    ],
+    during_total_hours_streamed: [
+      "during_total_hours_streamed",
+      "rolling_hours_streamed",
+      "hours_streamed",
+    ],
+    during_weighted_average_viewers: [
+      "during_weighted_average_viewers",
+      "during_average_viewers",
+      "rolling_average_viewers",
+      "average_viewers",
+    ],
+    during_total_hours_watched: [
+      "during_total_hours_watched",
+      "rolling_hours_watched",
+      "hours_watched",
+    ],
+    during_peak_viewers: [
+      "during_peak_viewers",
+      "rolling_peak_viewers",
+      "peak_viewers",
+    ],
+  };
+
+  return numberOf(row, ...(aliases[metricKey] || [metricKey]));
+}
+
 function valueOf(row, ...keys) {
   for (const key of keys) {
     const value = row?.[key];
@@ -102,6 +135,21 @@ function formatCompactWhole(value) {
     notation: "compact",
     maximumFractionDigits: 0,
   }).format(number);
+}
+
+function formatCompactWithMillionPrecision(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "—";
+
+  if (Math.abs(number) >= 1_000_000) {
+    return new Intl.NumberFormat(undefined, {
+      notation: "compact",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
+
+  return formatCompactWhole(number);
 }
 
 function formatPercent(value) {
@@ -307,7 +355,7 @@ function App() {
         during_peak_viewers:
           dailyPeak !== null && dailyPeak !== undefined
             ? dailyPeak
-            : numberOf(row, "during_peak_viewers"),
+            : numberOf(row, "during_peak_viewers", "rolling_peak_viewers", "peak_viewers"),
       };
     });
   }, [summary, dailyPeakByStreamer]);
@@ -496,10 +544,15 @@ function App() {
           "during_total_hours_watched"
         );
         accumulator.weightedViewerNumerator +=
-          numberOf(row, "during_weighted_average_viewers", "during_average_viewers") *
-          Math.max(numberOf(row, "during_total_hours_streamed"), 0);
+          numberOf(
+            row,
+            "during_weighted_average_viewers",
+            "during_average_viewers",
+            "rolling_average_viewers",
+            "average_viewers"
+          ) * Math.max(numberOf(row, "during_total_hours_streamed", "rolling_hours_streamed", "hours_streamed"), 0);
         accumulator.viewerWeight += Math.max(
-          numberOf(row, "during_total_hours_streamed"),
+          numberOf(row, "during_total_hours_streamed", "rolling_hours_streamed", "hours_streamed"),
           0
         );
         accumulator.peak = Math.max(
@@ -583,7 +636,7 @@ function App() {
 
   const topRows = useMemo(() => {
     return [...filteredSummary]
-      .sort((a, b) => numberOf(b, metric) - numberOf(a, metric))
+      .sort((a, b) => metricNumber(b, metric) - metricNumber(a, metric))
       .slice(0, 10);
   }, [filteredSummary, metric]);
 
@@ -655,7 +708,9 @@ function App() {
                 numberOf(
                   row,
                   "during_weighted_average_viewers",
-                  "during_average_viewers"
+                        "during_average_viewers",
+                        "rolling_average_viewers",
+                        "average_viewers"
                 ),
               0
             ) / rows.length,
@@ -856,7 +911,7 @@ function App() {
           <KpiCard
             icon="♥"
             label="Followers gained"
-            value={formatCompactWhole(totals.followers)}
+            value={formatCompactWithMillionPrecision(totals.followers)}
             accent="var(--accent-burgundy)"
             note="Selected groups"
           />
@@ -979,8 +1034,8 @@ function App() {
             </div>
             <div className="horizontal-ranking">
               {topRows.map((row, index) => {
-                const value = numberOf(row, metric);
-                const max = Math.max(...topRows.map((item) => numberOf(item, metric)), 1);
+                const value = metricNumber(row, metric);
+                const max = Math.max(...topRows.map((item) => metricNumber(item, metric)), 1);
 
                 return (
                   <div className="ranking-row" key={row.streamer}>
@@ -1039,7 +1094,7 @@ function App() {
                       </td>
                       <td>{formatNumber(numberOf(row, "during_broadcasts"))}</td>
                       <td>{formatNumber(numberOf(row, "during_total_hours_streamed"), 1)}</td>
-                      <td>{formatNumber(numberOf(row, "during_weighted_average_viewers", "during_average_viewers"))}</td>
+                      <td>{formatNumber(numberOf(row, "during_weighted_average_viewers", "during_average_viewers", "rolling_average_viewers", "average_viewers"))}</td>
                       <td>{formatNumber(numberOf(row, "during_peak_viewers"))}</td>
                       <td>{formatCompact(numberOf(row, "during_total_hours_watched"))}</td>
                       <td>{formatNumber(numberOf(row, "during_followers_gained"))}</td>
@@ -1070,7 +1125,7 @@ function App() {
                   <tr>
                     <td>Followers gained</td>
                     {comparisonRows.map((row) => (
-                      <td key={row.group}>{formatCompactWhole(numberOf(row, "total_followers_gained"))}</td>
+                      <td key={row.group}>{formatCompactWithMillionPrecision(numberOf(row, "total_followers_gained"))}</td>
                     ))}
                   </tr>
                   <tr>

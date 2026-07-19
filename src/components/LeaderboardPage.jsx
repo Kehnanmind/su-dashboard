@@ -8,8 +8,6 @@ const METRICS = [
   { value: "during_weighted_average_viewers", label: "Average viewers" },
   { value: "during_total_hours_watched", label: "Hours watched" },
   { value: "during_peak_viewers", label: "Peak viewers" },
-  { value: "follower_uplift_absolute", label: "Follower uplift" },
-  { value: "during_followers_per_hour", label: "Followers per hour" },
 ];
 
 const PRE_SU_STREAM_BUCKETS = ["<2", "<5", "<10", "<15", ">15"];
@@ -78,6 +76,21 @@ function formatCompactWhole(value) {
   }).format(number);
 }
 
+function formatCompactWithMillionPrecision(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "—";
+
+  if (Math.abs(number) >= 1_000_000) {
+    return new Intl.NumberFormat(undefined, {
+      notation: "compact",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
+
+  return formatCompactWhole(number);
+}
+
 function formatPercent(value) {
   if (value === null || value === undefined || value === "") {
     return "No baseline";
@@ -85,6 +98,44 @@ function formatPercent(value) {
   const number = Number(value);
   if (!Number.isFinite(number)) return "No baseline";
   return `${number >= 0 ? "+" : ""}${number.toFixed(1)}%`;
+}
+
+function metricNumber(row, metricKey) {
+  const aliases = {
+    during_followers_gained: [
+      "during_followers_gained",
+      "rolling_followers_gained",
+      "followers_gained",
+    ],
+    during_total_hours_streamed: [
+      "during_total_hours_streamed",
+      "rolling_hours_streamed",
+      "hours_streamed",
+    ],
+    during_weighted_average_viewers: [
+      "during_weighted_average_viewers",
+      "during_average_viewers",
+      "rolling_average_viewers",
+      "average_viewers",
+    ],
+    during_total_hours_watched: [
+      "during_total_hours_watched",
+      "rolling_hours_watched",
+      "hours_watched",
+    ],
+    during_peak_viewers: [
+      "during_peak_viewers",
+      "rolling_peak_viewers",
+      "peak_viewers",
+    ],
+    pre_weighted_average_viewers: [
+      "pre_weighted_average_viewers",
+      "pre_average_viewers",
+    ],
+    viewer_growth_pct: ["viewer_growth_pct"],
+  };
+
+  return numberOf(row, ...(aliases[metricKey] || [metricKey]));
 }
 
 function getStreamBucket(value) {
@@ -229,8 +280,14 @@ export default function LeaderboardPage({ streamers, groups }) {
 
   const sortedRows = useMemo(() => {
     return [...filteredRows].sort((a, b) => {
-      const aValue = sortKey === "streamer" ? streamerName(a).toLowerCase() : numberOf(a, sortKey);
-      const bValue = sortKey === "streamer" ? streamerName(b).toLowerCase() : numberOf(b, sortKey);
+      const aValue =
+        sortKey === "streamer" || sortKey === "size_tier"
+          ? String(valueOf(a, sortKey, sortKey === "streamer" ? "display_name" : "") || "").toLowerCase()
+          : metricNumber(a, sortKey);
+      const bValue =
+        sortKey === "streamer" || sortKey === "size_tier"
+          ? String(valueOf(b, sortKey, sortKey === "streamer" ? "display_name" : "") || "").toLowerCase()
+          : metricNumber(b, sortKey);
 
       if (typeof aValue === "string") {
         return sortDirection === "asc"
@@ -243,7 +300,7 @@ export default function LeaderboardPage({ streamers, groups }) {
   }, [filteredRows, sortKey, sortDirection]);
 
   const topRows = [...filteredRows]
-    .sort((a, b) => numberOf(b, metric) - numberOf(a, metric))
+    .sort((a, b) => metricNumber(b, metric) - metricNumber(a, metric))
     .slice(0, 10);
 
   const totals = filteredRows.reduce(
@@ -344,7 +401,7 @@ export default function LeaderboardPage({ streamers, groups }) {
 
       <div className="lb-kpis">
         <article><span>Streamers ranked</span><strong>{formatNumber(filteredRows.length)}</strong></article>
-        <article><span>Followers gained</span><strong>{formatCompactWhole(totals.followers)}</strong></article>
+        <article><span>Followers gained</span><strong>{formatCompactWithMillionPrecision(totals.followers)}</strong></article>
         <article><span>Hours streamed</span><strong>{formatCompact(totals.hours)}</strong></article>
         <article><span>Hours watched</span><strong>{formatCompact(totals.watchHours)}</strong></article>
       </div>
@@ -357,8 +414,8 @@ export default function LeaderboardPage({ streamers, groups }) {
 
         <div className="lb-bars">
           {topRows.map((row, index) => {
-            const value = numberOf(row, metric);
-            const maximum = Math.max(...topRows.map((item) => numberOf(item, metric)), 1);
+            const value = metricNumber(row, metric);
+            const maximum = Math.max(...topRows.map((item) => metricNumber(item, metric)), 1);
 
             return (
               <div className="lb-bar-row" key={row.streamer}>
@@ -405,7 +462,17 @@ export default function LeaderboardPage({ streamers, groups }) {
                 <SortHeader column="during_total_hours_streamed" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Hours streamed</SortHeader>
                 <SortHeader column="during_followers_gained" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Followers gained</SortHeader>
                 <SortHeader column="during_total_hours_watched" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Hours watched</SortHeader>
-                <th>Marathon</th>
+                <th>
+                  <span className="lb-marathon-header">
+                    Marathon
+                    <span className="lb-info-trigger" aria-label="Marathon definition" role="img">
+                      ?
+                      <span className="lb-info-tooltip" role="tooltip">
+                        A marathon streamer is someone who streamed at least 80% of all possible hours during SU.
+                      </span>
+                    </span>
+                  </span>
+                </th>
               </tr>
             </thead>
 
@@ -424,7 +491,7 @@ export default function LeaderboardPage({ streamers, groups }) {
                       ? "No baseline"
                       : formatNumber(numberOf(row, "pre_weighted_average_viewers", "pre_average_viewers"))}
                   </td>
-                  <td>{formatNumber(numberOf(row, "during_weighted_average_viewers", "during_average_viewers"))}</td>
+                  <td>{formatNumber(numberOf(row, "during_weighted_average_viewers", "during_average_viewers", "rolling_average_viewers", "average_viewers"))}</td>
                   <td>{formatPercent(valueOf(row, "viewer_growth_pct"))}</td>
                   <td>{formatNumber(numberOf(row, "during_total_hours_streamed"), 1)}</td>
                   <td>{formatNumber(numberOf(row, "during_followers_gained"))}</td>

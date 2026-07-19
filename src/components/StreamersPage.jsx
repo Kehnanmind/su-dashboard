@@ -20,6 +20,17 @@ const GROUP_COLORS = {
   Librarian: "#22d3ee",
 };
 
+const PRE_SU_STREAM_BUCKETS = ["<2", "<5", "<10", "<15", ">15"];
+
+const SIZE_TIER_ORDER = [
+  "Micro (<50)",
+  "Small (50-199)",
+  "Medium (200-999)",
+  "Large (1,000-4,999)",
+  "Very Large (5,000+)",
+  "No pre-SU baseline",
+];
+
 const DRAWER_METRIC_LABELS = {
   followers_gained: "Followers Gained",
   average_viewers: "Average Viewers",
@@ -78,6 +89,21 @@ function formatCompactWhole(value) {
   }).format(number);
 }
 
+function formatCompactWithMillionPrecision(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "—";
+
+  if (Math.abs(number) >= 1_000_000) {
+    return new Intl.NumberFormat(undefined, {
+      notation: "compact",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
+
+  return formatCompactWhole(number);
+}
+
 function formatPercent(value) {
   if (value === null || value === undefined || value === "") {
     return "No baseline";
@@ -96,14 +122,105 @@ function formatTooltipValue(value) {
   return formatNumber(number, decimals);
 }
 
+function getStreamBucket(value) {
+  if (value < 2) return "<2";
+  if (value < 5) return "<5";
+  if (value < 10) return "<10";
+  if (value < 15) return "<15";
+  return ">15";
+}
+
+function MultiSelect({ label, options, selected, onChange }) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    function closeOnOutsideClick(event) {
+      if (!event.target.closest(".streamers-multi-select")) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", closeOnOutsideClick);
+    return () => document.removeEventListener("mousedown", closeOnOutsideClick);
+  }, []);
+
+  function toggle(option) {
+    onChange(
+      selected.includes(option)
+        ? selected.filter((item) => item !== option)
+        : [...selected, option]
+    );
+  }
+
+  const text =
+    selected.length === options.length
+      ? `All (${options.length})`
+      : selected.length === 0
+        ? "None"
+        : selected.length === 1
+          ? selected[0]
+          : `${selected.length} selected`;
+
+  return (
+    <div className="streamers-multi-select">
+      <button type="button" onClick={() => setOpen((current) => !current)}>
+        <span>
+          <small>{label}</small>
+          <strong>{text}</strong>
+        </span>
+        <span>⌄</span>
+      </button>
+
+      {open && (
+        <div className="streamers-multi-menu">
+          <div className="streamers-multi-actions">
+            <button type="button" onClick={() => onChange(options)}>All</button>
+            <button type="button" onClick={() => onChange([])}>Clear</button>
+          </div>
+
+          {options.map((option) => (
+            <label key={option}>
+              <input
+                type="checkbox"
+                checked={selected.includes(option)}
+                onChange={() => toggle(option)}
+              />
+              {option}
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventStreams = [] }) {
   const [search, setSearch] = useState("");
   const [group, setGroup] = useState("All");
-  const [minimumPreStreams, setMinimumPreStreams] = useState(0);
+  const [selectedPreSuStreams, setSelectedPreSuStreams] = useState(PRE_SU_STREAM_BUCKETS);
+  const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
+  const [sizeTiersInitialized, setSizeTiersInitialized] = useState(false);
   const [sortKey, setSortKey] = useState("during_followers_gained");
   const [sortDirection, setSortDirection] = useState("desc");
   const [selectedStreamer, setSelectedStreamer] = useState(null);
   const [chartMetric, setChartMetric] = useState("average_viewers");
+
+  const availableSizeTiers = useMemo(() => {
+    const found = [
+      ...new Set(streamers.map((row) => valueOf(row, "size_tier")).filter(Boolean)),
+    ];
+
+    return [
+      ...SIZE_TIER_ORDER.filter((tier) => found.includes(tier)),
+      ...found.filter((tier) => !SIZE_TIER_ORDER.includes(tier)),
+    ];
+  }, [streamers]);
+
+  useEffect(() => {
+    if (sizeTiersInitialized || !availableSizeTiers.length) return;
+    setSelectedSizeTiers(availableSizeTiers);
+    setSizeTiersInitialized(true);
+  }, [availableSizeTiers, sizeTiersInitialized]);
 
   useEffect(() => {
     if (!selectedStreamer) return;
@@ -128,17 +245,33 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
           "pre_total_streams",
           "pre_streams"
         );
+        const sizeTier = valueOf(row, "size_tier");
 
         return (
           searchMatches &&
           groupMatches &&
-          preStreams >= Number(minimumPreStreams)
+          selectedPreSuStreams.includes(getStreamBucket(preStreams)) &&
+          selectedSizeTiers.includes(sizeTier)
         );
       })
       .sort((a, b) => {
         if (sortKey === "display_name") {
           const comparison = nameOf(a).localeCompare(nameOf(b));
           return sortDirection === "asc" ? comparison : -comparison;
+        }
+
+        if (sortKey === "pre_weighted_average_viewers") {
+          const difference =
+            numberOf(a, "pre_weighted_average_viewers", "pre_average_viewers") -
+            numberOf(b, "pre_weighted_average_viewers", "pre_average_viewers");
+          return sortDirection === "asc" ? difference : -difference;
+        }
+
+        if (sortKey === "during_weighted_average_viewers") {
+          const difference =
+            numberOf(a, "during_weighted_average_viewers", "during_average_viewers") -
+            numberOf(b, "during_weighted_average_viewers", "during_average_viewers");
+          return sortDirection === "asc" ? difference : -difference;
         }
 
         const difference = numberOf(a, sortKey) - numberOf(b, sortKey);
@@ -148,7 +281,8 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
     streamers,
     search,
     group,
-    minimumPreStreams,
+    selectedPreSuStreams,
+    selectedSizeTiers,
     sortKey,
     sortDirection,
   ]);
@@ -169,7 +303,8 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
   function resetFilters() {
     setSearch("");
     setGroup("All");
-    setMinimumPreStreams(0);
+    setSelectedPreSuStreams(PRE_SU_STREAM_BUCKETS);
+    setSelectedSizeTiers(availableSizeTiers);
     setSortKey("during_followers_gained");
     setSortDirection("desc");
     setSelectedStreamer(null);
@@ -303,19 +438,19 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
           </select>
         </label>
 
-        <label className="streamers-control">
-          <small>Minimum pre-SU streams</small>
-          <select
-            value={minimumPreStreams}
-            onChange={(event) => setMinimumPreStreams(event.target.value)}
-          >
-            <option value="0">No minimum</option>
-            <option value="1">1+</option>
-            <option value="3">3+</option>
-            <option value="5">5+</option>
-            <option value="10">10+</option>
-          </select>
-        </label>
+        <MultiSelect
+          label="Pre-SU streams"
+          options={PRE_SU_STREAM_BUCKETS}
+          selected={selectedPreSuStreams}
+          onChange={setSelectedPreSuStreams}
+        />
+
+        <MultiSelect
+          label="Streamer size"
+          options={availableSizeTiers}
+          selected={selectedSizeTiers}
+          onChange={setSelectedSizeTiers}
+        />
 
         <button type="button" className="streamers-reset" onClick={resetFilters}>
           Reset filters
@@ -329,7 +464,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
         </article>
         <article>
           <span>Followers gained</span>
-          <strong>{formatCompactWhole(summary.followers)}</strong>
+          <strong>{formatCompactWithMillionPrecision(summary.followers)}</strong>
         </article>
         <article>
           <span>Hours streamed</span>
@@ -391,7 +526,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                     <span className="streamers-info-trigger" aria-label="Marathon definition" role="img">
                       ?
                       <span className="streamers-info-tooltip" role="tooltip">
-                        Counted as a marathon streamer if they streamed for 80%+ of all possible time.
+                        A marathon streamer is someone who streamed at least 80% of all possible hours during SU.
                       </span>
                     </span>
                   </span>

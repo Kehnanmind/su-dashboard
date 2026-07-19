@@ -29,17 +29,16 @@ function InformationPage() {
         <h3>Long Stream Day Splitting</h3>
         <p>
           Some streams run across multiple days (for example, a 50-hour stream).
-          The updated data files already split those streams into day-by-day
-          pieces, so the daily stats shown in the app are now calculated per day
-          instead of being reused from the full stream.
+          The data files split those streams into day-by-day pieces, so daily
+          stats in the app are calculated per day rather than reused from the
+          full stream.
         </p>
         <p>
           <strong>Formula:</strong> Daily followers gained = Total followers
           gained x (Daily hours streamed / Total stream hours)
         </p>
         <p>
-          Average viewers and peak viewers are now represented per day as part
-          of the updated split data.
+          Average viewers and peak viewers are represented per day.
         </p>
       </article>
 
@@ -48,8 +47,8 @@ function InformationPage() {
         <ul>
 
           <li>
-            Marathon streamer: streamed at least 80% of all available hours
-            during Streamer University.
+            A marathon streamer is someone who streamed at least 80% of all
+            possible hours during Streamer University.
           </li>
           <li>
             Pre-SU metrics are based on the 30 days before Streamer University

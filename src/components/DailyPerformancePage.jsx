@@ -117,6 +117,21 @@ function formatCompactWhole(value) {
   }).format(number);
 }
 
+function formatCompactWithMillionPrecision(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "—";
+
+  if (Math.abs(number) >= 1_000_000) {
+    return new Intl.NumberFormat(undefined, {
+      notation: "compact",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
+
+  return formatCompactWhole(number);
+}
+
 function metricValue(row, metric) {
   const aliases = {
     followers_gained: [
@@ -807,7 +822,7 @@ function DailyPerformancePage({
       <section className="daily-kpis">
         <article>
           <span>Followers gained</span>
-          <strong>{formatCompactWhole(totals.followers)}</strong>
+          <strong>{formatCompactWithMillionPrecision(totals.followers)}</strong>
           <small>Current selection</small>
         </article>
         <article>
