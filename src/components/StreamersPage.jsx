@@ -681,6 +681,32 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                 <span>No pre-SU baseline</span>
                 <strong>{numberOf(drawerStreamer, "pre_broadcasts") === 0 ? "Yes" : "No"}</strong>
               </article>
+              <article>
+                <span>Pre-SU (30d) hours streamed</span>
+                <strong>
+                  {formatNumber(
+                    numberOf(
+                      drawerStreamer,
+                      "pre_total_hours_streamed",
+                      "pre_hours_streamed"
+                    ),
+                    1
+                  )}
+                </strong>
+              </article>
+              <article>
+                <span>During-SU hours streamed</span>
+                <strong>
+                  {formatNumber(
+                    numberOf(
+                      drawerStreamer,
+                      "during_total_hours_streamed",
+                      "during_hours_streamed"
+                    ),
+                    1
+                  )}
+                </strong>
+              </article>
             </div>
 
             <div className="streamers-drawer-section">
