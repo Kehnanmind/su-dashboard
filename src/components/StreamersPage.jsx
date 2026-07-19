@@ -221,10 +221,33 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
     const dayRows = (drawerDailyData || []).filter((row) => row.day);
     if (!dayRows.length) return null;
 
+    const averageValues = dayRows.map((row) => numberOf(row, "average_viewers"));
+    const peakValues = dayRows.map((row) => numberOf(row, "peak_viewers"));
+    const followerValues = dayRows.map((row) => numberOf(row, "followers_gained"));
+
+    const averageMin = Math.min(...averageValues);
+    const averageMax = Math.max(...averageValues);
+    const peakMin = Math.min(...peakValues);
+    const peakMax = Math.max(...peakValues);
+    const followersMin = Math.min(...followerValues);
+    const followersMax = Math.max(...followerValues);
+
+    const normalize = (value, min, max) => {
+      if (max <= min) return 0;
+      return (value - min) / (max - min);
+    };
+
+    const scoreForDay = (row) =>
+      normalize(numberOf(row, "average_viewers"), averageMin, averageMax) +
+      normalize(numberOf(row, "peak_viewers"), peakMin, peakMax) +
+      normalize(numberOf(row, "followers_gained"), followersMin, followersMax);
+
     return [...dayRows].sort(
       (a, b) =>
+        scoreForDay(b) - scoreForDay(a) ||
         numberOf(b, "average_viewers") - numberOf(a, "average_viewers") ||
-        numberOf(b, "peak_viewers") - numberOf(a, "peak_viewers")
+        numberOf(b, "peak_viewers") - numberOf(a, "peak_viewers") ||
+        numberOf(b, "followers_gained") - numberOf(a, "followers_gained")
     )[0];
   }, [drawerDailyData, drawerStreamer]);
 
