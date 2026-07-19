@@ -55,6 +55,10 @@ function InformationPage() {
             started.
           </li>
           <li>
+            Followers gained counts only followers gained while a streamer was
+            live. Followers gained while they were offline are not included.
+          </li>
+          <li>
             SU dates are <strong>July 15 to July 20</strong>. "During SU"
             means stats from streams that occurred on those dates only.
           </li>

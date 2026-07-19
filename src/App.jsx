@@ -544,17 +544,12 @@ function App() {
           row,
           "during_total_hours_watched"
         );
-        accumulator.weightedViewerNumerator +=
-          numberOf(
-            row,
-            "during_weighted_average_viewers",
-            "during_average_viewers",
-            "rolling_average_viewers",
-            "average_viewers"
-          ) * Math.max(numberOf(row, "during_total_hours_streamed", "rolling_hours_streamed", "hours_streamed"), 0);
-        accumulator.viewerWeight += Math.max(
-          numberOf(row, "during_total_hours_streamed", "rolling_hours_streamed", "hours_streamed"),
-          0
+        accumulator.viewerSum += numberOf(
+          row,
+          "during_weighted_average_viewers",
+          "during_average_viewers",
+          "rolling_average_viewers",
+          "average_viewers"
         );
         accumulator.peak = Math.max(
           accumulator.peak,
@@ -567,15 +562,14 @@ function App() {
         hours: 0,
         followers: 0,
         watchHours: 0,
-        weightedViewerNumerator: 0,
-        viewerWeight: 0,
+        viewerSum: 0,
         peak: 0,
       }
     );
 
     result.averageViewers =
-      result.viewerWeight > 0
-        ? result.weightedViewerNumerator / result.viewerWeight
+      result.streamers > 0
+        ? result.viewerSum / result.streamers
         : 0;
 
     return result;
@@ -900,7 +894,7 @@ function App() {
             label="Avg viewers"
             value={formatCompact(totals.averageViewers)}
             accent="var(--accent-burgundy)"
-            note="Weighted by hours streamed"
+            note="Simple average across filtered streamers"
           />
           <KpiCard
             icon="◷"
