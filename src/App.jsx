@@ -319,7 +319,6 @@ function App() {
   const [daily, setDaily] = useState([]);
   const [streamerDaily, setStreamerDaily] = useState([]);
   const [eventStreams, setEventStreams] = useState([]);
-  const [groupSummary, setGroupSummary] = useState([]);
   const [metadata, setMetadata] = useState(null);
   const [selectedGroups, setSelectedGroups] = useState([]);
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
@@ -369,7 +368,6 @@ function App() {
           "/data/json/event_daily_summary.json",
           "/data/json/streamer_daily_summary.json",
           "/data/json/event_streams.json",
-          "/data/json/group_summary.json",
           "/data/json/dashboard_metadata.json",
         ];
 
@@ -383,12 +381,12 @@ function App() {
           }
         }
 
-        const [summaryData, dailyData, streamerDailyData, eventStreamsData, groupData, metadataData] = await Promise.all(
+        const [summaryData, dailyData, streamerDailyData, eventStreamsData, metadataData] = await Promise.all(
           responses.map((response) => response.json())
         );
 
         const lastModified =
-          responses[5].headers.get("last-modified") ||
+          responses[4].headers.get("last-modified") ||
           responses[0].headers.get("last-modified") ||
           "";
 
@@ -404,15 +402,10 @@ function App() {
         const filteredEventStreams = (Array.isArray(eventStreamsData) ? eventStreamsData : []).filter(
           (row) => !EXCLUDED_GROUPS.has(row.group)
         );
-        const filteredGroupSummary = (Array.isArray(groupData) ? groupData : []).filter(
-          (row) => !EXCLUDED_GROUPS.has(row.group)
-        );
-
         setSummary(filteredSummary);
         setDaily(filteredDaily);
         setStreamerDaily(filteredStreamerDaily);
         setEventStreams(filteredEventStreams);
-        setGroupSummary(filteredGroupSummary);
         setMetadata(metadataData || null);
         setUpdatedAt(
           lastModified
@@ -675,51 +668,6 @@ function App() {
       )
       .slice(0, 12);
   }, [filteredSummary]);
-
-  const comparisonRows = useMemo(() => {
-    const source = selectedGroups
-      .map((group) => {
-        const direct = groupSummary.find((row) => row.group === group);
-        if (direct) return direct;
-
-        const rows = filteredSummary.filter((row) => row.group === group);
-        if (!rows.length) return null;
-
-        return {
-          group,
-          total_followers_gained: rows.reduce(
-            (sum, row) => sum + numberOf(row, "during_followers_gained"),
-            0
-          ),
-          total_event_hours: rows.reduce(
-            (sum, row) =>
-              sum + numberOf(row, "during_total_hours_streamed"),
-            0
-          ),
-          median_during_average_viewers:
-            rows.reduce(
-              (sum, row) =>
-                sum +
-                numberOf(
-                  row,
-                  "during_weighted_average_viewers",
-                        "during_average_viewers",
-                        "rolling_average_viewers",
-                        "average_viewers"
-                ),
-              0
-            ) / rows.length,
-          total_hours_watched: rows.reduce(
-            (sum, row) =>
-              sum + numberOf(row, "during_total_hours_watched"),
-            0
-          ),
-        };
-      })
-      .filter(Boolean);
-
-    return source.slice(0, 4);
-  }, [groupSummary, filteredSummary, selectedGroups]);
 
   function resetFilters() {
     setSelectedGroups(availableGroups);
@@ -1096,51 +1044,6 @@ function App() {
                       <td>{formatPercent(valueOf(row, "viewer_growth_pct"))}</td>
                     </tr>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <article className="panel comparison-panel">
-            <div className="panel-heading">
-              <h2>Group comparison</h2>
-              <span>Totals and averages</span>
-            </div>
-            <div className="comparison-table-wrap">
-              <table className="comparison-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    {comparisonRows.map((row) => (
-                      <th key={row.group}>{row.group}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Followers gained</td>
-                    {comparisonRows.map((row) => (
-                      <td key={row.group}>{formatCompactWithMillionPrecision(numberOf(row, "total_followers_gained"))}</td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td>Hours streamed</td>
-                    {comparisonRows.map((row) => (
-                      <td key={row.group}>{formatNumber(numberOf(row, "total_event_hours"), 1)}</td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td>Avg viewers</td>
-                    {comparisonRows.map((row) => (
-                      <td key={row.group}>{formatCompact(numberOf(row, "median_during_average_viewers"))}</td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td>Hours watched</td>
-                    {comparisonRows.map((row) => (
-                      <td key={row.group}>{formatCompact(numberOf(row, "total_hours_watched"))}</td>
-                    ))}
-                  </tr>
                 </tbody>
               </table>
             </div>

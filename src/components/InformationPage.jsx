@@ -71,6 +71,12 @@ function InformationPage() {
           This is a small personal project and may contain errors. Treat it as
           experimental and avoid sharing it publicly as a formal analysis :)
         </p>
+        <img
+          className="info-note-image"
+          src="/1x.avif"
+          alt="1X graphic"
+          loading="lazy"
+        />
       </article>
     </section>
   );

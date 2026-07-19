@@ -115,16 +115,6 @@ function duringAverageViewers(row) {
   );
 }
 
-function duringPeakViewers(row) {
-  return numberOf(row, "during_peak_viewers", "rolling_peak_viewers", "peak_viewers");
-}
-
-function averageViewerChange(row) {
-  const preAverage = preAverageViewers(row);
-  if (!Number.isFinite(preAverage) || preAverage <= 0) return null;
-  return duringAverageViewers(row) - preAverage;
-}
-
 function metricHasValue(row, metricKey) {
   if (metricKey === "viewer_growth_pct") {
     return valueOf(row, "viewer_growth_pct") !== null;
@@ -356,39 +346,31 @@ export default function LeaderboardPage({ streamers, groups }) {
   );
 
   const breakoutWinners = useMemo(() => {
-    const followerValues = filteredRows
-      .map((row) => numberOf(row, "during_followers_gained"))
-      .filter((value) => Number.isFinite(value))
-      .sort((a, b) => a - b);
-    const growthValues = filteredRows
+    const viewerGrowthValues = filteredRows
       .map((row) => Number(valueOf(row, "viewer_growth_pct")))
       .filter((value) => Number.isFinite(value))
       .sort((a, b) => a - b);
-    const averageChangeValues = filteredRows
-      .map((row) => averageViewerChange(row))
+    const followerGainValues = filteredRows
+      .map((row) => numberOf(row, "during_followers_gained"))
       .filter((value) => Number.isFinite(value))
       .sort((a, b) => a - b);
 
     return filteredRows
       .map((row) => {
         const growthValue = Number(valueOf(row, "viewer_growth_pct"));
+        const followerGainValue = numberOf(row, "during_followers_gained");
         const preAverage = preAverageViewers(row);
         const duringAverage = duringAverageViewers(row);
-        const avgViewerChange = averageViewerChange(row);
-        const followersGained = numberOf(row, "during_followers_gained");
-        const viewerGrowthScore = percentileRank(growthValue, growthValues);
-        const followerScore = percentileRank(followersGained, followerValues);
-        const avgViewerChangeScore = percentileRank(avgViewerChange, averageChangeValues);
+        const viewerGrowthScore = percentileRank(growthValue, viewerGrowthValues);
+        const followerGainScore = percentileRank(followerGainValue, followerGainValues);
 
         return {
           row,
-          breakoutScore: (viewerGrowthScore + followerScore + avgViewerChangeScore) / 3,
+          breakoutScore: (viewerGrowthScore + followerGainScore) / 2,
           viewerGrowth: Number.isFinite(growthValue) ? growthValue : null,
+          followersGained: followerGainValue,
           preAverage,
           duringAverage,
-          avgViewerChange,
-          followersGained,
-          peakViewers: duringPeakViewers(row),
           hoursStreamed: numberOf(row, "during_total_hours_streamed"),
         };
       })
@@ -474,7 +456,7 @@ export default function LeaderboardPage({ streamers, groups }) {
       <article className="lb-panel">
         <div className="lb-panel-heading">
           <h3>Breakout winners</h3>
-          <span>Based on viewer growth, followers gained, and change in average viewers versus pre-SU. This section does not use the ranking metric.</span>
+          <span>Based on viewer growth % and followers gained during SU. This section does not use the ranking metric.</span>
         </div>
 
         <div className="lb-winners-grid">
@@ -492,7 +474,7 @@ export default function LeaderboardPage({ streamers, groups }) {
 
               <dl className="lb-winner-stats">
                 <div>
-                  <dt>Pre-SU avg viewers</dt>
+                  <dt>Pre-SU (30d) avg viewers</dt>
                   <dd>{item.preAverage == null ? "No baseline" : formatNumber(item.preAverage)}</dd>
                 </div>
                 <div>
@@ -673,7 +655,7 @@ export default function LeaderboardPage({ streamers, groups }) {
                 <SortHeader column="streamer" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Streamer</SortHeader>
                 <th>Group</th>
                 <SortHeader column="size_tier" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Streamer size</SortHeader>
-                <SortHeader column="pre_weighted_average_viewers" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Pre-SU avg viewers</SortHeader>
+                <SortHeader column="pre_weighted_average_viewers" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Pre-SU (30d) avg viewers</SortHeader>
                 <SortHeader column="during_weighted_average_viewers" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>SU avg viewers</SortHeader>
                 <SortHeader column="viewer_growth_pct" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Viewer growth</SortHeader>
                 <SortHeader column="during_total_hours_streamed" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Hours streamed</SortHeader>

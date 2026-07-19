@@ -72,3 +72,12 @@
 .info-note {
   border-color: rgba(201, 164, 77, 0.35);
 }
+
+.info-note-image {
+  display: block;
+  margin-top: 12px;
+  width: min(110px, 100%);
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}

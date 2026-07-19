@@ -495,10 +495,10 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                 </th>
                 <th>Group</th>
                 <th onClick={() => changeSort("pre_broadcasts")}>
-                  Pre-SU streams{sortMark("pre_broadcasts")}
+                  Pre-SU (30d) streams{sortMark("pre_broadcasts")}
                 </th>
                 <th onClick={() => changeSort("pre_weighted_average_viewers")}>
-                  Pre-SU avg viewers
+                  Pre-SU (30d) avg viewers
                   {sortMark("pre_weighted_average_viewers")}
                 </th>
                 <th onClick={() => changeSort("during_weighted_average_viewers")}>
@@ -690,7 +690,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
               <div className="streamers-drawer-comparison">
                 <div className="streamers-drawer-comparison-header">
                   <span>Metric</span>
-                  <span>Pre-SU</span>
+                  <span>Pre-SU (30d)</span>
                   <span>SU</span>
                   <span>% Change</span>
                 </div>
