@@ -258,6 +258,11 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
       during: numberOf(drawerStreamer, "during_weighted_average_viewers", "during_average_viewers"),
     },
     {
+      label: "Peak viewers",
+      pre: numberOf(drawerStreamer, "pre_peak_viewers"),
+      during: numberOf(drawerStreamer, "during_peak_viewers"),
+    },
+    {
       label: "Followers gained",
       pre: numberOf(drawerStreamer, "pre_followers_gained"),
       during: numberOf(drawerStreamer, "during_followers_gained"),
