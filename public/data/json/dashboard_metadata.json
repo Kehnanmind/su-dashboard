@@ -2,7 +2,7 @@
   "project": {
     "name": "Streamer University Analytics",
     "unofficial": true,
-    "generated_at_utc": "2026-07-19T07:37:05.243798+00:00"
+    "generated_at_utc": "2026-07-19T08:23:56.409442+00:00"
   },
   "event": {
     "start_date": "2026-07-15",
@@ -37,7 +37,6 @@
   },
   "metric_definitions": {
     "average_viewers": "Arithmetic mean of the average-viewer value across broadcasts.",
-    "weighted_average_viewers": "Average viewers weighted by broadcast duration; especially useful for marathon creators.",
     "effort_ratio": "During-SU hours streamed per calendar day divided by pre-SU hours streamed per calendar day.",
     "viewer_growth_pct": "Percentage change from pre-SU average viewers to During-SU average viewers.",
     "expected_followers_during_su": "Pre-SU followers gained per calendar day multiplied by the number of event days.",
