@@ -367,15 +367,38 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
     const followersMin = Math.min(...followerValues);
     const followersMax = Math.max(...followerValues);
 
+    const hoursValues = dayRows.map((row) => numberOf(row, "hours_streamed"));
+    const hoursMin = Math.min(...hoursValues);
+    const hoursMax = Math.max(...hoursValues);
+
     const normalize = (value, min, max) => {
       if (max <= min) return 0;
       return (value - min) / (max - min);
     };
 
+    const normalizeLog = (value, min, max) => {
+      const logValue = Math.log1p(Math.max(0, value));
+      const logMin = Math.log1p(Math.max(0, min));
+      const logMax = Math.log1p(Math.max(0, max));
+      return normalize(logValue, logMin, logMax);
+    };
+
+    const DAY_SCORE_WEIGHTS = {
+      average_viewers: 0.6,
+      peak_viewers: 0.2,
+      followers_gained: 0.15,
+      hours_streamed: 0.05,
+    };
+
     const scoreForDay = (row) =>
-      normalize(numberOf(row, "average_viewers"), averageMin, averageMax) +
-      normalize(numberOf(row, "peak_viewers"), peakMin, peakMax) +
-      normalize(numberOf(row, "followers_gained"), followersMin, followersMax);
+      DAY_SCORE_WEIGHTS.average_viewers *
+        normalize(numberOf(row, "average_viewers"), averageMin, averageMax) +
+      DAY_SCORE_WEIGHTS.peak_viewers *
+        normalizeLog(numberOf(row, "peak_viewers"), peakMin, peakMax) +
+      DAY_SCORE_WEIGHTS.followers_gained *
+        normalizeLog(numberOf(row, "followers_gained"), followersMin, followersMax) +
+      DAY_SCORE_WEIGHTS.hours_streamed *
+        normalize(numberOf(row, "hours_streamed"), hoursMin, hoursMax);
 
     return [...dayRows].sort(
       (a, b) =>

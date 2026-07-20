@@ -2,12 +2,15 @@
   "project": {
     "name": "Streamer University Analytics",
     "unofficial": true,
-    "generated_at_utc": "2026-07-19T08:23:56.409442+00:00"
+    "generated_at_utc": "2026-07-20T12:36:15.549070+00:00"
   },
   "event": {
     "start_date": "2026-07-15",
     "end_date": "2026-07-20",
-    "event_days": 6,
+    "start_at": "2026-07-15T14:00:00",
+    "end_at_exclusive": "2026-07-20T06:00:00",
+    "event_days": 4.666666666666667,
+    "event_hours": 112.0,
     "pre_event_days": 30
   },
   "filters": {
@@ -33,7 +36,7 @@
   "marathon_definition": {
     "restart_gap_minutes": 90,
     "minimum_event_hours_share": 0.85,
-    "explanation": "A creator is marked as a marathon streamer when a reconstructed session lasts at least 24 hours or their total event streaming time is at least 75% of all possible event hours. Broadcasts restarted within 90 minutes are treated as one logical session."
+    "explanation": "A creator is marked as a marathon streamer when a reconstructed session lasts at least 24 hours or their total event streaming time is at least 85% of all possible event hours. Broadcasts restarted within 90 minutes are treated as one logical session."
   },
   "metric_definitions": {
     "average_viewers": "Arithmetic mean of the average-viewer value across broadcasts.",

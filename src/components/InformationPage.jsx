@@ -59,8 +59,12 @@ function InformationPage() {
             live. Followers gained while they were offline are not included.
           </li>
           <li>
-            SU dates are <strong>July 15 to July 20</strong>. "During SU"
-            means stats from streams that occurred on those dates only.
+            SU starts at <strong>2:00 PM on July 15</strong> and event-day
+            boundaries reset at <strong>6:00 AM</strong> (not midnight).
+          </li>
+          <li>
+            The current event window ends at <strong>6:00 AM on July 20</strong>.
+            "During SU" means stats that fall inside that timestamp range.
           </li>
         </ul>
       </article>
