@@ -20,8 +20,6 @@ const GROUP_COLORS = {
   Librarian: "#22d3ee",
 };
 
-const PRE_SU_STREAM_BUCKETS = ["<2", "<5", "<10", "<15", ">15"];
-
 const SIZE_TIER_ORDER = [
   "Micro (<50)",
   "Small (50-199)",
@@ -122,14 +120,6 @@ function formatTooltipValue(value) {
   return formatNumber(number, decimals);
 }
 
-function getStreamBucket(value) {
-  if (value < 2) return "<2";
-  if (value < 5) return "<5";
-  if (value < 10) return "<10";
-  if (value < 15) return "<15";
-  return ">15";
-}
-
 function MultiSelect({ label, options, selected, onChange }) {
   const [open, setOpen] = useState(false);
 
@@ -197,7 +187,6 @@ function MultiSelect({ label, options, selected, onChange }) {
 function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventStreams = [] }) {
   const [search, setSearch] = useState("");
   const [group, setGroup] = useState("All");
-  const [selectedPreSuStreams, setSelectedPreSuStreams] = useState(PRE_SU_STREAM_BUCKETS);
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [sizeTiersInitialized, setSizeTiersInitialized] = useState(false);
   const [sortKey, setSortKey] = useState("during_followers_gained");
@@ -239,18 +228,11 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
 
         const groupMatches = group === "All" || row.group === group;
 
-        const preStreams = numberOf(
-          row,
-          "pre_broadcasts",
-          "pre_total_streams",
-          "pre_streams"
-        );
         const sizeTier = valueOf(row, "size_tier");
 
         return (
           searchMatches &&
           groupMatches &&
-          selectedPreSuStreams.includes(getStreamBucket(preStreams)) &&
           selectedSizeTiers.includes(sizeTier)
         );
       })
@@ -274,6 +256,13 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
           return sortDirection === "asc" ? difference : -difference;
         }
 
+        if (sortKey === "pre_total_hours_streamed") {
+          const difference =
+            numberOf(a, "pre_total_hours_streamed", "pre_hours_streamed") -
+            numberOf(b, "pre_total_hours_streamed", "pre_hours_streamed");
+          return sortDirection === "asc" ? difference : -difference;
+        }
+
         const difference = numberOf(a, sortKey) - numberOf(b, sortKey);
         return sortDirection === "asc" ? difference : -difference;
       });
@@ -281,7 +270,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
     streamers,
     search,
     group,
-    selectedPreSuStreams,
     selectedSizeTiers,
     sortKey,
     sortDirection,
@@ -303,7 +291,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
   function resetFilters() {
     setSearch("");
     setGroup("All");
-    setSelectedPreSuStreams(PRE_SU_STREAM_BUCKETS);
     setSelectedSizeTiers(availableSizeTiers);
     setSortKey("during_followers_gained");
     setSortDirection("desc");
@@ -462,13 +449,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
         </label>
 
         <MultiSelect
-          label="Pre-SU streams"
-          options={PRE_SU_STREAM_BUCKETS}
-          selected={selectedPreSuStreams}
-          onChange={setSelectedPreSuStreams}
-        />
-
-        <MultiSelect
           label="Streamer size"
           options={availableSizeTiers}
           selected={selectedSizeTiers}
@@ -517,9 +497,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                   Streamer{sortMark("display_name")}
                 </th>
                 <th>Group</th>
-                <th onClick={() => changeSort("pre_broadcasts")}>
-                  Pre-SU (30d) streams{sortMark("pre_broadcasts")}
-                </th>
                 <th onClick={() => changeSort("pre_weighted_average_viewers")}>
                   Pre-SU (30d) avg viewers
                   {sortMark("pre_weighted_average_viewers")}
@@ -531,8 +508,12 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                 <th onClick={() => changeSort("viewer_growth_pct")}>
                   Viewer growth{sortMark("viewer_growth_pct")}
                 </th>
+                <th onClick={() => changeSort("pre_total_hours_streamed")}>
+                  Pre-SU (30d) hours streamed
+                  {sortMark("pre_total_hours_streamed")}
+                </th>
                 <th onClick={() => changeSort("during_total_hours_streamed")}>
-                  Hours streamed{sortMark("during_total_hours_streamed")}
+                  During-SU hours streamed{sortMark("during_total_hours_streamed")}
                 </th>
                 <th onClick={() => changeSort("during_followers_gained")}>
                   Followers gained{sortMark("during_followers_gained")}
@@ -597,17 +578,6 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                     </td>
 
                     <td>
-                      {formatNumber(
-                        numberOf(
-                          row,
-                          "pre_broadcasts",
-                          "pre_total_streams",
-                          "pre_streams"
-                        )
-                      )}
-                    </td>
-
-                    <td>
                       {preAverage == null
                         ? "No baseline"
                         : formatNumber(Number(preAverage))}
@@ -624,6 +594,17 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                     </td>
 
                     <td>{formatPercent(valueOf(row, "viewer_growth_pct"))}</td>
+
+                    <td>
+                      {formatNumber(
+                        numberOf(
+                          row,
+                          "pre_total_hours_streamed",
+                          "pre_hours_streamed"
+                        ),
+                        1
+                      )}
+                    </td>
 
                     <td>
                       {formatNumber(
