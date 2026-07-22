@@ -110,20 +110,24 @@ function formatPercent(value) {
   return `${number >= 0 ? "+" : ""}${number.toFixed(1)}%`;
 }
 
-function baselineAverageViewers(row, baselineMode = "30d") {
-  const keys =
-    baselineMode === "june"
-      ? ["pre_june_average_viewers", "pre_average_viewers", "pre_weighted_average_viewers"]
-      : ["pre_30d_average_viewers", "pre_weighted_average_viewers", "pre_average_viewers"];
-  const number = Number(valueOf(row, ...keys));
+function numericValueOf(row, ...keys) {
+  const value = valueOf(row, ...keys);
+  if (value === null) return null;
+
+  const number = Number(value);
   return Number.isFinite(number) ? number : null;
 }
 
+function baselineAverageViewers(row, baselineMode = "30d") {
+  return baselineMode === "june"
+    ? numericValueOf(row, "pre_june_average_viewers")
+    : numericValueOf(row, "pre_30d_average_viewers");
+}
+
 function baselineViewerGrowthPct(row, baselineMode = "30d") {
-  const keys = baselineMode === "june" ? ["viewer_growth_pct"] : ["viewer_growth_pct_30d", "viewer_growth_pct"];
-  const value = valueOf(row, ...keys);
-  const number = Number(value);
-  return Number.isFinite(number) ? number : null;
+  return baselineMode === "june"
+    ? numericValueOf(row, "viewer_growth_pct")
+    : numericValueOf(row, "viewer_growth_pct_30d");
 }
 
 function duringAverageViewers(row) {
@@ -189,19 +193,15 @@ function metricNumber(row, metricKey, baselineMode = "30d") {
   };
 
   if (metricKey === "pre_average_viewers") {
-    return numberOf(
-      row,
-      ...(baselineMode === "june"
-        ? ["pre_june_average_viewers", "pre_average_viewers", "pre_weighted_average_viewers"]
-        : ["pre_30d_average_viewers", "pre_weighted_average_viewers", "pre_average_viewers"])
-    );
+    return baselineMode === "june"
+      ? numericValueOf(row, "pre_june_average_viewers")
+      : numericValueOf(row, "pre_30d_average_viewers");
   }
 
   if (metricKey === "viewer_growth_pct") {
-    return numberOf(
-      row,
-      ...(baselineMode === "june" ? ["viewer_growth_pct"] : ["viewer_growth_pct_30d", "viewer_growth_pct"])
-    );
+    return baselineMode === "june"
+      ? numericValueOf(row, "viewer_growth_pct")
+      : numericValueOf(row, "viewer_growth_pct_30d");
   }
 
   return numberOf(row, ...(aliases[metricKey] || [metricKey]));
@@ -369,12 +369,18 @@ export default function LeaderboardPage({ streamers, groups }) {
   );
 
   const topRows = useMemo(
-    () => [...comparableMetricRows].sort((a, b) => metricNumber(b, metric, baselineMode) - metricNumber(a, metric, baselineMode)).slice(0, 10),
+    () =>
+      [...comparableMetricRows]
+        .sort((a, b) => metricNumber(b, metric, baselineMode) - metricNumber(a, metric, baselineMode))
+        .slice(0, 10),
     [comparableMetricRows, metric, baselineMode]
   );
 
   const bottomRows = useMemo(
-    () => [...comparableMetricRows].sort((a, b) => metricNumber(a, metric, baselineMode) - metricNumber(b, metric, baselineMode)).slice(0, 10),
+    () =>
+      [...comparableMetricRows]
+        .sort((a, b) => metricNumber(a, metric, baselineMode) - metricNumber(b, metric, baselineMode))
+        .slice(0, 10),
     [comparableMetricRows, metric, baselineMode]
   );
 

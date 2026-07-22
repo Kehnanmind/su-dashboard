@@ -491,6 +491,15 @@
   text-align: left;
 }
 
+.lb-table th:nth-child(5),
+.lb-table td:nth-child(5),
+.lb-table th:nth-child(8),
+.lb-table td:nth-child(8),
+.lb-table th:nth-child(11),
+.lb-table td:nth-child(11) {
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.07);
+}
+
 .lb-table tbody tr:hover {
   background: rgba(99, 69, 151, 0.12);
 }
