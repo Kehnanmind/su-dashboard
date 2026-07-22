@@ -36,6 +36,16 @@ const DRAWER_METRIC_LABELS = {
   hours_watched: "Hours Watched",
 };
 
+const BASELINE_OPTIONS = [
+  { value: "june", label: "June" },
+  { value: "30d", label: "Pre-SU 30 days" },
+];
+
+const BASELINE_LABELS = {
+  june: "June",
+  "30d": "30d",
+};
+
 function valueOf(row, ...keys) {
   for (const key of keys) {
     const value = row?.[key];
@@ -111,6 +121,30 @@ function formatPercent(value) {
   if (!Number.isFinite(number)) return "No baseline";
 
   return `${number >= 0 ? "+" : ""}${number.toFixed(1)}%`;
+}
+
+function baselineAverageViewers(row, baselineMode = "30d") {
+  const keys =
+    baselineMode === "june"
+      ? ["pre_june_average_viewers", "pre_average_viewers", "pre_weighted_average_viewers"]
+      : ["pre_30d_average_viewers", "pre_weighted_average_viewers", "pre_average_viewers"];
+  const value = valueOf(row, ...keys);
+  return value === null ? null : Number(value);
+}
+
+function baselineHoursStreamed(row, baselineMode = "30d") {
+  const keys =
+    baselineMode === "june"
+      ? ["pre_june_total_hours_streamed", "pre_total_hours_streamed", "pre_hours_streamed"]
+      : ["pre_30d_total_hours_streamed", "pre_total_hours_streamed", "pre_hours_streamed"];
+  const value = valueOf(row, ...keys);
+  return value === null ? null : Number(value);
+}
+
+function baselineViewerGrowthPct(row, baselineMode = "30d") {
+  const keys = baselineMode === "june" ? ["viewer_growth_pct"] : ["viewer_growth_pct_30d", "viewer_growth_pct"];
+  const value = valueOf(row, ...keys);
+  return value === null ? null : Number(value);
 }
 
 function formatTooltipValue(value) {
@@ -189,10 +223,12 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
   const [group, setGroup] = useState("All");
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [sizeTiersInitialized, setSizeTiersInitialized] = useState(false);
+  const [baselineMode, setBaselineMode] = useState("june");
   const [sortKey, setSortKey] = useState("during_followers_gained");
   const [sortDirection, setSortDirection] = useState("desc");
   const [selectedStreamer, setSelectedStreamer] = useState(null);
   const [chartMetric, setChartMetric] = useState("average_viewers");
+  const baselineLabel = BASELINE_LABELS[baselineMode] || "30d";
 
   const availableSizeTiers = useMemo(() => {
     const found = [
@@ -243,9 +279,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
         }
 
         if (sortKey === "pre_weighted_average_viewers") {
-          const difference =
-            numberOf(a, "pre_weighted_average_viewers", "pre_average_viewers") -
-            numberOf(b, "pre_weighted_average_viewers", "pre_average_viewers");
+          const difference = baselineAverageViewers(a, baselineMode) - baselineAverageViewers(b, baselineMode);
           return sortDirection === "asc" ? difference : -difference;
         }
 
@@ -257,9 +291,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
         }
 
         if (sortKey === "pre_total_hours_streamed") {
-          const difference =
-            numberOf(a, "pre_total_hours_streamed", "pre_hours_streamed") -
-            numberOf(b, "pre_total_hours_streamed", "pre_hours_streamed");
+          const difference = baselineHoursStreamed(a, baselineMode) - baselineHoursStreamed(b, baselineMode);
           return sortDirection === "asc" ? difference : -difference;
         }
 
@@ -292,6 +324,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
     setSearch("");
     setGroup("All");
     setSelectedSizeTiers(availableSizeTiers);
+    setBaselineMode("june");
     setSortKey("during_followers_gained");
     setSortDirection("desc");
     setSelectedStreamer(null);
@@ -304,7 +337,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
     }
 
     setSortKey(nextKey);
-    setSortDirection(nextKey === "display_name" ? "asc" : "desc");
+    setSortDirection("asc");
   }
 
   function sortMark(key) {
@@ -316,6 +349,9 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
   const drawerHandle = valueOf(drawerStreamer, "streamer", "display_name");
   const drawerTwitchUrl = drawerHandle
     ? `https://www.twitch.tv/${encodeURIComponent(drawerHandle)}`
+    : null;
+  const drawerSullyGnomeUrl = drawerHandle
+    ? `https://sullygnome.com/channel/${encodeURIComponent(String(drawerHandle).toLowerCase())}/7`
     : null;
 
   const drawerDailyData = useMemo(() => {
@@ -399,7 +435,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
   const drawerComparisonRows = [
     {
       label: "Avg viewers",
-      pre: numberOf(drawerStreamer, "pre_weighted_average_viewers", "pre_average_viewers"),
+      pre: baselineAverageViewers(drawerStreamer, baselineMode),
       during: numberOf(drawerStreamer, "during_weighted_average_viewers", "during_average_viewers"),
     },
     {
@@ -443,6 +479,17 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
             {groups.map((groupName) => (
               <option key={groupName} value={groupName}>
                 {groupName}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="streamers-control">
+          <small>Comparison baseline</small>
+          <select value={baselineMode} onChange={(event) => setBaselineMode(event.target.value)}>
+            {BASELINE_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
               </option>
             ))}
           </select>
@@ -498,7 +545,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                 </th>
                 <th>Group</th>
                 <th onClick={() => changeSort("pre_weighted_average_viewers")}>
-                  Pre-SU (30d) avg viewers
+                  Pre-SU ({baselineLabel}) avg viewers
                   {sortMark("pre_weighted_average_viewers")}
                 </th>
                 <th onClick={() => changeSort("during_weighted_average_viewers")}>
@@ -506,10 +553,10 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                   {sortMark("during_weighted_average_viewers")}
                 </th>
                 <th onClick={() => changeSort("viewer_growth_pct")}>
-                  Viewer growth{sortMark("viewer_growth_pct")}
+                  Viewer growth ({baselineLabel}){sortMark("viewer_growth_pct")}
                 </th>
                 <th onClick={() => changeSort("pre_total_hours_streamed")}>
-                  Pre-SU (30d) hours streamed
+                  Pre-SU ({baselineLabel}) hours streamed
                   {sortMark("pre_total_hours_streamed")}
                 </th>
                 <th onClick={() => changeSort("during_total_hours_streamed")}>
@@ -540,11 +587,9 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
 
             <tbody>
               {rows.map((row) => {
-                const preAverage = valueOf(
-                  row,
-                  "pre_weighted_average_viewers",
-                  "pre_average_viewers"
-                );
+                const preAverage = baselineAverageViewers(row, baselineMode);
+                const preHours = baselineHoursStreamed(row, baselineMode);
+                const viewerGrowth = baselineViewerGrowthPct(row, baselineMode);
 
                 return (
                   <tr
@@ -580,7 +625,7 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                     <td>
                       {preAverage == null
                         ? "No baseline"
-                        : formatNumber(Number(preAverage))}
+                        : formatNumber(preAverage)}
                     </td>
 
                     <td>
@@ -593,17 +638,10 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
                       )}
                     </td>
 
-                    <td>{formatPercent(valueOf(row, "viewer_growth_pct"))}</td>
+                    <td>{formatPercent(viewerGrowth)}</td>
 
                     <td>
-                      {formatNumber(
-                        numberOf(
-                          row,
-                          "pre_total_hours_streamed",
-                          "pre_hours_streamed"
-                        ),
-                        1
-                      )}
+                      {preHours == null ? "No baseline" : formatNumber(preHours, 1)}
                     </td>
 
                     <td>
@@ -661,41 +699,43 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
 
             <div className="streamers-drawer-header">
               <div>
-                <h3>{nameOf(drawerStreamer)}</h3>
+                <div className="streamers-drawer-title-row">
+                  <h3>{nameOf(drawerStreamer)}</h3>
+                  <div className="streamers-drawer-header-actions">
+                    {drawerTwitchUrl ? (
+                      <a href={drawerTwitchUrl} target="_blank" rel="noreferrer">
+                        Twitch
+                      </a>
+                    ) : null}
+                    {drawerSullyGnomeUrl ? (
+                      <a href={drawerSullyGnomeUrl} target="_blank" rel="noreferrer">
+                        SullyGnome
+                      </a>
+                    ) : null}
+                    {drawerStreamer.is_marathon ? (
+                      <span className="streamers-drawer-badge marathon">Marathon</span>
+                    ) : null}
+                  </div>
+                </div>
                 <p>{drawerStreamer.group || "Unknown group"}</p>
-              </div>
-              <div className="streamers-drawer-header-actions">
-                {drawerStreamer.is_marathon ? (
-                  <span className="streamers-drawer-badge marathon">Marathon</span>
-                ) : null}
-                {drawerTwitchUrl ? (
-                  <a href={drawerTwitchUrl} target="_blank" rel="noreferrer">
-                    Twitch
-                  </a>
-                ) : null}
               </div>
             </div>
 
             <div className="streamers-drawer-summary">
               <article>
-                <span>Viewer growth</span>
-                <strong>{formatPercent(valueOf(drawerStreamer, "viewer_growth_pct"))}</strong>
+                <span>Viewer growth ({baselineLabel})</span>
+                <strong>{formatPercent(baselineViewerGrowthPct(drawerStreamer, baselineMode))}</strong>
               </article>
               <article>
                 <span>No pre-SU baseline</span>
                 <strong>{numberOf(drawerStreamer, "pre_broadcasts") === 0 ? "Yes" : "No"}</strong>
               </article>
               <article>
-                <span>Pre-SU (30d) hours streamed</span>
+                <span>Pre-SU ({baselineLabel}) hours streamed</span>
                 <strong>
-                  {formatNumber(
-                    numberOf(
-                      drawerStreamer,
-                      "pre_total_hours_streamed",
-                      "pre_hours_streamed"
-                    ),
-                    1
-                  )}
+                  {baselineHoursStreamed(drawerStreamer, baselineMode) == null
+                    ? "No baseline"
+                    : formatNumber(baselineHoursStreamed(drawerStreamer, baselineMode), 1)}
                 </strong>
               </article>
               <article>
@@ -720,19 +760,26 @@ function StreamersPage({ streamers = [], groups = [], streamerDaily = [], eventS
               <div className="streamers-drawer-comparison">
                 <div className="streamers-drawer-comparison-header">
                   <span>Metric</span>
-                  <span>Pre-SU (30d)</span>
+                  <span>Pre-SU ({baselineLabel})</span>
                   <span>SU</span>
                   <span>% Change</span>
                 </div>
                 {drawerComparisonRows.map((row) => {
-                  const change = row.pre === 0 ? (row.during > 0 ? 100 : 0) : ((row.during - row.pre) / row.pre) * 100;
+                  const change =
+                    row.pre == null
+                      ? null
+                      : row.pre === 0
+                        ? row.during > 0
+                          ? 100
+                          : 0
+                        : ((row.during - row.pre) / row.pre) * 100;
 
                   return (
                     <div key={row.label} className="streamers-drawer-comparison-row">
                       <span>{row.label}</span>
-                      <strong>{formatNumber(row.pre)}</strong>
+                      <strong>{row.pre == null ? "No baseline" : formatNumber(row.pre)}</strong>
                       <strong>{formatNumber(row.during)}</strong>
-                      <em>{Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(1)}%` : "—"}</em>
+                      <em>{formatPercent(change)}</em>
                     </div>
                   );
                 })}

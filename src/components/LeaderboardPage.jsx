@@ -20,6 +20,16 @@ const SIZE_TIER_ORDER = [
   "No pre-SU baseline",
 ];
 
+const BASELINE_OPTIONS = [
+  { value: "june", label: "June" },
+  { value: "30d", label: "Pre-SU 30 days" },
+];
+
+const BASELINE_LABELS = {
+  june: "June",
+  "30d": "30d",
+};
+
 const GROUP_COLORS = {
   Student: "#36d17a",
   "Club Director": "#f59e0b",
@@ -100,8 +110,19 @@ function formatPercent(value) {
   return `${number >= 0 ? "+" : ""}${number.toFixed(1)}%`;
 }
 
-function preAverageViewers(row) {
-  const number = Number(valueOf(row, "pre_weighted_average_viewers", "pre_average_viewers"));
+function baselineAverageViewers(row, baselineMode = "30d") {
+  const keys =
+    baselineMode === "june"
+      ? ["pre_june_average_viewers", "pre_average_viewers", "pre_weighted_average_viewers"]
+      : ["pre_30d_average_viewers", "pre_weighted_average_viewers", "pre_average_viewers"];
+  const number = Number(valueOf(row, ...keys));
+  return Number.isFinite(number) ? number : null;
+}
+
+function baselineViewerGrowthPct(row, baselineMode = "30d") {
+  const keys = baselineMode === "june" ? ["viewer_growth_pct"] : ["viewer_growth_pct_30d", "viewer_growth_pct"];
+  const value = valueOf(row, ...keys);
+  const number = Number(value);
   return Number.isFinite(number) ? number : null;
 }
 
@@ -115,9 +136,9 @@ function duringAverageViewers(row) {
   );
 }
 
-function metricHasValue(row, metricKey) {
+function metricHasValue(row, metricKey, baselineMode = "30d") {
   if (metricKey === "viewer_growth_pct") {
-    return valueOf(row, "viewer_growth_pct") !== null;
+    return baselineViewerGrowthPct(row, baselineMode) !== null;
   }
 
   return true;
@@ -137,7 +158,7 @@ function percentileRank(value, sortedValues) {
   return ((count - 1) / (sortedValues.length - 1)) * 100;
 }
 
-function metricNumber(row, metricKey) {
+function metricNumber(row, metricKey, baselineMode = "30d") {
   const aliases = {
     during_followers_gained: [
       "during_followers_gained",
@@ -165,12 +186,23 @@ function metricNumber(row, metricKey) {
       "rolling_peak_viewers",
       "peak_viewers",
     ],
-    pre_weighted_average_viewers: [
-      "pre_weighted_average_viewers",
-      "pre_average_viewers",
-    ],
-    viewer_growth_pct: ["viewer_growth_pct"],
   };
+
+  if (metricKey === "pre_average_viewers") {
+    return numberOf(
+      row,
+      ...(baselineMode === "june"
+        ? ["pre_june_average_viewers", "pre_average_viewers", "pre_weighted_average_viewers"]
+        : ["pre_30d_average_viewers", "pre_weighted_average_viewers", "pre_average_viewers"])
+    );
+  }
+
+  if (metricKey === "viewer_growth_pct") {
+    return numberOf(
+      row,
+      ...(baselineMode === "june" ? ["viewer_growth_pct"] : ["viewer_growth_pct_30d", "viewer_growth_pct"])
+    );
+  }
 
   return numberOf(row, ...(aliases[metricKey] || [metricKey]));
 }
@@ -267,6 +299,7 @@ export default function LeaderboardPage({ streamers, groups }) {
   const [selectedPreSuStreams, setSelectedPreSuStreams] = useState(PRE_SU_STREAM_BUCKETS);
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [sizeTiersInitialized, setSizeTiersInitialized] = useState(false);
+  const [baselineMode, setBaselineMode] = useState("june");
   const [metric, setMetric] = useState("during_followers_gained");
   const [marathon, setMarathon] = useState("all");
   const [sortKey, setSortKey] = useState("during_followers_gained");
@@ -314,11 +347,11 @@ export default function LeaderboardPage({ streamers, groups }) {
       const aValue =
         sortKey === "streamer" || sortKey === "size_tier"
           ? String(valueOf(a, sortKey, sortKey === "streamer" ? "display_name" : "") || "").toLowerCase()
-          : metricNumber(a, sortKey);
+          : metricNumber(a, sortKey, baselineMode);
       const bValue =
         sortKey === "streamer" || sortKey === "size_tier"
           ? String(valueOf(b, sortKey, sortKey === "streamer" ? "display_name" : "") || "").toLowerCase()
-          : metricNumber(b, sortKey);
+          : metricNumber(b, sortKey, baselineMode);
 
       if (typeof aValue === "string") {
         return sortDirection === "asc"
@@ -328,26 +361,26 @@ export default function LeaderboardPage({ streamers, groups }) {
 
       return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
     });
-  }, [filteredRows, sortKey, sortDirection]);
+  }, [filteredRows, sortKey, sortDirection, baselineMode]);
 
   const comparableMetricRows = useMemo(
-    () => filteredRows.filter((row) => metricHasValue(row, metric)),
-    [filteredRows, metric]
+    () => filteredRows.filter((row) => metricHasValue(row, metric, baselineMode)),
+    [filteredRows, metric, baselineMode]
   );
 
   const topRows = useMemo(
-    () => [...comparableMetricRows].sort((a, b) => metricNumber(b, metric) - metricNumber(a, metric)).slice(0, 10),
-    [comparableMetricRows, metric]
+    () => [...comparableMetricRows].sort((a, b) => metricNumber(b, metric, baselineMode) - metricNumber(a, metric, baselineMode)).slice(0, 10),
+    [comparableMetricRows, metric, baselineMode]
   );
 
   const bottomRows = useMemo(
-    () => [...comparableMetricRows].sort((a, b) => metricNumber(a, metric) - metricNumber(b, metric)).slice(0, 10),
-    [comparableMetricRows, metric]
+    () => [...comparableMetricRows].sort((a, b) => metricNumber(a, metric, baselineMode) - metricNumber(b, metric, baselineMode)).slice(0, 10),
+    [comparableMetricRows, metric, baselineMode]
   );
 
   const breakoutWinners = useMemo(() => {
     const viewerGrowthValues = filteredRows
-      .map((row) => Number(valueOf(row, "viewer_growth_pct")))
+      .map((row) => baselineViewerGrowthPct(row, baselineMode))
       .filter((value) => Number.isFinite(value))
       .sort((a, b) => a - b);
     const followerGainValues = filteredRows
@@ -357,9 +390,9 @@ export default function LeaderboardPage({ streamers, groups }) {
 
     return filteredRows
       .map((row) => {
-        const growthValue = Number(valueOf(row, "viewer_growth_pct"));
+        const growthValue = baselineViewerGrowthPct(row, baselineMode);
         const followerGainValue = numberOf(row, "during_followers_gained");
-        const preAverage = preAverageViewers(row);
+        const preAverage = baselineAverageViewers(row, baselineMode);
         const duringAverage = duringAverageViewers(row);
         const viewerGrowthScore = percentileRank(growthValue, viewerGrowthValues);
         const followerGainScore = percentileRank(followerGainValue, followerGainValues);
@@ -376,11 +409,20 @@ export default function LeaderboardPage({ streamers, groups }) {
       })
       .sort((a, b) => b.breakoutScore - a.breakoutScore)
       .slice(0, 3);
-  }, [filteredRows]);
+  }, [filteredRows, baselineMode]);
 
-  const maximumTopValue = Math.max(...topRows.map((row) => Math.abs(metricNumber(row, metric))), 1);
-  const maximumBottomValue = Math.max(...bottomRows.map((row) => Math.abs(metricNumber(row, metric))), 1);
-  const metricLabel = METRICS.find((item) => item.value === metric)?.label || "Selected metric";
+  const maximumTopValue = Math.max(
+    ...topRows.map((row) => Math.abs(metricNumber(row, metric, baselineMode))),
+    1
+  );
+  const maximumBottomValue = Math.max(
+    ...bottomRows.map((row) => Math.abs(metricNumber(row, metric, baselineMode))),
+    1
+  );
+  const metricLabel =
+    metric === "viewer_growth_pct"
+      ? `Viewer growth (${BASELINE_LABELS[baselineMode]})`
+      : METRICS.find((item) => item.value === metric)?.label || "Selected metric";
   const omittedMetricCount = filteredRows.length - comparableMetricRows.length;
   const usesSignedMetricBars = metric === "viewer_growth_pct";
 
@@ -389,7 +431,7 @@ export default function LeaderboardPage({ streamers, groups }) {
       setSortDirection((current) => (current === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(column);
-      setSortDirection("desc");
+      setSortDirection("asc");
     }
   }
 
@@ -397,6 +439,7 @@ export default function LeaderboardPage({ streamers, groups }) {
     setSelectedGroups(groups);
     setSelectedPreSuStreams(PRE_SU_STREAM_BUCKETS);
     setSelectedSizeTiers(availableSizeTiers);
+    setBaselineMode("june");
     setMetric("during_followers_gained");
     setMarathon("all");
     setSortKey("during_followers_gained");
@@ -441,6 +484,17 @@ export default function LeaderboardPage({ streamers, groups }) {
           />
 
           <label className="lb-select-control">
+            <small>30d Pre-SU and June</small>
+            <select value={baselineMode} onChange={(event) => setBaselineMode(event.target.value)}>
+              {BASELINE_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="lb-select-control">
             <small>Marathon</small>
             <select value={marathon} onChange={(event) => setMarathon(event.target.value)}>
               <option value="all">All streamers</option>
@@ -474,7 +528,7 @@ export default function LeaderboardPage({ streamers, groups }) {
 
               <dl className="lb-winner-stats">
                 <div>
-                  <dt>Pre-SU (30d) avg viewers</dt>
+                  <dt>Pre-SU ({BASELINE_LABELS[baselineMode]}) avg viewers</dt>
                   <dd>{item.preAverage == null ? "No baseline" : formatNumber(item.preAverage)}</dd>
                 </div>
                 <div>
@@ -539,7 +593,7 @@ export default function LeaderboardPage({ streamers, groups }) {
 
           <div className="lb-bars">
             {topRows.map((row, index) => {
-              const value = metricNumber(row, metric);
+              const value = metricNumber(row, metric, baselineMode);
 
               return (
                 <div className="lb-bar-row" key={`top-${row.streamer}`}>
@@ -596,7 +650,7 @@ export default function LeaderboardPage({ streamers, groups }) {
 
           <div className="lb-bars lb-bars-bottom">
             {bottomRows.map((row, index) => {
-              const value = metricNumber(row, metric);
+              const value = metricNumber(row, metric, baselineMode);
 
               return (
                 <div className="lb-bar-row" key={`bottom-${row.streamer}`}>
@@ -655,9 +709,9 @@ export default function LeaderboardPage({ streamers, groups }) {
                 <SortHeader column="streamer" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Streamer</SortHeader>
                 <th>Group</th>
                 <SortHeader column="size_tier" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Streamer size</SortHeader>
-                <SortHeader column="pre_weighted_average_viewers" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Pre-SU (30d) avg viewers</SortHeader>
+                <SortHeader column="pre_average_viewers" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Pre-SU ({BASELINE_LABELS[baselineMode]}) avg viewers</SortHeader>
                 <SortHeader column="during_weighted_average_viewers" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>SU avg viewers</SortHeader>
-                <SortHeader column="viewer_growth_pct" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Viewer growth</SortHeader>
+                <SortHeader column="viewer_growth_pct" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Viewer growth ({BASELINE_LABELS[baselineMode]})</SortHeader>
                 <SortHeader column="during_total_hours_streamed" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Hours streamed</SortHeader>
                 <SortHeader column="during_followers_gained" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Followers gained</SortHeader>
                 <SortHeader column="during_total_hours_watched" sortKey={sortKey} direction={sortDirection} onSort={changeSort}>Hours watched</SortHeader>
@@ -686,12 +740,12 @@ export default function LeaderboardPage({ streamers, groups }) {
                   <td style={{ color: GROUP_COLORS[row.group] || "#8b98a8" }}>{row.group}</td>
                   <td>{valueOf(row, "size_tier") || "—"}</td>
                   <td>
-                    {valueOf(row, "pre_weighted_average_viewers", "pre_average_viewers") == null
+                    {baselineAverageViewers(row, baselineMode) == null
                       ? "No baseline"
-                      : formatNumber(numberOf(row, "pre_weighted_average_viewers", "pre_average_viewers"))}
+                      : formatNumber(baselineAverageViewers(row, baselineMode))}
                   </td>
                   <td>{formatNumber(numberOf(row, "during_weighted_average_viewers", "during_average_viewers", "rolling_average_viewers", "average_viewers"))}</td>
-                  <td>{formatPercent(valueOf(row, "viewer_growth_pct"))}</td>
+                  <td>{formatPercent(baselineViewerGrowthPct(row, baselineMode))}</td>
                   <td>{formatNumber(numberOf(row, "during_total_hours_streamed"), 1)}</td>
                   <td>{formatNumber(numberOf(row, "during_followers_gained"))}</td>
                   <td>{formatCompact(numberOf(row, "during_total_hours_watched"))}</td>

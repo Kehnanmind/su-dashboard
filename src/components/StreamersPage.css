@@ -423,9 +423,18 @@
 .streamers-drawer-header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.streamers-drawer-header > div {
+  min-width: 0;
+}
+
+.streamers-drawer-title-row {
+  display: flex;
+  align-items: center;
   gap: 12px;
-  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .streamers-drawer-header h3 {
@@ -452,9 +461,9 @@
 
 .streamers-drawer-header-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 8px;
+  margin-top: 3px;
 }
 
 .streamers-drawer-header-actions a {

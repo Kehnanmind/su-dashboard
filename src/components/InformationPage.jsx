@@ -20,7 +20,7 @@ function InformationPage() {
           </li>
           <li>
             <strong>SullyGnome</strong> and <strong>TwitchTracker</strong> can differ slightly, so you may see
-            discrepancies when comparing numbers.
+            discrepancies when comparing numbers. <strong>SullyGnome</strong> tends to have numbers that are slightly lower than whats reported on <strong>TwitchTracker</strong>.
           </li>
         </ul>
       </article>
@@ -29,30 +29,21 @@ function InformationPage() {
         <h3>Long Stream Day Splitting</h3>
         <p>
           Some streams run across multiple days (for example, a 50-hour stream).
-          The data files split those streams into day-by-day pieces, so daily
-          stats in the app are calculated per day rather than reused from the
+          Sullygnome reports that as a single stream, so I don't have the exact followers gained per day. To account for this, daily followers gained in the app are <strong>calculated</strong> per day rather than reused from the
           full stream.
         </p>
         <p>
           <strong>Formula:</strong> Daily followers gained = Total followers
           gained x (Daily hours streamed / Total stream hours)
         </p>
-        <p>
-          Average viewers and peak viewers are represented per day.
-        </p>
       </article>
 
       <article className="info-card">
         <h3>Definitions</h3>
         <ul>
-
           <li>
             A marathon streamer is someone who streamed at least 80% of all
             possible hours during Streamer University.
-          </li>
-          <li>
-            Pre-SU metrics are based on the 30 days before Streamer University
-            started.
           </li>
           <li>
             Followers gained counts only followers gained while a streamer was
@@ -64,7 +55,7 @@ function InformationPage() {
           </li>
           <li>
             The current event window ends at <strong>6:00 AM on July 20</strong>.
-            "During SU" means stats that fall inside that timestamp range.
+            "During SU" means stats that fall inside that timestamp range. So, if a streamer gained followers while being live past <strong>6:00 AM on July 20</strong>, those followers are not counted.
           </li>
         </ul>
       </article>

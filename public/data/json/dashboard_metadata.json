@@ -2,7 +2,7 @@
   "project": {
     "name": "Streamer University Analytics",
     "unofficial": true,
-    "generated_at_utc": "2026-07-20T12:36:15.549070+00:00"
+    "generated_at_utc": "2026-07-22T13:26:57.196421+00:00"
   },
   "event": {
     "start_date": "2026-07-15",
@@ -11,7 +11,21 @@
     "end_at_exclusive": "2026-07-20T06:00:00",
     "event_days": 4.666666666666667,
     "event_hours": 112.0,
-    "pre_event_days": 30
+    "pre_event_start": "2026-06-01",
+    "pre_event_end_exclusive": "2026-07-01",
+    "pre_event_days": 30,
+    "baseline_windows": {
+      "june_or_previous_calendar_month": {
+        "start": "2026-06-01",
+        "end_exclusive": "2026-07-01",
+        "days": 30
+      },
+      "rolling_30_days_pre_event": {
+        "start": "2026-06-15",
+        "end_exclusive": "2026-07-15",
+        "days": 30
+      }
+    }
   },
   "filters": {
     "groups": [
@@ -35,11 +49,11 @@
   },
   "marathon_definition": {
     "restart_gap_minutes": 90,
-    "minimum_event_hours_share": 0.85,
-    "explanation": "A creator is marked as a marathon streamer when a reconstructed session lasts at least 24 hours or their total event streaming time is at least 85% of all possible event hours. Broadcasts restarted within 90 minutes are treated as one logical session."
+    "minimum_event_hours_share": 0.8,
+    "explanation": "A creator is marked as a marathon streamer when a reconstructed session lasts at least 24 hours or their total event streaming time is at least 80% of all possible event hours. Broadcasts restarted within 90 minutes are treated as one logical session."
   },
   "metric_definitions": {
-    "average_viewers": "Arithmetic mean of the average-viewer value across broadcasts.",
+    "average_viewers": "Pre-SU uses the arithmetic mean of per-broadcast average viewers. During-SU uses an hours-weighted average within the analysis window, calculated as total hours watched divided by total hours streamed.",
     "effort_ratio": "During-SU hours streamed per calendar day divided by pre-SU hours streamed per calendar day.",
     "viewer_growth_pct": "Percentage change from pre-SU average viewers to During-SU average viewers.",
     "expected_followers_during_su": "Pre-SU followers gained per calendar day multiplied by the number of event days.",
@@ -47,7 +61,7 @@
     "size_tier": "Size tier based on pre-SU average viewers."
   },
   "methodology_notes": [
-    "Comparisons describe performance during the event relative to a 30-day baseline and do not prove causation.",
+    "Comparisons describe performance during the event relative to both the previous calendar month baseline and a rolling 30-day pre-event baseline and do not prove causation.",
     "Creators with no pre-SU streams remain visible, but comparison metrics are null rather than zero.",
     "Group summaries use medians for creator-level comparison because Twitch data is highly skewed.",
     "Control creators were not part of Streamer University."

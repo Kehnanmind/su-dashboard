@@ -506,9 +506,9 @@
     "total_hours_streamed": 25.85,
     "peak_viewers": 9156.0,
     "total_hours_watched": 72502.84999999999,
-    "followers_gained": 14720.727810650887,
+    "followers_gained": 18679.72781065089,
     "average_viewers": 2584.613152804642,
-    "followers_per_hour_streamed": 569.4672267176359,
+    "followers_per_hour_streamed": 722.6200313598023,
     "broadcasts": 4
   },
   {
@@ -551,12 +551,12 @@
     "broadcasts_started": 197,
     "active_broadcasts": 258,
     "sessions": 225,
-    "total_hours_streamed": 1509.05,
+    "total_hours_streamed": 1514.05,
     "peak_viewers": 129541.0,
-    "total_hours_watched": 6962692.616666666,
-    "followers_gained": 919593.9091965908,
-    "average_viewers": 4095.2952298907703,
-    "followers_per_hour_streamed": 609.3859774007427,
+    "total_hours_watched": 6969782.183333334,
+    "followers_gained": 1007139.8333107554,
+    "average_viewers": 4095.66082141717,
+    "followers_per_hour_streamed": 665.195887395235,
     "broadcasts": 197
   }
 ]

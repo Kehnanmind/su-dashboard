@@ -713,9 +713,7 @@ function DailyPerformancePage({
     }
 
     setTableSortKey(nextKey);
-    setTableSortDirection(
-      nextKey === "date" || nextKey === "streamer" ? "asc" : "desc"
-    );
+    setTableSortDirection("asc");
   }
 
   function sortMark(key) {
