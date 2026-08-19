@@ -44,6 +44,86 @@
 
 .post-su-window-status.complete { color: #36d17a; border-color: rgba(54, 209, 122, 0.45); }
 
+.post-su-momentum-panel {
+  margin-bottom: 12px;
+}
+
+.post-su-momentum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px 14px 14px;
+}
+
+.post-su-momentum-card {
+  padding: 10px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(18, 24, 33, 0.7);
+}
+
+.post-su-momentum-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.post-su-momentum-top small {
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.post-su-momentum-badge {
+  padding: 3px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.post-su-momentum-badge.positive {
+  border-color: rgba(54, 209, 122, 0.45);
+  color: #36d17a;
+}
+
+.post-su-momentum-badge.negative {
+  border-color: rgba(236, 106, 106, 0.45);
+  color: #ec6a6a;
+}
+
+.post-su-momentum-badge.neutral {
+  border-color: rgba(163, 173, 184, 0.4);
+  color: var(--text-secondary);
+}
+
+.post-su-momentum-values {
+  margin-top: 7px;
+}
+
+.post-su-momentum-values strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 21px;
+  line-height: 1;
+}
+
+.post-su-momentum-values span {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.post-su-momentum-sparkline {
+  height: 48px;
+  margin-top: 8px;
+}
+
 .post-su-kpis {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -107,3 +187,15 @@
 .post-su-drawer-heading { position: relative; z-index: 2; }
 .post-su-undetermined-tooltip { left: 0; right: auto; width: 200px; }
 .post-su-undetermined-tooltip::after { left: 8px; right: auto; }
+
+@media (max-width: 1280px) {
+  .post-su-momentum-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1060px) {
+  .post-su-momentum-grid {
+    grid-template-columns: 1fr;
+  }
+}

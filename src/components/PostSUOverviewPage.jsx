@@ -13,16 +13,6 @@ import {
 } from "recharts";
 import "./PostSUOverviewPage.css";
 
-const GROUP_COLORS = {
-  Student: "#36d17a",
-  "Club Director": "#f59e0b",
-  Professor: "#9b5cff",
-  "Campus Police": "#4f9eff",
-  "Guidance Counselor": "#ec4899",
-  Janitor: "#a3e635",
-  Librarian: "#22d3ee",
-};
-
 const OUTCOME_CONFIG = {
   Grew: { color: "#36d17a", label: "Grew" },
   Stagnant: { color: "#C9A44D", label: "Stagnant" },
@@ -48,6 +38,11 @@ function formatCompact(value) {
     notation: "compact",
     maximumFractionDigits: 1,
   }).format(value || 0);
+}
+
+function formatSignedPercent(value) {
+  if (!Number.isFinite(value)) return "N/A";
+  return `${value >= 0 ? "+" : ""}${value.toFixed(1)}%`;
 }
 
 function formatDate(value) {
@@ -97,29 +92,6 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
       { followers: 0, hours: 0, watched: 0, peak: 0 }
     ), [activeSummary]);
 
-  const groupRows = useMemo(() => {
-    const groups = new Map();
-
-    for (const row of activeSummary) {
-      const group = row.group || "Unassigned";
-      const current = groups.get(group) || {
-        group,
-        streamers: 0,
-        followers: 0,
-        hours: 0,
-        watched: 0,
-      };
-
-      current.streamers += 1;
-      current.followers += numberOf(row, "post_su_followers_gained");
-      current.hours += numberOf(row, "post_su_total_hours_streamed");
-      current.watched += numberOf(row, "post_su_total_hours_watched");
-      groups.set(group, current);
-    }
-
-    return [...groups.values()].sort((left, right) => right.followers - left.followers);
-  }, [activeSummary]);
-
   const trend = useMemo(() => {
     const dates = new Map();
 
@@ -140,8 +112,129 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
       dates.set(key, current);
     }
 
-    return [...dates.values()].sort((left, right) => left.date.localeCompare(right.date));
+    return [...dates.values()]
+      .sort((left, right) => left.date.localeCompare(right.date))
+      .map((row) => ({
+        ...row,
+        average_viewers: row.hours > 0 ? row.watched / row.hours : 0,
+      }));
   }, [daily]);
+
+  const momentumCards = useMemo(() => {
+    const preferredWindowSize = 14;
+    const windowsAvailable = Math.floor(trend.length / 2);
+    const windowSize = Math.max(3, Math.min(preferredWindowSize, windowsAvailable));
+    const hasWindows = windowSize >= 3 && trend.length >= windowSize * 2;
+
+    function average(values) {
+      if (!values.length) return 0;
+      return values.reduce((sum, value) => sum + value, 0) / values.length;
+    }
+
+    function momentumFor(metricKey) {
+      const series = trend.map((row) => numberOf(row, metricKey));
+      if (!hasWindows) {
+        return {
+          tone: "neutral",
+          label: "Not enough data",
+          deltaPct: Number.NaN,
+          previousAvg: Number.NaN,
+          recentAvg: Number.NaN,
+          windowSize,
+        };
+      }
+
+      const recent = series.slice(-windowSize);
+      const previous = series.slice(-windowSize * 2, -windowSize);
+      const recentAvg = average(recent);
+      const previousAvg = average(previous);
+
+      if (previousAvg <= 0 && recentAvg > 0) {
+        return {
+          tone: "positive",
+          label: "Emerging",
+          deltaPct: Number.NaN,
+          previousAvg,
+          recentAvg,
+          windowSize,
+        };
+      }
+
+      if (previousAvg <= 0) {
+        return {
+          tone: "neutral",
+          label: "Flat",
+          deltaPct: 0,
+          previousAvg,
+          recentAvg,
+          windowSize,
+        };
+      }
+
+      const deltaPct = ((recentAvg - previousAvg) / previousAvg) * 100;
+      if (deltaPct >= 8) {
+        return {
+          tone: "positive",
+          label: "Accelerating",
+          deltaPct,
+          previousAvg,
+          recentAvg,
+          windowSize,
+        };
+      }
+
+      if (deltaPct <= -8) {
+        return {
+          tone: "negative",
+          label: "Fading",
+          deltaPct,
+          previousAvg,
+          recentAvg,
+          windowSize,
+        };
+      }
+
+      return {
+        tone: "neutral",
+        label: "Steady",
+        deltaPct,
+        previousAvg,
+        recentAvg,
+        windowSize,
+      };
+    }
+
+    return [
+      {
+        key: "average_viewers",
+        title: "Average viewers",
+        metricKey: "average_viewers",
+        color: "#b17eff",
+        formatValue: (value) => formatNumber(value, 0),
+      },
+      {
+        key: "followers",
+        title: "Followers gained",
+        metricKey: "followers",
+        color: "#C9A44D",
+        formatValue: (value) => formatNumber(value, 0),
+      },
+      {
+        key: "watched",
+        title: "Hours watched",
+        metricKey: "watched",
+        color: "#4f9eff",
+        formatValue: (value) => formatCompact(value),
+      },
+    ].map((card) => {
+      const momentum = momentumFor(card.metricKey);
+      return {
+        ...card,
+        ...momentum,
+        sparkline: trend.map((row) => ({ label: row.label, value: numberOf(row, card.metricKey) })),
+      };
+    });
+  }, [trend]);
 
   const outcomes = useMemo(() => Object.keys(OUTCOME_CONFIG).map((outcome) => ({
     outcome,
@@ -173,6 +266,47 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
           {window?.complete_30_day_window ? "30-day window complete" : "Window in progress"}
         </span>
       </header>
+
+      <section className="post-su-panel post-su-momentum-panel">
+        <div className="post-su-panel-heading">
+          <div>
+            <h3>Trajectory & momentum</h3>
+            <span>Recent window vs prior window to show acceleration or fade</span>
+          </div>
+        </div>
+        <div className="post-su-momentum-grid">
+          {momentumCards.map((card) => (
+            <article className="post-su-momentum-card" key={card.key}>
+              <div className="post-su-momentum-top">
+                <small>{card.title}</small>
+                <span className={`post-su-momentum-badge ${card.tone}`}>{card.label}</span>
+              </div>
+              <div className="post-su-momentum-values">
+                <strong>{formatSignedPercent(card.deltaPct)}</strong>
+                <span>
+                  {Number.isFinite(card.recentAvg) && Number.isFinite(card.previousAvg)
+                    ? `Recent ${card.windowSize}d avg ${card.formatValue(card.recentAvg)} vs prior ${card.formatValue(card.previousAvg)}`
+                    : "Need at least 6 daily points for comparison"}
+                </span>
+              </div>
+              <div className="post-su-momentum-sparkline">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={card.sparkline} margin={{ top: 4, right: 0, bottom: 2, left: 0 }}>
+                    <Line
+                      type="monotone"
+                      dataKey="value"
+                      stroke={card.color}
+                      strokeWidth={2}
+                      dot={false}
+                      isAnimationActive={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="post-su-kpis">
         <article><span>Active streamers</span><strong>{formatNumber(activeSummary.length)}</strong></article>
@@ -215,7 +349,7 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
 
         <article className="post-su-panel post-su-trend-panel">
           <div className="post-su-panel-heading">
-            <div><h3>Daily post-SU performance</h3><span>Followers gained and hours watched</span></div>
+            <div><h3>Daily post-SU performance</h3><span>Followers gained, hours watched, and average viewers</span></div>
           </div>
           <div className="post-su-chart">
             <ResponsiveContainer width="100%" height="100%">
@@ -224,28 +358,15 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
                 <XAxis dataKey="label" tick={{ fill: "#A3ADB8", fontSize: 10 }} axisLine={false} tickLine={false} />
                 <YAxis yAxisId="followers" tick={{ fill: "#A3ADB8", fontSize: 10 }} axisLine={false} tickLine={false} width={42} />
                 <YAxis yAxisId="watched" orientation="right" tickFormatter={formatCompact} tick={{ fill: "#A3ADB8", fontSize: 10 }} axisLine={false} tickLine={false} width={45} />
+                <YAxis yAxisId="average" hide domain={[0, "auto"]} />
                 <Tooltip contentStyle={{ background: "#171B22", border: "1px solid #232A33", borderRadius: 6 }} labelStyle={{ color: "#F2F4F6" }} formatter={(value) => formatNumber(value, 0)} />
                 <Line yAxisId="followers" type="monotone" dataKey="followers" name="Followers gained" stroke="#C9A44D" strokeWidth={2} dot={false} />
                 <Line yAxisId="watched" type="monotone" dataKey="watched" name="Hours watched" stroke="#4f9eff" strokeWidth={2} dot={false} />
+                <Line yAxisId="average" type="monotone" dataKey="average_viewers" name="Average viewers" stroke="#b17eff" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
         </article>
-      </section>
-
-      <section className="post-su-panel post-su-group-panel">
-        <div className="post-su-panel-heading"><div><h3>Group performance</h3><span>Post-SU totals for streamers with activity</span></div></div>
-        <div className="post-su-group-list">
-          {groupRows.map((row) => (
-            <div className="post-su-group-row" key={row.group}>
-              <span className="post-su-group-name"><i style={{ background: GROUP_COLORS[row.group] || "#8b98a8" }} />{row.group}</span>
-              <span>{formatNumber(row.streamers)} active</span>
-              <strong>{formatCompact(row.followers)} followers</strong>
-              <span>{formatNumber(row.hours, 1)} hrs</span>
-              <span>{formatCompact(row.watched)} watched</span>
-            </div>
-          ))}
-        </div>
       </section>
 
       {selectedOutcome && (
