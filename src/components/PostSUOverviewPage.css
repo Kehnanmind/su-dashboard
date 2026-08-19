@@ -135,6 +135,24 @@
   line-height: 1.4;
 }
 
+.post-su-momentum-context {
+  margin-top: 7px;
+  color: #c8d7e8;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.post-su-momentum-context b {
+  color: #e6eef7;
+  font-weight: 700;
+}
+
+.post-su-momentum-context em {
+  margin: 0 4px;
+  color: var(--accent-gold);
+  font-style: normal;
+}
+
 .post-su-momentum-sparkline {
   height: 48px;
   margin-top: 8px;

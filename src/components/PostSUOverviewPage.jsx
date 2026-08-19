@@ -504,9 +504,9 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
               </div>
               <div className="post-su-momentum-values">
                 <strong>{formatSignedPercent(card.deltaPct)}</strong>
-                <span>
+                <span className="post-su-momentum-context">
                   {Number.isFinite(card.recentAvg) && Number.isFinite(card.previousAvg)
-                    ? `Recent ${card.windowSize}d average ${card.formatValue(card.recentAvg)} vs prior ${card.formatValue(card.previousAvg)}`
+                    ? <><b>Recent {card.windowSize}d average:</b> {card.formatValue(card.recentAvg)} <em>vs</em> <b>Prior {card.windowSize}d average:</b> {card.formatValue(card.previousAvg)}</>
                     : "Need at least 6 daily points for comparison"}
                 </span>
               </div>
