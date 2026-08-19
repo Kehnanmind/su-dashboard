@@ -315,6 +315,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
     const windowsAvailable = Math.floor(trend.length / 2);
     const windowSize = Math.max(3, Math.min(preferredWindowSize, windowsAvailable));
     const hasWindows = windowSize >= 3 && trend.length >= windowSize * 2;
+    const comparisonTrend = hasWindows ? trend.slice(-windowSize * 2) : trend;
 
     function average(values) {
       if (!values.length) return 0;
@@ -421,7 +422,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       return {
         ...card,
         ...momentum,
-        sparkline: trend.map((row) => ({
+        sparkline: comparisonTrend.map((row) => ({
           label: row.label,
           date: row.date,
           value: numberOf(row, card.metricKey),
