@@ -110,6 +110,29 @@ function streamerKeyOf(row) {
   return valueOf(row, "streamer", "channel", "display_name") || "";
 }
 
+function normalizeStreamUrl(row) {
+  const rawUrl = String(valueOf(row, "stream_url") || "").trim();
+  const handle = String(valueOf(row, "streamer", "display_name", "channel") || "")
+    .trim()
+    .toLowerCase();
+
+  if (!rawUrl) return rawUrl;
+  if (!handle) return rawUrl;
+
+  if (/\/channel\/[^/]+\/stream\//i.test(rawUrl)) {
+    return rawUrl;
+  }
+
+  const streamId = String(valueOf(row, "stream_id") || "").trim() || rawUrl.split("/").pop();
+  if (!streamId) return rawUrl;
+
+  if (/\/channel\/stream\//i.test(rawUrl)) {
+    return `https://sullygnome.com/channel/${encodeURIComponent(handle)}/stream/${encodeURIComponent(streamId)}`;
+  }
+
+  return rawUrl;
+}
+
 function formatNumber(value, decimals = 0) {
   const number = Number(value);
   if (!Number.isFinite(number)) return "—";
@@ -498,7 +521,12 @@ function App() {
     for (const stream of [...preSUStreams, ...eventStreams, ...postSUStreams]) {
       const id = valueOf(stream, "stream_id");
       const key = id || `${stream.streamer}-${stream.stream_start}`;
-      if (!byId.has(key)) byId.set(key, stream);
+      if (!byId.has(key)) {
+        byId.set(key, {
+          ...stream,
+          stream_url: normalizeStreamUrl(stream),
+        });
+      }
     }
 
     return [...byId.values()];
