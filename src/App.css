@@ -127,9 +127,26 @@ button {
 }
 
 .sidebar-secondary-nav {
-  margin-top: 10px;
+  margin-top: 18px;
   padding-top: 10px;
   border-top: 1px solid var(--border);
+}
+
+.sidebar-post-su-nav {
+  display: grid;
+  gap: 6px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(201, 164, 77, 0.35);
+}
+
+.sidebar-nav-label {
+  padding: 0 12px 2px;
+  color: var(--accent-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .nav-item-secondary {

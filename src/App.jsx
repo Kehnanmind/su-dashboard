@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Bar,
   BarChart,
@@ -18,6 +19,8 @@ import LeaderboardPage from "./components/LeaderboardPage";
 import StreamersPage from "./components/StreamersPage";
 import DailyPerformancePage from "./components/DailyPerformancePage";
 import InformationPage from "./components/InformationPage";
+import PostSUOverviewPage from "./components/PostSUOverviewPage";
+import PostSUStreamerBreakdownPage from "./components/PostSUStreamerBreakdownPage";
 
 
 const GROUP_ORDER = [
@@ -320,6 +323,11 @@ function App() {
   const [streamerDaily, setStreamerDaily] = useState([]);
   const [eventStreams, setEventStreams] = useState([]);
   const [metadata, setMetadata] = useState(null);
+  const [postSUSummary, setPostSUSummary] = useState([]);
+  const [postSUDaily, setPostSUDaily] = useState([]);
+  const [postSUStreams, setPostSUStreams] = useState([]);
+  const [postSUMetadata, setPostSUMetadata] = useState(null);
+  const [preSUStreams, setPreSUStreams] = useState([]);
   const [selectedGroups, setSelectedGroups] = useState([]);
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
@@ -369,6 +377,11 @@ function App() {
           "/data/json/streamer_daily_summary.json",
           "/data/json/event_streams.json",
           "/data/json/dashboard_metadata.json",
+          "/data/json/post_su_summary.json",
+          "/data/json/post_su_daily_summary.json",
+          "/data/json/post_su_streams.json",
+          "/data/json/post_su_metadata.json",
+          "/data/json/pre_su_streams.json",
         ];
 
         const responses = await Promise.all(paths.map((path) => fetch(path)));
@@ -381,7 +394,7 @@ function App() {
           }
         }
 
-        const [summaryData, dailyData, streamerDailyData, eventStreamsData, metadataData] = await Promise.all(
+        const [summaryData, dailyData, streamerDailyData, eventStreamsData, metadataData, postSUSummaryData, postSUDailyData, postSUStreamsData, postSUMetadataData, preSUStreamsData] = await Promise.all(
           responses.map((response) => response.json())
         );
 
@@ -407,6 +420,11 @@ function App() {
         setStreamerDaily(filteredStreamerDaily);
         setEventStreams(filteredEventStreams);
         setMetadata(metadataData || null);
+        setPostSUSummary(Array.isArray(postSUSummaryData) ? postSUSummaryData.filter((row) => !EXCLUDED_GROUPS.has(row.group)) : []);
+        setPostSUDaily(Array.isArray(postSUDailyData) ? postSUDailyData : []);
+        setPostSUStreams(Array.isArray(postSUStreamsData) ? postSUStreamsData : []);
+        setPostSUMetadata(postSUMetadataData || null);
+        setPreSUStreams(Array.isArray(preSUStreamsData) ? preSUStreamsData.filter((row) => !EXCLUDED_GROUPS.has(row.group)) : []);
         setUpdatedAt(
           lastModified
             ? new Date(lastModified).toLocaleString(undefined, {
@@ -473,6 +491,18 @@ function App() {
       ...found.filter((group) => !GROUP_ORDER.includes(group)),
     ];
   }, [summaryWithDailyPeaks]);
+
+  const timelineStreams = useMemo(() => {
+    const byId = new Map();
+
+    for (const stream of [...preSUStreams, ...eventStreams, ...postSUStreams]) {
+      const id = valueOf(stream, "stream_id");
+      const key = id || `${stream.streamer}-${stream.stream_start}`;
+      if (!byId.has(key)) byId.set(key, stream);
+    }
+
+    return [...byId.values()];
+  }, [preSUStreams, eventStreams, postSUStreams]);
 
   const availableDays = useMemo(() => {
     return [
@@ -731,6 +761,24 @@ function App() {
           </button>
         </nav>
 
+        <nav className="sidebar-post-su-nav" aria-label="Post-SU analysis">
+          <span className="sidebar-nav-label">Post-SU</span>
+          <button
+            className={`nav-item ${activeView === "post-su-overview" ? "active" : ""}`}
+            type="button"
+            onClick={() => setActiveView("post-su-overview")}
+          >
+            <span>◷</span> Overview (Post-SU)
+          </button>
+          <button
+            className={`nav-item ${activeView === "post-su-streamers" ? "active" : ""}`}
+            type="button"
+            onClick={() => setActiveView("post-su-streamers")}
+          >
+            <span>♙</span> Streamer Breakdown
+          </button>
+        </nav>
+
         <div className="sidebar-secondary-nav">
           <button
             className={`nav-item nav-item-secondary ${activeView === "information" ? "active" : ""}`}
@@ -765,6 +813,19 @@ function App() {
       <main className="main-content">
         {activeView === "leaderboard" ? (
             <LeaderboardPage streamers={summaryWithDailyPeaks} groups={availableGroups} />
+        ) : activeView === "post-su-overview" ? (
+          <PostSUOverviewPage
+            summary={postSUSummary}
+            daily={postSUDaily}
+            metadata={postSUMetadata}
+          />
+        ) : activeView === "post-su-streamers" ? (
+          <PostSUStreamerBreakdownPage
+            summary={postSUSummary}
+            duringSummary={summaryWithDailyPeaks}
+            streams={timelineStreams}
+            groups={availableGroups}
+          />
         ) : activeView === "streamers" ? (
           <StreamersPage
             streamers={summaryWithDailyPeaks}
@@ -1053,6 +1114,7 @@ function App() {
           </>
         )}
       </main>
+      <Analytics />
     </div>
   );
 }
