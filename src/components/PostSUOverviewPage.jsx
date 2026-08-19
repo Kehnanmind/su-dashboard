@@ -31,6 +31,15 @@ const GROUP_COLORS = {
   Librarian: "#22d3ee",
 };
 
+const SIZE_TIER_ORDER = [
+  "Micro (<50)",
+  "Small (50-199)",
+  "Medium (200-999)",
+  "Large (1,000-4,999)",
+  "Very Large (5,000+)",
+  "No pre-SU baseline",
+];
+
 function numberOf(row, key) {
   const value = Number(row?.[key]);
   return Number.isFinite(value) ? value : 0;
@@ -175,14 +184,48 @@ function MultiSelectDropdown({
   );
 }
 
-function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
+function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], metadata = null }) {
   const [selectedOutcome, setSelectedOutcome] = useState(null);
   const [selectedGroups, setSelectedGroups] = useState([]);
+  const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
 
   const groupOptions = useMemo(() => {
     const groups = [...new Set(summary.map((row) => row.group).filter(Boolean))];
     return groups.sort((left, right) => String(left).localeCompare(String(right)));
   }, [summary]);
+
+  const sizeTierOptions = useMemo(() => {
+    const tiers = [
+      ...new Set(
+        duringSummary
+          .map((row) => row.size_tier)
+          .filter(Boolean)
+      ),
+    ];
+
+    return [
+      ...SIZE_TIER_ORDER.filter((tier) => tiers.includes(tier)),
+      ...tiers.filter((tier) => !SIZE_TIER_ORDER.includes(tier)),
+    ];
+  }, [duringSummary]);
+
+  const summaryWithSizeTier = useMemo(() => {
+    const tierByStreamer = new Map();
+
+    for (const row of duringSummary) {
+      const key = String(row?.streamer || row?.display_name || "").toLowerCase();
+      if (!key) continue;
+      if (row?.size_tier) tierByStreamer.set(key, row.size_tier);
+    }
+
+    return summary.map((row) => {
+      const key = String(row?.streamer || row?.display_name || "").toLowerCase();
+      return {
+        ...row,
+        size_tier: row?.size_tier || tierByStreamer.get(key) || null,
+      };
+    });
+  }, [duringSummary, summary]);
 
   useEffect(() => {
     setSelectedGroups((current) => {
@@ -194,9 +237,21 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
     });
   }, [groupOptions]);
 
+  useEffect(() => {
+    setSelectedSizeTiers((current) => {
+      if (!sizeTierOptions.length) return [];
+      if (!current.length) return sizeTierOptions;
+
+      const next = current.filter((tier) => sizeTierOptions.includes(tier));
+      return next.length ? next : sizeTierOptions;
+    });
+  }, [sizeTierOptions]);
+
   const filteredSummary = useMemo(() => {
-    return summary.filter((row) => selectedGroups.includes(row.group));
-  }, [summary, selectedGroups]);
+    return summaryWithSizeTier.filter(
+      (row) => selectedGroups.includes(row.group) && selectedSizeTiers.includes(row.size_tier)
+    );
+  }, [summaryWithSizeTier, selectedGroups, selectedSizeTiers]);
 
   const activeSummary = useMemo(
     () => filteredSummary.filter((row) => row.has_post_su_data),
@@ -401,15 +456,27 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
           <h2>Overview</h2>
           <p>{windowLabel}</p>
         </div>
-        <MultiSelectDropdown
-          label="Group"
-          options={groupOptions}
-          selected={selectedGroups}
-          onChange={(next) => {
-            setSelectedGroups(next);
-            setSelectedOutcome(null);
-          }}
-        />
+        <div className="post-su-heading-filters">
+          <MultiSelectDropdown
+            label="Group"
+            options={groupOptions}
+            selected={selectedGroups}
+            onChange={(next) => {
+              setSelectedGroups(next);
+              setSelectedOutcome(null);
+            }}
+          />
+          <MultiSelectDropdown
+            label="Pre-SU streamer size"
+            options={sizeTierOptions}
+            selected={selectedSizeTiers}
+            onChange={(next) => {
+              setSelectedSizeTiers(next);
+              setSelectedOutcome(null);
+            }}
+            allLabel="All"
+          />
+        </div>
       </header>
 
       <section className="post-su-kpis">

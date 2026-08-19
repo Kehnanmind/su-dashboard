@@ -13,6 +13,12 @@
   overflow: visible;
 }
 
+.post-su-heading-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
 .post-su-heading .dropdown {
   min-width: 250px;
 }

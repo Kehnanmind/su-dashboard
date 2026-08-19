@@ -844,6 +844,7 @@ function App() {
         ) : activeView === "post-su-overview" ? (
           <PostSUOverviewPage
             summary={postSUSummary}
+            duringSummary={summaryWithDailyPeaks}
             daily={postSUDaily}
             metadata={postSUMetadata}
           />
