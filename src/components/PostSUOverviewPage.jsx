@@ -293,7 +293,7 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
                 <strong>{formatSignedPercent(card.deltaPct)}</strong>
                 <span>
                   {Number.isFinite(card.recentAvg) && Number.isFinite(card.previousAvg)
-                    ? `Recent ${card.windowSize}d avg ${card.formatValue(card.recentAvg)} vs prior ${card.formatValue(card.previousAvg)}`
+                    ? `Recent ${card.windowSize}d average ${card.formatValue(card.recentAvg)} vs prior ${card.formatValue(card.previousAvg)}`
                     : "Need at least 6 daily points for comparison"}
                 </span>
               </div>
