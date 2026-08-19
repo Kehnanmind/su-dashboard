@@ -6,6 +6,7 @@ import {
   LineChart,
   Pie,
   PieChart,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -75,6 +76,25 @@ function formatMonthDay(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return String(value || "-");
   return date.toLocaleDateString("en-US", { month: "2-digit", day: "2-digit" });
+}
+
+function buildSparklineSeries(rows, metricKey, priorAverage) {
+  const rawValues = rows.map((row) => Math.max(0, numberOf(row, metricKey)));
+  const baseline = Number(priorAverage);
+  const safeBaseline = Number.isFinite(baseline) && baseline > 0 ? baseline : 1;
+
+  return rows.map((row, index) => {
+    const rawValue = rawValues[index];
+    const percentFromBaseline = ((rawValue - safeBaseline) / safeBaseline) * 100;
+
+    return {
+      label: row.label,
+      date: row.date,
+      rawValue,
+      displayValue: percentFromBaseline,
+      index,
+    };
+  });
 }
 
 function outcomeOf(row) {
@@ -422,11 +442,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       return {
         ...card,
         ...momentum,
-        sparkline: comparisonTrend.map((row) => ({
-          label: row.label,
-          date: row.date,
-          value: numberOf(row, card.metricKey),
-        })),
+        sparkline: buildSparklineSeries(comparisonTrend, card.metricKey, momentum.previousAvg),
       };
     });
   }, [trend]);
@@ -513,6 +529,8 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
               <div className="post-su-momentum-sparkline">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={card.sparkline} margin={{ top: 4, right: 0, bottom: 2, left: 0 }}>
+                    <YAxis hide domain={[(dataMin) => Math.min(-35, dataMin - 3), (dataMax) => Math.max(35, dataMax + 3)]} />
+                    <ReferenceLine y={0} stroke="rgba(163, 173, 184, 0.45)" strokeDasharray="3 3" />
                     <Tooltip
                       cursor={{ stroke: "rgba(163, 173, 184, 0.35)", strokeWidth: 1 }}
                       contentStyle={{ background: "#171B22", border: "1px solid #232A33", borderRadius: 6, padding: "6px 8px" }}
@@ -520,14 +538,15 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
                       itemStyle={{ fontSize: 11, margin: 0 }}
                       wrapperStyle={{ fontSize: 11 }}
                       labelFormatter={(_, payload) => formatMonthDay(payload?.[0]?.payload?.date)}
-                      formatter={(value) => [card.formatValue(value), card.title]}
+                      formatter={(_, __, item) => [card.formatValue(item?.payload?.rawValue), card.title]}
                     />
                     <Line
-                      type="monotone"
-                      dataKey="value"
+                      type="linear"
+                      dataKey="displayValue"
                       stroke={card.color}
-                      strokeWidth={2}
+                      strokeWidth={2.3}
                       dot={false}
+                      activeDot={{ r: 3 }}
                       isAnimationActive={false}
                     />
                   </LineChart>
