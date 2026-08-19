@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Cell,
   CartesianGrid,
@@ -19,6 +19,16 @@ const OUTCOME_CONFIG = {
   Declined: { color: "#ec6a6a", label: "Declined" },
   "Barely streamed": { color: "#657285", label: "Barely streamed" },
   Undetermined: { color: "#8b98a8", label: "Undetermined" },
+};
+
+const GROUP_COLORS = {
+  Student: "#36d17a",
+  "Club Director": "#f59e0b",
+  Professor: "#9b5cff",
+  "Campus Police": "#4f9eff",
+  "Guidance Counselor": "#ec4899",
+  Janitor: "#a3e635",
+  Librarian: "#22d3ee",
 };
 
 function numberOf(row, key) {
@@ -52,6 +62,12 @@ function formatDate(value) {
   return date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
+function formatMonthDay(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value || "-");
+  return date.toLocaleDateString("en-US", { month: "2-digit", day: "2-digit" });
+}
+
 function outcomeOf(row) {
   const totalHours = numberOf(row, "post_su_total_hours_streamed");
   const audienceResult = row?.post_su_audience_result;
@@ -74,12 +90,126 @@ function outcomeOf(row) {
   return "Stagnant";
 }
 
+function MultiSelectDropdown({
+  label,
+  options,
+  selected,
+  onChange,
+  allLabel = "All",
+}) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  const selectedLabel =
+    selected.length === options.length
+      ? `${allLabel} (${options.length})`
+      : selected.length === 0
+        ? "None"
+        : selected.length === 1
+          ? selected[0]
+          : `${selected.length} selected`;
+
+  function toggleOption(option) {
+    if (selected.includes(option)) {
+      onChange(selected.filter((item) => item !== option));
+    } else {
+      onChange([...selected, option]);
+    }
+  }
+
+  return (
+    <div className="dropdown" ref={wrapperRef}>
+      <button
+        className="dropdown-trigger"
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+      >
+        <span>
+          <small>{label}</small>
+          <strong>{selectedLabel}</strong>
+        </span>
+        <span className="chevron">⌄</span>
+      </button>
+
+      {open && (
+        <div className="dropdown-menu">
+          <div className="dropdown-actions">
+            <button type="button" onClick={() => onChange(options)}>
+              Select all
+            </button>
+            <button type="button" onClick={() => onChange([])}>
+              Clear
+            </button>
+          </div>
+
+          {options.map((option) => (
+            <label className="dropdown-option" key={option}>
+              <input
+                type="checkbox"
+                checked={selected.includes(option)}
+                onChange={() => toggleOption(option)}
+              />
+              <span
+                className="option-dot"
+                style={{
+                  background: GROUP_COLORS[option] || "#8b98a8",
+                }}
+              />
+              {option}
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
   const [selectedOutcome, setSelectedOutcome] = useState(null);
+  const [selectedGroups, setSelectedGroups] = useState([]);
+
+  const groupOptions = useMemo(() => {
+    const groups = [...new Set(summary.map((row) => row.group).filter(Boolean))];
+    return groups.sort((left, right) => String(left).localeCompare(String(right)));
+  }, [summary]);
+
+  useEffect(() => {
+    setSelectedGroups((current) => {
+      if (!groupOptions.length) return [];
+      if (!current.length) return groupOptions;
+
+      const next = current.filter((group) => groupOptions.includes(group));
+      return next.length ? next : groupOptions;
+    });
+  }, [groupOptions]);
+
+  const filteredSummary = useMemo(() => {
+    return summary.filter((row) => selectedGroups.includes(row.group));
+  }, [summary, selectedGroups]);
+
   const activeSummary = useMemo(
-    () => summary.filter((row) => row.has_post_su_data),
-    [summary]
+    () => filteredSummary.filter((row) => row.has_post_su_data),
+    [filteredSummary]
   );
+
+  const allowedStreamers = useMemo(() => {
+    return new Set(
+      filteredSummary
+        .map((row) => String(row.streamer || row.display_name || "").toLowerCase())
+        .filter(Boolean)
+    );
+  }, [filteredSummary]);
 
   const totals = useMemo(
     () => activeSummary.reduce(
@@ -96,6 +226,11 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
     const dates = new Map();
 
     for (const row of daily) {
+      if (allowedStreamers) {
+        const streamerKey = String(row.streamer || row.display_name || "").toLowerCase();
+        if (!allowedStreamers.has(streamerKey)) continue;
+      }
+
       const key = String(row.calendar_date || row.date || "");
       if (!key) continue;
 
@@ -118,10 +253,10 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
         ...row,
         average_viewers: row.hours > 0 ? row.watched / row.hours : 0,
       }));
-  }, [daily]);
+  }, [daily, allowedStreamers]);
 
   const momentumCards = useMemo(() => {
-    const preferredWindowSize = 14;
+    const preferredWindowSize = 10;
     const windowsAvailable = Math.floor(trend.length / 2);
     const windowSize = Math.max(3, Math.min(preferredWindowSize, windowsAvailable));
     const hasWindows = windowSize >= 3 && trend.length >= windowSize * 2;
@@ -231,23 +366,27 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
       return {
         ...card,
         ...momentum,
-        sparkline: trend.map((row) => ({ label: row.label, value: numberOf(row, card.metricKey) })),
+        sparkline: trend.map((row) => ({
+          label: row.label,
+          date: row.date,
+          value: numberOf(row, card.metricKey),
+        })),
       };
     });
   }, [trend]);
 
   const outcomes = useMemo(() => Object.keys(OUTCOME_CONFIG).map((outcome) => ({
     outcome,
-    value: summary.filter((row) => outcomeOf(row) === outcome).length,
+    value: filteredSummary.filter((row) => outcomeOf(row) === outcome).length,
     ...OUTCOME_CONFIG[outcome],
-  })), [summary]);
+  })), [filteredSummary]);
 
   const outcomeStreamers = useMemo(() => {
     if (!selectedOutcome) return [];
-    return summary
+    return filteredSummary
       .filter((row) => outcomeOf(row) === selectedOutcome)
       .sort((left, right) => numberOf(right, "post_su_viewer_growth_pct") - numberOf(left, "post_su_viewer_growth_pct"));
-  }, [selectedOutcome, summary]);
+  }, [selectedOutcome, filteredSummary]);
 
   const window = metadata?.post_su_window;
   const windowLabel = window
@@ -262,9 +401,15 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
           <h2>Overview</h2>
           <p>{windowLabel}</p>
         </div>
-        <span className={`post-su-window-status ${window?.complete_30_day_window ? "complete" : ""}`}>
-          {window?.complete_30_day_window ? "30-day window complete" : "Window in progress"}
-        </span>
+        <MultiSelectDropdown
+          label="Group"
+          options={groupOptions}
+          selected={selectedGroups}
+          onChange={(next) => {
+            setSelectedGroups(next);
+            setSelectedOutcome(null);
+          }}
+        />
       </header>
 
       <section className="post-su-kpis">
@@ -300,6 +445,15 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
               <div className="post-su-momentum-sparkline">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={card.sparkline} margin={{ top: 4, right: 0, bottom: 2, left: 0 }}>
+                    <Tooltip
+                      cursor={{ stroke: "rgba(163, 173, 184, 0.35)", strokeWidth: 1 }}
+                      contentStyle={{ background: "#171B22", border: "1px solid #232A33", borderRadius: 6, padding: "6px 8px" }}
+                      labelStyle={{ color: "#F2F4F6", fontSize: 11, margin: 0 }}
+                      itemStyle={{ fontSize: 11, margin: 0 }}
+                      wrapperStyle={{ fontSize: 11 }}
+                      labelFormatter={(_, payload) => formatMonthDay(payload?.[0]?.payload?.date)}
+                      formatter={(value) => [card.formatValue(value), card.title]}
+                    />
                     <Line
                       type="monotone"
                       dataKey="value"
