@@ -267,6 +267,14 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
         </span>
       </header>
 
+      <section className="post-su-kpis">
+        <article><span>Active streamers</span><strong>{formatNumber(activeSummary.length)}</strong></article>
+        <article><span>Followers gained</span><strong>{formatCompact(totals.followers)}</strong></article>
+        <article><span>Hours streamed</span><strong>{formatNumber(totals.hours, 1)}</strong></article>
+        <article><span>Hours watched</span><strong>{formatCompact(totals.watched)}</strong></article>
+        <article><span>Peak viewers</span><strong>{formatCompact(totals.peak)}</strong></article>
+      </section>
+
       <section className="post-su-panel post-su-momentum-panel">
         <div className="post-su-panel-heading">
           <div>
@@ -308,13 +316,7 @@ function PostSUOverviewPage({ summary = [], daily = [], metadata = null }) {
         </div>
       </section>
 
-      <section className="post-su-kpis">
-        <article><span>Active streamers</span><strong>{formatNumber(activeSummary.length)}</strong></article>
-        <article><span>Followers gained</span><strong>{formatCompact(totals.followers)}</strong></article>
-        <article><span>Hours streamed</span><strong>{formatNumber(totals.hours, 1)}</strong></article>
-        <article><span>Hours watched</span><strong>{formatCompact(totals.watched)}</strong></article>
-        <article><span>Peak viewers</span><strong>{formatCompact(totals.peak)}</strong></article>
-      </section>
+      <section className="post-su-panel post-su-spacer-ribbon" aria-hidden="true" />
 
       <section className="post-su-grid">
         <article className="post-su-panel post-su-outcomes-panel">

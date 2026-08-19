@@ -48,6 +48,13 @@
   margin-bottom: 12px;
 }
 
+.post-su-spacer-ribbon {
+  height: 22px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(201, 164, 77, 0.12), rgba(79, 158, 255, 0.08));
+}
+
 .post-su-momentum-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
