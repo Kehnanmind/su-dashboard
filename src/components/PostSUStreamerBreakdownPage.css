@@ -163,18 +163,18 @@
   border-radius: 6px;
   background: var(--bg-surface);
   color: var(--text-primary);
-  font-size: 10px;
+  font-size: 12px;
 }
 .post-su-stream-tooltip strong {
   display: block;
   margin-bottom: 2px;
   color: var(--text-primary);
-  font-size: 11px;
+  font-size: 13px;
 }
 .post-su-stream-tooltip small {
   margin-top: 3px;
   color: var(--accent-gold);
-  font-size: 9px;
+  font-size: 11px;
 }
 .post-su-clickable-dot { cursor: pointer; outline: none; }
 .post-su-clickable-dot:focus-visible circle:last-child { stroke: var(--accent-gold); stroke-width: 2px; }
