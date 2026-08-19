@@ -48,6 +48,23 @@ const SU_END_TIME = new Date("2026-07-20T06:00:00").getTime();
 const PRE_SU_COLOR = "#efb6bd";
 const DURING_SU_COLOR = "#b8cee0";
 const POST_SU_COLOR = "#d6a85f";
+const GROUP_COLORS = {
+  Student: "#36d17a",
+  "Club Director": "#f59e0b",
+  Professor: "#9b5cff",
+  "Campus Police": "#4f9eff",
+  "Guidance Counselor": "#ec4899",
+  Janitor: "#a3e635",
+  Librarian: "#22d3ee",
+};
+const SIZE_TIER_ORDER = [
+  "Micro (<50)",
+  "Small (50-199)",
+  "Medium (200-999)",
+  "Large (1,000-4,999)",
+  "Very Large (5,000+)",
+  "No pre-SU baseline",
+];
 
 function viewerScale(value) {
   return Number(value);
@@ -183,6 +200,94 @@ function dateKey(date) {
   return `${year}-${month}-${day}`;
 }
 
+function MultiSelectDropdown({
+  label,
+  options,
+  selected,
+  onChange,
+  allLabel = "All",
+  colorMap = null,
+}) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  const selectedLabel =
+    selected.length === options.length
+      ? `${allLabel} (${options.length})`
+      : selected.length === 0
+        ? "None"
+        : selected.length === 1
+          ? selected[0]
+          : `${selected.length} selected`;
+
+  function toggleOption(option) {
+    if (selected.includes(option)) {
+      onChange(selected.filter((item) => item !== option));
+    } else {
+      onChange([...selected, option]);
+    }
+  }
+
+  return (
+    <div className="dropdown" ref={wrapperRef}>
+      <button
+        className="dropdown-trigger"
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+      >
+        <span>
+          <small>{label}</small>
+          <strong>{selectedLabel}</strong>
+        </span>
+        <span className="chevron">⌄</span>
+      </button>
+
+      {open && (
+        <div className="dropdown-menu">
+          <div className="dropdown-actions">
+            <button type="button" onClick={() => onChange(options)}>
+              Select all
+            </button>
+            <button type="button" onClick={() => onChange([])}>
+              Clear
+            </button>
+          </div>
+
+          {options.map((option) => (
+            <label className="dropdown-option" key={option}>
+              <input
+                type="checkbox"
+                checked={selected.includes(option)}
+                onChange={() => toggleOption(option)}
+              />
+              {colorMap ? (
+                <span
+                  className="option-dot"
+                  style={{
+                    background: colorMap[option] || "#8b98a8",
+                  }}
+                />
+              ) : null}
+              {option}
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function CustomRangePicker({ label, start, end, minDate, maxDate, onChange, onClear, showPeriodMarkers = false }) {
   const [open, setOpen] = useState(false);
   const [viewDate, setViewDate] = useState(() => new Date(`${minDate}T00:00:00`));
@@ -257,7 +362,8 @@ function CustomRangePicker({ label, start, end, minDate, maxDate, onChange, onCl
 
 function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams = [], groups = [] }) {
   const [search, setSearch] = useState("");
-  const [group, setGroup] = useState("All");
+  const [selectedGroups, setSelectedGroups] = useState([]);
+  const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [sortKey, setSortKey] = useState("post_su_followers_gained");
   const [sortDescending, setSortDescending] = useState(true);
   const [selectedStreamer, setSelectedStreamer] = useState(null);
@@ -275,6 +381,35 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   const postSUMetricStart = metricRangeStart || earliestPostSUDate;
   const postSUMetricEnd = metricRangeEnd || latestPostSUDate;
   const postSUMetricRangeLabel = `${formatRangeDate(postSUMetricStart)} - ${formatRangeDate(postSUMetricEnd)}`;
+
+  const sizeTierOptions = useMemo(() => {
+    const found = [
+      ...new Set(duringSummary.map((row) => valueOf(row, "size_tier")).filter(Boolean)),
+    ];
+
+    return [
+      ...SIZE_TIER_ORDER.filter((tier) => found.includes(tier)),
+      ...found.filter((tier) => !SIZE_TIER_ORDER.includes(tier)),
+    ];
+  }, [duringSummary]);
+
+  useEffect(() => {
+    setSelectedGroups((current) => {
+      if (!groups.length) return [];
+      if (!current.length) return groups;
+      const next = current.filter((groupValue) => groups.includes(groupValue));
+      return next.length ? next : groups;
+    });
+  }, [groups]);
+
+  useEffect(() => {
+    setSelectedSizeTiers((current) => {
+      if (!sizeTierOptions.length) return [];
+      if (!current.length) return sizeTierOptions;
+      const next = current.filter((tier) => sizeTierOptions.includes(tier));
+      return next.length ? next : sizeTierOptions;
+    });
+  }, [sizeTierOptions]);
 
   const metricStreams = useMemo(() => {
     const startTime = new Date(`${postSUMetricStart}T00:00:00`).getTime();
@@ -340,7 +475,9 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
     return combinedRows
       .filter((row) => {
         const name = String(row.display_name || row.streamer || "").toLowerCase();
-        return (group === "All" || row.group === group) && (!normalizedSearch || name.includes(normalizedSearch));
+        return selectedGroups.includes(row.group)
+          && selectedSizeTiers.includes(valueOf(row, "size_tier"))
+          && (!normalizedSearch || name.includes(normalizedSearch));
       })
       .sort((left, right) => {
         const leftValue = sortKey === "display_name" ? String(left.display_name || left.streamer) : tableSortValue(left, sortKey);
@@ -350,7 +487,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
         const comparison = typeof leftValue === "string" ? leftValue.localeCompare(rightValue) : leftValue - rightValue;
         return sortDescending ? -comparison : comparison;
       });
-  }, [combinedRows, search, group, sortKey, sortDescending]);
+  }, [combinedRows, search, selectedGroups, selectedSizeTiers, sortKey, sortDescending]);
 
   useEffect(() => {
     if (!selectedStreamer && rows.length) setSelectedStreamer(rows[0]);
@@ -480,8 +617,20 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
 
       <main className="post-su-breakdown-main">
         <section className="post-su-breakdown-toolbar">
-          <label><span>Search streamer</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search streamer..." /></label>
-          <label><span>Group</span><select value={group} onChange={(event) => setGroup(event.target.value)}><option value="All">All groups</option>{groups.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
+          <label className="post-su-search-control"><span>Search streamer</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search streamer..." /></label>
+          <MultiSelectDropdown
+            label="Group"
+            options={groups}
+            selected={selectedGroups}
+            onChange={setSelectedGroups}
+            colorMap={GROUP_COLORS}
+          />
+          <MultiSelectDropdown
+            label="Pre-SU streamer size"
+            options={sizeTierOptions}
+            selected={selectedSizeTiers}
+            onChange={setSelectedSizeTiers}
+          />
         </section>
           {selectedStreamer ? (
             <>
