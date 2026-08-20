@@ -134,6 +134,14 @@ function formatOutcome(result) {
   return activity && activity !== "Active" ? `${audience} / ${activity}` : audience;
 }
 
+function outcomeCategory(result) {
+  const [audience, activity] = String(result || "Undetermined")
+    .split("/")
+    .map((part) => part.trim());
+
+  return activity === "Barely streamed" ? activity : audience;
+}
+
 function outcomeForRange(row) {
   if (!row?.has_post_su_data) return "Undetermined";
 
@@ -384,6 +392,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [sortKey, setSortKey] = useState("post_su_followers_gained");
   const [sortDescending, setSortDescending] = useState(true);
+  const [outcomeFilter, setOutcomeFilter] = useState("All");
   const [selectedStreamer, setSelectedStreamer] = useState(null);
   const [metricRangeStart, setMetricRangeStart] = useState("2026-07-21");
   const [metricRangeEnd, setMetricRangeEnd] = useState("2026-08-19");
@@ -496,6 +505,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
         const name = String(row.display_name || row.streamer || "").toLowerCase();
         return selectedGroups.includes(row.group)
           && selectedSizeTiers.includes(valueOf(row, "size_tier"))
+          && (outcomeFilter === "All" || outcomeCategory(outcomeForRange(row)) === outcomeFilter)
           && (!normalizedSearch || name.includes(normalizedSearch));
       })
       .sort((left, right) => {
@@ -506,7 +516,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
         const comparison = typeof leftValue === "string" ? leftValue.localeCompare(rightValue) : leftValue - rightValue;
         return sortDescending ? -comparison : comparison;
       });
-  }, [combinedRows, search, selectedGroups, selectedSizeTiers, sortKey, sortDescending]);
+  }, [combinedRows, search, selectedGroups, selectedSizeTiers, outcomeFilter, sortKey, sortDescending]);
 
   useEffect(() => {
     if (!selectedStreamer && rows.length) setSelectedStreamer(rows[0]);
@@ -683,7 +693,21 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
                 <th colSpan="3">During-SU <small>Event period</small></th>
                 <th colSpan="3">Post-SU <small>{postSUMetricRangeLabel}</small></th>
                 <th colSpan="3">Change % <small>Post-SU vs Pre-SU</small></th>
-                <th rowSpan="2">Outcome</th>
+                <th rowSpan="2" className="post-su-outcome-header">
+                  <span>Outcome</span>
+                  <select
+                    aria-label="Filter by outcome"
+                    value={outcomeFilter}
+                    onChange={(event) => setOutcomeFilter(event.target.value)}
+                  >
+                    <option value="All">All</option>
+                    <option value="Grew">Grew</option>
+                    <option value="Stagnant">Stagnant</option>
+                    <option value="Declined">Declined</option>
+                    <option value="Barely streamed">Barely streamed</option>
+                    <option value="Undetermined">Undetermined</option>
+                  </select>
+                </th>
               </tr>
               <tr className="post-su-table-subgroups">
                 <th onClick={() => toggleSort("pre_average")}>Avg viewers{sortMark("pre_average")}</th><th onClick={() => toggleSort("pre_followers")}>Followers{sortMark("pre_followers")}</th><th onClick={() => toggleSort("pre_hours")}>Hours{sortMark("pre_hours")}</th>

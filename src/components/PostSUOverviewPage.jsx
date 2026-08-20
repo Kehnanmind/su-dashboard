@@ -534,6 +534,13 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
   const windowLabel = window
     ? `${formatDate(window.start)} - ${formatDate(window.end_exclusive)} (${formatNumber(window.days_available, 1)} days available)`
     : "Post-SU reporting window";
+  const postSUOutcomePeriod = window
+    ? (() => {
+        const lastDate = new Date(`${String(window.end_exclusive).slice(0, 10)}T00:00:00`);
+        lastDate.setDate(lastDate.getDate() - 1);
+        return `${formatDate(window.start)} - ${formatDate(lastDate)}`;
+      })()
+    : "the full available Post-SU period";
 
   return (
     <section className="post-su-page">
@@ -631,7 +638,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
 
       <section className="post-su-grid">
         <article className="post-su-panel post-su-outcomes-panel">
-          <div className="post-su-panel-heading"><div><h3>Audience outcome</h3><span>Compared with June average viewers</span></div></div>
+          <div className="post-su-panel-heading"><div><h3>Audience outcome</h3><span>Full <strong>Post-SU</strong> period: {postSUOutcomePeriod} · Compared with June average viewers <span className="post-su-outcome-help" aria-label="How the audience outcome is calculated?" role="img" tabIndex="0">?<span className="post-su-outcome-tooltip" role="tooltip">This outcome uses the full available <strong>Post-SU</strong> period. Viewers can be unusually high during the first week after SU, including from possible <strong>bots</strong>, so growth may be inflated by that early activity. For more in-depth and precise analysis, see <strong>Streamer Breakdown</strong>.</span></span></span></div></div>
           <div className="post-su-outcomes">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>

@@ -175,9 +175,14 @@
 
 .post-su-grid { display: grid; grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.8fr); gap: 12px; margin-bottom: 12px; }
 .post-su-panel { overflow: hidden; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-surface); }
+.post-su-outcomes-panel { overflow: visible; position: relative; z-index: 3; }
 .post-su-panel-heading { display: flex; min-height: 64px; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--border); }
 .post-su-panel-heading h3 { margin: 0; color: var(--text-primary); font-size: 14px; }
 .post-su-panel-heading span { display: block; }
+.post-su-outcome-help { position: relative; display: inline-flex !important; width: 14px; height: 14px; margin-left: 3px; align-items: center; justify-content: center; border: 1px solid rgba(201, 214, 224, 0.6); border-radius: 999px; color: #d9e4eb; font-size: 9px; font-weight: 800; line-height: 1; letter-spacing: 0; cursor: help; }
+.post-su-outcome-tooltip { position: absolute; left: 0; top: calc(100% + 8px); z-index: 30; width: 250px; padding: 9px 10px; border: 1px solid rgba(57, 83, 103, 0.95); border-radius: 6px; background: rgba(8, 20, 31, 0.98); color: #dbe8f2; font-size: 10px; font-weight: 600; letter-spacing: 0; line-height: 1.4; opacity: 0; pointer-events: none; transform: translateY(3px); transition: opacity 0.18s ease, transform 0.18s ease; text-transform: none; }
+.post-su-outcome-tooltip::after { content: ""; position: absolute; left: 8px; bottom: 100%; border-width: 5px; border-style: solid; border-color: transparent transparent rgba(57, 83, 103, 0.95) transparent; }
+.post-su-outcome-help:hover .post-su-outcome-tooltip, .post-su-outcome-help:focus-visible .post-su-outcome-tooltip { opacity: 1; transform: translateY(0); }
 .post-su-chart { height: 300px; padding: 8px 8px 2px; }
 
 .post-su-outcomes { display: grid; grid-template-columns: 1fr; grid-template-rows: 210px auto; min-height: 300px; }

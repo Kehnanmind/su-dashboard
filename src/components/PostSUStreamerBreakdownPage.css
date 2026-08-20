@@ -205,6 +205,10 @@
 .post-su-breakdown-table-panel thead .post-su-table-groups th:nth-child(5) { background: rgba(214, 168, 95, 0.16); color: #d6a85f; }
 .post-su-breakdown-table-panel thead .post-su-table-groups th:nth-child(6) { background: rgba(163, 173, 184, 0.14); color: #c0c6ce; }
 .post-su-breakdown-table-panel thead .post-su-table-groups small { display: block; margin-top: 4px; color: var(--text-secondary); font-size: 8px; font-weight: 600; letter-spacing: 0.02em; text-transform: none; }
+.post-su-outcome-header { min-width: 126px; text-align: center !important; }
+.post-su-outcome-header span { display: block; text-align: center; }
+.post-su-outcome-header select { display: block; width: auto; max-width: 104px; margin: 6px auto 0; padding: 4px 5px; border: 1px solid rgba(163, 173, 184, 0.42); border-radius: 4px; outline: 0; background: var(--bg-surface); color: var(--text-primary); font-size: 9px; font-weight: 600; text-align: center; text-align-last: center; text-transform: none; cursor: pointer; }
+.post-su-outcome-header option { background: var(--bg-surface); }
 .post-su-breakdown-table-panel thead .post-su-table-subgroups th { padding: 7px 10px 9px; color: var(--text-secondary); text-align: right; font-size: 8px; }
 .post-su-breakdown-table-panel thead .post-su-table-subgroups th:nth-child(3n + 1) { border-left: 1px solid rgba(163, 173, 184, 0.2); }
 .post-su-breakdown-table-panel tbody td:nth-child(3), .post-su-breakdown-table-panel tbody td:nth-child(6), .post-su-breakdown-table-panel tbody td:nth-child(9) { border-left: 1px solid rgba(163, 173, 184, 0.12); }
