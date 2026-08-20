@@ -336,14 +336,71 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
     const windowSize = Math.max(3, Math.min(preferredWindowSize, windowsAvailable));
     const hasWindows = windowSize >= 3 && trend.length >= windowSize * 2;
     const comparisonTrend = hasWindows ? trend.slice(-windowSize * 2) : trend;
+    const previousDates = new Set(
+      comparisonTrend.slice(0, windowSize).map((row) => row.date)
+    );
+    const recentDates = new Set(
+      comparisonTrend.slice(-windowSize).map((row) => row.date)
+    );
+    const streamerWindows = new Map();
+
+    for (const row of daily) {
+      const streamerKey = String(row.streamer || row.display_name || "").toLowerCase();
+      const date = String(row.calendar_date || row.date || "");
+      if (!streamerKey || !date || !allowedStreamers.has(streamerKey)) continue;
+
+      const window = streamerWindows.get(streamerKey) || {
+        previous: { hours: 0, watched: 0, followers: 0, days: 0 },
+        recent: { hours: 0, watched: 0, followers: 0, days: 0 },
+      };
+      const period = previousDates.has(date)
+        ? window.previous
+        : recentDates.has(date)
+          ? window.recent
+          : null;
+      if (!period) continue;
+
+      period.hours += numberOf(row, "hours_streamed");
+      period.watched += numberOf(row, "hours_watched");
+      period.followers += numberOf(row, "followers_gained");
+      period.days += 1;
+      streamerWindows.set(streamerKey, window);
+    }
+
+    const comparableStreamers = [...streamerWindows.values()].filter(
+      (window) => window.previous.days > 0 && window.recent.days > 0
+    );
+    const comparableStreamerKeys = new Set(
+      [...streamerWindows.entries()]
+        .filter(([, window]) => window.previous.days > 0 && window.recent.days > 0)
+        .map(([streamerKey]) => streamerKey)
+    );
 
     function average(values) {
       if (!values.length) return 0;
       return values.reduce((sum, value) => sum + value, 0) / values.length;
     }
 
+    const streamerTrend = comparisonTrend.map((row) => {
+      const values = daily
+        .filter((dailyRow) => {
+          const streamerKey = String(
+            dailyRow.streamer || dailyRow.display_name || ""
+          ).toLowerCase();
+          const date = String(dailyRow.calendar_date || dailyRow.date || "");
+          return comparableStreamerKeys.has(streamerKey) && date === row.date;
+        })
+        .map((dailyRow) =>
+          numberOf(dailyRow, "average_viewers_weighted", "average_viewers")
+        );
+
+      return {
+        ...row,
+        average_viewers: average(values),
+      };
+    });
+
     function momentumFor(metricKey) {
-      const series = trend.map((row) => numberOf(row, metricKey));
       if (!hasWindows) {
         return {
           tone: "neutral",
@@ -355,10 +412,19 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         };
       }
 
-      const recent = series.slice(-windowSize);
-      const previous = series.slice(-windowSize * 2, -windowSize);
-      const recentAvg = average(recent);
-      const previousAvg = average(previous);
+      const valuesFor = (period) => {
+        if (metricKey === "average_viewers") {
+          return period.hours > 0 ? period.watched / period.hours : 0;
+        }
+
+        return period[metricKey] / windowSize;
+      };
+      const recentAvg = average(
+        comparableStreamers.map((window) => valuesFor(window.recent))
+      );
+      const previousAvg = average(
+        comparableStreamers.map((window) => valuesFor(window.previous))
+      );
 
       if (previousAvg <= 0 && recentAvg > 0) {
         return {
@@ -442,10 +508,14 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       return {
         ...card,
         ...momentum,
-        sparkline: buildSparklineSeries(comparisonTrend, card.metricKey, momentum.previousAvg),
+        sparkline: buildSparklineSeries(
+          card.metricKey === "average_viewers" ? streamerTrend : comparisonTrend,
+          card.metricKey,
+          momentum.previousAvg
+        ),
       };
     });
-  }, [trend]);
+  }, [allowedStreamers, daily, trend]);
 
   const outcomes = useMemo(() => Object.keys(OUTCOME_CONFIG).map((outcome) => ({
     outcome,
