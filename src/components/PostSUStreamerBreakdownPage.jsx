@@ -134,6 +134,24 @@ function formatOutcome(result) {
   return activity && activity !== "Active" ? `${audience} / ${activity}` : audience;
 }
 
+function outcomeForRange(row) {
+  if (!row?.has_post_su_data) return "Undetermined";
+
+  const baseline = Number(valueOf(row, "pre_june_average_viewers", "pre_average_viewers"));
+  const average = Number(valueOf(row, "post_su_average_viewers_weighted", "post_su_average_viewers_simple"));
+  const broadcasts = Number(row.post_su_broadcasts);
+  const hours = Number(row.post_su_total_hours_streamed);
+  const activity = broadcasts < 2 || hours < 20 ? "Barely streamed" : "Active";
+
+  if (!Number.isFinite(baseline) || baseline <= 0 || !Number.isFinite(average)) {
+    return `Undetermined / ${activity}`;
+  }
+
+  const growthPct = ((average - baseline) / baseline) * 100;
+  const audience = growthPct > 10 ? "Grew" : growthPct < -10 ? "Declined" : "Stagnant";
+  return `${audience} / ${activity}`;
+}
+
 function tableSortValue(row, key) {
   const fields = {
     pre_average: ["pre_june_average_viewers", "pre_30d_average_viewers", "pre_average_viewers"],
@@ -441,13 +459,14 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
 
     return summary.map((row) => {
       const streamRows = byStreamer.get(String(row?.streamer || row?.display_name || "")) || [];
+      const broadcasts = streamRows.length;
       const hours = streamRows.reduce((total, stream) => total + numberOf(stream, "post_su_hours_streamed", "stream_hours"), 0);
       const followers = streamRows.reduce((total, stream) => total + numberOf(stream, "post_su_followers_gained", "followers_gained"), 0);
       const weightedViewers = streamRows.reduce((total, stream) => total + numberOf(stream, "post_su_average_viewers", "average_viewers") * numberOf(stream, "post_su_hours_streamed", "stream_hours"), 0);
       const average = hours > 0 ? weightedViewers / hours : 0;
       const peak = streamRows.reduce((highest, stream) => Math.max(highest, numberOf(stream, "post_su_peak_viewers", "peak_viewers")), 0);
 
-      return { ...row, has_post_su_data: streamRows.length > 0, post_su_total_hours_streamed: hours, post_su_hours_streamed: hours, post_su_followers_gained: followers, post_su_average_viewers_weighted: average, post_su_average_viewers_simple: average, post_su_peak_viewers: peak };
+      return { ...row, has_post_su_data: streamRows.length > 0, post_su_broadcasts: broadcasts, post_su_total_hours_streamed: hours, post_su_hours_streamed: hours, post_su_followers_gained: followers, post_su_average_viewers_weighted: average, post_su_average_viewers_simple: average, post_su_peak_viewers: peak };
     });
   }, [metricStreams, summary]);
 
@@ -696,7 +715,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
                     const baseline = tableSortValue(row, baselineKey);
                     return <td className={`post-su-table-change ${changeClass(value, baseline)}`} key={valueKey}>{changePercent(value, baseline)}</td>;
                   })}
-                  <td>{formatOutcome(row.post_su_result)}</td>
+                  <td>{formatOutcome(outcomeForRange(row))}</td>
                 </tr>
               ))}
             </tbody>
