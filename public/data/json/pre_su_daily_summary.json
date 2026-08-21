@@ -397,7 +397,7 @@
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 6.216666666666667,
     "hours_watched": 161.63333333333333,
@@ -507,7 +507,7 @@
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 2,
     "hours_streamed": 10.75,
     "hours_watched": 34103.0,
@@ -837,7 +837,7 @@
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 2,
     "hours_streamed": 4.3,
     "hours_watched": 55.0,
@@ -980,7 +980,7 @@
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 13.516666666666667,
     "hours_watched": 49268.25,
@@ -1365,7 +1365,7 @@
   },
   {
     "calendar_date": "2026-06-03T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 7.75,
     "hours_watched": 147.25,
@@ -1816,7 +1816,7 @@
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 5.766666666666667,
     "hours_watched": 103.8,
@@ -2454,7 +2454,7 @@
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 7.983333333333333,
     "hours_watched": 23351.25,
@@ -2872,7 +2872,7 @@
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 12.1,
     "hours_watched": 40716.5,
@@ -3224,7 +3224,7 @@
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 7.816666666666666,
     "hours_watched": 109.43333333333334,
@@ -3345,7 +3345,7 @@
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 8.05,
     "hours_watched": 22387.05,
@@ -3796,7 +3796,7 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 6.116666666666666,
     "hours_watched": 103.98333333333332,
@@ -3928,7 +3928,7 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 11.933333333333334,
     "hours_watched": 52124.8,
@@ -4335,7 +4335,7 @@
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 5.983333333333333,
     "hours_watched": 83.76666666666667,
@@ -4489,7 +4489,7 @@
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 11.883333333333333,
     "hours_watched": 31074.916666666668,
@@ -4874,7 +4874,7 @@
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 4.95,
     "hours_watched": 59.4,
@@ -5479,7 +5479,7 @@
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 14.2,
     "hours_watched": 89090.8,
@@ -5864,7 +5864,7 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 2,
     "hours_streamed": 0.7666666666666667,
     "hours_watched": 17.616666666666667,
@@ -6029,7 +6029,7 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 14.25,
     "hours_watched": 53879.25,
@@ -6535,7 +6535,7 @@
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 25.966666666666665,
     "hours_watched": 98387.7,
@@ -7536,7 +7536,7 @@
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 9.2,
     "hours_watched": 26284.4,
@@ -7998,7 +7998,7 @@
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 5.05,
     "hours_watched": 60.6,
@@ -8163,7 +8163,7 @@
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 3.816666666666667,
     "hours_watched": 8202.016666666666,
@@ -8702,7 +8702,7 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 8.466666666666667,
     "hours_watched": 135.46666666666667,
@@ -8900,7 +8900,7 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 15.083333333333334,
     "hours_watched": 45883.5,
@@ -9373,7 +9373,7 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 3.45,
     "hours_watched": 51.75,
@@ -9549,7 +9549,7 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 12.416666666666666,
     "hours_watched": 34369.333333333336,
@@ -9978,7 +9978,7 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 8.2,
     "hours_watched": 164.0,
@@ -10121,7 +10121,7 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 11.083333333333334,
     "hours_watched": 47104.16666666666,
@@ -10616,7 +10616,7 @@
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 10.233333333333333,
     "hours_watched": 50112.63333333333,
@@ -11089,7 +11089,7 @@
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 11.466666666666667,
     "hours_watched": 69774.66666666666,
@@ -11628,7 +11628,7 @@
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 6.966666666666667,
     "hours_watched": 18531.33333333333,
@@ -12079,7 +12079,7 @@
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 7.2,
     "hours_watched": 115.2,
@@ -12233,7 +12233,7 @@
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 5.85,
     "hours_watched": 21726.9,
@@ -12717,7 +12717,7 @@
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 8.183333333333334,
     "hours_watched": 130.93333333333334,
@@ -13311,7 +13311,7 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 14.433333333333334,
     "hours_watched": 115.46666666666668,
@@ -13454,7 +13454,7 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 7.433333333333334,
     "hours_watched": 21839.13333333333,
@@ -14048,7 +14048,7 @@
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 15.416666666666666,
     "hours_watched": 33531.25,
@@ -14939,7 +14939,7 @@
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 2.216666666666667,
     "hours_watched": 26.6,
@@ -15929,7 +15929,7 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 6.183333333333334,
     "hours_watched": 86.56666666666666,
@@ -16072,7 +16072,7 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 3.066666666666667,
     "hours_watched": 6026.0,
@@ -16457,7 +16457,7 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 2.6333333333333333,
     "hours_watched": 26.33333333333333,
@@ -16589,7 +16589,7 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 12.25,
     "hours_watched": 33381.25,
@@ -16919,7 +16919,7 @@
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 3.5,
     "hours_watched": 49.0,
@@ -17106,7 +17106,7 @@
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 11.35,
     "hours_watched": 34015.95,
@@ -17568,7 +17568,7 @@
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 13.7,
     "hours_watched": 33606.1,
@@ -18019,7 +18019,7 @@
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 8.683333333333334,
     "hours_watched": 24981.95,
@@ -18580,7 +18580,7 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 10.2,
     "hours_watched": 20736.6,
@@ -19482,7 +19482,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 5.616666666666666,
     "hours_watched": 241.51666666666668,
@@ -19801,7 +19801,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 13.45,
     "hours_watched": 44075.65,
@@ -20362,7 +20362,7 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 1.3,
     "hours_watched": 96.2,
@@ -20989,7 +20989,7 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "seleolu",
+    "streamer": "sele",
     "broadcasts_started": 1,
     "hours_streamed": 0.8666666666666667,
     "hours_watched": 34.666666666666664,
@@ -21176,7 +21176,7 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 12.466666666666667,
     "hours_watched": 42710.799999999996,
@@ -21858,7 +21858,7 @@
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 10.75,
     "hours_watched": 47826.75,
@@ -22518,7 +22518,7 @@
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 14.533333333333333,
     "hours_watched": 34458.53333333334,
@@ -23145,7 +23145,7 @@
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "broadcasts_started": 1,
     "hours_streamed": 38.333333333333336,
     "hours_watched": 111588.33333333331,

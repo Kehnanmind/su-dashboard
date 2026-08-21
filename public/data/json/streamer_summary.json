@@ -5800,8 +5800,8 @@
     "scale_percentile": 67.4074074074074
   },
   {
-    "streamer": "yugi2x",
-    "display_name": "yugi2x",
+    "streamer": "yugi",
+    "display_name": "yugi",
     "group": "Student",
     "category": "student",
     "pre_broadcasts": 20,
@@ -12992,8 +12992,8 @@
     "scale_percentile": 23.703703703703706
   },
   {
-    "streamer": "seleolu",
-    "display_name": "seleolu",
+    "streamer": "sele",
+    "display_name": "sele",
     "group": "Student",
     "category": "student",
     "pre_broadcasts": 17,

@@ -475,8 +475,8 @@
     "stream_url": "https://sullygnome.com/channel/stream/319460076638"
   },
   {
-    "streamer": "yugi2x",
-    "display_name": "yugi2x",
+    "streamer": "yugi",
+    "display_name": "yugi",
     "group": "Student",
     "stream_start": "2026-07-15T17:23:00",
     "stream_end": "2026-07-19T20:00:00",
@@ -488,7 +488,7 @@
     "followers_gained": 73633,
     "followers_per_hour_streamed": 746.6587797870543,
     "followers_per_1000_viewer_hours": 273.902707185273,
-    "session_id": "yugi2x_49",
+    "session_id": "yugi_49",
     "session_hours": 98.61666666666666,
     "stream_id": "317008917623",
     "stream_url": "https://sullygnome.com/channel/stream/317008917623"

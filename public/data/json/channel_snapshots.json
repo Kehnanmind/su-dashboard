@@ -2000,10 +2000,10 @@
     "group_y": "Student"
   },
   {
-    "streamer": "seleolu",
+    "streamer": "sele",
     "snapshot_date": "2026-07-21T17:21:15",
     "timeframe_days": 30,
-    "url": "https://sullygnome.com/channel/seleolu/30",
+    "url": "https://sullygnome.com/channel/sele/30",
     "total_followers": 18460.0,
     "rolling_average_viewers": 58.0,
     "rolling_followers_gained": 16165.0,
@@ -2016,7 +2016,7 @@
     "group_x": "Student",
     "category": "student",
     "source_file": "sullygnome_channel_snapshots.csv",
-    "display_name": "seleolu",
+    "display_name": "sele",
     "group_y": "Student"
   },
   {
@@ -2660,10 +2660,10 @@
     "group_y": "Student"
   },
   {
-    "streamer": "yugi2x",
+    "streamer": "yugi",
     "snapshot_date": "2026-07-21T17:22:58",
     "timeframe_days": 30,
-    "url": "https://sullygnome.com/channel/yugi2x/30",
+    "url": "https://sullygnome.com/channel/yugi/30",
     "total_followers": 416688.0,
     "rolling_average_viewers": 3116.0,
     "rolling_followers_gained": 106094.0,
@@ -2676,7 +2676,7 @@
     "group_x": "Student",
     "category": "student",
     "source_file": "sullygnome_channel_snapshots.csv",
-    "display_name": "yugi2x",
+    "display_name": "yugi",
     "group_y": "Student"
   },
   {
