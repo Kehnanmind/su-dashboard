@@ -64,16 +64,14 @@ function InformationPage() {
         <h3>Post-SU Analysis</h3>
         <ul>
           <li>
-            <strong>Pre-SU</strong> means the June 1 through June 30 baseline.
-            July 1 through July 14 is not used as the baseline because some
-            smaller streamers had already been accepted into SU, which could
-            inflate their viewer numbers before the event began.
+            <strong>Pre-SU</strong> means the June 1st to June 30th baseline.
+            July 1-July 14 is not included in the baseline, because a lot of the smaller
+            streamers gained a lot of  viewers after getting accepted in SU.
           </li>
           <li>
             <strong>Post-SU</strong> begins July 21 and currently covers the
             full available reporting period through August 19. The Post-SU
-            metrics date range can be changed in Streamer Breakdown, and the
-            table values and outcomes update to match the selected range.
+            metrics date range can be changed in Streamer Breakdown.
           </li>
           <li>
             <strong>Outcome</strong> compares the selected Post-SU average
@@ -84,12 +82,6 @@ function InformationPage() {
           <li>
             <strong>Barely streamed</strong> means fewer than 2 broadcasts or
             fewer than 20 total Post-SU streaming hours in the selected range.
-            This activity label takes priority over the audience outcome.
-          </li>
-          <li>
-            A streamer with no valid June baseline is shown as
-            <strong> Undetermined</strong> rather than being treated as zero.
-            No baseline does not mean no viewers.
           </li>
         </ul>
       </article>
