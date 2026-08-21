@@ -108,7 +108,7 @@ function outcomeOf(row) {
     return "Undetermined";
   }
 
-  if (row?.barely_streamed_post_su || totalHours < 10) {
+  if (row?.barely_streamed_post_su || totalHours < 20) {
     return "Barely streamed";
   }
 
@@ -389,12 +389,15 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       return values.reduce((sum, value) => sum + value, 0) / values.length;
     }
 
-    function periodValue(metricKey, period) {
+    // Average viewers stays a per-streamer figure; followers and hours watched are cohort totals per day.
+    function cohortValue(metricKey, periods) {
       if (metricKey === "average_viewers") {
-        return period.hours > 0 ? period.watched / period.hours : 0;
+        return average(
+          periods.map((period) => (period.hours > 0 ? period.watched / period.hours : 0))
+        );
       }
 
-      return period[metricKey] / windowSize;
+      return periods.reduce((sum, period) => sum + period[metricKey], 0) / windowSize;
     }
 
     // Rolling version of the headline metric, so the last point equals the recent-window average.
@@ -424,9 +427,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
           date: trend[end].date,
           startDate: trend[end - windowSize + 1].date,
           label: trend[end].label,
-          [metricKey]: average(
-            [...totals.values()].map((total) => periodValue(metricKey, total))
-          ),
+          [metricKey]: cohortValue(metricKey, [...totals.values()]),
         });
       }
 
@@ -446,13 +447,10 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         };
       }
 
-      const valuesFor = (period) => periodValue(metricKey, period);
-      const recentAvg = average(
-        comparableStreamers.map((window) => valuesFor(window.recent))
-      );
-      const previousAvg = average(
-        comparableStreamers.map((window) => valuesFor(window.previous))
-      );
+      const valuesFor = (period) =>
+        cohortValue(metricKey, comparableStreamers.map((window) => window[period]));
+      const recentAvg = valuesFor("recent");
+      const previousAvg = valuesFor("previous");
 
       if (previousAvg <= 0 && recentAvg > 0) {
         return {
@@ -515,6 +513,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         title: "Average viewers",
         metricKey: "average_viewers",
         color: "#b17eff",
+        valueNoun: "avg per streamer",
         formatValue: (value) => formatNumber(value, 0),
       },
       {
@@ -522,6 +521,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         title: "Followers gained",
         metricKey: "followers",
         color: "#C9A44D",
+        valueNoun: "daily total",
         formatValue: (value) => formatNumber(value, 0),
       },
       {
@@ -529,6 +529,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         title: "Hours watched",
         metricKey: "watched",
         color: "#4f9eff",
+        valueNoun: "daily total",
         formatValue: (value) => formatCompact(value),
       },
     ].map((card) => {
@@ -630,7 +631,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
                 <strong>{formatSignedPercent(card.deltaPct)}</strong>
                 <span className="post-su-momentum-context">
                   {Number.isFinite(card.recentAvg) && Number.isFinite(card.previousAvg)
-                    ? <><b>Recent {card.windowSize}d average:</b> {card.formatValue(card.recentAvg)} <em>vs</em> <b>Prior {card.windowSize}d average:</b> {card.formatValue(card.previousAvg)}</>
+                    ? <><b>Recent {card.windowSize}d {card.valueNoun}:</b> {card.formatValue(card.recentAvg)} <em>vs</em> <b>Prior {card.windowSize}d {card.valueNoun}:</b> {card.formatValue(card.previousAvg)}</>
                     : "Need at least 6 daily points for comparison"}
                 </span>
               </div>
@@ -666,7 +667,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
                       }
                       formatter={(_, __, item) => [
                         card.formatValue(item?.payload?.rawValue),
-                        card.hasWindows ? `${card.title} · ${card.windowSize}d avg` : card.title,
+                        card.hasWindows ? `${card.title} · ${card.windowSize}d ${card.valueNoun}` : card.title,
                       ]}
                     />
                     <Line
