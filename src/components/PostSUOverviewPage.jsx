@@ -78,21 +78,19 @@ function formatMonthDay(value) {
   return date.toLocaleDateString("en-US", { month: "2-digit", day: "2-digit" });
 }
 
-function buildSparklineSeries(rows, metricKey, priorAverage) {
-  const rawValues = rows.map((row) => Math.max(0, numberOf(row, metricKey)));
+// Rebases a rolling series onto the prior-window average, so 0 is the "no change" line.
+function toBaselineSeries(points, metricKey, priorAverage) {
   const baseline = Number(priorAverage);
-  const safeBaseline = Number.isFinite(baseline) && baseline > 0 ? baseline : 1;
+  if (!Number.isFinite(baseline) || baseline <= 0) return [];
 
-  return rows.map((row, index) => {
-    const rawValue = rawValues[index];
-    const percentFromBaseline = ((rawValue - safeBaseline) / safeBaseline) * 100;
-
+  return points.map((point) => {
+    const rawValue = Number(point[metricKey]) || 0;
     return {
-      label: row.label,
-      date: row.date,
+      label: point.label,
+      date: point.date,
+      startDate: point.startDate,
       rawValue,
-      displayValue: percentFromBaseline,
-      index,
+      displayValue: ((rawValue - baseline) / baseline) * 100,
     };
   });
 }
@@ -343,11 +341,21 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       comparisonTrend.slice(-windowSize).map((row) => row.date)
     );
     const streamerWindows = new Map();
+    const dailyByDate = new Map();
 
     for (const row of daily) {
       const streamerKey = String(row.streamer || row.display_name || "").toLowerCase();
       const date = String(row.calendar_date || row.date || "");
       if (!streamerKey || !date || !allowedStreamers.has(streamerKey)) continue;
+
+      const byStreamer = dailyByDate.get(date) || new Map();
+      const entry = byStreamer.get(streamerKey) || { hours: 0, watched: 0, followers: 0, days: 0 };
+      entry.hours += numberOf(row, "hours_streamed");
+      entry.watched += numberOf(row, "hours_watched");
+      entry.followers += numberOf(row, "followers_gained");
+      entry.days += 1;
+      byStreamer.set(streamerKey, entry);
+      dailyByDate.set(date, byStreamer);
 
       const window = streamerWindows.get(streamerKey) || {
         previous: { hours: 0, watched: 0, followers: 0, days: 0 },
@@ -381,24 +389,50 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       return values.reduce((sum, value) => sum + value, 0) / values.length;
     }
 
-    const streamerTrend = comparisonTrend.map((row) => {
-      const values = daily
-        .filter((dailyRow) => {
-          const streamerKey = String(
-            dailyRow.streamer || dailyRow.display_name || ""
-          ).toLowerCase();
-          const date = String(dailyRow.calendar_date || dailyRow.date || "");
-          return comparableStreamerKeys.has(streamerKey) && date === row.date;
-        })
-        .map((dailyRow) =>
-          numberOf(dailyRow, "average_viewers_weighted", "average_viewers")
-        );
+    function periodValue(metricKey, period) {
+      if (metricKey === "average_viewers") {
+        return period.hours > 0 ? period.watched / period.hours : 0;
+      }
 
-      return {
-        ...row,
-        average_viewers: average(values),
-      };
-    });
+      return period[metricKey] / windowSize;
+    }
+
+    // Rolling version of the headline metric, so the last point equals the recent-window average.
+    function rollingSeries(metricKey) {
+      const points = [];
+
+      for (let end = windowSize - 1; end < trend.length; end += 1) {
+        const totals = new Map();
+
+        for (let offset = end - windowSize + 1; offset <= end; offset += 1) {
+          const byStreamer = dailyByDate.get(trend[offset].date);
+          if (!byStreamer) continue;
+
+          for (const [streamerKey, entry] of byStreamer) {
+            if (!comparableStreamerKeys.has(streamerKey)) continue;
+
+            const total = totals.get(streamerKey) || { hours: 0, watched: 0, followers: 0, days: 0 };
+            total.hours += entry.hours;
+            total.watched += entry.watched;
+            total.followers += entry.followers;
+            total.days += entry.days;
+            totals.set(streamerKey, total);
+          }
+        }
+
+        points.push({
+          date: trend[end].date,
+          startDate: trend[end - windowSize + 1].date,
+          label: trend[end].label,
+          [metricKey]: average(
+            [...totals.values()].map((total) => periodValue(metricKey, total))
+          ),
+        });
+      }
+
+      // Only the slide from the prior window to the recent window: first point is the prior average, last is the recent average.
+      return points.slice(-(windowSize + 1));
+    }
 
     function momentumFor(metricKey) {
       if (!hasWindows) {
@@ -412,13 +446,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         };
       }
 
-      const valuesFor = (period) => {
-        if (metricKey === "average_viewers") {
-          return period.hours > 0 ? period.watched / period.hours : 0;
-        }
-
-        return period[metricKey] / windowSize;
-      };
+      const valuesFor = (period) => periodValue(metricKey, period);
       const recentAvg = average(
         comparableStreamers.map((window) => valuesFor(window.recent))
       );
@@ -508,11 +536,14 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       return {
         ...card,
         ...momentum,
-        sparkline: buildSparklineSeries(
-          card.metricKey === "average_viewers" ? streamerTrend : comparisonTrend,
-          card.metricKey,
-          momentum.previousAvg
-        ),
+        hasWindows,
+        sparkline: hasWindows
+          ? toBaselineSeries(
+              rollingSeries(card.metricKey),
+              card.metricKey,
+              momentum.previousAvg
+            )
+          : [],
       };
     });
   }, [allowedStreamers, daily, trend]);
@@ -585,7 +616,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         <div className="post-su-panel-heading">
           <div>
             <h3>Trajectory & momentum</h3>
-            <span>Recent window vs prior window to show acceleration or fade</span>
+            <span>How the rolling window average slides from the prior window (0 line) to the most recent window</span>
           </div>
         </div>
         <div className="post-su-momentum-grid">
@@ -605,8 +636,24 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
               </div>
               <div className="post-su-momentum-sparkline">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={card.sparkline} margin={{ top: 4, right: 0, bottom: 2, left: 0 }}>
+                  <LineChart data={card.sparkline} margin={{ top: 4, right: 18, bottom: 2, left: 18 }}>
                     <YAxis hide domain={[(dataMin) => Math.min(-35, dataMin - 3), (dataMax) => Math.max(35, dataMax + 3)]} />
+                    <XAxis
+                      dataKey="date"
+                      type="category"
+                      interval={0}
+                      ticks={card.sparkline.length > 1 ? [card.sparkline[0].date, card.sparkline[card.sparkline.length - 1].date] : []}
+                      tickFormatter={(value) =>
+                        value === card.sparkline[0]?.date
+                          ? `Prior ${card.windowSize}d`
+                          : `Recent ${card.windowSize}d`
+                      }
+                      tick={{ fill: "#A3ADB8", fontSize: 9 }}
+                      axisLine={false}
+                      tickLine={false}
+                      tickMargin={2}
+                      height={14}
+                    />
                     <ReferenceLine y={0} stroke="rgba(163, 173, 184, 0.45)" strokeDasharray="3 3" />
                     <Tooltip
                       cursor={{ stroke: "rgba(163, 173, 184, 0.35)", strokeWidth: 1 }}
@@ -614,8 +661,13 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
                       labelStyle={{ color: "#F2F4F6", fontSize: 11, margin: 0 }}
                       itemStyle={{ fontSize: 11, margin: 0 }}
                       wrapperStyle={{ fontSize: 11 }}
-                      labelFormatter={(_, payload) => formatMonthDay(payload?.[0]?.payload?.date)}
-                      formatter={(_, __, item) => [card.formatValue(item?.payload?.rawValue), card.title]}
+                      labelFormatter={(_, payload) =>
+                        `${formatMonthDay(payload?.[0]?.payload?.startDate)} – ${formatMonthDay(payload?.[0]?.payload?.date)}`
+                      }
+                      formatter={(_, __, item) => [
+                        card.formatValue(item?.payload?.rawValue),
+                        card.hasWindows ? `${card.title} · ${card.windowSize}d avg` : card.title,
+                      ]}
                     />
                     <Line
                       type="linear"
