@@ -617,7 +617,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         <div className="post-su-panel-heading">
           <div>
             <h3>Trajectory & momentum</h3>
-            <span>How the rolling window average slides from the prior window (0 line) to the most recent window</span>
+            <span>Are the last 10 days better or worse than the 10 days before? The line rises if better, falls if worse</span>
           </div>
         </div>
         <div className="post-su-momentum-grid">
