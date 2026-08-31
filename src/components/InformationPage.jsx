@@ -26,7 +26,7 @@ function InformationPage() {
       </article>
 
       <article className="info-card">
-        <h3>Long Stream Day Splitting</h3>
+        <h3>Long Stream Day Splitting (During SU)</h3>
         <p>
           Some streams run across multiple days (for example, a 50-hour stream).
           Sullygnome reports that as a single stream, so I don't have the exact followers gained per day. To account for this, daily followers gained in the app are <strong>calculated</strong> per day rather than reused from the
