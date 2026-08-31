@@ -46,6 +46,7 @@ function formatCompact(value) {
 
 const SU_START_TIME = new Date("2026-07-15T14:00:00").getTime();
 const SU_END_TIME = new Date("2026-07-20T06:00:00").getTime();
+const DEFAULT_STREAMER = "e11ysa";
 const PRE_SU_COLOR = "#efb6bd";
 const DURING_SU_COLOR = "#b8cee0";
 const POST_SU_COLOR = "#d6a85f";
@@ -609,7 +610,9 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   useEffect(() => {
     setSelectedStreamer((current) => {
       if (!rows.length) return null;
-      if (!current) return rows[0];
+      if (!current) {
+        return rows.find((row) => String(row.streamer || row.display_name || "").toLowerCase() === DEFAULT_STREAMER) || rows[0];
+      }
       return rows.find((row) => row.streamer === current.streamer) || rows[0];
     });
   }, [rows]);
@@ -798,7 +801,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
               <tr className="post-su-table-groups">
                 <th rowSpan="2" onClick={() => toggleSort("display_name")}>Streamer{sortMark("display_name")}</th>
                 <th rowSpan="2">Group</th>
-                <th colSpan="3">Pre-SU <small>June baseline</small></th>
+                <th colSpan="3">Pre-SU <small>06/01-06/30</small></th>
                 <th colSpan="3">During-SU <small>Event period</small></th>
                 <th colSpan="3">Post-SU <small>{postSUMetricRangeLabel}</small></th>
                 <th colSpan="3">Change % <small>Post-SU vs Pre-SU</small></th>

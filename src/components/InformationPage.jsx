@@ -91,7 +91,7 @@ function InformationPage() {
       </article>
 
       <article className="info-card info-note">
-        <h3>Project Note</h3>
+        <h3>Project Note 🐔</h3>
         <p>
           This is a small personal project and may contain errors. Treat it as
           experimental and avoid sharing it publicly as a formal analysis :)
