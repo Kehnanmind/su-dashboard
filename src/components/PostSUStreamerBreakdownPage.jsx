@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   CartesianGrid,
   Line,
@@ -217,6 +218,79 @@ function StreamTrendDot({ cx, cy, payload }) {
   }
 
   return <g className={payload.stream_url ? "post-su-clickable-dot" : ""} role={payload.stream_url ? "link" : undefined} tabIndex={payload.stream_url ? 0 : undefined} aria-label={payload.stream_url ? `Open stream from ${payload.label}` : undefined} onClick={payload.stream_url ? openStream : undefined} onKeyDown={payload.stream_url ? handleKeyDown : undefined} pointerEvents="all"><circle cx={cx} cy={cy} r={8} fill="transparent" onClick={payload.stream_url ? openStream : undefined} /><circle cx={cx} cy={cy} r={4.5} fill={color} onClick={payload.stream_url ? openStream : undefined} /></g>;
+}
+
+const CARTEREFE_ATTENDANCE_NOTE = "Was invited to SU, but wasn't able to attend.";
+
+function StreamerAttendanceDisclaimer() {
+  const triggerRef = useRef(null);
+  const tooltipRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [position, setPosition] = useState(null);
+
+  useLayoutEffect(() => {
+    if (!isOpen) return undefined;
+
+    function updatePosition() {
+      if (!triggerRef.current || !tooltipRef.current) return;
+
+      const triggerBounds = triggerRef.current.getBoundingClientRect();
+      const tooltipBounds = tooltipRef.current.getBoundingClientRect();
+      const viewportPadding = 8;
+      const gap = 8;
+      const maxLeft = Math.max(viewportPadding, window.innerWidth - tooltipBounds.width - viewportPadding);
+      const left = Math.min(Math.max(viewportPadding, triggerBounds.left - viewportPadding), maxLeft);
+      const below = triggerBounds.bottom + gap;
+      const above = triggerBounds.top - tooltipBounds.height - gap;
+      const top = below + tooltipBounds.height <= window.innerHeight - viewportPadding
+        ? below
+        : Math.max(viewportPadding, above);
+
+      setPosition({ left, top });
+    }
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, true);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [isOpen]);
+
+  return (
+    <>
+      <span
+        ref={triggerRef}
+        className="post-su-streamer-disclaimer"
+        tabIndex="0"
+        aria-label={CARTEREFE_ATTENDANCE_NOTE}
+        aria-describedby="carterefe-attendance-note"
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+        onFocus={() => setIsOpen(true)}
+        onBlur={() => setIsOpen(false)}
+      >
+        <span aria-hidden="true">i</span>
+      </span>
+      {isOpen && createPortal(
+        <span
+          ref={tooltipRef}
+          id="carterefe-attendance-note"
+          className="post-su-streamer-disclaimer-tooltip"
+          role="tooltip"
+          style={{
+            left: position?.left ?? 0,
+            top: position?.top ?? 0,
+            visibility: position ? "visible" : "hidden",
+          }}
+        >
+          {CARTEREFE_ATTENDANCE_NOTE}
+        </span>,
+        document.body
+      )}
+    </>
+  );
 }
 
 function dateKey(date) {
@@ -754,7 +828,14 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
             <tbody>
               {rows.map((row) => (
                 <tr className={selectedStreamer?.streamer === row.streamer ? "selected" : ""} onClick={() => setSelectedStreamer(row)} key={row.streamer}>
-                  <td><strong>{row.display_name || row.streamer}</strong></td>
+                  <td>
+                    <span className="post-su-streamer-name">
+                      <strong>{row.display_name || row.streamer}</strong>
+                      {[row.streamer, row.display_name].some((name) => String(name || "").toLowerCase() === "carterefe") && (
+                        <StreamerAttendanceDisclaimer />
+                      )}
+                    </span>
+                  </td>
                   <td>{row.group || "-"}</td>
                   <td>{formatCompact(valueOf(row, "pre_june_average_viewers", "pre_30d_average_viewers", "pre_average_viewers"))}</td>
                   <td>{formatCompact(valueOf(row, "pre_june_followers_gained", "pre_30d_followers_gained", "pre_followers_gained"))}</td>
