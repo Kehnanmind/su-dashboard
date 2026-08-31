@@ -3,6 +3,12 @@
 .post-su-breakdown-heading > div > span { color: var(--accent-gold); font-size: 10px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
 .post-su-breakdown-heading h2 { margin: 4px 0 0; color: var(--text-primary); font-size: 30px; }
 .post-su-breakdown-heading p { margin: 6px 0 0; color: var(--text-secondary); font-size: 12px; }
+.post-su-breakdown-heading-actions { display: flex; align-items: center; gap: 10px; }
+.post-su-breakdown-heading-actions .post-su-custom-range { min-width: 320px; }
+.post-su-breakdown-heading-actions .post-su-range-trigger { min-height: 46px; padding: 6px 12px; }
+.post-su-breakdown-heading-actions .post-su-range-label { font-size: 10px; }
+.post-su-breakdown-heading-actions .post-su-range-trigger strong { font-size: 12px; }
+.post-su-breakdown-heading-actions .post-su-calendar-popover { z-index: 140; }
 .post-su-breakdown-count { padding: 7px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--text-secondary); font-size: 11px; }
 .post-su-breakdown-filters { display: grid; grid-template-columns: minmax(260px, 1fr) 210px; gap: 10px; margin-bottom: 12px; }
 .post-su-breakdown-filters label { display: flex; flex-direction: column; justify-content: center; min-height: 56px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-card); }
@@ -371,6 +377,8 @@
 
 @media (max-width: 620px) {
   .post-su-breakdown-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .post-su-breakdown-heading-actions { width: 100%; align-items: stretch; flex-direction: column; }
+  .post-su-breakdown-heading-actions .post-su-custom-range { min-width: 0; }
   .post-su-breakdown-toolbar { grid-template-columns: 1fr; }
   .post-su-profile-period { display: none; }
   .post-su-breakdown-main .post-su-breakdown-metrics { grid-template-columns: 1fr; }

@@ -69,19 +69,23 @@ function InformationPage() {
             streamers gained a lot of  viewers after getting accepted in SU.
           </li>
           <li>
-            <strong>Post-SU</strong> begins July 21 and currently covers the
-            full available reporting period through August 19. The Post-SU
-            metrics date range can be changed in Streamer Breakdown.
+            <strong>Post-SU</strong> defaults to August 1 through August 30.
+            July is excluded from the default because event hype and botting
+            inflated audience numbers, making August a more representative
+            comparison period. You can change this period using the
+            <strong> Post-SU metrics</strong> date selector in Streamer Breakdown.
           </li>
           <li>
-            <strong>Outcome</strong> compares the selected Post-SU average
-            viewers with the streamer's June average: more than 10% above is
-            <strong> Grew</strong>, within +/-10% is <strong>Stagnant</strong>,
-            and more than 10% below is <strong>Declined</strong>.
+            <strong>Outcome</strong> compares the average viewers from the
+            selected Post-SU metrics period with the streamer's June average:
+            more than 10% above is <strong>Grew</strong>, within +/-10% is
+            <strong> Stagnant</strong>, and more than 10% below is
+            <strong> Declined</strong>.
           </li>
           <li>
             <strong>Barely streamed</strong> means fewer than 2 broadcasts or
-            fewer than 20 total Post-SU streaming hours in the selected range.
+            fewer than 20 total streaming hours during the selected Post-SU
+            metrics period.
           </li>
         </ul>
       </article>

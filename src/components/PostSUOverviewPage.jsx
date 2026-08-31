@@ -78,6 +78,19 @@ function formatMonthDay(value) {
   return date.toLocaleDateString("en-US", { month: "2-digit", day: "2-digit" });
 }
 
+function OutcomeTooltip({ active, payload }) {
+  if (!active || !payload?.length) return null;
+
+  const entry = payload[0];
+  return (
+    <div className="post-su-pie-tooltip">
+      <strong>{entry.name}</strong>
+      <span>{formatNumber(entry.value)} streamers</span>
+      <small>July is excluded because event hype and botting inflated audience numbers.</small>
+    </div>
+  );
+}
+
 // Rebases a rolling series onto the prior-window average, so 0 is the "no change" line.
 function toBaselineSeries(points, metricKey, priorAverage) {
   const baseline = Number(priorAverage);
@@ -562,17 +575,14 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
       .sort((left, right) => numberOf(right, "post_su_viewer_growth_pct") - numberOf(left, "post_su_viewer_growth_pct"));
   }, [selectedOutcome, filteredSummary]);
 
-  const window = metadata?.post_su_window;
-  const windowLabel = window
-    ? `${formatDate(window.start)} - ${formatDate(window.end_exclusive)} (${formatNumber(window.days_available, 1)} days available)`
-    : "Post-SU reporting window";
-  const postSUOutcomePeriod = window
+  const classificationWindow = metadata?.classification_window;
+  const postSUOutcomePeriod = classificationWindow
     ? (() => {
-        const lastDate = new Date(`${String(window.end_exclusive).slice(0, 10)}T00:00:00`);
+        const lastDate = new Date(`${String(classificationWindow.end_exclusive).slice(0, 10)}T00:00:00`);
         lastDate.setDate(lastDate.getDate() - 1);
-        return `${formatDate(window.start)} - ${formatDate(lastDate)}`;
+        return `${formatDate(classificationWindow.start)} - ${formatDate(lastDate)}`;
       })()
-    : "the full available Post-SU period";
+    : "Aug 1 - Aug 30";
 
   return (
     <section className="post-su-page">
@@ -580,7 +590,6 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         <div>
           <span className="post-su-kicker">Post-SU Analysis</span>
           <h2>Overview</h2>
-          <p>{windowLabel}</p>
         </div>
         <div className="post-su-heading-filters">
           <MultiSelectDropdown
@@ -617,7 +626,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         <div className="post-su-panel-heading">
           <div>
             <h3>Trajectory & momentum</h3>
-            <span>Are the last 10 days better or worse than the 10 days before? The line rises if better, falls if worse</span>
+            <span>Last 10 days vs previous 10 days</span>
           </div>
         </div>
         <div className="post-su-momentum-grid">
@@ -691,13 +700,12 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
 
       <section className="post-su-grid">
         <article className="post-su-panel post-su-outcomes-panel">
-          <div className="post-su-panel-heading"><div><h3>Audience outcome</h3><span>Full <strong>Post-SU</strong> period: {postSUOutcomePeriod} · Compared with June average viewers <span className="post-su-outcome-help" aria-label="How the audience outcome is calculated?" role="img" tabIndex="0">?<span className="post-su-outcome-tooltip" role="tooltip">This outcome uses the full available <strong>Post-SU</strong> period. Viewers can be unusually high during the first week after SU, including from possible <strong>bots</strong>, so growth may be inflated by that early activity. For more in-depth and precise analysis, see <strong>Streamer Breakdown</strong>.</span></span></span></div></div>
+          <div className="post-su-panel-heading"><div><h3>Audience outcome</h3><span><strong>Post-SU</strong> period: {postSUOutcomePeriod} · Compared with June average viewers <span className="post-su-outcome-help" aria-label="How the audience outcome is calculated?" role="img" tabIndex="0">?<span className="post-su-outcome-tooltip" role="tooltip">July is excluded because hype around the event and botting inflated audience numbers. Outcomes use August 1-30 for a more representative <strong>Post-SU</strong> comparison.</span></span></span></div></div>
           <div className="post-su-outcomes">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Tooltip
-                  contentStyle={{ background: "#171B22", border: "1px solid #232A33", borderRadius: 6 }}
-                  formatter={(value, name) => [`${formatNumber(value)} streamers`, name]}
+                  content={<OutcomeTooltip />}
                 />
                 <Pie
                   data={outcomes}
@@ -749,6 +757,10 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
             <div className="post-su-drawer-heading">
               <div><span>{OUTCOME_CONFIG[selectedOutcome].label}{selectedOutcome === "Undetermined" && <span className="post-su-undetermined-help" aria-label="What does undetermined mean?" role="img" tabIndex="0">?<span className="post-su-undetermined-tooltip" role="tooltip">Undetermined means there is not enough pre-SU or post-SU stream data to calculate audience growth.</span></span>}</span><h3>{formatNumber(outcomeStreamers.length)} streamers</h3></div>
               <button type="button" onClick={() => setSelectedOutcome(null)}>Close</button>
+            </div>
+            <div className="post-su-drawer-columns">
+              <span>Streamer</span>
+              <span>June vs August (%) Average Viewers</span>
             </div>
             <div className="post-su-drawer-list">
               {outcomeStreamers.map((row) => {

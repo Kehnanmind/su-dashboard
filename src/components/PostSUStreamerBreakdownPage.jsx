@@ -394,8 +394,8 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   const [sortDescending, setSortDescending] = useState(true);
   const [outcomeFilter, setOutcomeFilter] = useState("All");
   const [selectedStreamer, setSelectedStreamer] = useState(null);
-  const [metricRangeStart, setMetricRangeStart] = useState("2026-07-21");
-  const [metricRangeEnd, setMetricRangeEnd] = useState("2026-08-19");
+  const [metricRangeStart, setMetricRangeStart] = useState("2026-08-01");
+  const [metricRangeEnd, setMetricRangeEnd] = useState("2026-08-30");
   const [timelineRangeStart, setTimelineRangeStart] = useState("");
   const [timelineRangeEnd, setTimelineRangeEnd] = useState("");
   const rangeStart = timelineRangeStart;
@@ -404,7 +404,9 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   const setRangeEnd = setTimelineRangeEnd;
   const earliestTimelineDate = "2026-06-01";
   const earliestPostSUDate = "2026-07-21";
-  const latestPostSUDate = "2026-08-19";
+  const latestPostSUDate = "2026-08-30";
+  const defaultPostSUMetricStart = "2026-08-01";
+  const defaultPostSUMetricEnd = "2026-08-30";
   const postSUMetricStart = metricRangeStart || earliestPostSUDate;
   const postSUMetricEnd = metricRangeEnd || latestPostSUDate;
   const postSUMetricRangeLabel = `${formatRangeDate(postSUMetricStart)} - ${formatRangeDate(postSUMetricEnd)}`;
@@ -519,11 +521,12 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   }, [combinedRows, search, selectedGroups, selectedSizeTiers, outcomeFilter, sortKey, sortDescending]);
 
   useEffect(() => {
-    if (!selectedStreamer && rows.length) setSelectedStreamer(rows[0]);
-    if (selectedStreamer && !rows.some((row) => row.streamer === selectedStreamer.streamer)) {
-      setSelectedStreamer(rows[0] || null);
-    }
-  }, [rows, selectedStreamer]);
+    setSelectedStreamer((current) => {
+      if (!rows.length) return null;
+      if (!current) return rows[0];
+      return rows.find((row) => row.streamer === current.streamer) || rows[0];
+    });
+  }, [rows]);
 
   const selectedStreams = useMemo(() => {
     if (!selectedStreamer) return [];
@@ -658,7 +661,10 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
     <section className="post-su-breakdown-page">
       <header className="post-su-breakdown-heading">
         <div><span>Post-SU Analysis</span><h2>Streamer Breakdown</h2><p>Individual performance and post-SU broadcast activity.</p></div>
-        <div className="post-su-breakdown-count">{formatNumber(rows.length)} streamers</div>
+        <div className="post-su-breakdown-heading-actions">
+          <CustomRangePicker label="Post-SU metrics" start={metricRangeStart} end={metricRangeEnd} minDate={earliestPostSUDate} maxDate={latestPostSUDate} onChange={(nextStart, nextEnd) => { setMetricRangeStart(nextStart); setMetricRangeEnd(nextEnd); }} onClear={() => { setMetricRangeStart(defaultPostSUMetricStart); setMetricRangeEnd(defaultPostSUMetricEnd); }} />
+          <div className="post-su-breakdown-count">{formatNumber(rows.length)} streamers</div>
+        </div>
       </header>
 
       <main className="post-su-breakdown-main">
@@ -699,7 +705,7 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
       </main>
 
       <section className="post-su-breakdown-table-panel">
-        <div className="post-su-table-heading"><div><span>Performance summary</span><h3>All streamers</h3></div><div className="post-su-table-actions"><CustomRangePicker label="Post-SU metrics" start={metricRangeStart} end={metricRangeEnd} minDate={earliestPostSUDate} maxDate={latestPostSUDate} onChange={(nextStart, nextEnd) => { setMetricRangeStart(nextStart); setMetricRangeEnd(nextEnd); }} onClear={() => { setMetricRangeStart(earliestPostSUDate); setMetricRangeEnd(latestPostSUDate); }} /><small>Click a row to inspect the streamer</small></div></div>
+        <div className="post-su-table-heading"><div><span>Performance summary</span><h3>All streamers</h3></div><div className="post-su-table-actions"><small>Click a row to inspect the streamer</small></div></div>
         <div className="post-su-breakdown-table-wrap">
           <table>
             <thead>

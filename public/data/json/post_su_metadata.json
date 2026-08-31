@@ -1,24 +1,32 @@
 {
-  "generated_at_utc": "2026-08-21T06:39:52.835810+00:00",
+  "generated_at_utc": "2026-08-31T17:37:00.624625+00:00",
   "post_su_window": {
     "start": "2026-07-21T00:00:00",
-    "end_exclusive": "2026-08-20T00:00:00",
-    "scheduled_end_exclusive": "2026-08-20T00:00:00",
-    "days_available": 30.0,
+    "end_exclusive": "2026-08-31T00:00:00",
+    "inclusion_rule": "Streams starting before the end-exclusive cutoff are included in full.",
+    "data_end_exclusive": "2026-08-31T00:00:00",
+    "days_available": 41.0,
+    "complete_data_window": true,
     "complete_30_day_window": true
+  },
+  "classification_window": {
+    "start": "2026-08-01T00:00:00",
+    "end_exclusive": "2026-08-31T00:00:00",
+    "stream_inclusion_rule": "Audience and activity results use only streams starting during this August window."
   },
   "calculation_definitions": {
     "weighted_average_viewers": "Post-SU hours watched divided by post-SU hours streamed. Hours watched are taken from the source file or calculated as average viewers multiplied by stream hours.",
     "simple_average_viewers": "Arithmetic mean of the average viewers for each post-SU broadcast.",
-    "hours_watched": "Source hours watched, prorated by post-SU duration share when a stream crosses the post-SU boundary.",
-    "followers_gained": "Source followers gained, prorated by post-SU duration share when a stream crosses the post-SU boundary.",
+    "hours_watched": "Source hours watched, prorated by post-SU duration share only when a stream crosses the post-SU start boundary.",
+    "followers_gained": "Source followers gained, prorated by post-SU duration share only when a stream crosses the post-SU start boundary.",
     "growth_classification": {
+      "window": "August 1 through August 30 streams only.",
       "undetermined": "Pre-SU and post-SU stream data are both required to determine audience growth.",
       "grew": "More than 10% above June average viewers.",
       "stagnant": "Between -10% and 10% of June average viewers.",
       "fell_off": "More than 10% below June average viewers."
     },
-    "barely_streamed": "Fewer than 2 broadcasts or fewer than 20 total post-SU streaming hours."
+    "barely_streamed": "Fewer than 2 broadcasts or fewer than 20 total streaming hours during August 1 through August 30."
   },
   "source_files": {
     "streams": "streamer_university_streams_post_su.csv",

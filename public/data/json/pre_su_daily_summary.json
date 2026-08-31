@@ -24,13 +24,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "andrewuhrik",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.95,
-    "hours_watched": 22.8,
-    "followers_gained": 5800.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 1.7,
+    "hours_watched": 33.3,
+    "followers_gained": 5801.333333333333,
     "peak_viewers": 34,
-    "average_viewers_weighted": 24.000000000000004,
-    "followers_per_hour_streamed": 6105.263157894738
+    "average_viewers_weighted": 19.588235294117645,
+    "followers_per_hour_streamed": 3412.549019607843
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -45,36 +45,36 @@
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "aozami",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.0,
-    "hours_watched": 936.0,
-    "followers_gained": 39.0,
-    "peak_viewers": 218,
-    "average_viewers_weighted": 156.0,
-    "followers_per_hour_streamed": 6.5
-  },
-  {
-    "calendar_date": "2026-06-01T00:00:00",
     "streamer": "avazura",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.333333333333333,
-    "hours_watched": 524.3333333333334,
-    "followers_gained": 1.0,
-    "peak_viewers": 166,
-    "average_viewers_weighted": 121.00000000000001,
-    "followers_per_hour_streamed": 0.23076923076923078
+    "broadcasts_started": 2,
+    "hours_streamed": 5.083333333333333,
+    "hours_watched": 628.5833333333334,
+    "followers_gained": 2.901408450704225,
+    "peak_viewers": 200,
+    "average_viewers_weighted": 123.65573770491805,
+    "followers_per_hour_streamed": 0.5707688755483722
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "bonita",
-    "broadcasts_started": 2,
-    "hours_streamed": 14.733333333333334,
-    "hours_watched": 2894.5333333333333,
-    "followers_gained": 61.11878453038674,
+    "broadcasts_started": 1,
+    "hours_streamed": 12.066666666666666,
+    "hours_watched": 2606.4,
+    "followers_gained": 53.0,
     "peak_viewers": 367,
-    "average_viewers_weighted": 196.46153846153845,
-    "followers_per_hour_streamed": 4.148333791655208
+    "average_viewers_weighted": 216.0,
+    "followers_per_hour_streamed": 4.392265193370166
+  },
+  {
+    "calendar_date": "2026-06-01T00:00:00",
+    "streamer": "bonnie",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.5,
+    "hours_watched": 1285.0,
+    "followers_gained": 3.629032258064516,
+    "peak_viewers": 3300,
+    "average_viewers_weighted": 2570.0,
+    "followers_per_hour_streamed": 7.258064516129032
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -101,13 +101,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "cutegunz",
-    "broadcasts_started": 1,
-    "hours_streamed": 10.366666666666667,
-    "hours_watched": 1648.3,
-    "followers_gained": 29.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 10.866666666666667,
+    "hours_watched": 1693.8,
+    "followers_gained": 30.170046801872076,
     "peak_viewers": 427,
-    "average_viewers_weighted": 159.0,
-    "followers_per_hour_streamed": 2.797427652733119
+    "average_viewers_weighted": 155.87116564417178,
+    "followers_per_hour_streamed": 2.7763846750189027
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -157,11 +157,11 @@
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "ijustlovepuzzles",
     "broadcasts_started": 1,
-    "hours_streamed": 2.5,
-    "hours_watched": 532.4999999999999,
-    "followers_gained": 2.7162977867203217,
+    "hours_streamed": 8.283333333333333,
+    "hours_watched": 1764.35,
+    "followers_gained": 9.0,
     "peak_viewers": 437,
-    "average_viewers_weighted": 212.99999999999994,
+    "average_viewers_weighted": 213.0,
     "followers_per_hour_streamed": 1.0865191146881288
   },
   {
@@ -178,13 +178,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.316666666666666,
-    "hours_watched": 470.51666666666665,
-    "followers_gained": 22.0,
-    "peak_viewers": 135,
-    "average_viewers_weighted": 109.0,
-    "followers_per_hour_streamed": 5.096525096525097
+    "broadcasts_started": 2,
+    "hours_streamed": 6.316666666666666,
+    "hours_watched": 802.5166666666667,
+    "followers_gained": 40.064516129032256,
+    "peak_viewers": 214,
+    "average_viewers_weighted": 127.04749340369393,
+    "followers_per_hour_streamed": 6.342667461060516
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -207,17 +207,6 @@
     "peak_viewers": 138,
     "average_viewers_weighted": 110.99999999999999,
     "followers_per_hour_streamed": 9.62962962962963
-  },
-  {
-    "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "kiiingjojo",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.4166666666666667,
-    "hours_watched": 1.25,
-    "followers_gained": 1.0,
-    "peak_viewers": 5,
-    "average_viewers_weighted": 3.0,
-    "followers_per_hour_streamed": 2.4
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -255,13 +244,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.533333333333333,
-    "hours_watched": 366.9333333333333,
-    "followers_gained": -3.0,
-    "peak_viewers": 65,
-    "average_viewers_weighted": 42.99999999999999,
-    "followers_per_hour_streamed": -0.3515625
+    "broadcasts_started": 2,
+    "hours_streamed": 13.033333333333333,
+    "hours_watched": 776.4333333333332,
+    "followers_gained": 25.45945945945946,
+    "peak_viewers": 160,
+    "average_viewers_weighted": 59.57289002557543,
+    "followers_per_hour_streamed": 1.9534112117232323
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -299,13 +288,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.683333333333334,
-    "hours_watched": 668.45,
-    "followers_gained": 7.0,
-    "peak_viewers": 141,
-    "average_viewers_weighted": 87.0,
-    "followers_per_hour_streamed": 0.911062906724512
+    "broadcasts_started": 2,
+    "hours_streamed": 13.683333333333334,
+    "hours_watched": 1382.45,
+    "followers_gained": 26.78021978021978,
+    "peak_viewers": 222,
+    "average_viewers_weighted": 101.03166869671134,
+    "followers_per_hour_streamed": 1.957141518651872
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -333,12 +322,12 @@
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 2,
-    "hours_streamed": 9.083333333333334,
-    "hours_watched": 1953.5833333333333,
-    "followers_gained": 48.96621621621622,
+    "hours_streamed": 15.733333333333334,
+    "hours_watched": 3463.133333333333,
+    "followers_gained": 93.0,
     "peak_viewers": 303,
-    "average_viewers_weighted": 215.07339449541283,
-    "followers_per_hour_streamed": 5.390776097198115
+    "average_viewers_weighted": 220.11440677966098,
+    "followers_per_hour_streamed": 5.911016949152542
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -376,13 +365,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.366666666666666,
-    "hours_watched": 999.9666666666668,
-    "followers_gained": 60.0,
-    "peak_viewers": 339,
-    "average_viewers_weighted": 229.00000000000006,
-    "followers_per_hour_streamed": 13.740458015267176
+    "broadcasts_started": 2,
+    "hours_streamed": 8.366666666666667,
+    "hours_watched": 2239.966666666667,
+    "followers_gained": 136.26168224299067,
+    "peak_viewers": 492,
+    "average_viewers_weighted": 267.7250996015937,
+    "followers_per_hour_streamed": 16.28625684179171
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -397,7 +386,7 @@
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 6.216666666666667,
     "hours_watched": 161.63333333333333,
@@ -410,9 +399,9 @@
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "stableronaldo",
     "broadcasts_started": 1,
-    "hours_streamed": 8.5,
-    "hours_watched": 207230.0,
-    "followers_gained": 4527.120161109868,
+    "hours_streamed": 15.5,
+    "hours_watched": 377890.0,
+    "followers_gained": 8255.336764376818,
     "peak_viewers": 80525,
     "average_viewers_weighted": 24380.0,
     "followers_per_hour_streamed": 532.6023718952786
@@ -442,13 +431,13 @@
   {
     "calendar_date": "2026-06-01T00:00:00",
     "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.75,
-    "hours_watched": 253.0,
-    "followers_gained": 23.0,
-    "peak_viewers": 64,
-    "average_viewers_weighted": 44.0,
-    "followers_per_hour_streamed": 4.0
+    "broadcasts_started": 2,
+    "hours_streamed": 6.5,
+    "hours_watched": 279.25,
+    "followers_gained": 28.696202531645568,
+    "peak_viewers": 66,
+    "average_viewers_weighted": 42.96153846153846,
+    "followers_per_hour_streamed": 4.414800389483934
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -507,14 +496,14 @@
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 2,
-    "hours_streamed": 10.75,
-    "hours_watched": 34103.0,
-    "followers_gained": 286.2320675105485,
+    "hours_streamed": 17.75,
+    "hours_watched": 53983.0,
+    "followers_gained": 507.1603375527426,
     "peak_viewers": 4319,
-    "average_viewers_weighted": 3172.3720930232557,
-    "followers_per_hour_streamed": 26.62623883819056
+    "average_viewers_weighted": 3041.2957746478874,
+    "followers_per_hour_streamed": 28.572413383253103
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
@@ -574,24 +563,24 @@
   {
     "calendar_date": "2026-06-02T00:00:00",
     "streamer": "aozami",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.7,
-    "hours_watched": 923.4,
-    "followers_gained": 34.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 11.7,
+    "hours_watched": 1859.4,
+    "followers_gained": 73.0,
     "peak_viewers": 286,
-    "average_viewers_weighted": 162.0,
-    "followers_per_hour_streamed": 5.964912280701754
+    "average_viewers_weighted": 158.92307692307693,
+    "followers_per_hour_streamed": 6.239316239316239
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 12.116666666666667,
-    "hours_watched": 2241.583333333333,
-    "followers_gained": 46.0,
-    "peak_viewers": 297,
-    "average_viewers_weighted": 184.99999999999997,
-    "followers_per_hour_streamed": 3.796423658872077
+    "hours_streamed": 4.233333333333333,
+    "hours_watched": 626.5333333333333,
+    "followers_gained": 15.0,
+    "peak_viewers": 213,
+    "average_viewers_weighted": 148.0,
+    "followers_per_hour_streamed": 3.543307086614173
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
@@ -706,13 +695,13 @@
   {
     "calendar_date": "2026-06-02T00:00:00",
     "streamer": "kiiingjojo",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.7666666666666667,
-    "hours_watched": 3.066666666666667,
-    "followers_gained": 1.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 1.1833333333333333,
+    "hours_watched": 4.316666666666666,
+    "followers_gained": 2.0,
     "peak_viewers": 8,
-    "average_viewers_weighted": 4.0,
-    "followers_per_hour_streamed": 1.3043478260869565
+    "average_viewers_weighted": 3.6478873239436616,
+    "followers_per_hour_streamed": 1.6901408450704225
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
@@ -837,7 +826,7 @@
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 2,
     "hours_streamed": 4.3,
     "hours_watched": 55.0,
@@ -958,17 +947,6 @@
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
-    "streamer": "wardrobewinter",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.26666666666666666,
-    "hours_watched": 107.46666666666671,
-    "followers_gained": 63.000000000000014,
-    "peak_viewers": 489,
-    "average_viewers_weighted": 403.00000000000017,
-    "followers_per_hour_streamed": 236.25000000000006
-  },
-  {
-    "calendar_date": "2026-06-02T00:00:00",
     "streamer": "yourragegaming",
     "broadcasts_started": 1,
     "hours_streamed": 3.7666666666666666,
@@ -980,7 +958,7 @@
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 13.516666666666667,
     "hours_watched": 49268.25,
@@ -1081,12 +1059,12 @@
     "calendar_date": "2026-06-03T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 7.966666666666667,
-    "hours_watched": 1577.4,
-    "followers_gained": 38.0,
-    "peak_viewers": 293,
-    "average_viewers_weighted": 198.0,
-    "followers_per_hour_streamed": 4.7698744769874475
+    "hours_streamed": 12.116666666666667,
+    "hours_watched": 2241.583333333333,
+    "followers_gained": 46.0,
+    "peak_viewers": 297,
+    "average_viewers_weighted": 184.99999999999997,
+    "followers_per_hour_streamed": 3.796423658872077
   },
   {
     "calendar_date": "2026-06-03T00:00:00",
@@ -1142,17 +1120,6 @@
     "peak_viewers": 29,
     "average_viewers_weighted": 19.000000000000004,
     "followers_per_hour_streamed": 1.9534883720930236
-  },
-  {
-    "calendar_date": "2026-06-03T00:00:00",
-    "streamer": "ijustlovepuzzles",
-    "broadcasts_started": 1,
-    "hours_streamed": 13.9,
-    "hours_watched": 3530.6,
-    "followers_gained": 15.0,
-    "peak_viewers": 658,
-    "average_viewers_weighted": 254.0,
-    "followers_per_hour_streamed": 1.079136690647482
   },
   {
     "calendar_date": "2026-06-03T00:00:00",
@@ -1277,17 +1244,6 @@
   },
   {
     "calendar_date": "2026-06-03T00:00:00",
-    "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.383333333333334,
-    "hours_watched": 430.6666666666667,
-    "followers_gained": 13.0,
-    "peak_viewers": 120,
-    "average_viewers_weighted": 80.0,
-    "followers_per_hour_streamed": 2.414860681114551
-  },
-  {
-    "calendar_date": "2026-06-03T00:00:00",
     "streamer": "noemi",
     "broadcasts_started": 1,
     "hours_streamed": 7.166666666666667,
@@ -1365,7 +1321,7 @@
   },
   {
     "calendar_date": "2026-06-03T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 7.75,
     "hours_watched": 147.25,
@@ -1454,13 +1410,13 @@
   {
     "calendar_date": "2026-06-03T00:00:00",
     "streamer": "wardrobewinter",
-    "broadcasts_started": 2,
-    "hours_streamed": 3.3,
-    "hours_watched": 1230.9,
-    "followers_gained": 2227.0,
+    "broadcasts_started": 3,
+    "hours_streamed": 3.5666666666666664,
+    "hours_watched": 1338.3666666666668,
+    "followers_gained": 2290.0,
     "peak_viewers": 922,
-    "average_viewers_weighted": 373.00000000000006,
-    "followers_per_hour_streamed": 674.8484848484849
+    "average_viewers_weighted": 375.24299065420564,
+    "followers_per_hour_streamed": 642.0560747663552
   },
   {
     "calendar_date": "2026-06-03T00:00:00",
@@ -1541,17 +1497,6 @@
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
-    "streamer": "angelcrackedu",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.26666666666666666,
-    "hours_watched": 1.8666666666666671,
-    "followers_gained": 1.0000000000000002,
-    "peak_viewers": 13,
-    "average_viewers_weighted": 7.000000000000002,
-    "followers_per_hour_streamed": 3.750000000000001
-  },
-  {
-    "calendar_date": "2026-06-04T00:00:00",
     "streamer": "avazura",
     "broadcasts_started": 1,
     "hours_streamed": 7.066666666666666,
@@ -1565,12 +1510,12 @@
     "calendar_date": "2026-06-04T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 8.333333333333334,
-    "hours_watched": 1475.0,
-    "followers_gained": 25.0,
-    "peak_viewers": 262,
-    "average_viewers_weighted": 177.0,
-    "followers_per_hour_streamed": 3.0
+    "hours_streamed": 7.966666666666667,
+    "hours_watched": 1577.4,
+    "followers_gained": 38.0,
+    "peak_viewers": 293,
+    "average_viewers_weighted": 198.0,
+    "followers_per_hour_streamed": 4.7698744769874475
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
@@ -1626,6 +1571,17 @@
     "peak_viewers": 17,
     "average_viewers_weighted": 9.0,
     "followers_per_hour_streamed": 1.5
+  },
+  {
+    "calendar_date": "2026-06-04T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 1,
+    "hours_streamed": 13.9,
+    "hours_watched": 3530.6,
+    "followers_gained": 15.0,
+    "peak_viewers": 658,
+    "average_viewers_weighted": 254.0,
+    "followers_per_hour_streamed": 1.079136690647482
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
@@ -1695,17 +1651,6 @@
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.966666666666667,
-    "hours_watched": 255.13333333333333,
-    "followers_gained": 11.0,
-    "peak_viewers": 176,
-    "average_viewers_weighted": 86.0,
-    "followers_per_hour_streamed": 3.7078651685393256
-  },
-  {
-    "calendar_date": "2026-06-04T00:00:00",
     "streamer": "markusking",
     "broadcasts_started": 1,
     "hours_streamed": 5.65,
@@ -1736,6 +1681,17 @@
     "peak_viewers": 100,
     "average_viewers_weighted": 80.00000000000003,
     "followers_per_hour_streamed": 9.152542372881358
+  },
+  {
+    "calendar_date": "2026-06-04T00:00:00",
+    "streamer": "mookie",
+    "broadcasts_started": 1,
+    "hours_streamed": 5.383333333333334,
+    "hours_watched": 430.6666666666667,
+    "followers_gained": 13.0,
+    "peak_viewers": 120,
+    "average_viewers_weighted": 80.0,
+    "followers_per_hour_streamed": 2.414860681114551
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
@@ -1816,7 +1772,7 @@
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 5.766666666666667,
     "hours_watched": 103.8,
@@ -1894,13 +1850,13 @@
   {
     "calendar_date": "2026-06-04T00:00:00",
     "streamer": "wardrobewinter",
-    "broadcasts_started": 2,
-    "hours_streamed": 2.1333333333333333,
-    "hours_watched": 1640.2833333333333,
-    "followers_gained": 1197.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 1.05,
+    "hours_watched": 1054.2,
+    "followers_gained": 620.0,
     "peak_viewers": 1155,
-    "average_viewers_weighted": 768.8828125,
-    "followers_per_hour_streamed": 561.09375
+    "average_viewers_weighted": 1004.0,
+    "followers_per_hour_streamed": 590.4761904761905
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
@@ -1959,6 +1915,17 @@
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
+    "streamer": "angelcrackedu",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.26666666666666666,
+    "hours_watched": 1.8666666666666671,
+    "followers_gained": 1.0000000000000002,
+    "peak_viewers": 13,
+    "average_viewers_weighted": 7.000000000000002,
+    "followers_per_hour_streamed": 3.750000000000001
+  },
+  {
+    "calendar_date": "2026-06-05T00:00:00",
     "streamer": "avazura",
     "broadcasts_started": 1,
     "hours_streamed": 3.716666666666667,
@@ -1983,12 +1950,12 @@
     "calendar_date": "2026-06-05T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 8.3,
-    "hours_watched": 1427.6,
-    "followers_gained": 33.0,
-    "peak_viewers": 267,
-    "average_viewers_weighted": 171.99999999999997,
-    "followers_per_hour_streamed": 3.975903614457831
+    "hours_streamed": 8.333333333333334,
+    "hours_watched": 1475.0,
+    "followers_gained": 25.0,
+    "peak_viewers": 262,
+    "average_viewers_weighted": 177.0,
+    "followers_per_hour_streamed": 3.0
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
@@ -2146,6 +2113,17 @@
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
+    "streamer": "malek_04",
+    "broadcasts_started": 1,
+    "hours_streamed": 2.966666666666667,
+    "hours_watched": 255.13333333333333,
+    "followers_gained": 11.0,
+    "peak_viewers": 176,
+    "average_viewers_weighted": 86.0,
+    "followers_per_hour_streamed": 3.7078651685393256
+  },
+  {
+    "calendar_date": "2026-06-05T00:00:00",
     "streamer": "markusking",
     "broadcasts_started": 1,
     "hours_streamed": 2.783333333333333,
@@ -2165,17 +2143,6 @@
     "peak_viewers": 111,
     "average_viewers_weighted": 77.0,
     "followers_per_hour_streamed": 1.6
-  },
-  {
-    "calendar_date": "2026-06-05T00:00:00",
-    "streamer": "marlon",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.7333333333333334,
-    "hours_watched": 36665.06666666667,
-    "followers_gained": 2558.0000000000005,
-    "peak_viewers": 15171,
-    "average_viewers_weighted": 9821.000000000002,
-    "followers_per_hour_streamed": 685.1785714285716
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
@@ -2323,13 +2290,13 @@
   {
     "calendar_date": "2026-06-05T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 2,
-    "hours_streamed": 1.9166666666666667,
-    "hours_watched": 9.583333333333332,
+    "broadcasts_started": 1,
+    "hours_streamed": 1.7333333333333334,
+    "hours_watched": 8.666666666666666,
     "followers_gained": 2.0,
     "peak_viewers": 10,
     "average_viewers_weighted": 4.999999999999999,
-    "followers_per_hour_streamed": 1.0434782608695652
+    "followers_per_hour_streamed": 1.1538461538461537
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
@@ -2389,13 +2356,13 @@
   {
     "calendar_date": "2026-06-05T00:00:00",
     "streamer": "wardrobewinter",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.0833333333333335,
-    "hours_watched": 1378.2500000000002,
-    "followers_gained": 1074.0000000000002,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.166666666666667,
+    "hours_watched": 1964.3333333333335,
+    "followers_gained": 1651.0000000000002,
     "peak_viewers": 1253,
-    "average_viewers_weighted": 447.00000000000006,
-    "followers_per_hour_streamed": 348.3243243243244
+    "average_viewers_weighted": 471.44,
+    "followers_per_hour_streamed": 396.24
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
@@ -2454,7 +2421,7 @@
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 7.983333333333333,
     "hours_watched": 23351.25,
@@ -2478,12 +2445,12 @@
     "calendar_date": "2026-06-06T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 11.566666666666666,
-    "hours_watched": 2417.4333333333334,
-    "followers_gained": 53.0,
-    "peak_viewers": 299,
-    "average_viewers_weighted": 209.0,
-    "followers_per_hour_streamed": 4.582132564841499
+    "hours_streamed": 8.3,
+    "hours_watched": 1427.6,
+    "followers_gained": 33.0,
+    "peak_viewers": 267,
+    "average_viewers_weighted": 171.99999999999997,
+    "followers_per_hour_streamed": 3.975903614457831
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
@@ -2517,17 +2484,6 @@
     "peak_viewers": 10,
     "average_viewers_weighted": 4.0,
     "followers_per_hour_streamed": 0.0
-  },
-  {
-    "calendar_date": "2026-06-06T00:00:00",
-    "streamer": "ijustlovepuzzles",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.166666666666667,
-    "hours_watched": 1218.3333333333333,
-    "followers_gained": 6.0,
-    "peak_viewers": 237,
-    "average_viewers_weighted": 169.99999999999997,
-    "followers_per_hour_streamed": 0.8372093023255813
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
@@ -2630,6 +2586,17 @@
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
+    "streamer": "marlon",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.7333333333333334,
+    "hours_watched": 36665.06666666667,
+    "followers_gained": 2558.0000000000005,
+    "peak_viewers": 15171,
+    "average_viewers_weighted": 9821.000000000002,
+    "followers_per_hour_streamed": 685.1785714285716
+  },
+  {
+    "calendar_date": "2026-06-06T00:00:00",
     "streamer": "mcqueennlive",
     "broadcasts_started": 1,
     "hours_streamed": 0.06666666666666667,
@@ -2664,13 +2631,13 @@
   {
     "calendar_date": "2026-06-06T00:00:00",
     "streamer": "paybae",
-    "broadcasts_started": 2,
-    "hours_streamed": 10.183333333333334,
-    "hours_watched": 2017.35,
-    "followers_gained": 106.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 4.916666666666667,
+    "hours_watched": 958.75,
+    "followers_gained": 74.0,
     "peak_viewers": 290,
-    "average_viewers_weighted": 198.10310965630114,
-    "followers_per_hour_streamed": 10.409165302782323
+    "average_viewers_weighted": 195.0,
+    "followers_per_hour_streamed": 15.050847457627118
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
@@ -2682,17 +2649,6 @@
     "peak_viewers": 26015,
     "average_viewers_weighted": 21484.0,
     "followers_per_hour_streamed": 174.76190476190476
-  },
-  {
-    "calendar_date": "2026-06-06T00:00:00",
-    "streamer": "rawdogmoon",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.9833333333333334,
-    "hours_watched": 733.8333333333335,
-    "followers_gained": 48.000000000000014,
-    "peak_viewers": 651,
-    "average_viewers_weighted": 370.00000000000006,
-    "followers_per_hour_streamed": 24.201680672268914
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
@@ -2752,13 +2708,13 @@
   {
     "calendar_date": "2026-06-06T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.733333333333333,
-    "hours_watched": 33.13333333333333,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.916666666666667,
+    "hours_watched": 34.05,
     "followers_gained": 4.0,
     "peak_viewers": 15,
-    "average_viewers_weighted": 7.0,
-    "followers_per_hour_streamed": 0.8450704225352113
+    "average_viewers_weighted": 6.925423728813558,
+    "followers_per_hour_streamed": 0.8135593220338982
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
@@ -2872,7 +2828,7 @@
   },
   {
     "calendar_date": "2026-06-06T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 12.1,
     "hours_watched": 40716.5,
@@ -2939,13 +2895,13 @@
   {
     "calendar_date": "2026-06-07T00:00:00",
     "streamer": "bonita",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.65,
-    "hours_watched": 841.85,
-    "followers_gained": 16.0,
-    "peak_viewers": 238,
-    "average_viewers_weighted": 149.0,
-    "followers_per_hour_streamed": 2.831858407079646
+    "broadcasts_started": 2,
+    "hours_streamed": 17.21666666666667,
+    "hours_watched": 3259.2833333333333,
+    "followers_gained": 69.0,
+    "peak_viewers": 299,
+    "average_viewers_weighted": 189.30977734753145,
+    "followers_per_hour_streamed": 4.007744433688286
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
@@ -3004,6 +2960,17 @@
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 1,
+    "hours_streamed": 7.166666666666667,
+    "hours_watched": 1218.3333333333333,
+    "followers_gained": 6.0,
+    "peak_viewers": 237,
+    "average_viewers_weighted": 169.99999999999997,
+    "followers_per_hour_streamed": 0.8372093023255813
+  },
+  {
+    "calendar_date": "2026-06-07T00:00:00",
     "streamer": "itsshonyx",
     "broadcasts_started": 1,
     "hours_streamed": 4.833333333333333,
@@ -3034,17 +3001,6 @@
     "peak_viewers": 168,
     "average_viewers_weighted": 115.0,
     "followers_per_hour_streamed": 7.861271676300578
-  },
-  {
-    "calendar_date": "2026-06-07T00:00:00",
-    "streamer": "jordynlucas",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.35,
-    "hours_watched": 531.9,
-    "followers_gained": 168.0,
-    "peak_viewers": 579,
-    "average_viewers_weighted": 393.99999999999994,
-    "followers_per_hour_streamed": 124.44444444444444
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
@@ -3170,24 +3126,24 @@
   {
     "calendar_date": "2026-06-07T00:00:00",
     "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 10.933333333333334,
-    "hours_watched": 2372.5333333333333,
-    "followers_gained": 45.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 16.2,
+    "hours_watched": 3431.133333333333,
+    "followers_gained": 77.0,
     "peak_viewers": 290,
-    "average_viewers_weighted": 217.0,
-    "followers_per_hour_streamed": 4.115853658536586
+    "average_viewers_weighted": 211.79835390946502,
+    "followers_per_hour_streamed": 4.753086419753086
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
     "streamer": "rawdogmoon",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.1333333333333333,
-    "hours_watched": 789.3333333333334,
-    "followers_gained": 117.0,
-    "peak_viewers": 510,
-    "average_viewers_weighted": 370.0,
-    "followers_per_hour_streamed": 54.84375
+    "broadcasts_started": 2,
+    "hours_streamed": 4.116666666666667,
+    "hours_watched": 1523.166666666667,
+    "followers_gained": 165.0,
+    "peak_viewers": 651,
+    "average_viewers_weighted": 370.00000000000006,
+    "followers_per_hour_streamed": 40.08097165991902
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
@@ -3224,7 +3180,7 @@
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 7.816666666666666,
     "hours_watched": 109.43333333333334,
@@ -3345,7 +3301,7 @@
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 8.05,
     "hours_watched": 22387.05,
@@ -3444,17 +3400,6 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "bonita",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.966666666666667,
-    "hours_watched": 499.8,
-    "followers_gained": 20.0,
-    "peak_viewers": 189,
-    "average_viewers_weighted": 126.0,
-    "followers_per_hour_streamed": 5.042016806722689
-  },
-  {
-    "calendar_date": "2026-06-08T00:00:00",
     "streamer": "braeden",
     "broadcasts_started": 1,
     "hours_streamed": 5.433333333333334,
@@ -3543,14 +3488,14 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "ijustlovepuzzles",
+    "streamer": "jordynlucas",
     "broadcasts_started": 1,
-    "hours_streamed": 8.016666666666667,
-    "hours_watched": 2629.4666666666667,
-    "followers_gained": 32.0,
-    "peak_viewers": 465,
-    "average_viewers_weighted": 327.99999999999994,
-    "followers_per_hour_streamed": 3.9916839916839915
+    "hours_streamed": 1.35,
+    "hours_watched": 531.9,
+    "followers_gained": 168.0,
+    "peak_viewers": 579,
+    "average_viewers_weighted": 393.99999999999994,
+    "followers_per_hour_streamed": 124.44444444444444
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
@@ -3730,17 +3675,6 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.05,
-    "hours_watched": 1579.2,
-    "followers_gained": 28.0,
-    "peak_viewers": 303,
-    "average_viewers_weighted": 224.0,
-    "followers_per_hour_streamed": 3.971631205673759
-  },
-  {
-    "calendar_date": "2026-06-08T00:00:00",
     "streamer": "plaqueboymax",
     "broadcasts_started": 1,
     "hours_streamed": 4.666666666666667,
@@ -3774,17 +3708,6 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.116666666666666,
-    "hours_watched": 2369.85,
-    "followers_gained": 107.0,
-    "peak_viewers": 454,
-    "average_viewers_weighted": 333.0,
-    "followers_per_hour_streamed": 15.03512880562061
-  },
-  {
-    "calendar_date": "2026-06-08T00:00:00",
     "streamer": "rulaempire",
     "broadcasts_started": 1,
     "hours_streamed": 6.383333333333334,
@@ -3796,7 +3719,7 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 6.116666666666666,
     "hours_watched": 103.98333333333332,
@@ -3826,17 +3749,6 @@
     "peak_viewers": 291,
     "average_viewers_weighted": 52.99999999999999,
     "followers_per_hour_streamed": 45.0
-  },
-  {
-    "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.0833333333333335,
-    "hours_watched": 135.66666666666669,
-    "followers_gained": 11.000000000000002,
-    "peak_viewers": 68,
-    "average_viewers_weighted": 44.00000000000001,
-    "followers_per_hour_streamed": 3.567567567567568
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
@@ -3874,13 +3786,13 @@
   {
     "calendar_date": "2026-06-08T00:00:00",
     "streamer": "theycallmeleii",
-    "broadcasts_started": 2,
-    "hours_streamed": 2.066666666666667,
-    "hours_watched": 341.5166666666667,
-    "followers_gained": 251.0,
-    "peak_viewers": 333,
-    "average_viewers_weighted": 165.25,
-    "followers_per_hour_streamed": 121.4516129032258
+    "broadcasts_started": 1,
+    "hours_streamed": 0.5166666666666667,
+    "hours_watched": 67.16666666666667,
+    "followers_gained": 41.0,
+    "peak_viewers": 160,
+    "average_viewers_weighted": 130.0,
+    "followers_per_hour_streamed": 79.35483870967741
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
@@ -3928,7 +3840,7 @@
   },
   {
     "calendar_date": "2026-06-08T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 11.933333333333334,
     "hours_watched": 52124.8,
@@ -4018,12 +3930,12 @@
     "calendar_date": "2026-06-09T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 3.0166666666666666,
-    "hours_watched": 286.5833333333333,
-    "followers_gained": 12.0,
-    "peak_viewers": 160,
-    "average_viewers_weighted": 95.0,
-    "followers_per_hour_streamed": 3.977900552486188
+    "hours_streamed": 3.966666666666667,
+    "hours_watched": 499.8,
+    "followers_gained": 20.0,
+    "peak_viewers": 189,
+    "average_viewers_weighted": 126.0,
+    "followers_per_hour_streamed": 5.042016806722689
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
@@ -4137,6 +4049,17 @@
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 1,
+    "hours_streamed": 8.016666666666667,
+    "hours_watched": 2629.4666666666667,
+    "followers_gained": 32.0,
+    "peak_viewers": 465,
+    "average_viewers_weighted": 327.99999999999994,
+    "followers_per_hour_streamed": 3.9916839916839915
+  },
+  {
+    "calendar_date": "2026-06-09T00:00:00",
     "streamer": "itsshonyx",
     "broadcasts_started": 1,
     "hours_streamed": 1.3,
@@ -4171,13 +4094,13 @@
   {
     "calendar_date": "2026-06-09T00:00:00",
     "streamer": "jaymommy0",
-    "broadcasts_started": 3,
-    "hours_streamed": 7.35,
-    "hours_watched": 718.3166666666666,
-    "followers_gained": 37.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 5.833333333333334,
+    "hours_watched": 583.3333333333334,
+    "followers_gained": 33.0,
     "peak_viewers": 158,
-    "average_viewers_weighted": 97.73015873015872,
-    "followers_per_hour_streamed": 5.034013605442177
+    "average_viewers_weighted": 100.0,
+    "followers_per_hour_streamed": 5.657142857142857
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
@@ -4281,13 +4204,13 @@
   {
     "calendar_date": "2026-06-09T00:00:00",
     "streamer": "paybae",
-    "broadcasts_started": 2,
-    "hours_streamed": 9.733333333333334,
-    "hours_watched": 1797.65,
-    "followers_gained": 46.0,
-    "peak_viewers": 273,
-    "average_viewers_weighted": 184.69006849315068,
-    "followers_per_hour_streamed": 4.726027397260274
+    "broadcasts_started": 1,
+    "hours_streamed": 7.05,
+    "hours_watched": 1579.2,
+    "followers_gained": 28.0,
+    "peak_viewers": 303,
+    "average_viewers_weighted": 224.0,
+    "followers_per_hour_streamed": 3.971631205673759
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
@@ -4325,17 +4248,17 @@
   {
     "calendar_date": "2026-06-09T00:00:00",
     "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.433333333333334,
-    "hours_watched": 1378.7666666666669,
-    "followers_gained": 71.0,
-    "peak_viewers": 420,
-    "average_viewers_weighted": 311.00000000000006,
-    "followers_per_hour_streamed": 16.01503759398496
+    "broadcasts_started": 2,
+    "hours_streamed": 11.55,
+    "hours_watched": 3748.616666666667,
+    "followers_gained": 178.0,
+    "peak_viewers": 454,
+    "average_viewers_weighted": 324.55555555555554,
+    "followers_per_hour_streamed": 15.41125541125541
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 5.983333333333333,
     "hours_watched": 83.76666666666667,
@@ -4392,12 +4315,12 @@
     "calendar_date": "2026-06-09T00:00:00",
     "streamer": "suhmmiee",
     "broadcasts_started": 1,
-    "hours_streamed": 1.0,
-    "hours_watched": 30.0,
-    "followers_gained": 3.0,
-    "peak_viewers": 43,
-    "average_viewers_weighted": 30.0,
-    "followers_per_hour_streamed": 3.0
+    "hours_streamed": 3.0833333333333335,
+    "hours_watched": 135.66666666666669,
+    "followers_gained": 11.000000000000002,
+    "peak_viewers": 68,
+    "average_viewers_weighted": 44.00000000000001,
+    "followers_per_hour_streamed": 3.567567567567568
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
@@ -4446,13 +4369,13 @@
   {
     "calendar_date": "2026-06-09T00:00:00",
     "streamer": "theycallmeleii",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.8666666666666667,
-    "hours_watched": 627.8,
-    "followers_gained": 282.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.416666666666667,
+    "hours_watched": 902.15,
+    "followers_gained": 492.0,
     "peak_viewers": 404,
-    "average_viewers_weighted": 218.99999999999997,
-    "followers_per_hour_streamed": 98.37209302325581
+    "average_viewers_weighted": 204.26037735849056,
+    "followers_per_hour_streamed": 111.39622641509433
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
@@ -4489,7 +4412,7 @@
   },
   {
     "calendar_date": "2026-06-09T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 11.883333333333333,
     "hours_watched": 31074.916666666668,
@@ -4568,12 +4491,12 @@
     "calendar_date": "2026-06-10T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 10.133333333333333,
-    "hours_watched": 2006.4,
-    "followers_gained": 46.0,
-    "peak_viewers": 274,
-    "average_viewers_weighted": 198.00000000000003,
-    "followers_per_hour_streamed": 4.5394736842105265
+    "hours_streamed": 3.0166666666666666,
+    "hours_watched": 286.5833333333333,
+    "followers_gained": 12.0,
+    "peak_viewers": 160,
+    "average_viewers_weighted": 95.0,
+    "followers_per_hour_streamed": 3.977900552486188
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
@@ -4698,6 +4621,17 @@
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
+    "streamer": "jaymommy0",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.5166666666666666,
+    "hours_watched": 134.98333333333332,
+    "followers_gained": 4.0,
+    "peak_viewers": 107,
+    "average_viewers_weighted": 89.0,
+    "followers_per_hour_streamed": 2.6373626373626373
+  },
+  {
+    "calendar_date": "2026-06-10T00:00:00",
     "streamer": "kelo",
     "broadcasts_started": 1,
     "hours_streamed": 4.25,
@@ -4764,17 +4698,6 @@
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
-    "streamer": "nicknayersina",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.7,
-    "hours_watched": 217.6,
-    "followers_gained": 19.0,
-    "peak_viewers": 185,
-    "average_viewers_weighted": 128.0,
-    "followers_per_hour_streamed": 11.176470588235295
-  },
-  {
-    "calendar_date": "2026-06-10T00:00:00",
     "streamer": "noemi",
     "broadcasts_started": 1,
     "hours_streamed": 7.066666666666666,
@@ -4787,13 +4710,13 @@
   {
     "calendar_date": "2026-06-10T00:00:00",
     "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.683333333333334,
-    "hours_watched": 1079.8333333333333,
-    "followers_gained": 21.0,
-    "peak_viewers": 270,
-    "average_viewers_weighted": 189.99999999999997,
-    "followers_per_hour_streamed": 3.695014662756598
+    "broadcasts_started": 2,
+    "hours_streamed": 9.733333333333334,
+    "hours_watched": 1797.65,
+    "followers_gained": 46.0,
+    "peak_viewers": 273,
+    "average_viewers_weighted": 184.69006849315068,
+    "followers_per_hour_streamed": 4.726027397260274
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
@@ -4841,17 +4764,6 @@
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
-    "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.55,
-    "hours_watched": 1288.65,
-    "followers_gained": 84.0,
-    "peak_viewers": 470,
-    "average_viewers_weighted": 363.00000000000006,
-    "followers_per_hour_streamed": 23.661971830985916
-  },
-  {
-    "calendar_date": "2026-06-10T00:00:00",
     "streamer": "rizpyyt",
     "broadcasts_started": 1,
     "hours_streamed": 1.0333333333333334,
@@ -4874,7 +4786,7 @@
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 4.95,
     "hours_watched": 59.4,
@@ -4904,6 +4816,17 @@
     "peak_viewers": 97,
     "average_viewers_weighted": 77.0,
     "followers_per_hour_streamed": 48.0
+  },
+  {
+    "calendar_date": "2026-06-10T00:00:00",
+    "streamer": "suhmmiee",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.0,
+    "hours_watched": 30.0,
+    "followers_gained": 3.0,
+    "peak_viewers": 43,
+    "average_viewers_weighted": 30.0,
+    "followers_per_hour_streamed": 3.0
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
@@ -5052,12 +4975,12 @@
     "calendar_date": "2026-06-11T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 11.233333333333333,
-    "hours_watched": 2066.9333333333334,
-    "followers_gained": 30.0,
-    "peak_viewers": 268,
-    "average_viewers_weighted": 184.00000000000003,
-    "followers_per_hour_streamed": 2.6706231454005938
+    "hours_streamed": 10.133333333333333,
+    "hours_watched": 2006.4,
+    "followers_gained": 46.0,
+    "peak_viewers": 274,
+    "average_viewers_weighted": 198.00000000000003,
+    "followers_per_hour_streamed": 4.5394736842105265
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
@@ -5105,17 +5028,6 @@
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
-    "streamer": "e11ysa",
-    "broadcasts_started": 2,
-    "hours_streamed": 3.3833333333333333,
-    "hours_watched": 857.3833333333333,
-    "followers_gained": 144.0,
-    "peak_viewers": 781,
-    "average_viewers_weighted": 253.41379310344828,
-    "followers_per_hour_streamed": 42.5615763546798
-  },
-  {
-    "calendar_date": "2026-06-11T00:00:00",
     "streamer": "edwardkso",
     "broadcasts_started": 1,
     "hours_streamed": 6.433333333333334,
@@ -5145,17 +5057,6 @@
     "followers_gained": 0.0,
     "peak_viewers": 13,
     "average_viewers_weighted": 6.0,
-    "followers_per_hour_streamed": 0.0
-  },
-  {
-    "calendar_date": "2026-06-11T00:00:00",
-    "streamer": "ijustlovepuzzles",
-    "broadcasts_started": 2,
-    "hours_streamed": 5.4,
-    "hours_watched": 508.2,
-    "followers_gained": 0.0,
-    "peak_viewers": 202,
-    "average_viewers_weighted": 94.1111111111111,
     "followers_per_hour_streamed": 0.0
   },
   {
@@ -5248,17 +5149,6 @@
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.616666666666666,
-    "hours_watched": 522.7166666666667,
-    "followers_gained": 15.0,
-    "peak_viewers": 123,
-    "average_viewers_weighted": 79.00000000000001,
-    "followers_per_hour_streamed": 2.2670025188916876
-  },
-  {
-    "calendar_date": "2026-06-11T00:00:00",
     "streamer": "markusking",
     "broadcasts_started": 1,
     "hours_streamed": 4.233333333333333,
@@ -5293,13 +5183,13 @@
   {
     "calendar_date": "2026-06-11T00:00:00",
     "streamer": "nicknayersina",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.95,
-    "hours_watched": 386.1,
-    "followers_gained": 63.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 3.65,
+    "hours_watched": 603.7,
+    "followers_gained": 82.0,
     "peak_viewers": 280,
-    "average_viewers_weighted": 198.00000000000003,
-    "followers_per_hour_streamed": 32.30769230769231
+    "average_viewers_weighted": 165.39726027397262,
+    "followers_per_hour_streamed": 22.465753424657535
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
@@ -5316,12 +5206,12 @@
     "calendar_date": "2026-06-11T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 7.116666666666666,
-    "hours_watched": 1430.45,
-    "followers_gained": 28.0,
-    "peak_viewers": 293,
-    "average_viewers_weighted": 201.00000000000003,
-    "followers_per_hour_streamed": 3.934426229508197
+    "hours_streamed": 5.683333333333334,
+    "hours_watched": 1079.8333333333333,
+    "followers_gained": 21.0,
+    "peak_viewers": 270,
+    "average_viewers_weighted": 189.99999999999997,
+    "followers_per_hour_streamed": 3.695014662756598
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
@@ -5333,6 +5223,17 @@
     "peak_viewers": 1905,
     "average_viewers_weighted": 1137.0,
     "followers_per_hour_streamed": 75.97733711048159
+  },
+  {
+    "calendar_date": "2026-06-11T00:00:00",
+    "streamer": "regtoofunny",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.55,
+    "hours_watched": 1288.65,
+    "followers_gained": 84.0,
+    "peak_viewers": 470,
+    "average_viewers_weighted": 363.00000000000006,
+    "followers_per_hour_streamed": 23.661971830985916
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
@@ -5388,17 +5289,6 @@
     "peak_viewers": 87,
     "average_viewers_weighted": 67.99999999999999,
     "followers_per_hour_streamed": 63.599999999999994
-  },
-  {
-    "calendar_date": "2026-06-11T00:00:00",
-    "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.4166666666666665,
-    "hours_watched": 65.25,
-    "followers_gained": 11.0,
-    "peak_viewers": 42,
-    "average_viewers_weighted": 27.0,
-    "followers_per_hour_streamed": 4.551724137931035
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
@@ -5479,7 +5369,7 @@
   },
   {
     "calendar_date": "2026-06-11T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 14.2,
     "hours_watched": 89090.8,
@@ -5534,6 +5424,17 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
+    "streamer": "bonita",
+    "broadcasts_started": 1,
+    "hours_streamed": 11.233333333333333,
+    "hours_watched": 2066.9333333333334,
+    "followers_gained": 30.0,
+    "peak_viewers": 268,
+    "average_viewers_weighted": 184.00000000000003,
+    "followers_per_hour_streamed": 2.6706231454005938
+  },
+  {
+    "calendar_date": "2026-06-12T00:00:00",
     "streamer": "bonnie",
     "broadcasts_started": 1,
     "hours_streamed": 5.583333333333333,
@@ -5564,17 +5465,6 @@
     "peak_viewers": 7745,
     "average_viewers_weighted": 5927.000000000001,
     "followers_per_hour_streamed": 248.13559322033905
-  },
-  {
-    "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "catrnado",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.9166666666666665,
-    "hours_watched": 236.25,
-    "followers_gained": 5.0,
-    "peak_viewers": 134,
-    "average_viewers_weighted": 81.0,
-    "followers_per_hour_streamed": 1.7142857142857144
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
@@ -5633,6 +5523,17 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
+    "streamer": "e11ysa",
+    "broadcasts_started": 2,
+    "hours_streamed": 3.3833333333333333,
+    "hours_watched": 857.3833333333333,
+    "followers_gained": 144.0,
+    "peak_viewers": 781,
+    "average_viewers_weighted": 253.41379310344828,
+    "followers_per_hour_streamed": 42.5615763546798
+  },
+  {
+    "calendar_date": "2026-06-12T00:00:00",
     "streamer": "edwardkso",
     "broadcasts_started": 1,
     "hours_streamed": 7.533333333333333,
@@ -5652,6 +5553,17 @@
     "peak_viewers": 177,
     "average_viewers_weighted": 66.00000000000001,
     "followers_per_hour_streamed": 10.726256983240225
+  },
+  {
+    "calendar_date": "2026-06-12T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 2,
+    "hours_streamed": 5.4,
+    "hours_watched": 508.2,
+    "followers_gained": 0.0,
+    "peak_viewers": 202,
+    "average_viewers_weighted": 94.1111111111111,
+    "followers_per_hour_streamed": 0.0
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
@@ -5711,13 +5623,13 @@
   {
     "calendar_date": "2026-06-12T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 14.05,
-    "hours_watched": 730.6,
-    "followers_gained": 26.0,
-    "peak_viewers": 104,
-    "average_viewers_weighted": 52.0,
-    "followers_per_hour_streamed": 1.8505338078291813
+    "broadcasts_started": 2,
+    "hours_streamed": 20.666666666666668,
+    "hours_watched": 1253.3166666666666,
+    "followers_gained": 41.0,
+    "peak_viewers": 123,
+    "average_viewers_weighted": 60.644354838709674,
+    "followers_per_hour_streamed": 1.9838709677419353
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
@@ -5765,17 +5677,6 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.383333333333334,
-    "hours_watched": 555.35,
-    "followers_gained": 11.0,
-    "peak_viewers": 138,
-    "average_viewers_weighted": 87.0,
-    "followers_per_hour_streamed": 1.723237597911227
-  },
-  {
-    "calendar_date": "2026-06-12T00:00:00",
     "streamer": "notbilzo",
     "broadcasts_started": 1,
     "hours_streamed": 4.916666666666667,
@@ -5789,12 +5690,12 @@
     "calendar_date": "2026-06-12T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 14.3,
-    "hours_watched": 2902.9,
-    "followers_gained": 64.0,
-    "peak_viewers": 276,
-    "average_viewers_weighted": 203.0,
-    "followers_per_hour_streamed": 4.475524475524475
+    "hours_streamed": 7.116666666666666,
+    "hours_watched": 1430.45,
+    "followers_gained": 28.0,
+    "peak_viewers": 293,
+    "average_viewers_weighted": 201.00000000000003,
+    "followers_per_hour_streamed": 3.934426229508197
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
@@ -5864,7 +5765,7 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 2,
     "hours_streamed": 0.7666666666666667,
     "hours_watched": 17.616666666666667,
@@ -5909,13 +5810,13 @@
   {
     "calendar_date": "2026-06-12T00:00:00",
     "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.5166666666666666,
-    "hours_watched": 100.66666666666669,
-    "followers_gained": 11.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.933333333333334,
+    "hours_watched": 165.91666666666669,
+    "followers_gained": 22.0,
     "peak_viewers": 80,
-    "average_viewers_weighted": 40.00000000000001,
-    "followers_per_hour_streamed": 4.370860927152318
+    "average_viewers_weighted": 33.63175675675676,
+    "followers_per_hour_streamed": 4.45945945945946
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
@@ -6029,7 +5930,7 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 14.25,
     "hours_watched": 53879.25,
@@ -6081,17 +5982,6 @@
     "peak_viewers": 14,
     "average_viewers_weighted": 8.0,
     "followers_per_hour_streamed": 0.8333333333333334
-  },
-  {
-    "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "aishahsofey",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.8166666666666667,
-    "hours_watched": 1609.5666666666664,
-    "followers_gained": 406.99999999999994,
-    "peak_viewers": 1176,
-    "average_viewers_weighted": 885.9999999999999,
-    "followers_per_hour_streamed": 224.0366972477064
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
@@ -6158,6 +6048,17 @@
     "peak_viewers": 6931,
     "average_viewers_weighted": 4636.999999999999,
     "followers_per_hour_streamed": 153.15254237288136
+  },
+  {
+    "calendar_date": "2026-06-13T00:00:00",
+    "streamer": "catrnado",
+    "broadcasts_started": 1,
+    "hours_streamed": 2.9166666666666665,
+    "hours_watched": 236.25,
+    "followers_gained": 5.0,
+    "peak_viewers": 134,
+    "average_viewers_weighted": 81.0,
+    "followers_per_hour_streamed": 1.7142857142857144
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
@@ -6282,17 +6183,6 @@
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.3333333333333335,
-    "hours_watched": 112.00000000000003,
-    "followers_gained": 5.000000000000001,
-    "peak_viewers": 63,
-    "average_viewers_weighted": 48.00000000000001,
-    "followers_per_hour_streamed": 2.1428571428571432
-  },
-  {
-    "calendar_date": "2026-06-13T00:00:00",
     "streamer": "markusking",
     "broadcasts_started": 1,
     "hours_streamed": 5.083333333333333,
@@ -6338,13 +6228,13 @@
   {
     "calendar_date": "2026-06-13T00:00:00",
     "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.233333333333333,
-    "hours_watched": 781.2,
-    "followers_gained": 3.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 13.616666666666667,
+    "hours_watched": 1336.5500000000002,
+    "followers_gained": 14.0,
     "peak_viewers": 188,
-    "average_viewers_weighted": 108.0,
-    "followers_per_hour_streamed": 0.4147465437788018
+    "average_viewers_weighted": 98.15544675642596,
+    "followers_per_hour_streamed": 1.0281517747858018
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
@@ -6372,12 +6262,12 @@
     "calendar_date": "2026-06-13T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 6.333333333333333,
-    "hours_watched": 1285.6666666666667,
-    "followers_gained": 41.0,
-    "peak_viewers": 320,
-    "average_viewers_weighted": 203.00000000000003,
-    "followers_per_hour_streamed": 6.473684210526316
+    "hours_streamed": 14.3,
+    "hours_watched": 2902.9,
+    "followers_gained": 64.0,
+    "peak_viewers": 276,
+    "average_viewers_weighted": 203.0,
+    "followers_per_hour_streamed": 4.475524475524475
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
@@ -6422,28 +6312,6 @@
     "peak_viewers": 763,
     "average_viewers_weighted": 610.0000000000001,
     "followers_per_hour_streamed": 120.56603773584906
-  },
-  {
-    "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "suburbbaby",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.8333333333333335,
-    "hours_watched": 1090.8333333333335,
-    "followers_gained": 328.00000000000006,
-    "peak_viewers": 462,
-    "average_viewers_weighted": 385.00000000000006,
-    "followers_per_hour_streamed": 115.76470588235296
-  },
-  {
-    "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.8333333333333334,
-    "hours_watched": 25.0,
-    "followers_gained": 4.0,
-    "peak_viewers": 43,
-    "average_viewers_weighted": 30.0,
-    "followers_per_hour_streamed": 4.8
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
@@ -6535,7 +6403,7 @@
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 25.966666666666665,
     "hours_watched": 98387.7,
@@ -6576,6 +6444,17 @@
     "peak_viewers": 19,
     "average_viewers_weighted": 10.0,
     "followers_per_hour_streamed": 2.0210526315789474
+  },
+  {
+    "calendar_date": "2026-06-14T00:00:00",
+    "streamer": "aishahsofey",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.8166666666666667,
+    "hours_watched": 1609.5666666666664,
+    "followers_gained": 406.99999999999994,
+    "peak_viewers": 1176,
+    "average_viewers_weighted": 885.9999999999999,
+    "followers_per_hour_streamed": 224.0366972477064
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
@@ -6811,13 +6690,13 @@
   {
     "calendar_date": "2026-06-14T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.883333333333334,
-    "hours_watched": 567.6,
-    "followers_gained": 15.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 10.216666666666667,
+    "hours_watched": 679.6,
+    "followers_gained": 20.0,
     "peak_viewers": 135,
-    "average_viewers_weighted": 72.0,
-    "followers_per_hour_streamed": 1.9027484143763214
+    "average_viewers_weighted": 66.51876019575856,
+    "followers_per_hour_streamed": 1.9575856443719413
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
@@ -6876,25 +6755,14 @@
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
-    "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.066666666666666,
-    "hours_watched": 671.3333333333334,
-    "followers_gained": 20.0,
-    "peak_viewers": 126,
-    "average_viewers_weighted": 95.00000000000001,
-    "followers_per_hour_streamed": 2.8301886792452833
-  },
-  {
-    "calendar_date": "2026-06-14T00:00:00",
     "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.333333333333334,
-    "hours_watched": 1858.3333333333333,
-    "followers_gained": 42.0,
-    "peak_viewers": 290,
-    "average_viewers_weighted": 222.99999999999997,
-    "followers_per_hour_streamed": 5.04
+    "broadcasts_started": 2,
+    "hours_streamed": 14.666666666666668,
+    "hours_watched": 3144.0,
+    "followers_gained": 83.0,
+    "peak_viewers": 320,
+    "average_viewers_weighted": 214.36363636363635,
+    "followers_per_hour_streamed": 5.659090909090908
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
@@ -6954,24 +6822,24 @@
   {
     "calendar_date": "2026-06-14T00:00:00",
     "streamer": "suburbbaby",
-    "broadcasts_started": 2,
-    "hours_streamed": 3.7666666666666666,
-    "hours_watched": 1882.2,
-    "followers_gained": 1511.0,
+    "broadcasts_started": 3,
+    "hours_streamed": 6.6,
+    "hours_watched": 2973.0333333333338,
+    "followers_gained": 1839.0,
     "peak_viewers": 776,
-    "average_viewers_weighted": 499.69911504424783,
-    "followers_per_hour_streamed": 401.15044247787614
+    "average_viewers_weighted": 450.4595959595961,
+    "followers_per_hour_streamed": 278.6363636363636
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
     "streamer": "suhmmiee",
     "broadcasts_started": 1,
-    "hours_streamed": 1.6333333333333333,
-    "hours_watched": 71.86666666666666,
-    "followers_gained": 12.0,
-    "peak_viewers": 61,
-    "average_viewers_weighted": 44.0,
-    "followers_per_hour_streamed": 7.346938775510204
+    "hours_streamed": 0.8333333333333334,
+    "hours_watched": 25.0,
+    "followers_gained": 4.0,
+    "peak_viewers": 43,
+    "average_viewers_weighted": 30.0,
+    "followers_per_hour_streamed": 4.8
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
@@ -7196,13 +7064,13 @@
   {
     "calendar_date": "2026-06-15T00:00:00",
     "streamer": "e11ysa",
-    "broadcasts_started": 2,
-    "hours_streamed": 3.3,
-    "hours_watched": 640.05,
-    "followers_gained": 68.0,
-    "peak_viewers": 469,
-    "average_viewers_weighted": 193.95454545454544,
-    "followers_per_hour_streamed": 20.606060606060606
+    "broadcasts_started": 1,
+    "hours_streamed": 2.15,
+    "hours_watched": 369.8,
+    "followers_gained": 26.0,
+    "peak_viewers": 428,
+    "average_viewers_weighted": 172.0,
+    "followers_per_hour_streamed": 12.093023255813954
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
@@ -7360,6 +7228,17 @@
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
+    "streamer": "mookie",
+    "broadcasts_started": 1,
+    "hours_streamed": 7.066666666666666,
+    "hours_watched": 671.3333333333334,
+    "followers_gained": 20.0,
+    "peak_viewers": 126,
+    "average_viewers_weighted": 95.00000000000001,
+    "followers_per_hour_streamed": 2.8301886792452833
+  },
+  {
+    "calendar_date": "2026-06-15T00:00:00",
     "streamer": "officedrummer",
     "broadcasts_started": 1,
     "hours_streamed": 1.7333333333333334,
@@ -7448,14 +7327,14 @@
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
-    "streamer": "suburbbaby",
+    "streamer": "suhmmiee",
     "broadcasts_started": 1,
-    "hours_streamed": 1.3,
-    "hours_watched": 267.8,
-    "followers_gained": 221.0,
-    "peak_viewers": 338,
-    "average_viewers_weighted": 206.0,
-    "followers_per_hour_streamed": 170.0
+    "hours_streamed": 1.6333333333333333,
+    "hours_watched": 71.86666666666666,
+    "followers_gained": 12.0,
+    "peak_viewers": 61,
+    "average_viewers_weighted": 44.0,
+    "followers_per_hour_streamed": 7.346938775510204
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
@@ -7536,7 +7415,7 @@
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 9.2,
     "hours_watched": 26284.4,
@@ -7566,17 +7445,6 @@
     "peak_viewers": 17,
     "average_viewers_weighted": 9.999999999999998,
     "followers_per_hour_streamed": 0.0
-  },
-  {
-    "calendar_date": "2026-06-16T00:00:00",
-    "streamer": "amberrtyson",
-    "broadcasts_started": 1,
-    "hours_streamed": 33.0,
-    "hours_watched": 3432.0,
-    "followers_gained": 440.0,
-    "peak_viewers": 700,
-    "average_viewers_weighted": 104.0,
-    "followers_per_hour_streamed": 13.333333333333334
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
@@ -7614,13 +7482,13 @@
   {
     "calendar_date": "2026-06-16T00:00:00",
     "streamer": "bonita",
-    "broadcasts_started": 2,
-    "hours_streamed": 13.15,
-    "hours_watched": 1771.6166666666668,
-    "followers_gained": 65.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 8.616666666666667,
+    "hours_watched": 1146.0166666666669,
+    "followers_gained": 44.0,
     "peak_viewers": 204,
-    "average_viewers_weighted": 134.723700887199,
-    "followers_per_hour_streamed": 4.942965779467681
+    "average_viewers_weighted": 133.00000000000003,
+    "followers_per_hour_streamed": 5.106382978723404
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
@@ -7709,6 +7577,17 @@
     "peak_viewers": 18,
     "average_viewers_weighted": 9.0,
     "followers_per_hour_streamed": 2.4657534246575343
+  },
+  {
+    "calendar_date": "2026-06-16T00:00:00",
+    "streamer": "e11ysa",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.15,
+    "hours_watched": 270.25,
+    "followers_gained": 42.0,
+    "peak_viewers": 469,
+    "average_viewers_weighted": 235.00000000000003,
+    "followers_per_hour_streamed": 36.52173913043479
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
@@ -7954,17 +7833,6 @@
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 9.4,
-    "hours_watched": 2556.8,
-    "followers_gained": 89.0,
-    "peak_viewers": 431,
-    "average_viewers_weighted": 272.0,
-    "followers_per_hour_streamed": 9.46808510638298
-  },
-  {
-    "calendar_date": "2026-06-16T00:00:00",
     "streamer": "raphaelsololive",
     "broadcasts_started": 1,
     "hours_streamed": 7.283333333333333,
@@ -7998,7 +7866,7 @@
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 5.05,
     "hours_watched": 60.6,
@@ -8021,13 +7889,13 @@
   {
     "calendar_date": "2026-06-16T00:00:00",
     "streamer": "suburbbaby",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.3,
-    "hours_watched": 1178.1,
-    "followers_gained": 559.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.6,
+    "hours_watched": 1445.8999999999999,
+    "followers_gained": 780.0,
     "peak_viewers": 481,
-    "average_viewers_weighted": 357.0,
-    "followers_per_hour_streamed": 169.3939393939394
+    "average_viewers_weighted": 314.32608695652175,
+    "followers_per_hour_streamed": 169.56521739130437
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
@@ -8163,7 +8031,7 @@
   },
   {
     "calendar_date": "2026-06-16T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 3.816666666666667,
     "hours_watched": 8202.016666666666,
@@ -8240,6 +8108,17 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
+    "streamer": "amberrtyson",
+    "broadcasts_started": 1,
+    "hours_streamed": 33.0,
+    "hours_watched": 3432.0,
+    "followers_gained": 440.0,
+    "peak_viewers": 700,
+    "average_viewers_weighted": 104.0,
+    "followers_per_hour_streamed": 13.333333333333334
+  },
+  {
+    "calendar_date": "2026-06-17T00:00:00",
     "streamer": "andrewuhrik",
     "broadcasts_started": 1,
     "hours_streamed": 0.8833333333333333,
@@ -8264,12 +8143,12 @@
     "calendar_date": "2026-06-17T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 8.083333333333334,
-    "hours_watched": 1535.8333333333333,
-    "followers_gained": 68.0,
-    "peak_viewers": 269,
-    "average_viewers_weighted": 189.99999999999997,
-    "followers_per_hour_streamed": 8.412371134020617
+    "hours_streamed": 4.533333333333333,
+    "hours_watched": 625.6,
+    "followers_gained": 21.0,
+    "peak_viewers": 189,
+    "average_viewers_weighted": 138.0,
+    "followers_per_hour_streamed": 4.632352941176471
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
@@ -8406,24 +8285,24 @@
   {
     "calendar_date": "2026-06-17T00:00:00",
     "streamer": "fumibean",
-    "broadcasts_started": 2,
-    "hours_streamed": 5.116666666666666,
-    "hours_watched": 40.666666666666664,
-    "followers_gained": -2.220446049250313e-16,
+    "broadcasts_started": 1,
+    "hours_streamed": 4.85,
+    "hours_watched": 38.8,
+    "followers_gained": 1.0,
     "peak_viewers": 15,
-    "average_viewers_weighted": 7.947882736156352,
-    "followers_per_hour_streamed": -4.339633972476182e-17
+    "average_viewers_weighted": 8.0,
+    "followers_per_hour_streamed": 0.2061855670103093
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
     "streamer": "ilikehaskell",
-    "broadcasts_started": 2,
-    "hours_streamed": 2.15,
-    "hours_watched": 2193.2,
-    "followers_gained": 1750.0,
-    "peak_viewers": 1426,
-    "average_viewers_weighted": 1020.0930232558139,
-    "followers_per_hour_streamed": 813.953488372093
+    "broadcasts_started": 1,
+    "hours_streamed": 0.7,
+    "hours_watched": 485.1,
+    "followers_gained": 547.0,
+    "peak_viewers": 1161,
+    "average_viewers_weighted": 693.0000000000001,
+    "followers_per_hour_streamed": 781.4285714285714
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
@@ -8603,17 +8482,6 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.15,
-    "hours_watched": 528.9,
-    "followers_gained": 15.0,
-    "peak_viewers": 112,
-    "average_viewers_weighted": 85.99999999999999,
-    "followers_per_hour_streamed": 2.4390243902439024
-  },
-  {
-    "calendar_date": "2026-06-17T00:00:00",
     "streamer": "noemi",
     "broadcasts_started": 2,
     "hours_streamed": 7.25,
@@ -8644,6 +8512,17 @@
     "peak_viewers": 252,
     "average_viewers_weighted": 142.00952380952378,
     "followers_per_hour_streamed": 44.00000000000001
+  },
+  {
+    "calendar_date": "2026-06-17T00:00:00",
+    "streamer": "paybae",
+    "broadcasts_started": 1,
+    "hours_streamed": 9.4,
+    "hours_watched": 2556.8,
+    "followers_gained": 89.0,
+    "peak_viewers": 431,
+    "average_viewers_weighted": 272.0,
+    "followers_per_hour_streamed": 9.46808510638298
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
@@ -8702,7 +8581,7 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 8.466666666666667,
     "hours_watched": 135.46666666666667,
@@ -8721,17 +8600,6 @@
     "peak_viewers": 783,
     "average_viewers_weighted": 608.0000000000001,
     "followers_per_hour_streamed": 54.905660377358494
-  },
-  {
-    "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "sierrasprague",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.1666666666666665,
-    "hours_watched": 41.16666666666666,
-    "followers_gained": 4.0,
-    "peak_viewers": 29,
-    "average_viewers_weighted": 12.999999999999998,
-    "followers_per_hour_streamed": 1.2631578947368423
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
@@ -8900,7 +8768,7 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 15.083333333333334,
     "hours_watched": 45883.5,
@@ -9023,12 +8891,12 @@
     "calendar_date": "2026-06-18T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 3.7,
-    "hours_watched": 403.3,
-    "followers_gained": 20.0,
-    "peak_viewers": 175,
-    "average_viewers_weighted": 109.0,
-    "followers_per_hour_streamed": 5.405405405405405
+    "hours_streamed": 8.083333333333334,
+    "hours_watched": 1535.8333333333333,
+    "followers_gained": 68.0,
+    "peak_viewers": 269,
+    "average_viewers_weighted": 189.99999999999997,
+    "followers_per_hour_streamed": 8.412371134020617
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
@@ -9109,17 +8977,6 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "elinameng",
-    "broadcasts_started": 2,
-    "hours_streamed": 2.3,
-    "hours_watched": 27.75,
-    "followers_gained": 8.0,
-    "peak_viewers": 23,
-    "average_viewers_weighted": 12.06521739130435,
-    "followers_per_hour_streamed": 3.4782608695652177
-  },
-  {
-    "calendar_date": "2026-06-18T00:00:00",
     "streamer": "flako",
     "broadcasts_started": 1,
     "hours_streamed": 8.133333333333333,
@@ -9132,35 +8989,24 @@
   {
     "calendar_date": "2026-06-18T00:00:00",
     "streamer": "fumibean",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.9666666666666666,
-    "hours_watched": 17.700000000000003,
-    "followers_gained": 3.000000000000001,
+    "broadcasts_started": 2,
+    "hours_streamed": 2.2333333333333334,
+    "hours_watched": 19.56666666666667,
+    "followers_gained": 2.000000000000001,
     "peak_viewers": 14,
-    "average_viewers_weighted": 9.000000000000002,
-    "followers_per_hour_streamed": 1.52542372881356
-  },
-  {
-    "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "ijustlovepuzzles",
-    "broadcasts_started": 1,
-    "hours_streamed": 16.3,
-    "hours_watched": 3781.6,
-    "followers_gained": 38.0,
-    "peak_viewers": 490,
-    "average_viewers_weighted": 231.99999999999997,
-    "followers_per_hour_streamed": 2.331288343558282
+    "average_viewers_weighted": 8.761194029850747,
+    "followers_per_hour_streamed": 0.8955223880597019
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
     "streamer": "ilikehaskell",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.5,
-    "hours_watched": 3082.5,
-    "followers_gained": 5290.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 2.95,
+    "hours_watched": 4790.6,
+    "followers_gained": 6493.0,
     "peak_viewers": 2472,
-    "average_viewers_weighted": 2055.0,
-    "followers_per_hour_streamed": 3526.6666666666665
+    "average_viewers_weighted": 1623.9322033898306,
+    "followers_per_hour_streamed": 2201.016949152542
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
@@ -9263,14 +9109,14 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "mcqueennlive",
+    "streamer": "mookie",
     "broadcasts_started": 1,
-    "hours_streamed": 0.45,
-    "hours_watched": 80.55,
-    "followers_gained": 18.0,
-    "peak_viewers": 259,
-    "average_viewers_weighted": 179.0,
-    "followers_per_hour_streamed": 40.0
+    "hours_streamed": 6.15,
+    "hours_watched": 528.9,
+    "followers_gained": 15.0,
+    "peak_viewers": 112,
+    "average_viewers_weighted": 85.99999999999999,
+    "followers_per_hour_streamed": 2.4390243902439024
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
@@ -9329,17 +9175,6 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.3,
-    "hours_watched": 1828.5,
-    "followers_gained": 91.0,
-    "peak_viewers": 427,
-    "average_viewers_weighted": 345.0,
-    "followers_per_hour_streamed": 17.169811320754718
-  },
-  {
-    "calendar_date": "2026-06-18T00:00:00",
     "streamer": "rizpyyt",
     "broadcasts_started": 1,
     "hours_streamed": 1.4833333333333334,
@@ -9373,7 +9208,7 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 3.45,
     "hours_watched": 51.75,
@@ -9381,6 +9216,17 @@
     "peak_viewers": 22,
     "average_viewers_weighted": 15.0,
     "followers_per_hour_streamed": 0.2898550724637681
+  },
+  {
+    "calendar_date": "2026-06-18T00:00:00",
+    "streamer": "sierrasprague",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.1666666666666665,
+    "hours_watched": 41.16666666666666,
+    "followers_gained": 4.0,
+    "peak_viewers": 29,
+    "average_viewers_weighted": 12.999999999999998,
+    "followers_per_hour_streamed": 1.2631578947368423
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
@@ -9425,17 +9271,6 @@
     "peak_viewers": 366,
     "average_viewers_weighted": 241.99999999999997,
     "followers_per_hour_streamed": 244.7191011235955
-  },
-  {
-    "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.0,
-    "hours_watched": 68.0,
-    "followers_gained": 16.0,
-    "peak_viewers": 52,
-    "average_viewers_weighted": 34.0,
-    "followers_per_hour_streamed": 8.0
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
@@ -9549,7 +9384,7 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 12.416666666666666,
     "hours_watched": 34369.333333333336,
@@ -9639,12 +9474,12 @@
     "calendar_date": "2026-06-19T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
-    "hours_streamed": 8.283333333333333,
-    "hours_watched": 1913.45,
-    "followers_gained": 3.0,
-    "peak_viewers": 441,
-    "average_viewers_weighted": 231.0,
-    "followers_per_hour_streamed": 0.36217303822937624
+    "hours_streamed": 3.7,
+    "hours_watched": 403.3,
+    "followers_gained": 20.0,
+    "peak_viewers": 175,
+    "average_viewers_weighted": 109.0,
+    "followers_per_hour_streamed": 5.405405405405405
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
@@ -9715,13 +9550,13 @@
   {
     "calendar_date": "2026-06-19T00:00:00",
     "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.8666666666666667,
-    "hours_watched": 131.4666666666667,
-    "followers_gained": 11.000000000000002,
+    "broadcasts_started": 3,
+    "hours_streamed": 6.166666666666667,
+    "hours_watched": 159.2166666666667,
+    "followers_gained": 19.0,
     "peak_viewers": 186,
-    "average_viewers_weighted": 34.00000000000001,
-    "followers_per_hour_streamed": 2.844827586206897
+    "average_viewers_weighted": 25.81891891891892,
+    "followers_per_hour_streamed": 3.081081081081081
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
@@ -9744,6 +9579,17 @@
     "peak_viewers": 16,
     "average_viewers_weighted": 9.0,
     "followers_per_hour_streamed": 0.0
+  },
+  {
+    "calendar_date": "2026-06-19T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 1,
+    "hours_streamed": 16.3,
+    "hours_watched": 3781.6,
+    "followers_gained": 38.0,
+    "peak_viewers": 490,
+    "average_viewers_weighted": 231.99999999999997,
+    "followers_per_hour_streamed": 2.331288343558282
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
@@ -9857,6 +9703,17 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
+    "streamer": "mcqueennlive",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.45,
+    "hours_watched": 80.55,
+    "followers_gained": 18.0,
+    "peak_viewers": 259,
+    "average_viewers_weighted": 179.0,
+    "followers_per_hour_streamed": 40.0
+  },
+  {
+    "calendar_date": "2026-06-19T00:00:00",
     "streamer": "mookie",
     "broadcasts_started": 1,
     "hours_streamed": 6.933333333333334,
@@ -9901,17 +9758,6 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.866666666666666,
-    "hours_watched": 1809.3333333333333,
-    "followers_gained": 10.0,
-    "peak_viewers": 304,
-    "average_viewers_weighted": 230.0,
-    "followers_per_hour_streamed": 1.2711864406779663
-  },
-  {
-    "calendar_date": "2026-06-19T00:00:00",
     "streamer": "raphaelsololive",
     "broadcasts_started": 1,
     "hours_streamed": 7.516666666666667,
@@ -9946,13 +9792,13 @@
   {
     "calendar_date": "2026-06-19T00:00:00",
     "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.4,
-    "hours_watched": 371.0,
-    "followers_gained": 29.0,
-    "peak_viewers": 378,
-    "average_viewers_weighted": 265.0,
-    "followers_per_hour_streamed": 20.714285714285715
+    "broadcasts_started": 2,
+    "hours_streamed": 6.699999999999999,
+    "hours_watched": 2199.5,
+    "followers_gained": 120.0,
+    "peak_viewers": 427,
+    "average_viewers_weighted": 328.2835820895523,
+    "followers_per_hour_streamed": 17.910447761194032
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
@@ -9978,7 +9824,7 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 8.2,
     "hours_watched": 164.0,
@@ -10000,14 +9846,14 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "suburbbaby",
+    "streamer": "suhmmiee",
     "broadcasts_started": 1,
-    "hours_streamed": 1.8166666666666667,
-    "hours_watched": 715.7666666666665,
-    "followers_gained": 685.9999999999999,
-    "peak_viewers": 616,
-    "average_viewers_weighted": 393.99999999999994,
-    "followers_per_hour_streamed": 377.6146788990825
+    "hours_streamed": 2.0,
+    "hours_watched": 68.0,
+    "followers_gained": 16.0,
+    "peak_viewers": 52,
+    "average_viewers_weighted": 34.0,
+    "followers_per_hour_streamed": 8.0
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
@@ -10121,7 +9967,7 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 11.083333333333334,
     "hours_watched": 47104.16666666666,
@@ -10195,6 +10041,17 @@
     "peak_viewers": 25,
     "average_viewers_weighted": 17.0,
     "followers_per_hour_streamed": 5.769230769230769
+  },
+  {
+    "calendar_date": "2026-06-20T00:00:00",
+    "streamer": "bonita",
+    "broadcasts_started": 1,
+    "hours_streamed": 8.283333333333333,
+    "hours_watched": 1913.45,
+    "followers_gained": 3.0,
+    "peak_viewers": 441,
+    "average_viewers_weighted": 231.0,
+    "followers_per_hour_streamed": 0.36217303822937624
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
@@ -10287,13 +10144,13 @@
   {
     "calendar_date": "2026-06-20T00:00:00",
     "streamer": "jaymommy0",
-    "broadcasts_started": 2,
-    "hours_streamed": 10.483333333333334,
-    "hours_watched": 1173.7333333333333,
-    "followers_gained": 46.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 2.5166666666666666,
+    "hours_watched": 337.2333333333333,
+    "followers_gained": 22.0,
     "peak_viewers": 183,
-    "average_viewers_weighted": 111.9618441971383,
-    "followers_per_hour_streamed": 4.387917329093799
+    "average_viewers_weighted": 134.0,
+    "followers_per_hour_streamed": 8.741721854304636
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
@@ -10419,13 +10276,13 @@
   {
     "calendar_date": "2026-06-20T00:00:00",
     "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.416666666666667,
-    "hours_watched": 1201.5,
-    "followers_gained": 11.0,
-    "peak_viewers": 247,
-    "average_viewers_weighted": 162.0,
-    "followers_per_hour_streamed": 1.4831460674157302
+    "broadcasts_started": 2,
+    "hours_streamed": 15.283333333333333,
+    "hours_watched": 3010.833333333333,
+    "followers_gained": 21.0,
+    "peak_viewers": 304,
+    "average_viewers_weighted": 197.00109051254088,
+    "followers_per_hour_streamed": 1.3740458015267176
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
@@ -10507,13 +10364,13 @@
   {
     "calendar_date": "2026-06-20T00:00:00",
     "streamer": "suburbbaby",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.083333333333333,
-    "hours_watched": 1510.8333333333333,
-    "followers_gained": 1054.0,
-    "peak_viewers": 499,
-    "average_viewers_weighted": 370.0,
-    "followers_per_hour_streamed": 258.12244897959187
+    "broadcasts_started": 2,
+    "hours_streamed": 5.8999999999999995,
+    "hours_watched": 2226.6,
+    "followers_gained": 1740.0,
+    "peak_viewers": 616,
+    "average_viewers_weighted": 377.3898305084746,
+    "followers_per_hour_streamed": 294.91525423728814
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
@@ -10616,7 +10473,7 @@
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 10.233333333333333,
     "hours_watched": 50112.63333333333,
@@ -10759,17 +10616,6 @@
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.45,
-    "hours_watched": 39.2,
-    "followers_gained": 9.0,
-    "peak_viewers": 26,
-    "average_viewers_weighted": 16.0,
-    "followers_per_hour_streamed": 3.6734693877551017
-  },
-  {
-    "calendar_date": "2026-06-21T00:00:00",
     "streamer": "ilikehaskell",
     "broadcasts_started": 1,
     "hours_streamed": 3.8,
@@ -10778,6 +10624,17 @@
     "peak_viewers": 3911,
     "average_viewers_weighted": 2880.0,
     "followers_per_hour_streamed": 1844.4736842105265
+  },
+  {
+    "calendar_date": "2026-06-21T00:00:00",
+    "streamer": "jaymommy0",
+    "broadcasts_started": 1,
+    "hours_streamed": 7.966666666666667,
+    "hours_watched": 836.5,
+    "followers_gained": 24.0,
+    "peak_viewers": 145,
+    "average_viewers_weighted": 105.0,
+    "followers_per_hour_streamed": 3.01255230125523
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
@@ -10869,17 +10726,6 @@
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.083333333333333,
-    "hours_watched": 1345.8333333333333,
-    "followers_gained": 46.0,
-    "peak_viewers": 263,
-    "average_viewers_weighted": 190.0,
-    "followers_per_hour_streamed": 6.4941176470588236
-  },
-  {
-    "calendar_date": "2026-06-21T00:00:00",
     "streamer": "plaqueboymax",
     "broadcasts_started": 1,
     "hours_streamed": 5.35,
@@ -10899,17 +10745,6 @@
     "peak_viewers": 105,
     "average_viewers_weighted": 71.0,
     "followers_per_hour_streamed": 18.713826366559484
-  },
-  {
-    "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "rawdogmoon",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.283333333333333,
-    "hours_watched": 3117.1666666666665,
-    "followers_gained": 158.0,
-    "peak_viewers": 851,
-    "average_viewers_weighted": 590.0,
-    "followers_per_hour_streamed": 29.90536277602524
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
@@ -10954,17 +10789,6 @@
     "peak_viewers": 959,
     "average_viewers_weighted": 750.0,
     "followers_per_hour_streamed": 86.50485436893204
-  },
-  {
-    "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.3833333333333333,
-    "hours_watched": 26.216666666666665,
-    "followers_gained": 3.0,
-    "peak_viewers": 23,
-    "average_viewers_weighted": 11.0,
-    "followers_per_hour_streamed": 1.2587412587412588
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
@@ -11067,29 +10891,18 @@
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "yonnajay",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.2,
-    "hours_watched": 9048.6,
-    "followers_gained": 1590.0,
-    "peak_viewers": 4786,
-    "average_viewers_weighted": 4113.0,
-    "followers_per_hour_streamed": 722.7272727272726
-  },
-  {
-    "calendar_date": "2026-06-21T00:00:00",
     "streamer": "ysabellagrace",
-    "broadcasts_started": 2,
-    "hours_streamed": 9.633333333333333,
-    "hours_watched": 307.0333333333333,
-    "followers_gained": 12.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 5.866666666666666,
+    "hours_watched": 205.33333333333331,
+    "followers_gained": 5.0,
     "peak_viewers": 74,
-    "average_viewers_weighted": 31.8719723183391,
-    "followers_per_hour_streamed": 1.245674740484429
+    "average_viewers_weighted": 35.0,
+    "followers_per_hour_streamed": 0.8522727272727273
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 11.466666666666667,
     "hours_watched": 69774.66666666666,
@@ -11244,13 +11057,13 @@
   {
     "calendar_date": "2026-06-22T00:00:00",
     "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.6833333333333333,
-    "hours_watched": 18.51666666666667,
-    "followers_gained": 2.0000000000000004,
-    "peak_viewers": 23,
-    "average_viewers_weighted": 11.000000000000002,
-    "followers_per_hour_streamed": 1.1881188118811883
+    "broadcasts_started": 2,
+    "hours_streamed": 4.133333333333334,
+    "hours_watched": 57.71666666666667,
+    "followers_gained": 11.0,
+    "peak_viewers": 26,
+    "average_viewers_weighted": 13.963709677419354,
+    "followers_per_hour_streamed": 2.661290322580645
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
@@ -11273,17 +11086,6 @@
     "peak_viewers": 43,
     "average_viewers_weighted": 25.0,
     "followers_per_hour_streamed": 2.4181360201511337
-  },
-  {
-    "calendar_date": "2026-06-22T00:00:00",
-    "streamer": "ijustlovepuzzles",
-    "broadcasts_started": 1,
-    "hours_streamed": 14.1,
-    "hours_watched": 2100.9,
-    "followers_gained": 21.0,
-    "peak_viewers": 271,
-    "average_viewers_weighted": 149.0,
-    "followers_per_hour_streamed": 1.4893617021276595
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
@@ -11375,17 +11177,6 @@
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 9.733333333333333,
-    "hours_watched": 476.9333333333333,
-    "followers_gained": 23.0,
-    "peak_viewers": 76,
-    "average_viewers_weighted": 49.0,
-    "followers_per_hour_streamed": 2.3630136986301373
-  },
-  {
-    "calendar_date": "2026-06-22T00:00:00",
     "streamer": "marlea",
     "broadcasts_started": 1,
     "hours_streamed": 4.216666666666667,
@@ -11465,12 +11256,12 @@
     "calendar_date": "2026-06-22T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 10.083333333333334,
-    "hours_watched": 2006.5833333333333,
-    "followers_gained": 59.0,
-    "peak_viewers": 285,
-    "average_viewers_weighted": 198.99999999999997,
-    "followers_per_hour_streamed": 5.851239669421488
+    "hours_streamed": 7.083333333333333,
+    "hours_watched": 1345.8333333333333,
+    "followers_gained": 46.0,
+    "peak_viewers": 263,
+    "average_viewers_weighted": 190.0,
+    "followers_per_hour_streamed": 6.4941176470588236
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
@@ -11485,25 +11276,14 @@
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
-    "streamer": "raphaelsololive",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.816666666666667,
-    "hours_watched": 267.5833333333333,
-    "followers_gained": 40.0,
-    "peak_viewers": 125,
-    "average_viewers_weighted": 94.99999999999999,
-    "followers_per_hour_streamed": 14.201183431952662
-  },
-  {
-    "calendar_date": "2026-06-22T00:00:00",
     "streamer": "rawdogmoon",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.016666666666667,
-    "hours_watched": 1515.0333333333333,
-    "followers_gained": 134.0,
-    "peak_viewers": 413,
-    "average_viewers_weighted": 302.0,
-    "followers_per_hour_streamed": 26.710963455149503
+    "broadcasts_started": 2,
+    "hours_streamed": 10.3,
+    "hours_watched": 4632.2,
+    "followers_gained": 292.0,
+    "peak_viewers": 851,
+    "average_viewers_weighted": 449.72815533980577,
+    "followers_per_hour_streamed": 28.349514563106794
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
@@ -11530,13 +11310,13 @@
   {
     "calendar_date": "2026-06-22T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.2666666666666666,
-    "hours_watched": 20.4,
-    "followers_gained": 2.0,
-    "peak_viewers": 17,
-    "average_viewers_weighted": 9.0,
-    "followers_per_hour_streamed": 0.8823529411764706
+    "broadcasts_started": 2,
+    "hours_streamed": 4.65,
+    "hours_watched": 46.61666666666666,
+    "followers_gained": 5.0,
+    "peak_viewers": 23,
+    "average_viewers_weighted": 10.025089605734765,
+    "followers_per_hour_streamed": 1.075268817204301
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
@@ -11628,7 +11408,29 @@
   },
   {
     "calendar_date": "2026-06-22T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yonnajay",
+    "broadcasts_started": 1,
+    "hours_streamed": 2.2,
+    "hours_watched": 9048.6,
+    "followers_gained": 1590.0,
+    "peak_viewers": 4786,
+    "average_viewers_weighted": 4113.0,
+    "followers_per_hour_streamed": 722.7272727272726
+  },
+  {
+    "calendar_date": "2026-06-22T00:00:00",
+    "streamer": "ysabellagrace",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.7666666666666666,
+    "hours_watched": 101.7,
+    "followers_gained": 7.0,
+    "peak_viewers": 43,
+    "average_viewers_weighted": 27.0,
+    "followers_per_hour_streamed": 1.8584070796460177
+  },
+  {
+    "calendar_date": "2026-06-22T00:00:00",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 6.966666666666667,
     "hours_watched": 18531.33333333333,
@@ -11728,13 +11530,13 @@
   {
     "calendar_date": "2026-06-23T00:00:00",
     "streamer": "bonita",
-    "broadcasts_started": 2,
-    "hours_streamed": 18.316666666666666,
-    "hours_watched": 11731.3,
-    "followers_gained": 208.0,
-    "peak_viewers": 2043,
-    "average_viewers_weighted": 640.4713375796179,
-    "followers_per_hour_streamed": 11.355777979981802
+    "broadcasts_started": 1,
+    "hours_streamed": 2.1,
+    "hours_watched": 249.9,
+    "followers_gained": 21.0,
+    "peak_viewers": 146,
+    "average_viewers_weighted": 119.0,
+    "followers_per_hour_streamed": 10.0
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
@@ -11826,17 +11628,6 @@
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.433333333333333,
-    "hours_watched": 41.36666666666667,
-    "followers_gained": 7.0,
-    "peak_viewers": 29,
-    "average_viewers_weighted": 17.0,
-    "followers_per_hour_streamed": 2.8767123287671237
-  },
-  {
-    "calendar_date": "2026-06-23T00:00:00",
     "streamer": "ezee",
     "broadcasts_started": 1,
     "hours_streamed": 3.3666666666666667,
@@ -11867,6 +11658,17 @@
     "peak_viewers": 23,
     "average_viewers_weighted": 12.0,
     "followers_per_hour_streamed": 1.6042780748663101
+  },
+  {
+    "calendar_date": "2026-06-23T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 1,
+    "hours_streamed": 14.1,
+    "hours_watched": 2100.9,
+    "followers_gained": 21.0,
+    "peak_viewers": 271,
+    "average_viewers_weighted": 149.0,
+    "followers_per_hour_streamed": 1.4893617021276595
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
@@ -11915,13 +11717,13 @@
   {
     "calendar_date": "2026-06-23T00:00:00",
     "streamer": "kiiingjojo",
-    "broadcasts_started": 3,
-    "hours_streamed": 3.3,
-    "hours_watched": 23.866666666666667,
+    "broadcasts_started": 2,
+    "hours_streamed": 3.1333333333333333,
+    "hours_watched": 23.03333333333333,
     "followers_gained": 9.0,
     "peak_viewers": 22,
-    "average_viewers_weighted": 7.232323232323233,
-    "followers_per_hour_streamed": 2.7272727272727275
+    "average_viewers_weighted": 7.3510638297872335,
+    "followers_per_hour_streamed": 2.872340425531915
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
@@ -11937,13 +11739,13 @@
   {
     "calendar_date": "2026-06-23T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.583333333333333,
-    "hours_watched": 301.5,
-    "followers_gained": 1.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 15.316666666666666,
+    "hours_watched": 778.4333333333333,
+    "followers_gained": 24.0,
     "peak_viewers": 84,
-    "average_viewers_weighted": 54.0,
-    "followers_per_hour_streamed": 0.17910447761194032
+    "average_viewers_weighted": 50.82263329706202,
+    "followers_per_hour_streamed": 1.5669205658324266
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
@@ -12026,23 +11828,23 @@
     "calendar_date": "2026-06-23T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 8.9,
-    "hours_watched": 1744.4,
-    "followers_gained": 30.0,
-    "peak_viewers": 270,
-    "average_viewers_weighted": 196.0,
-    "followers_per_hour_streamed": 3.3707865168539324
+    "hours_streamed": 10.083333333333334,
+    "hours_watched": 2006.5833333333333,
+    "followers_gained": 59.0,
+    "peak_viewers": 285,
+    "average_viewers_weighted": 198.99999999999997,
+    "followers_per_hour_streamed": 5.851239669421488
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
     "streamer": "raphaelsololive",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.133333333333334,
-    "hours_watched": 503.06666666666666,
-    "followers_gained": 92.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 7.950000000000001,
+    "hours_watched": 770.65,
+    "followers_gained": 132.0,
     "peak_viewers": 194,
-    "average_viewers_weighted": 97.99999999999999,
-    "followers_per_hour_streamed": 17.92207792207792
+    "average_viewers_weighted": 96.93710691823898,
+    "followers_per_hour_streamed": 16.603773584905657
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
@@ -12079,7 +11881,7 @@
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 7.2,
     "hours_watched": 115.2,
@@ -12109,17 +11911,6 @@
     "peak_viewers": 32830,
     "average_viewers_weighted": 23359.0,
     "followers_per_hour_streamed": 372.78195488721803
-  },
-  {
-    "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.066666666666667,
-    "hours_watched": 20.666666666666668,
-    "followers_gained": 1.0,
-    "peak_viewers": 22,
-    "average_viewers_weighted": 10.0,
-    "followers_per_hour_streamed": 0.48387096774193544
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
@@ -12233,7 +12024,7 @@
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 5.85,
     "hours_watched": 21726.9,
@@ -12343,6 +12134,17 @@
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
+    "streamer": "bonita",
+    "broadcasts_started": 1,
+    "hours_streamed": 16.216666666666665,
+    "hours_watched": 11481.4,
+    "followers_gained": 187.0,
+    "peak_viewers": 2043,
+    "average_viewers_weighted": 708.0,
+    "followers_per_hour_streamed": 11.531346351490237
+  },
+  {
+    "calendar_date": "2026-06-24T00:00:00",
     "streamer": "bonnie",
     "broadcasts_started": 1,
     "hours_streamed": 8.7,
@@ -12432,13 +12234,13 @@
   {
     "calendar_date": "2026-06-24T00:00:00",
     "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.0,
-    "hours_watched": 95.0,
-    "followers_gained": 8.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 7.433333333333334,
+    "hours_watched": 136.36666666666667,
+    "followers_gained": 15.0,
     "peak_viewers": 30,
-    "average_viewers_weighted": 19.0,
-    "followers_per_hour_streamed": 1.6
+    "average_viewers_weighted": 18.345291479820627,
+    "followers_per_hour_streamed": 2.0179372197309418
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
@@ -12564,13 +12366,13 @@
   {
     "calendar_date": "2026-06-24T00:00:00",
     "streamer": "kiiingjojo",
-    "broadcasts_started": 3,
-    "hours_streamed": 3.0666666666666664,
-    "hours_watched": 25.1,
+    "broadcasts_started": 4,
+    "hours_streamed": 3.2333333333333334,
+    "hours_watched": 25.933333333333334,
     "followers_gained": 12.0,
     "peak_viewers": 16,
-    "average_viewers_weighted": 8.184782608695654,
-    "followers_per_hour_streamed": 3.91304347826087
+    "average_viewers_weighted": 8.02061855670103,
+    "followers_per_hour_streamed": 3.711340206185567
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
@@ -12695,6 +12497,17 @@
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
+    "streamer": "paybae",
+    "broadcasts_started": 1,
+    "hours_streamed": 8.9,
+    "hours_watched": 1744.4,
+    "followers_gained": 30.0,
+    "peak_viewers": 270,
+    "average_viewers_weighted": 196.0,
+    "followers_per_hour_streamed": 3.3707865168539324
+  },
+  {
+    "calendar_date": "2026-06-24T00:00:00",
     "streamer": "plaqueboymax",
     "broadcasts_started": 1,
     "hours_streamed": 4.583333333333333,
@@ -12717,7 +12530,7 @@
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 8.183333333333334,
     "hours_watched": 130.93333333333334,
@@ -12751,13 +12564,13 @@
   {
     "calendar_date": "2026-06-24T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.183333333333334,
-    "hours_watched": 46.016666666666666,
-    "followers_gained": 4.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 6.25,
+    "hours_watched": 66.68333333333334,
+    "followers_gained": 5.0,
     "peak_viewers": 22,
-    "average_viewers_weighted": 11.0,
-    "followers_per_hour_streamed": 0.9561752988047808
+    "average_viewers_weighted": 10.669333333333334,
+    "followers_per_hour_streamed": 0.8
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
@@ -12861,13 +12674,13 @@
   {
     "calendar_date": "2026-06-24T00:00:00",
     "streamer": "ysabellagrace",
-    "broadcasts_started": 2,
-    "hours_streamed": 3.966666666666667,
-    "hours_watched": 120.58333333333333,
-    "followers_gained": 9.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 2.4833333333333334,
+    "hours_watched": 96.85,
+    "followers_gained": 7.0,
     "peak_viewers": 57,
-    "average_viewers_weighted": 30.399159663865543,
-    "followers_per_hour_streamed": 2.26890756302521
+    "average_viewers_weighted": 39.0,
+    "followers_per_hour_streamed": 2.8187919463087248
   },
   {
     "calendar_date": "2026-06-24T00:00:00",
@@ -13245,28 +13058,6 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.05,
-    "hours_watched": 1343.1,
-    "followers_gained": 58.0,
-    "peak_viewers": 309,
-    "average_viewers_weighted": 222.0,
-    "followers_per_hour_streamed": 9.586776859504132
-  },
-  {
-    "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "raphaelsololive",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.5833333333333335,
-    "hours_watched": 149.83333333333337,
-    "followers_gained": 19.000000000000004,
-    "peak_viewers": 94,
-    "average_viewers_weighted": 58.000000000000014,
-    "followers_per_hour_streamed": 7.35483870967742
-  },
-  {
-    "calendar_date": "2026-06-25T00:00:00",
     "streamer": "rawdogmoon",
     "broadcasts_started": 1,
     "hours_streamed": 3.566666666666667,
@@ -13311,7 +13102,7 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 14.433333333333334,
     "hours_watched": 115.46666666666668,
@@ -13355,17 +13146,6 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.35,
-    "hours_watched": 21.15,
-    "followers_gained": 1.0,
-    "peak_viewers": 19,
-    "average_viewers_weighted": 8.999999999999998,
-    "followers_per_hour_streamed": 0.425531914893617
-  },
-  {
-    "calendar_date": "2026-06-25T00:00:00",
     "streamer": "suburbbaby",
     "broadcasts_started": 1,
     "hours_streamed": 3.45,
@@ -13374,17 +13154,6 @@
     "peak_viewers": 651,
     "average_viewers_weighted": 470.0,
     "followers_per_hour_streamed": 188.69565217391303
-  },
-  {
-    "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.316666666666666,
-    "hours_watched": 233.1,
-    "followers_gained": 23.0,
-    "peak_viewers": 84,
-    "average_viewers_weighted": 54.0,
-    "followers_per_hour_streamed": 5.328185328185328
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
@@ -13454,7 +13223,18 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "yugi",
+    "streamer": "ysabellagrace",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.4833333333333334,
+    "hours_watched": 23.73333333333333,
+    "followers_gained": 2.0,
+    "peak_viewers": 22,
+    "average_viewers_weighted": 15.999999999999998,
+    "followers_per_hour_streamed": 1.348314606741573
+  },
+  {
+    "calendar_date": "2026-06-25T00:00:00",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 7.433333333333334,
     "hours_watched": 21839.13333333333,
@@ -13517,17 +13297,6 @@
     "peak_viewers": 76,
     "average_viewers_weighted": 54.0,
     "followers_per_hour_streamed": 3.6363636363636362
-  },
-  {
-    "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "aozami",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.783333333333333,
-    "hours_watched": 1282.05,
-    "followers_gained": 64.0,
-    "peak_viewers": 266,
-    "average_viewers_weighted": 189.0,
-    "followers_per_hour_streamed": 9.434889434889435
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -13652,17 +13421,6 @@
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.1,
-    "hours_watched": 753.3,
-    "followers_gained": 36.0,
-    "peak_viewers": 119,
-    "average_viewers_weighted": 93.0,
-    "followers_per_hour_streamed": 4.444444444444445
-  },
-  {
-    "calendar_date": "2026-06-26T00:00:00",
     "streamer": "jordynlucas",
     "broadcasts_started": 2,
     "hours_streamed": 7.0,
@@ -13718,17 +13476,6 @@
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "lanializa",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.7333333333333333,
-    "hours_watched": 407.0,
-    "followers_gained": 137.0,
-    "peak_viewers": 647,
-    "average_viewers_weighted": 555.0,
-    "followers_per_hour_streamed": 186.81818181818184
-  },
-  {
-    "calendar_date": "2026-06-26T00:00:00",
     "streamer": "ludwig",
     "broadcasts_started": 1,
     "hours_streamed": 2.2666666666666666,
@@ -13737,28 +13484,6 @@
     "peak_viewers": 10916,
     "average_viewers_weighted": 6892.000000000001,
     "followers_per_hour_streamed": 51.1764705882353
-  },
-  {
-    "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "madi2hottyy",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.683333333333334,
-    "hours_watched": 6612.866666666667,
-    "followers_gained": 666.0,
-    "peak_viewers": 3515,
-    "average_viewers_weighted": 1412.0,
-    "followers_per_hour_streamed": 142.20640569395016
-  },
-  {
-    "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.45,
-    "hours_watched": 618.35,
-    "followers_gained": 18.0,
-    "peak_viewers": 122,
-    "average_viewers_weighted": 83.0,
-    "followers_per_hour_streamed": 2.4161073825503356
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -13852,12 +13577,12 @@
     "calendar_date": "2026-06-26T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 6.483333333333333,
-    "hours_watched": 1458.75,
-    "followers_gained": 44.0,
-    "peak_viewers": 312,
-    "average_viewers_weighted": 225.0,
-    "followers_per_hour_streamed": 6.786632390745501
+    "hours_streamed": 6.05,
+    "hours_watched": 1343.1,
+    "followers_gained": 58.0,
+    "peak_viewers": 309,
+    "average_viewers_weighted": 222.0,
+    "followers_per_hour_streamed": 9.586776859504132
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -13873,13 +13598,13 @@
   {
     "calendar_date": "2026-06-26T00:00:00",
     "streamer": "raphaelsololive",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.2,
-    "hours_watched": 191.4,
-    "followers_gained": 25.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.783333333333333,
+    "hours_watched": 341.23333333333335,
+    "followers_gained": 44.0,
     "peak_viewers": 137,
-    "average_viewers_weighted": 87.0,
-    "followers_per_hour_streamed": 11.363636363636363
+    "average_viewers_weighted": 71.33797909407666,
+    "followers_per_hour_streamed": 9.198606271777004
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -13939,13 +13664,13 @@
   {
     "calendar_date": "2026-06-26T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.183333333333334,
-    "hours_watched": 37.65,
-    "followers_gained": 8.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 6.533333333333333,
+    "hours_watched": 58.8,
+    "followers_gained": 9.0,
     "peak_viewers": 22,
     "average_viewers_weighted": 9.0,
-    "followers_per_hour_streamed": 1.9123505976095616
+    "followers_per_hour_streamed": 1.3775510204081634
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -13957,6 +13682,17 @@
     "peak_viewers": 339,
     "average_viewers_weighted": 239.00000000000003,
     "followers_per_hour_streamed": 114.95798319327734
+  },
+  {
+    "calendar_date": "2026-06-26T00:00:00",
+    "streamer": "suhmmiee",
+    "broadcasts_started": 1,
+    "hours_streamed": 4.316666666666666,
+    "hours_watched": 233.1,
+    "followers_gained": 23.0,
+    "peak_viewers": 84,
+    "average_viewers_weighted": 54.0,
+    "followers_per_hour_streamed": 5.328185328185328
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -13990,17 +13726,6 @@
     "peak_viewers": 25,
     "average_viewers_weighted": 15.0,
     "followers_per_hour_streamed": 6.0
-  },
-  {
-    "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "theycallmeleii",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.31666666666666665,
-    "hours_watched": 54.46666666666668,
-    "followers_gained": 54.000000000000014,
-    "peak_viewers": 222,
-    "average_viewers_weighted": 172.00000000000006,
-    "followers_per_hour_streamed": 170.52631578947373
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
@@ -14048,7 +13773,7 @@
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 15.416666666666666,
     "hours_watched": 33531.25,
@@ -14115,13 +13840,13 @@
   {
     "calendar_date": "2026-06-27T00:00:00",
     "streamer": "aozami",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.016666666666667,
-    "hours_watched": 1943.6166666666663,
-    "followers_gained": 115.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 13.8,
+    "hours_watched": 3225.666666666666,
+    "followers_gained": 179.0,
     "peak_viewers": 517,
-    "average_viewers_weighted": 276.99999999999994,
-    "followers_per_hour_streamed": 16.389548693586697
+    "average_viewers_weighted": 233.74396135265695,
+    "followers_per_hour_streamed": 12.971014492753623
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
@@ -14280,13 +14005,13 @@
   {
     "calendar_date": "2026-06-27T00:00:00",
     "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.15,
-    "hours_watched": 154.8,
-    "followers_gained": 2.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 10.25,
+    "hours_watched": 908.0999999999999,
+    "followers_gained": 38.0,
     "peak_viewers": 119,
-    "average_viewers_weighted": 72.00000000000001,
-    "followers_per_hour_streamed": 0.9302325581395349
+    "average_viewers_weighted": 88.5951219512195,
+    "followers_per_hour_streamed": 3.707317073170732
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
@@ -14323,6 +14048,17 @@
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
+    "streamer": "lanializa",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.7333333333333333,
+    "hours_watched": 407.0,
+    "followers_gained": 137.0,
+    "peak_viewers": 647,
+    "average_viewers_weighted": 555.0,
+    "followers_per_hour_streamed": 186.81818181818184
+  },
+  {
+    "calendar_date": "2026-06-27T00:00:00",
     "streamer": "ludwig",
     "broadcasts_started": 1,
     "hours_streamed": 4.016666666666667,
@@ -14334,14 +14070,25 @@
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
+    "streamer": "madi2hottyy",
+    "broadcasts_started": 1,
+    "hours_streamed": 4.683333333333334,
+    "hours_watched": 6612.866666666667,
+    "followers_gained": 666.0,
+    "peak_viewers": 3515,
+    "average_viewers_weighted": 1412.0,
+    "followers_per_hour_streamed": 142.20640569395016
+  },
+  {
+    "calendar_date": "2026-06-27T00:00:00",
     "streamer": "malek_04",
     "broadcasts_started": 1,
-    "hours_streamed": 6.483333333333333,
-    "hours_watched": 499.2166666666666,
-    "followers_gained": 12.0,
-    "peak_viewers": 128,
-    "average_viewers_weighted": 76.99999999999999,
-    "followers_per_hour_streamed": 1.8508997429305913
+    "hours_streamed": 7.45,
+    "hours_watched": 618.35,
+    "followers_gained": 18.0,
+    "peak_viewers": 122,
+    "average_viewers_weighted": 83.0,
+    "followers_per_hour_streamed": 2.4161073825503356
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
@@ -14391,12 +14138,12 @@
     "calendar_date": "2026-06-27T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 7.033333333333333,
-    "hours_watched": 1498.1,
-    "followers_gained": 36.0,
-    "peak_viewers": 290,
-    "average_viewers_weighted": 213.0,
-    "followers_per_hour_streamed": 5.118483412322275
+    "hours_streamed": 6.483333333333333,
+    "hours_watched": 1458.75,
+    "followers_gained": 44.0,
+    "peak_viewers": 312,
+    "average_viewers_weighted": 225.0,
+    "followers_per_hour_streamed": 6.786632390745501
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
@@ -14518,6 +14265,17 @@
     "peak_viewers": 1010,
     "average_viewers_weighted": 760.0,
     "followers_per_hour_streamed": 42.35294117647059
+  },
+  {
+    "calendar_date": "2026-06-27T00:00:00",
+    "streamer": "theycallmeleii",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.31666666666666665,
+    "hours_watched": 54.46666666666668,
+    "followers_gained": 54.000000000000014,
+    "peak_viewers": 222,
+    "average_viewers_weighted": 172.00000000000006,
+    "followers_per_hour_streamed": 170.52631578947373
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
@@ -14820,23 +14578,12 @@
     "calendar_date": "2026-06-28T00:00:00",
     "streamer": "malek_04",
     "broadcasts_started": 1,
-    "hours_streamed": 4.383333333333334,
-    "hours_watched": 376.9666666666666,
-    "followers_gained": 30.0,
-    "peak_viewers": 118,
-    "average_viewers_weighted": 85.99999999999997,
-    "followers_per_hour_streamed": 6.844106463878326
-  },
-  {
-    "calendar_date": "2026-06-28T00:00:00",
-    "streamer": "malibuandre",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.3666666666666667,
-    "hours_watched": 45.1,
-    "followers_gained": 152.0,
-    "peak_viewers": 58,
-    "average_viewers_weighted": 33.0,
-    "followers_per_hour_streamed": 111.21951219512195
+    "hours_streamed": 6.483333333333333,
+    "hours_watched": 499.2166666666666,
+    "followers_gained": 12.0,
+    "peak_viewers": 128,
+    "average_viewers_weighted": 76.99999999999999,
+    "followers_per_hour_streamed": 1.8508997429305913
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
@@ -14897,12 +14644,12 @@
     "calendar_date": "2026-06-28T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 7.6,
-    "hours_watched": 2135.6,
-    "followers_gained": 56.0,
-    "peak_viewers": 383,
-    "average_viewers_weighted": 281.0,
-    "followers_per_hour_streamed": 7.36842105263158
+    "hours_streamed": 7.033333333333333,
+    "hours_watched": 1498.1,
+    "followers_gained": 36.0,
+    "peak_viewers": 290,
+    "average_viewers_weighted": 213.0,
+    "followers_per_hour_streamed": 5.118483412322275
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
@@ -14939,7 +14686,7 @@
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 2.216666666666667,
     "hours_watched": 26.6,
@@ -14994,17 +14741,6 @@
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
-    "streamer": "suhmmiee",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.7333333333333334,
-    "hours_watched": 119.6,
-    "followers_gained": 15.0,
-    "peak_viewers": 111,
-    "average_viewers_weighted": 69.0,
-    "followers_per_hour_streamed": 8.653846153846153
-  },
-  {
-    "calendar_date": "2026-06-28T00:00:00",
     "streamer": "thatsdaveontv",
     "broadcasts_started": 1,
     "hours_streamed": 3.9,
@@ -15035,17 +14771,6 @@
     "peak_viewers": 2398,
     "average_viewers_weighted": 534.0,
     "followers_per_hour_streamed": 3.656509695290859
-  },
-  {
-    "calendar_date": "2026-06-28T00:00:00",
-    "streamer": "theycallmeleii",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.75,
-    "hours_watched": 143.25,
-    "followers_gained": 115.0,
-    "peak_viewers": 304,
-    "average_viewers_weighted": 191.0,
-    "followers_per_hour_streamed": 153.33333333333334
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
@@ -15303,13 +15028,24 @@
   {
     "calendar_date": "2026-06-29T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 12.416666666666666,
-    "hours_watched": 1129.9166666666667,
-    "followers_gained": 67.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 16.8,
+    "hours_watched": 1506.8833333333332,
+    "followers_gained": 97.0,
     "peak_viewers": 175,
-    "average_viewers_weighted": 91.00000000000001,
-    "followers_per_hour_streamed": 5.395973154362417
+    "average_viewers_weighted": 89.69543650793649,
+    "followers_per_hour_streamed": 5.773809523809524
+  },
+  {
+    "calendar_date": "2026-06-29T00:00:00",
+    "streamer": "malibuandre",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.3666666666666667,
+    "hours_watched": 45.1,
+    "followers_gained": 152.0,
+    "peak_viewers": 58,
+    "average_viewers_weighted": 33.0,
+    "followers_per_hour_streamed": 111.21951219512195
   },
   {
     "calendar_date": "2026-06-29T00:00:00",
@@ -15381,12 +15117,12 @@
     "calendar_date": "2026-06-29T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 6.016666666666667,
-    "hours_watched": 1546.2833333333333,
-    "followers_gained": 29.0,
-    "peak_viewers": 370,
-    "average_viewers_weighted": 257.0,
-    "followers_per_hour_streamed": 4.81994459833795
+    "hours_streamed": 7.6,
+    "hours_watched": 2135.6,
+    "followers_gained": 56.0,
+    "peak_viewers": 383,
+    "average_viewers_weighted": 281.0,
+    "followers_per_hour_streamed": 7.36842105263158
   },
   {
     "calendar_date": "2026-06-29T00:00:00",
@@ -15409,17 +15145,6 @@
     "peak_viewers": 827,
     "average_viewers_weighted": 393.99999999999994,
     "followers_per_hour_streamed": 22.5
-  },
-  {
-    "calendar_date": "2026-06-29T00:00:00",
-    "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.683333333333333,
-    "hours_watched": 1679.6,
-    "followers_gained": 184.0,
-    "peak_viewers": 597,
-    "average_viewers_weighted": 456.0,
-    "followers_per_hour_streamed": 49.95475113122172
   },
   {
     "calendar_date": "2026-06-29T00:00:00",
@@ -15467,6 +15192,17 @@
   },
   {
     "calendar_date": "2026-06-29T00:00:00",
+    "streamer": "suhmmiee",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.7333333333333334,
+    "hours_watched": 119.6,
+    "followers_gained": 15.0,
+    "peak_viewers": 111,
+    "average_viewers_weighted": 69.0,
+    "followers_per_hour_streamed": 8.653846153846153
+  },
+  {
+    "calendar_date": "2026-06-29T00:00:00",
     "streamer": "sukiimellow",
     "broadcasts_started": 1,
     "hours_streamed": 3.15,
@@ -15497,6 +15233,17 @@
     "peak_viewers": 244,
     "average_viewers_weighted": 130.0,
     "followers_per_hour_streamed": 149.16666666666669
+  },
+  {
+    "calendar_date": "2026-06-29T00:00:00",
+    "streamer": "theycallmeleii",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.75,
+    "hours_watched": 143.25,
+    "followers_gained": 115.0,
+    "peak_viewers": 304,
+    "average_viewers_weighted": 191.0,
+    "followers_per_hour_streamed": 153.33333333333334
   },
   {
     "calendar_date": "2026-06-29T00:00:00",
@@ -15534,13 +15281,13 @@
   {
     "calendar_date": "2026-06-30T00:00:00",
     "streamer": "a2guapo",
-    "broadcasts_started": 2,
-    "hours_streamed": 9.716666666666667,
-    "hours_watched": 8032.316666666667,
-    "followers_gained": 100.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 8.95,
+    "hours_watched": 7330.05,
+    "followers_gained": 92.0,
     "peak_viewers": 1469,
-    "average_viewers_weighted": 826.6535162950257,
-    "followers_per_hour_streamed": 10.291595197255575
+    "average_viewers_weighted": 819.0000000000001,
+    "followers_per_hour_streamed": 10.279329608938548
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
@@ -15775,17 +15522,6 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.65,
-    "hours_watched": 164.3,
-    "followers_gained": 29.0,
-    "peak_viewers": 89,
-    "average_viewers_weighted": 62.00000000000001,
-    "followers_per_hour_streamed": 10.943396226415095
-  },
-  {
-    "calendar_date": "2026-06-30T00:00:00",
     "streamer": "marlea",
     "broadcasts_started": 1,
     "hours_streamed": 4.25,
@@ -15874,6 +15610,17 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
+    "streamer": "paybae",
+    "broadcasts_started": 1,
+    "hours_streamed": 6.016666666666667,
+    "hours_watched": 1546.2833333333333,
+    "followers_gained": 29.0,
+    "peak_viewers": 370,
+    "average_viewers_weighted": 257.0,
+    "followers_per_hour_streamed": 4.81994459833795
+  },
+  {
+    "calendar_date": "2026-06-30T00:00:00",
     "streamer": "plaqueboymax",
     "broadcasts_started": 1,
     "hours_streamed": 4.1,
@@ -15907,14 +15654,25 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
+    "streamer": "regtoofunny",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.683333333333333,
+    "hours_watched": 1679.6,
+    "followers_gained": 184.0,
+    "peak_viewers": 597,
+    "average_viewers_weighted": 456.0,
+    "followers_per_hour_streamed": 49.95475113122172
+  },
+  {
+    "calendar_date": "2026-06-30T00:00:00",
     "streamer": "rizpyyt",
-    "broadcasts_started": 2,
-    "hours_streamed": 2.1833333333333336,
-    "hours_watched": 51.28333333333333,
-    "followers_gained": 17.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 1.1166666666666667,
+    "hours_watched": 25.683333333333334,
+    "followers_gained": 10.0,
     "peak_viewers": 72,
-    "average_viewers_weighted": 23.488549618320608,
-    "followers_per_hour_streamed": 7.786259541984732
+    "average_viewers_weighted": 23.0,
+    "followers_per_hour_streamed": 8.955223880597014
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
@@ -15929,7 +15687,7 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 6.183333333333334,
     "hours_watched": 86.56666666666666,
@@ -15963,13 +15721,13 @@
   {
     "calendar_date": "2026-06-30T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 2,
-    "hours_streamed": 3.1999999999999997,
-    "hours_watched": 35.1,
+    "broadcasts_started": 1,
+    "hours_streamed": 3.1666666666666665,
+    "hours_watched": 34.833333333333336,
     "followers_gained": 3.0,
     "peak_viewers": 19,
-    "average_viewers_weighted": 10.968750000000002,
-    "followers_per_hour_streamed": 0.9375000000000001
+    "average_viewers_weighted": 11.000000000000002,
+    "followers_per_hour_streamed": 0.9473684210526316
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
@@ -16050,17 +15808,6 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "ynlgeo",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.3666666666666667,
-    "hours_watched": 801.2666666666667,
-    "followers_gained": 147.0,
-    "peak_viewers": 377,
-    "average_viewers_weighted": 238.0,
-    "followers_per_hour_streamed": 43.663366336633665
-  },
-  {
-    "calendar_date": "2026-06-30T00:00:00",
     "streamer": "ysabellagrace",
     "broadcasts_started": 2,
     "hours_streamed": 5.783333333333333,
@@ -16072,7 +15819,7 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 3.066666666666667,
     "hours_watched": 6026.0,
@@ -16091,6 +15838,17 @@
     "peak_viewers": 1676,
     "average_viewers_weighted": 1413.0,
     "followers_per_hour_streamed": 27.43421052631579
+  },
+  {
+    "calendar_date": "2026-07-01T00:00:00",
+    "streamer": "a2guapo",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.7666666666666667,
+    "hours_watched": 702.2666666666667,
+    "followers_gained": 8.0,
+    "peak_viewers": 1469,
+    "average_viewers_weighted": 915.9999999999999,
+    "followers_per_hour_streamed": 10.434782608695652
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
@@ -16237,17 +15995,6 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.483333333333333,
-    "hours_watched": 1010.25,
-    "followers_gained": 61.0,
-    "peak_viewers": 194,
-    "average_viewers_weighted": 135.0,
-    "followers_per_hour_streamed": 8.151447661469932
-  },
-  {
-    "calendar_date": "2026-07-01T00:00:00",
     "streamer": "kelo",
     "broadcasts_started": 1,
     "hours_streamed": 10.333333333333334,
@@ -16267,17 +16014,6 @@
     "peak_viewers": 171,
     "average_viewers_weighted": 118.0,
     "followers_per_hour_streamed": 5.660377358490567
-  },
-  {
-    "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "kiiingjojo",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.9,
-    "hours_watched": 2.7,
-    "followers_gained": 2.0,
-    "peak_viewers": 13,
-    "average_viewers_weighted": 3.0,
-    "followers_per_hour_streamed": 2.2222222222222223
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
@@ -16304,13 +16040,13 @@
   {
     "calendar_date": "2026-07-01T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 7.366666666666666,
-    "hours_watched": 493.56666666666666,
-    "followers_gained": 80.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 10.016666666666666,
+    "hours_watched": 657.8666666666667,
+    "followers_gained": 109.0,
     "peak_viewers": 101,
-    "average_viewers_weighted": 67.0,
-    "followers_per_hour_streamed": 10.85972850678733
+    "average_viewers_weighted": 65.67720465890184,
+    "followers_per_hour_streamed": 10.881863560732114
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
@@ -16435,14 +16171,14 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "regtoofunny",
+    "streamer": "rizpyyt",
     "broadcasts_started": 1,
-    "hours_streamed": 4.25,
-    "hours_watched": 1440.75,
-    "followers_gained": 107.0,
-    "peak_viewers": 426,
-    "average_viewers_weighted": 339.0,
-    "followers_per_hour_streamed": 25.176470588235293
+    "hours_streamed": 1.0666666666666667,
+    "hours_watched": 25.599999999999994,
+    "followers_gained": 6.999999999999998,
+    "peak_viewers": 33,
+    "average_viewers_weighted": 23.999999999999996,
+    "followers_per_hour_streamed": 6.562499999999998
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
@@ -16457,7 +16193,7 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 2.6333333333333333,
     "hours_watched": 26.33333333333333,
@@ -16514,12 +16250,12 @@
     "calendar_date": "2026-07-01T00:00:00",
     "streamer": "stanleyymeng",
     "broadcasts_started": 2,
-    "hours_streamed": 1.8,
-    "hours_watched": 19.8,
+    "hours_streamed": 1.4166666666666667,
+    "hours_watched": 15.483333333333336,
     "followers_gained": 3.0,
     "peak_viewers": 18,
-    "average_viewers_weighted": 11.0,
-    "followers_per_hour_streamed": 1.6666666666666665
+    "average_viewers_weighted": 10.929411764705884,
+    "followers_per_hour_streamed": 2.1176470588235294
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
@@ -16578,6 +16314,17 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
+    "streamer": "ynlgeo",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.3666666666666667,
+    "hours_watched": 801.2666666666667,
+    "followers_gained": 147.0,
+    "peak_viewers": 377,
+    "average_viewers_weighted": 238.0,
+    "followers_per_hour_streamed": 43.663366336633665
+  },
+  {
+    "calendar_date": "2026-07-01T00:00:00",
     "streamer": "ysabellagrace",
     "broadcasts_started": 1,
     "hours_streamed": 2.7666666666666666,
@@ -16589,7 +16336,7 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 12.25,
     "hours_watched": 33381.25,
@@ -16744,13 +16491,13 @@
   {
     "calendar_date": "2026-07-02T00:00:00",
     "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.65,
-    "hours_watched": 581.25,
-    "followers_gained": 20.0,
-    "peak_viewers": 147,
-    "average_viewers_weighted": 124.99999999999999,
-    "followers_per_hour_streamed": 4.301075268817204
+    "broadcasts_started": 2,
+    "hours_streamed": 12.133333333333333,
+    "hours_watched": 1591.5,
+    "followers_gained": 81.0,
+    "peak_viewers": 194,
+    "average_viewers_weighted": 131.16758241758242,
+    "followers_per_hour_streamed": 6.675824175824176
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
@@ -16765,25 +16512,14 @@
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "kelo",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.65,
-    "hours_watched": 7862.85,
-    "followers_gained": 778.0,
-    "peak_viewers": 1067,
-    "average_viewers_weighted": 909.0,
-    "followers_per_hour_streamed": 89.94219653179191
-  },
-  {
-    "calendar_date": "2026-07-02T00:00:00",
     "streamer": "kiiingjojo",
     "broadcasts_started": 1,
-    "hours_streamed": 1.0333333333333334,
-    "hours_watched": 3.1,
+    "hours_streamed": 0.9,
+    "hours_watched": 2.7,
     "followers_gained": 2.0,
-    "peak_viewers": 8,
+    "peak_viewers": 13,
     "average_viewers_weighted": 3.0,
-    "followers_per_hour_streamed": 1.9354838709677418
+    "followers_per_hour_streamed": 2.2222222222222223
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
@@ -16806,28 +16542,6 @@
     "peak_viewers": 11352,
     "average_viewers_weighted": 7921.000000000001,
     "followers_per_hour_streamed": 123.375
-  },
-  {
-    "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "madi2hottyy",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.633333333333333,
-    "hours_watched": 7286.533333333334,
-    "followers_gained": 1075.0,
-    "peak_viewers": 1143,
-    "average_viewers_weighted": 844.0000000000001,
-    "followers_per_hour_streamed": 124.51737451737452
-  },
-  {
-    "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.6,
-    "hours_watched": 929.2,
-    "followers_gained": 81.0,
-    "peak_viewers": 304,
-    "average_viewers_weighted": 202.00000000000003,
-    "followers_per_hour_streamed": 17.608695652173914
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
@@ -16875,17 +16589,6 @@
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 9.3,
-    "hours_watched": 2157.6,
-    "followers_gained": 47.0,
-    "peak_viewers": 332,
-    "average_viewers_weighted": 231.99999999999997,
-    "followers_per_hour_streamed": 5.053763440860215
-  },
-  {
-    "calendar_date": "2026-07-02T00:00:00",
     "streamer": "plaqueboymax",
     "broadcasts_started": 1,
     "hours_streamed": 4.383333333333334,
@@ -16910,16 +16613,16 @@
     "calendar_date": "2026-07-02T00:00:00",
     "streamer": "regtoofunny",
     "broadcasts_started": 1,
-    "hours_streamed": 4.233333333333333,
-    "hours_watched": 1447.8,
-    "followers_gained": 99.0,
-    "peak_viewers": 417,
-    "average_viewers_weighted": 342.0,
-    "followers_per_hour_streamed": 23.385826771653544
+    "hours_streamed": 4.25,
+    "hours_watched": 1440.75,
+    "followers_gained": 107.0,
+    "peak_viewers": 426,
+    "average_viewers_weighted": 339.0,
+    "followers_per_hour_streamed": 25.176470588235293
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 3.5,
     "hours_watched": 49.0,
@@ -16975,13 +16678,13 @@
   {
     "calendar_date": "2026-07-02T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.3333333333333335,
-    "hours_watched": 50.000000000000014,
+    "broadcasts_started": 2,
+    "hours_streamed": 3.75,
+    "hours_watched": 54.58333333333335,
     "followers_gained": 8.000000000000002,
     "peak_viewers": 24,
-    "average_viewers_weighted": 15.000000000000004,
-    "followers_per_hour_streamed": 2.4000000000000004
+    "average_viewers_weighted": 14.55555555555556,
+    "followers_per_hour_streamed": 2.1333333333333337
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
@@ -17106,7 +16809,7 @@
   },
   {
     "calendar_date": "2026-07-02T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 11.35,
     "hours_watched": 34015.95,
@@ -17315,25 +17018,25 @@
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
-    "streamer": "jaymommy0",
+    "streamer": "kelo",
     "broadcasts_started": 1,
-    "hours_streamed": 10.133333333333333,
-    "hours_watched": 1226.1333333333334,
-    "followers_gained": 41.0,
-    "peak_viewers": 178,
-    "average_viewers_weighted": 121.00000000000001,
-    "followers_per_hour_streamed": 4.046052631578948
+    "hours_streamed": 8.65,
+    "hours_watched": 7862.85,
+    "followers_gained": 778.0,
+    "peak_viewers": 1067,
+    "average_viewers_weighted": 909.0,
+    "followers_per_hour_streamed": 89.94219653179191
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
-    "streamer": "kelo",
+    "streamer": "kiiingjojo",
     "broadcasts_started": 1,
-    "hours_streamed": 11.433333333333334,
-    "hours_watched": 22660.866666666665,
-    "followers_gained": 1661.0,
-    "peak_viewers": 5873,
-    "average_viewers_weighted": 1981.9999999999998,
-    "followers_per_hour_streamed": 145.27696793002914
+    "hours_streamed": 1.0333333333333334,
+    "hours_watched": 3.1,
+    "followers_gained": 2.0,
+    "peak_viewers": 8,
+    "average_viewers_weighted": 3.0,
+    "followers_per_hour_streamed": 1.9354838709677418
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
@@ -17361,12 +17064,23 @@
     "calendar_date": "2026-07-03T00:00:00",
     "streamer": "madi2hottyy",
     "broadcasts_started": 1,
-    "hours_streamed": 6.633333333333334,
-    "hours_watched": 4975.0,
-    "followers_gained": 676.0,
-    "peak_viewers": 1347,
-    "average_viewers_weighted": 750.0,
-    "followers_per_hour_streamed": 101.90954773869346
+    "hours_streamed": 8.633333333333333,
+    "hours_watched": 7286.533333333334,
+    "followers_gained": 1075.0,
+    "peak_viewers": 1143,
+    "average_viewers_weighted": 844.0000000000001,
+    "followers_per_hour_streamed": 124.51737451737452
+  },
+  {
+    "calendar_date": "2026-07-03T00:00:00",
+    "streamer": "malek_04",
+    "broadcasts_started": 1,
+    "hours_streamed": 4.6,
+    "hours_watched": 929.2,
+    "followers_gained": 81.0,
+    "peak_viewers": 304,
+    "average_viewers_weighted": 202.00000000000003,
+    "followers_per_hour_streamed": 17.608695652173914
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
@@ -17405,12 +17119,12 @@
     "calendar_date": "2026-07-03T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 6.0,
-    "hours_watched": 1314.0,
-    "followers_gained": 23.0,
-    "peak_viewers": 296,
-    "average_viewers_weighted": 219.0,
-    "followers_per_hour_streamed": 3.8333333333333335
+    "hours_streamed": 9.3,
+    "hours_watched": 2157.6,
+    "followers_gained": 47.0,
+    "peak_viewers": 332,
+    "average_viewers_weighted": 231.99999999999997,
+    "followers_per_hour_streamed": 5.053763440860215
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
@@ -17437,13 +17151,13 @@
   {
     "calendar_date": "2026-07-03T00:00:00",
     "streamer": "regtoofunny",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.166666666666667,
-    "hours_watched": 2149.333333333333,
-    "followers_gained": 111.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 9.4,
+    "hours_watched": 3597.133333333333,
+    "followers_gained": 210.0,
     "peak_viewers": 515,
-    "average_viewers_weighted": 415.99999999999994,
-    "followers_per_hour_streamed": 21.483870967741936
+    "average_viewers_weighted": 382.6737588652482,
+    "followers_per_hour_streamed": 22.340425531914892
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
@@ -17568,7 +17282,7 @@
   },
   {
     "calendar_date": "2026-07-03T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 13.7,
     "hours_watched": 33606.1,
@@ -17778,13 +17492,24 @@
   {
     "calendar_date": "2026-07-04T00:00:00",
     "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 10.116666666666667,
-    "hours_watched": 1740.0666666666666,
-    "followers_gained": 83.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 20.25,
+    "hours_watched": 2966.2,
+    "followers_gained": 124.0,
     "peak_viewers": 289,
-    "average_viewers_weighted": 172.0,
-    "followers_per_hour_streamed": 8.204283360790773
+    "average_viewers_weighted": 146.479012345679,
+    "followers_per_hour_streamed": 6.1234567901234565
+  },
+  {
+    "calendar_date": "2026-07-04T00:00:00",
+    "streamer": "kelo",
+    "broadcasts_started": 1,
+    "hours_streamed": 11.433333333333334,
+    "hours_watched": 22660.866666666665,
+    "followers_gained": 1661.0,
+    "peak_viewers": 5873,
+    "average_viewers_weighted": 1981.9999999999998,
+    "followers_per_hour_streamed": 145.27696793002914
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
@@ -17810,6 +17535,17 @@
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
+    "streamer": "madi2hottyy",
+    "broadcasts_started": 1,
+    "hours_streamed": 6.633333333333334,
+    "hours_watched": 4975.0,
+    "followers_gained": 676.0,
+    "peak_viewers": 1347,
+    "average_viewers_weighted": 750.0,
+    "followers_per_hour_streamed": 101.90954773869346
+  },
+  {
+    "calendar_date": "2026-07-04T00:00:00",
     "streamer": "mcqueennlive",
     "broadcasts_started": 1,
     "hours_streamed": 2.933333333333333,
@@ -17818,17 +17554,6 @@
     "peak_viewers": 364,
     "average_viewers_weighted": 291.0,
     "followers_per_hour_streamed": 31.704545454545457
-  },
-  {
-    "calendar_date": "2026-07-04T00:00:00",
-    "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.283333333333333,
-    "hours_watched": 1159.6666666666667,
-    "followers_gained": 18.0,
-    "peak_viewers": 207,
-    "average_viewers_weighted": 140.0,
-    "followers_per_hour_streamed": 2.1730382293762576
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
@@ -17873,6 +17598,17 @@
     "peak_viewers": 1572,
     "average_viewers_weighted": 1132.0,
     "followers_per_hour_streamed": 54.090909090909086
+  },
+  {
+    "calendar_date": "2026-07-04T00:00:00",
+    "streamer": "paybae",
+    "broadcasts_started": 1,
+    "hours_streamed": 6.0,
+    "hours_watched": 1314.0,
+    "followers_gained": 23.0,
+    "peak_viewers": 296,
+    "average_viewers_weighted": 219.0,
+    "followers_per_hour_streamed": 3.8333333333333335
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
@@ -18019,7 +17755,7 @@
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 8.683333333333334,
     "hours_watched": 24981.95,
@@ -18107,17 +17843,6 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "blazian",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.9333333333333333,
-    "hours_watched": 25.13333333333334,
-    "followers_gained": 3.000000000000001,
-    "peak_viewers": 21,
-    "average_viewers_weighted": 13.000000000000004,
-    "followers_per_hour_streamed": 1.551724137931035
-  },
-  {
-    "calendar_date": "2026-07-05T00:00:00",
     "streamer": "bonita",
     "broadcasts_started": 1,
     "hours_streamed": 0.95,
@@ -18192,17 +17917,6 @@
     "peak_viewers": 283,
     "average_viewers_weighted": 144.0,
     "followers_per_hour_streamed": 47.88461538461538
-  },
-  {
-    "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.1666666666666665,
-    "hours_watched": 57.0,
-    "followers_gained": 6.0,
-    "peak_viewers": 28,
-    "average_viewers_weighted": 18.0,
-    "followers_per_hour_streamed": 1.8947368421052633
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
@@ -18283,17 +17997,6 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 10.033333333333333,
-    "hours_watched": 1625.4000000000005,
-    "followers_gained": 83.00000000000001,
-    "peak_viewers": 304,
-    "average_viewers_weighted": 162.00000000000006,
-    "followers_per_hour_streamed": 8.272425249169437
-  },
-  {
-    "calendar_date": "2026-07-05T00:00:00",
     "streamer": "marlea",
     "broadcasts_started": 1,
     "hours_streamed": 4.616666666666666,
@@ -18340,12 +18043,12 @@
     "calendar_date": "2026-07-05T00:00:00",
     "streamer": "mookie",
     "broadcasts_started": 1,
-    "hours_streamed": 6.4,
-    "hours_watched": 633.6,
-    "followers_gained": 5.0,
-    "peak_viewers": 143,
-    "average_viewers_weighted": 99.0,
-    "followers_per_hour_streamed": 0.78125
+    "hours_streamed": 8.283333333333333,
+    "hours_watched": 1159.6666666666667,
+    "followers_gained": 18.0,
+    "peak_viewers": 207,
+    "average_viewers_weighted": 140.0,
+    "followers_per_hour_streamed": 2.1730382293762576
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
@@ -18445,17 +18148,6 @@
     "peak_viewers": 17,
     "average_viewers_weighted": 9.999999999999998,
     "followers_per_hour_streamed": 3.3027522935779814
-  },
-  {
-    "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.8,
-    "hours_watched": 25.2,
-    "followers_gained": 8.0,
-    "peak_viewers": 33,
-    "average_viewers_weighted": 14.0,
-    "followers_per_hour_streamed": 4.444444444444445
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
@@ -18580,7 +18272,7 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 10.2,
     "hours_watched": 20736.6,
@@ -18702,13 +18394,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "blazian",
-    "broadcasts_started": 2,
-    "hours_streamed": 4.733333333333333,
-    "hours_watched": 298.2,
-    "followers_gained": 2987.0,
+    "broadcasts_started": 3,
+    "hours_streamed": 6.666666666666667,
+    "hours_watched": 323.3333333333333,
+    "followers_gained": 2990.0,
     "peak_viewers": 620,
-    "average_viewers_weighted": 63.0,
-    "followers_per_hour_streamed": 631.056338028169
+    "average_viewers_weighted": 48.49999999999999,
+    "followers_per_hour_streamed": 448.5
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -18845,13 +18537,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "cutegunz",
-    "broadcasts_started": 2,
-    "hours_streamed": 6.183333333333334,
-    "hours_watched": 919.5333333333333,
-    "followers_gained": 2733.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 5.266666666666667,
+    "hours_watched": 721.5333333333333,
+    "followers_gained": 2696.0,
     "peak_viewers": 665,
-    "average_viewers_weighted": 148.71159029649596,
-    "followers_per_hour_streamed": 441.99460916442047
+    "average_viewers_weighted": 137.0,
+    "followers_per_hour_streamed": 511.8987341772152
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -18911,13 +18603,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "elinameng",
-    "broadcasts_started": 2,
-    "hours_streamed": 8.333333333333332,
-    "hours_watched": 399.73333333333335,
-    "followers_gained": 3351.0,
+    "broadcasts_started": 3,
+    "hours_streamed": 11.5,
+    "hours_watched": 456.73333333333335,
+    "followers_gained": 3357.0,
     "peak_viewers": 1508,
-    "average_viewers_weighted": 47.96800000000001,
-    "followers_per_hour_streamed": 402.12000000000006
+    "average_viewers_weighted": 39.71594202898551,
+    "followers_per_hour_streamed": 291.9130434782609
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -18944,13 +18636,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "ftgioo",
-    "broadcasts_started": 2,
-    "hours_streamed": 1.4666666666666668,
-    "hours_watched": 378.4666666666667,
+    "broadcasts_started": 1,
+    "hours_streamed": 1.35,
+    "hours_watched": 330.75,
     "followers_gained": 6645.0,
-    "peak_viewers": 443,
-    "average_viewers_weighted": 258.04545454545456,
-    "followers_per_hour_streamed": 4530.681818181818
+    "peak_viewers": 278,
+    "average_viewers_weighted": 244.99999999999997,
+    "followers_per_hour_streamed": 4922.222222222222
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -18962,17 +18654,6 @@
     "peak_viewers": 548,
     "average_viewers_weighted": 47.0,
     "followers_per_hour_streamed": 512.967032967033
-  },
-  {
-    "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "ijustlovepuzzles",
-    "broadcasts_started": 1,
-    "hours_streamed": 10.066666666666666,
-    "hours_watched": 3201.2,
-    "followers_gained": -3658.0,
-    "peak_viewers": 410,
-    "average_viewers_weighted": 318.0,
-    "followers_per_hour_streamed": -363.3774834437086
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -19120,13 +18801,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "kierapleaze",
-    "broadcasts_started": 2,
-    "hours_streamed": 1.9333333333333333,
-    "hours_watched": 367.58333333333337,
-    "followers_gained": 232.00000000000003,
-    "peak_viewers": 416,
-    "average_viewers_weighted": 190.12931034482762,
-    "followers_per_hour_streamed": 120.00000000000001
+    "broadcasts_started": 1,
+    "hours_streamed": 0.75,
+    "hours_watched": 107.25,
+    "followers_gained": 45.0,
+    "peak_viewers": 231,
+    "average_viewers_weighted": 143.0,
+    "followers_per_hour_streamed": 60.0
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -19186,13 +18867,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 15.266666666666667,
-    "hours_watched": 2885.4,
-    "followers_gained": 3316.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 25.3,
+    "hours_watched": 4510.800000000001,
+    "followers_gained": 3399.0,
     "peak_viewers": 5106,
-    "average_viewers_weighted": 189.0,
-    "followers_per_hour_streamed": 217.20524017467247
+    "average_viewers_weighted": 178.29249011857712,
+    "followers_per_hour_streamed": 134.34782608695653
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -19263,13 +18944,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 8.75,
-    "hours_watched": 1776.25,
-    "followers_gained": 3855.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 15.15,
+    "hours_watched": 2409.85,
+    "followers_gained": 3860.0,
     "peak_viewers": 2620,
-    "average_viewers_weighted": 203.0,
-    "followers_per_hour_streamed": 440.57142857142856
+    "average_viewers_weighted": 159.06600660066005,
+    "followers_per_hour_streamed": 254.78547854785478
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -19336,17 +19017,6 @@
     "peak_viewers": 512,
     "average_viewers_weighted": 137.99999999999997,
     "followers_per_hour_streamed": 697.2908366533865
-  },
-  {
-    "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "paybae",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.033333333333333,
-    "hours_watched": 1548.8,
-    "followers_gained": 157.0,
-    "peak_viewers": 721,
-    "average_viewers_weighted": 384.0,
-    "followers_per_hour_streamed": 38.925619834710744
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -19482,7 +19152,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 5.616666666666666,
     "hours_watched": 241.51666666666668,
@@ -19560,13 +19230,13 @@
   {
     "calendar_date": "2026-07-06T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 2,
-    "hours_streamed": 8.166666666666668,
-    "hours_watched": 227.5666666666667,
-    "followers_gained": 2077.0,
+    "broadcasts_started": 3,
+    "hours_streamed": 9.966666666666667,
+    "hours_watched": 252.76666666666668,
+    "followers_gained": 2085.0,
     "peak_viewers": 92,
-    "average_viewers_weighted": 27.865306122448978,
-    "followers_per_hour_streamed": 254.32653061224485
+    "average_viewers_weighted": 25.36120401337793,
+    "followers_per_hour_streamed": 209.19732441471572
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
@@ -19801,7 +19471,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 13.45,
     "hours_watched": 44075.65,
@@ -19956,24 +19626,24 @@
   {
     "calendar_date": "2026-07-07T00:00:00",
     "streamer": "coolitshawty",
-    "broadcasts_started": 3,
-    "hours_streamed": 2.0,
-    "hours_watched": 25.78333333333333,
-    "followers_gained": 9.0,
-    "peak_viewers": 32,
-    "average_viewers_weighted": 12.891666666666666,
-    "followers_per_hour_streamed": 4.5
+    "broadcasts_started": 2,
+    "hours_streamed": 1.1666666666666667,
+    "hours_watched": 11.616666666666665,
+    "followers_gained": 6.0,
+    "peak_viewers": 23,
+    "average_viewers_weighted": 9.957142857142856,
+    "followers_per_hour_streamed": 5.142857142857142
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
     "streamer": "cutegunz",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.716666666666667,
-    "hours_watched": 913.4666666666668,
-    "followers_gained": 64.0,
-    "peak_viewers": 184,
-    "average_viewers_weighted": 136.00000000000003,
-    "followers_per_hour_streamed": 9.528535980148883
+    "broadcasts_started": 2,
+    "hours_streamed": 7.633333333333334,
+    "hours_watched": 1111.4666666666667,
+    "followers_gained": 101.0,
+    "peak_viewers": 337,
+    "average_viewers_weighted": 145.6069868995633,
+    "followers_per_hour_streamed": 13.231441048034934
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -19999,17 +19669,6 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.216666666666667,
-    "hours_watched": 128.66666666666666,
-    "followers_gained": 27.0,
-    "peak_viewers": 55,
-    "average_viewers_weighted": 39.99999999999999,
-    "followers_per_hour_streamed": 8.393782383419689
-  },
-  {
-    "calendar_date": "2026-07-07T00:00:00",
     "streamer": "ezee",
     "broadcasts_started": 1,
     "hours_streamed": 5.683333333333334,
@@ -20021,6 +19680,17 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
+    "streamer": "ftgioo",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.11666666666666667,
+    "hours_watched": 47.7166666666667,
+    "followers_gained": 0.0,
+    "peak_viewers": 443,
+    "average_viewers_weighted": 409.0000000000002,
+    "followers_per_hour_streamed": 0.0
+  },
+  {
+    "calendar_date": "2026-07-07T00:00:00",
     "streamer": "fumibean",
     "broadcasts_started": 1,
     "hours_streamed": 3.7333333333333334,
@@ -20029,6 +19699,17 @@
     "peak_viewers": 72,
     "average_viewers_weighted": 48.00000000000001,
     "followers_per_hour_streamed": 9.642857142857144
+  },
+  {
+    "calendar_date": "2026-07-07T00:00:00",
+    "streamer": "ijustlovepuzzles",
+    "broadcasts_started": 1,
+    "hours_streamed": 10.066666666666666,
+    "hours_watched": 3201.2,
+    "followers_gained": -3658.0,
+    "peak_viewers": 410,
+    "average_viewers_weighted": 318.0,
+    "followers_per_hour_streamed": -363.3774834437086
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -20051,17 +19732,6 @@
     "peak_viewers": 332,
     "average_viewers_weighted": 100.0,
     "followers_per_hour_streamed": 26.497461928934012
-  },
-  {
-    "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "jaymommy0",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.366666666666666,
-    "hours_watched": 698.6666666666666,
-    "followers_gained": 55.0,
-    "peak_viewers": 200,
-    "average_viewers_weighted": 160.0,
-    "followers_per_hour_streamed": 12.595419847328245
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -20099,13 +19769,13 @@
   {
     "calendar_date": "2026-07-07T00:00:00",
     "streamer": "kierapleaze",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.0,
-    "hours_watched": 338.0,
-    "followers_gained": 116.0,
-    "peak_viewers": 207,
-    "average_viewers_weighted": 169.0,
-    "followers_per_hour_streamed": 58.0
+    "broadcasts_started": 2,
+    "hours_streamed": 3.1833333333333336,
+    "hours_watched": 598.3333333333334,
+    "followers_gained": 303.0,
+    "peak_viewers": 416,
+    "average_viewers_weighted": 187.95811518324606,
+    "followers_per_hour_streamed": 95.18324607329842
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -20150,17 +19820,6 @@
     "peak_viewers": 4158,
     "average_viewers_weighted": 2454.0,
     "followers_per_hour_streamed": 873.4647887323944
-  },
-  {
-    "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "malek_04",
-    "broadcasts_started": 1,
-    "hours_streamed": 3.3333333333333335,
-    "hours_watched": 363.33333333333337,
-    "followers_gained": 48.000000000000014,
-    "peak_viewers": 156,
-    "average_viewers_weighted": 109.0,
-    "followers_per_hour_streamed": 14.400000000000004
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -20254,12 +19913,12 @@
     "calendar_date": "2026-07-07T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 7.883333333333334,
-    "hours_watched": 3137.5666666666666,
-    "followers_gained": 153.0,
-    "peak_viewers": 757,
-    "average_viewers_weighted": 397.99999999999994,
-    "followers_per_hour_streamed": 19.408033826638476
+    "hours_streamed": 4.033333333333333,
+    "hours_watched": 1548.8,
+    "followers_gained": 157.0,
+    "peak_viewers": 721,
+    "average_viewers_weighted": 384.0,
+    "followers_per_hour_streamed": 38.925619834710744
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -20362,7 +20021,7 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 1.3,
     "hours_watched": 96.2,
@@ -20392,17 +20051,6 @@
     "peak_viewers": 430,
     "average_viewers_weighted": 417.00000000000017,
     "followers_per_hour_streamed": 341.53846153846166
-  },
-  {
-    "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.7666666666666666,
-    "hours_watched": 77.46666666666667,
-    "followers_gained": 9.0,
-    "peak_viewers": 69,
-    "average_viewers_weighted": 28.0,
-    "followers_per_hour_streamed": 3.253012048192771
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
@@ -20682,13 +20330,13 @@
   {
     "calendar_date": "2026-07-08T00:00:00",
     "streamer": "coolitshawty",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.55,
-    "hours_watched": 15.5,
-    "followers_gained": 0.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 2.3833333333333333,
+    "hours_watched": 29.666666666666664,
+    "followers_gained": 3.0,
     "peak_viewers": 32,
-    "average_viewers_weighted": 10.0,
-    "followers_per_hour_streamed": 0.0
+    "average_viewers_weighted": 12.447552447552447,
+    "followers_per_hour_streamed": 1.2587412587412588
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
@@ -20704,13 +20352,13 @@
   {
     "calendar_date": "2026-07-08T00:00:00",
     "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.0833333333333335,
-    "hours_watched": 37.50000000000001,
-    "followers_gained": 15.000000000000004,
-    "peak_viewers": 25,
-    "average_viewers_weighted": 18.000000000000004,
-    "followers_per_hour_streamed": 7.200000000000001
+    "broadcasts_started": 2,
+    "hours_streamed": 5.300000000000001,
+    "hours_watched": 166.16666666666666,
+    "followers_gained": 42.0,
+    "peak_viewers": 55,
+    "average_viewers_weighted": 31.35220125786163,
+    "followers_per_hour_streamed": 7.924528301886792
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
@@ -20736,17 +20384,6 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "iwantacinnamonroll",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.8,
-    "hours_watched": 131.4,
-    "followers_gained": 16.0,
-    "peak_viewers": 102,
-    "average_viewers_weighted": 73.0,
-    "followers_per_hour_streamed": 8.88888888888889
-  },
-  {
-    "calendar_date": "2026-07-08T00:00:00",
     "streamer": "jasontheween",
     "broadcasts_started": 1,
     "hours_streamed": 7.583333333333333,
@@ -20755,6 +20392,17 @@
     "peak_viewers": 29552,
     "average_viewers_weighted": 22227.0,
     "followers_per_hour_streamed": 687.8241758241759
+  },
+  {
+    "calendar_date": "2026-07-08T00:00:00",
+    "streamer": "jaymommy0",
+    "broadcasts_started": 1,
+    "hours_streamed": 4.366666666666666,
+    "hours_watched": 698.6666666666666,
+    "followers_gained": 55.0,
+    "peak_viewers": 200,
+    "average_viewers_weighted": 160.0,
+    "followers_per_hour_streamed": 12.595419847328245
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
@@ -20802,6 +20450,17 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
+    "streamer": "malek_04",
+    "broadcasts_started": 1,
+    "hours_streamed": 3.3333333333333335,
+    "hours_watched": 363.33333333333337,
+    "followers_gained": 48.000000000000014,
+    "peak_viewers": 156,
+    "average_viewers_weighted": 109.0,
+    "followers_per_hour_streamed": 14.400000000000004
+  },
+  {
+    "calendar_date": "2026-07-08T00:00:00",
     "streamer": "mandoomillions",
     "broadcasts_started": 1,
     "hours_streamed": 1.1666666666666667,
@@ -20846,17 +20505,6 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "mookie",
-    "broadcasts_started": 1,
-    "hours_streamed": 6.15,
-    "hours_watched": 713.4,
-    "followers_gained": 23.0,
-    "peak_viewers": 188,
-    "average_viewers_weighted": 115.99999999999999,
-    "followers_per_hour_streamed": 3.7398373983739837
-  },
-  {
-    "calendar_date": "2026-07-08T00:00:00",
     "streamer": "notquitelikedub",
     "broadcasts_started": 1,
     "hours_streamed": 0.9666666666666667,
@@ -20870,12 +20518,12 @@
     "calendar_date": "2026-07-08T00:00:00",
     "streamer": "paybae",
     "broadcasts_started": 1,
-    "hours_streamed": 4.683333333333334,
-    "hours_watched": 1259.8166666666666,
-    "followers_gained": 50.0,
-    "peak_viewers": 331,
-    "average_viewers_weighted": 269.0,
-    "followers_per_hour_streamed": 10.676156583629894
+    "hours_streamed": 7.883333333333334,
+    "hours_watched": 3137.5666666666666,
+    "followers_gained": 153.0,
+    "peak_viewers": 757,
+    "average_viewers_weighted": 397.99999999999994,
+    "followers_per_hour_streamed": 19.408033826638476
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
@@ -20989,7 +20637,7 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "sele",
+    "streamer": "seleolu",
     "broadcasts_started": 1,
     "hours_streamed": 0.8666666666666667,
     "hours_watched": 34.666666666666664,
@@ -21034,13 +20682,13 @@
   {
     "calendar_date": "2026-07-08T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.0833333333333335,
-    "hours_watched": 39.58333333333334,
-    "followers_gained": 20.000000000000004,
-    "peak_viewers": 30,
-    "average_viewers_weighted": 19.000000000000004,
-    "followers_per_hour_streamed": 9.600000000000001
+    "broadcasts_started": 2,
+    "hours_streamed": 4.85,
+    "hours_watched": 117.05000000000001,
+    "followers_gained": 29.000000000000004,
+    "peak_viewers": 69,
+    "average_viewers_weighted": 24.134020618556704,
+    "followers_per_hour_streamed": 5.97938144329897
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
@@ -21176,7 +20824,7 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 12.466666666666667,
     "hours_watched": 42710.799999999996,
@@ -21397,13 +21045,13 @@
   {
     "calendar_date": "2026-07-09T00:00:00",
     "streamer": "iwantacinnamonroll",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.2,
-    "hours_watched": 154.0,
-    "followers_gained": 15.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.0,
+    "hours_watched": 285.4,
+    "followers_gained": 31.0,
     "peak_viewers": 104,
-    "average_viewers_weighted": 70.0,
-    "followers_per_hour_streamed": 6.8181818181818175
+    "average_viewers_weighted": 71.35,
+    "followers_per_hour_streamed": 7.75
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
@@ -21552,12 +21200,12 @@
     "calendar_date": "2026-07-09T00:00:00",
     "streamer": "mookie",
     "broadcasts_started": 1,
-    "hours_streamed": 6.216666666666667,
-    "hours_watched": 615.45,
-    "followers_gained": 21.0,
-    "peak_viewers": 125,
-    "average_viewers_weighted": 99.0,
-    "followers_per_hour_streamed": 3.3780160857908847
+    "hours_streamed": 6.15,
+    "hours_watched": 713.4,
+    "followers_gained": 23.0,
+    "peak_viewers": 188,
+    "average_viewers_weighted": 115.99999999999999,
+    "followers_per_hour_streamed": 3.7398373983739837
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
@@ -21602,6 +21250,17 @@
     "peak_viewers": 7243,
     "average_viewers_weighted": 2724.0,
     "followers_per_hour_streamed": 1423.3333333333333
+  },
+  {
+    "calendar_date": "2026-07-09T00:00:00",
+    "streamer": "paybae",
+    "broadcasts_started": 1,
+    "hours_streamed": 4.683333333333334,
+    "hours_watched": 1259.8166666666666,
+    "followers_gained": 50.0,
+    "peak_viewers": 331,
+    "average_viewers_weighted": 269.0,
+    "followers_per_hour_streamed": 10.676156583629894
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
@@ -21858,7 +21517,7 @@
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 10.75,
     "hours_watched": 47826.75,
@@ -22031,17 +21690,6 @@
     "peak_viewers": 9,
     "average_viewers_weighted": 3.0,
     "followers_per_hour_streamed": -1.6666666666666667
-  },
-  {
-    "calendar_date": "2026-07-10T00:00:00",
-    "streamer": "coolitshawty",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.31666666666666665,
-    "hours_watched": 1.2666666666666668,
-    "followers_gained": 5.000000000000001,
-    "peak_viewers": 15,
-    "average_viewers_weighted": 4.000000000000001,
-    "followers_per_hour_streamed": 15.78947368421053
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
@@ -22267,12 +21915,12 @@
     "calendar_date": "2026-07-10T00:00:00",
     "streamer": "mookie",
     "broadcasts_started": 1,
-    "hours_streamed": 5.633333333333334,
-    "hours_watched": 715.4333333333333,
-    "followers_gained": 77.0,
-    "peak_viewers": 210,
-    "average_viewers_weighted": 126.99999999999999,
-    "followers_per_hour_streamed": 13.668639053254436
+    "hours_streamed": 6.216666666666667,
+    "hours_watched": 615.45,
+    "followers_gained": 21.0,
+    "peak_viewers": 125,
+    "average_viewers_weighted": 99.0,
+    "followers_per_hour_streamed": 3.3780160857908847
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
@@ -22397,17 +22045,6 @@
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
-    "streamer": "smokecertified",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.5333333333333333,
-    "hours_watched": 22.933333333333334,
-    "followers_gained": 13.0,
-    "peak_viewers": 59,
-    "average_viewers_weighted": 43.0,
-    "followers_per_hour_streamed": 24.375
-  },
-  {
-    "calendar_date": "2026-07-10T00:00:00",
     "streamer": "stableronaldo",
     "broadcasts_started": 1,
     "hours_streamed": 4.383333333333334,
@@ -22420,13 +22057,13 @@
   {
     "calendar_date": "2026-07-10T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 2,
-    "hours_streamed": 5.316666666666666,
-    "hours_watched": 120.26666666666665,
-    "followers_gained": 32.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 3.4833333333333334,
+    "hours_watched": 83.6,
+    "followers_gained": 26.0,
     "peak_viewers": 41,
-    "average_viewers_weighted": 22.620689655172413,
-    "followers_per_hour_streamed": 6.018808777429467
+    "average_viewers_weighted": 23.999999999999996,
+    "followers_per_hour_streamed": 7.464114832535885
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
@@ -22518,7 +22155,7 @@
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 14.533333333333333,
     "hours_watched": 34458.53333333334,
@@ -22596,13 +22233,13 @@
   {
     "calendar_date": "2026-07-11T00:00:00",
     "streamer": "angelcrackedu",
-    "broadcasts_started": 2,
-    "hours_streamed": 2.4833333333333334,
-    "hours_watched": 110.86666666666665,
-    "followers_gained": 90.0,
-    "peak_viewers": 65,
-    "average_viewers_weighted": 44.64429530201341,
-    "followers_per_hour_streamed": 36.241610738255034
+    "broadcasts_started": 1,
+    "hours_streamed": 0.21666666666666667,
+    "hours_watched": 4.333333333333335,
+    "followers_gained": -2.000000000000001,
+    "peak_viewers": 30,
+    "average_viewers_weighted": 20.000000000000007,
+    "followers_per_hour_streamed": -9.230769230769235
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
@@ -22673,13 +22310,13 @@
   {
     "calendar_date": "2026-07-11T00:00:00",
     "streamer": "coolitshawty",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.65,
-    "hours_watched": 31.35,
-    "followers_gained": 45.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 1.9666666666666666,
+    "hours_watched": 32.61666666666667,
+    "followers_gained": 50.0,
     "peak_viewers": 29,
-    "average_viewers_weighted": 19.000000000000004,
-    "followers_per_hour_streamed": 27.272727272727273
+    "average_viewers_weighted": 16.584745762711865,
+    "followers_per_hour_streamed": 25.423728813559322
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
@@ -22724,17 +22361,6 @@
     "peak_viewers": 393,
     "average_viewers_weighted": 261.0,
     "followers_per_hour_streamed": 98.09523809523809
-  },
-  {
-    "calendar_date": "2026-07-11T00:00:00",
-    "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.183333333333334,
-    "hours_watched": 389.05,
-    "followers_gained": 74.0,
-    "peak_viewers": 376,
-    "average_viewers_weighted": 93.0,
-    "followers_per_hour_streamed": 17.689243027888445
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
@@ -22790,17 +22416,6 @@
     "peak_viewers": 13,
     "average_viewers_weighted": 7.0,
     "followers_per_hour_streamed": 2.4
-  },
-  {
-    "calendar_date": "2026-07-11T00:00:00",
-    "streamer": "kierapleaze",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.21666666666666667,
-    "hours_watched": 16.466666666666672,
-    "followers_gained": 4.000000000000002,
-    "peak_viewers": 97,
-    "average_viewers_weighted": 76.00000000000003,
-    "followers_per_hour_streamed": 18.46153846153847
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
@@ -22925,6 +22540,17 @@
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
+    "streamer": "mookie",
+    "broadcasts_started": 1,
+    "hours_streamed": 5.633333333333334,
+    "hours_watched": 715.4333333333333,
+    "followers_gained": 77.0,
+    "peak_viewers": 210,
+    "average_viewers_weighted": 126.99999999999999,
+    "followers_per_hour_streamed": 13.668639053254436
+  },
+  {
+    "calendar_date": "2026-07-11T00:00:00",
     "streamer": "noemi",
     "broadcasts_started": 1,
     "hours_streamed": 4.933333333333334,
@@ -22970,13 +22596,13 @@
   {
     "calendar_date": "2026-07-11T00:00:00",
     "streamer": "raphaelsololive",
-    "broadcasts_started": 2,
-    "hours_streamed": 4.283333333333333,
-    "hours_watched": 416.75,
-    "followers_gained": 98.0,
-    "peak_viewers": 148,
-    "average_viewers_weighted": 97.29571984435798,
-    "followers_per_hour_streamed": 22.879377431906615
+    "broadcasts_started": 1,
+    "hours_streamed": 0.23333333333333334,
+    "hours_watched": 7.700000000000002,
+    "followers_gained": 5.000000000000001,
+    "peak_viewers": 61,
+    "average_viewers_weighted": 33.00000000000001,
+    "followers_per_hour_streamed": 21.42857142857143
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
@@ -23013,6 +22639,17 @@
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
+    "streamer": "smokecertified",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.5333333333333333,
+    "hours_watched": 22.933333333333334,
+    "followers_gained": 13.0,
+    "peak_viewers": 59,
+    "average_viewers_weighted": 43.0,
+    "followers_per_hour_streamed": 24.375
+  },
+  {
+    "calendar_date": "2026-07-11T00:00:00",
     "streamer": "stableronaldo",
     "broadcasts_started": 1,
     "hours_streamed": 3.4833333333333334,
@@ -23025,24 +22662,24 @@
   {
     "calendar_date": "2026-07-11T00:00:00",
     "streamer": "stanleyymeng",
-    "broadcasts_started": 1,
-    "hours_streamed": 2.85,
-    "hours_watched": 88.35,
-    "followers_gained": 10.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 4.683333333333334,
+    "hours_watched": 125.01666666666665,
+    "followers_gained": 16.0,
     "peak_viewers": 39,
-    "average_viewers_weighted": 30.999999999999996,
-    "followers_per_hour_streamed": 3.508771929824561
+    "average_viewers_weighted": 26.69395017793594,
+    "followers_per_hour_streamed": 3.4163701067615655
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
     "streamer": "suburbbaby",
-    "broadcasts_started": 2,
-    "hours_streamed": 8.266666666666666,
-    "hours_watched": 4672.333333333333,
-    "followers_gained": 3312.0,
-    "peak_viewers": 1378,
-    "average_viewers_weighted": 565.2016129032259,
-    "followers_per_hour_streamed": 400.6451612903226
+    "broadcasts_started": 1,
+    "hours_streamed": 6.6,
+    "hours_watched": 2739.0,
+    "followers_gained": 2544.0,
+    "peak_viewers": 806,
+    "average_viewers_weighted": 415.0,
+    "followers_per_hour_streamed": 385.4545454545455
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
@@ -23145,7 +22782,7 @@
   },
   {
     "calendar_date": "2026-07-11T00:00:00",
-    "streamer": "yugi",
+    "streamer": "yugi2x",
     "broadcasts_started": 1,
     "hours_streamed": 38.333333333333336,
     "hours_watched": 111588.33333333331,
@@ -23201,13 +22838,13 @@
   {
     "calendar_date": "2026-07-12T00:00:00",
     "streamer": "angelcrackedu",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.48333333333333334,
-    "hours_watched": 23.200000000000003,
-    "followers_gained": 19.000000000000004,
+    "broadcasts_started": 2,
+    "hours_streamed": 2.75,
+    "hours_watched": 129.73333333333332,
+    "followers_gained": 111.0,
     "peak_viewers": 82,
-    "average_viewers_weighted": 48.00000000000001,
-    "followers_per_hour_streamed": 39.31034482758621
+    "average_viewers_weighted": 47.17575757575757,
+    "followers_per_hour_streamed": 40.36363636363637
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
@@ -23267,24 +22904,13 @@
   {
     "calendar_date": "2026-07-12T00:00:00",
     "streamer": "elinameng",
-    "broadcasts_started": 1,
-    "hours_streamed": 5.816666666666666,
-    "hours_watched": 2140.5333333333333,
-    "followers_gained": 200.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 10.0,
+    "hours_watched": 2529.5833333333335,
+    "followers_gained": 274.0,
     "peak_viewers": 1796,
-    "average_viewers_weighted": 368.0,
-    "followers_per_hour_streamed": 34.383954154727796
-  },
-  {
-    "calendar_date": "2026-07-12T00:00:00",
-    "streamer": "fanum",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.1166666666666667,
-    "hours_watched": 20034.116666666665,
-    "followers_gained": 570.0,
-    "peak_viewers": 27882,
-    "average_viewers_weighted": 17940.999999999996,
-    "followers_per_hour_streamed": 510.44776119402985
+    "average_viewers_weighted": 252.95833333333334,
+    "followers_per_hour_streamed": 27.4
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
@@ -23343,14 +22969,14 @@
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
-    "streamer": "kiiingjojo",
+    "streamer": "kierapleaze",
     "broadcasts_started": 1,
-    "hours_streamed": 2.6333333333333333,
-    "hours_watched": 36.86666666666667,
-    "followers_gained": 22.0,
-    "peak_viewers": 30,
-    "average_viewers_weighted": 14.0,
-    "followers_per_hour_streamed": 8.354430379746836
+    "hours_streamed": 0.21666666666666667,
+    "hours_watched": 16.466666666666672,
+    "followers_gained": 4.000000000000002,
+    "peak_viewers": 97,
+    "average_viewers_weighted": 76.00000000000003,
+    "followers_per_hour_streamed": 18.46153846153847
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
@@ -23377,13 +23003,13 @@
   {
     "calendar_date": "2026-07-12T00:00:00",
     "streamer": "madaichakell",
-    "broadcasts_started": 3,
-    "hours_streamed": 3.316666666666667,
-    "hours_watched": 11.916666666666668,
-    "followers_gained": 7.0,
+    "broadcasts_started": 1,
+    "hours_streamed": 2.566666666666667,
+    "hours_watched": 10.266666666666667,
+    "followers_gained": 5.0,
     "peak_viewers": 10,
-    "average_viewers_weighted": 3.592964824120603,
-    "followers_per_hour_streamed": 2.1105527638190953
+    "average_viewers_weighted": 4.0,
+    "followers_per_hour_streamed": 1.9480519480519478
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
@@ -23453,6 +23079,17 @@
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
+    "streamer": "raphaelsololive",
+    "broadcasts_started": 1,
+    "hours_streamed": 4.05,
+    "hours_watched": 409.05,
+    "followers_gained": 93.0,
+    "peak_viewers": 148,
+    "average_viewers_weighted": 101.00000000000001,
+    "followers_per_hour_streamed": 22.962962962962965
+  },
+  {
+    "calendar_date": "2026-07-12T00:00:00",
     "streamer": "rawdogmoon",
     "broadcasts_started": 1,
     "hours_streamed": 6.366666666666666,
@@ -23461,17 +23098,6 @@
     "peak_viewers": 496,
     "average_viewers_weighted": 266.0,
     "followers_per_hour_streamed": 67.53926701570681
-  },
-  {
-    "calendar_date": "2026-07-12T00:00:00",
-    "streamer": "runiktvlive",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.3666666666666667,
-    "hours_watched": 4671.266666666666,
-    "followers_gained": 3810.0,
-    "peak_viewers": 5409,
-    "average_viewers_weighted": 3417.9999999999995,
-    "followers_per_hour_streamed": 2787.80487804878
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
@@ -23509,13 +23135,13 @@
   {
     "calendar_date": "2026-07-12T00:00:00",
     "streamer": "suburbbaby",
-    "broadcasts_started": 1,
-    "hours_streamed": 4.066666666666666,
-    "hours_watched": 5274.466666666666,
-    "followers_gained": 3201.0,
+    "broadcasts_started": 2,
+    "hours_streamed": 5.733333333333333,
+    "hours_watched": 7207.799999999999,
+    "followers_gained": 3969.0,
     "peak_viewers": 1858,
-    "average_viewers_weighted": 1297.0,
-    "followers_per_hour_streamed": 787.1311475409836
+    "average_viewers_weighted": 1257.174418604651,
+    "followers_per_hour_streamed": 692.267441860465
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
@@ -23739,6 +23365,17 @@
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
+    "streamer": "fanum",
+    "broadcasts_started": 1,
+    "hours_streamed": 1.1166666666666667,
+    "hours_watched": 20034.116666666665,
+    "followers_gained": 570.0,
+    "peak_viewers": 27882,
+    "average_viewers_weighted": 17940.999999999996,
+    "followers_per_hour_streamed": 510.44776119402985
+  },
+  {
+    "calendar_date": "2026-07-13T00:00:00",
     "streamer": "flako",
     "broadcasts_started": 1,
     "hours_streamed": 0.9833333333333333,
@@ -23794,6 +23431,17 @@
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
+    "streamer": "kiiingjojo",
+    "broadcasts_started": 1,
+    "hours_streamed": 2.6333333333333333,
+    "hours_watched": 36.86666666666667,
+    "followers_gained": 22.0,
+    "peak_viewers": 30,
+    "average_viewers_weighted": 14.0,
+    "followers_per_hour_streamed": 8.354430379746836
+  },
+  {
+    "calendar_date": "2026-07-13T00:00:00",
     "streamer": "lacy",
     "broadcasts_started": 1,
     "hours_streamed": 7.016666666666667,
@@ -23817,13 +23465,13 @@
   {
     "calendar_date": "2026-07-13T00:00:00",
     "streamer": "madaichakell",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.15,
-    "hours_watched": 6.9,
-    "followers_gained": 11.0,
+    "broadcasts_started": 3,
+    "hours_streamed": 1.9,
+    "hours_watched": 8.55,
+    "followers_gained": 13.0,
     "peak_viewers": 11,
-    "average_viewers_weighted": 6.000000000000001,
-    "followers_per_hour_streamed": 9.56521739130435
+    "average_viewers_weighted": 4.500000000000001,
+    "followers_per_hour_streamed": 6.842105263157895
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
@@ -23846,17 +23494,6 @@
     "peak_viewers": 17,
     "average_viewers_weighted": 7.0,
     "followers_per_hour_streamed": 3.061224489795918
-  },
-  {
-    "calendar_date": "2026-07-13T00:00:00",
-    "streamer": "markellwashington",
-    "broadcasts_started": 1,
-    "hours_streamed": 0.06666666666666667,
-    "hours_watched": 13.000000000000014,
-    "followers_gained": 44.00000000000005,
-    "peak_viewers": 438,
-    "average_viewers_weighted": 195.00000000000023,
-    "followers_per_hour_streamed": 660.0000000000008
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
@@ -23927,13 +23564,13 @@
   {
     "calendar_date": "2026-07-13T00:00:00",
     "streamer": "runiktvlive",
-    "broadcasts_started": 1,
-    "hours_streamed": 1.2166666666666666,
-    "hours_watched": 1189.9,
-    "followers_gained": 1000.0,
-    "peak_viewers": 1393,
-    "average_viewers_weighted": 978.0000000000001,
-    "followers_per_hour_streamed": 821.9178082191781
+    "broadcasts_started": 2,
+    "hours_streamed": 2.583333333333333,
+    "hours_watched": 5861.166666666666,
+    "followers_gained": 4810.0,
+    "peak_viewers": 5409,
+    "average_viewers_weighted": 2268.8387096774195,
+    "followers_per_hour_streamed": 1861.935483870968
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
@@ -23993,13 +23630,13 @@
   {
     "calendar_date": "2026-07-13T00:00:00",
     "streamer": "thatsdaveontv",
-    "broadcasts_started": 2,
-    "hours_streamed": 1.9166666666666665,
-    "hours_watched": 525.6666666666665,
-    "followers_gained": 994.9999999999999,
+    "broadcasts_started": 1,
+    "hours_streamed": 1.0666666666666667,
+    "hours_watched": 311.4666666666666,
+    "followers_gained": 504.9999999999999,
     "peak_viewers": 406,
-    "average_viewers_weighted": 274.2608695652173,
-    "followers_per_hour_streamed": 519.1304347826086
+    "average_viewers_weighted": 291.99999999999994,
+    "followers_per_hour_streamed": 473.4374999999999
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
@@ -24102,11 +23739,22 @@
   },
   {
     "calendar_date": "2026-07-14T00:00:00",
+    "streamer": "markellwashington",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.06666666666666667,
+    "hours_watched": 13.000000000000014,
+    "followers_gained": 44.00000000000005,
+    "peak_viewers": 438,
+    "average_viewers_weighted": 195.00000000000023,
+    "followers_per_hour_streamed": 660.0000000000008
+  },
+  {
+    "calendar_date": "2026-07-14T00:00:00",
     "streamer": "silky",
     "broadcasts_started": 1,
-    "hours_streamed": 6.933333333333334,
-    "hours_watched": 47923.2,
-    "followers_gained": 2340.0,
+    "hours_streamed": 5.683333333333334,
+    "hours_watched": 39283.2,
+    "followers_gained": 1918.125,
     "peak_viewers": 12872,
     "average_viewers_weighted": 6911.999999999999,
     "followers_per_hour_streamed": 337.5
@@ -24121,5 +23769,16 @@
     "peak_viewers": 46708,
     "average_viewers_weighted": 33353.0,
     "followers_per_hour_streamed": 626.4963503649635
+  },
+  {
+    "calendar_date": "2026-07-14T00:00:00",
+    "streamer": "thatsdaveontv",
+    "broadcasts_started": 1,
+    "hours_streamed": 0.85,
+    "hours_watched": 214.2,
+    "followers_gained": 490.0,
+    "peak_viewers": 395,
+    "average_viewers_weighted": 252.0,
+    "followers_per_hour_streamed": 576.4705882352941
   }
 ]
