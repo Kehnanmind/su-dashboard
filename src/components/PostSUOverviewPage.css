@@ -23,6 +23,17 @@
   min-width: 250px;
 }
 
+.post-su-heading .dropdown-trigger {
+  border-color: rgba(214, 168, 95, 0.58);
+  box-shadow: inset 0 0 0 1px rgba(214, 168, 95, 0.12);
+}
+
+.post-su-heading .dropdown-trigger:hover,
+.post-su-heading .dropdown-trigger:focus-visible {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(214, 168, 95, 0.14);
+}
+
 .post-su-heading .dropdown-menu {
   left: auto;
   right: 0;

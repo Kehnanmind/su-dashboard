@@ -268,6 +268,27 @@
 .post-su-breakdown-toolbar .dropdown-trigger strong { max-width: 160px; }
 .post-su-breakdown-toolbar .dropdown-menu { width: 260px; z-index: 130; }
 .post-su-breakdown-toolbar .dropdown-option input { width: auto; min-width: 0; }
+.post-su-breakdown-toolbar .dropdown-trigger,
+.post-su-breakdown-heading-actions .post-su-range-trigger,
+.post-su-timeline-picker .post-su-range-trigger,
+.post-su-group-filter select,
+.post-su-outcome-header select {
+  border-color: rgba(214, 168, 95, 0.58);
+  box-shadow: inset 0 0 0 1px rgba(214, 168, 95, 0.12);
+}
+.post-su-breakdown-toolbar .dropdown-trigger:hover,
+.post-su-breakdown-toolbar .dropdown-trigger:focus-visible,
+.post-su-breakdown-heading-actions .post-su-range-trigger:hover,
+.post-su-breakdown-heading-actions .post-su-range-trigger:focus-visible,
+.post-su-timeline-picker .post-su-range-trigger:hover,
+.post-su-timeline-picker .post-su-range-trigger:focus-visible,
+.post-su-group-filter select:hover,
+.post-su-group-filter select:focus-visible,
+.post-su-outcome-header select:hover,
+.post-su-outcome-header select:focus-visible {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(214, 168, 95, 0.14);
+}
 
 .post-su-search-control {
   border-color: rgba(79, 158, 255, 0.5);
