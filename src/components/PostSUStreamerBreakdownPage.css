@@ -359,6 +359,7 @@
 .post-su-calendar-grid button.selected-day { border-color: var(--accent-gold); background: var(--accent-gold); color: #171b22; font-weight: 800; }
 .post-su-calendar-grid button.in-range { background: rgba(214, 168, 95, 0.18); color: var(--accent-gold); }
 .post-su-calendar-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 9px; }
+.post-su-calendar-actions { display: flex; align-items: center; gap: 5px; }
 .post-su-calendar-footer button { padding: 3px 7px; font-size: 10px; }
 .post-su-chart-actions { flex-wrap: wrap; justify-content: flex-end; }
 .post-su-range-control { display: inline-flex; align-items: center; gap: 6px; padding: 4px 6px; border: 1px solid var(--border); border-radius: 5px; background: rgba(21, 28, 38, 0.7); }
