@@ -3364,8 +3364,8 @@
     "scale_percentile": 88.14814814814815
   },
   {
-    "streamer": "notbilzo",
-    "display_name": "notbilzo",
+    "streamer": "bilzo",
+    "display_name": "bilzo",
     "group": "Student",
     "category": "student",
     "pre_broadcasts": 6,
@@ -9976,8 +9976,8 @@
     "scale_percentile": 66.66666666666666
   },
   {
-    "streamer": "s0pink",
-    "display_name": "s0pink",
+    "streamer": "sopink",
+    "display_name": "sopink",
     "group": "Student",
     "category": "student",
     "pre_broadcasts": 8,
@@ -11832,8 +11832,8 @@
     "scale_percentile": 34.074074074074076
   },
   {
-    "streamer": "rizpyyt",
-    "display_name": "rizpyyt",
+    "streamer": "rizpy",
+    "display_name": "rizpy",
     "group": "Student",
     "category": "student",
     "pre_broadcasts": 14,

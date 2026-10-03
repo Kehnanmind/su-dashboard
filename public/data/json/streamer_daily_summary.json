@@ -1248,8 +1248,8 @@
     "broadcasts": 1
   },
   {
-    "streamer": "notbilzo",
-    "display_name": "notbilzo",
+    "streamer": "bilzo",
+    "display_name": "bilzo",
     "group": "Student",
     "stream_date": "2026-07-15T06:00:00",
     "event_day": "Day 1",
@@ -1472,8 +1472,8 @@
     "broadcasts": 2
   },
   {
-    "streamer": "rizpyyt",
-    "display_name": "rizpyyt",
+    "streamer": "rizpy",
+    "display_name": "rizpy",
     "group": "Student",
     "stream_date": "2026-07-15T06:00:00",
     "event_day": "Day 1",
@@ -1520,8 +1520,8 @@
     "broadcasts": 2
   },
   {
-    "streamer": "s0pink",
-    "display_name": "s0pink",
+    "streamer": "sopink",
+    "display_name": "sopink",
     "group": "Student",
     "stream_date": "2026-07-15T06:00:00",
     "event_day": "Day 1",
@@ -3344,8 +3344,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "notbilzo",
-    "display_name": "notbilzo",
+    "streamer": "bilzo",
+    "display_name": "bilzo",
     "group": "Student",
     "stream_date": "2026-07-16T06:00:00",
     "event_day": "Day 2",
@@ -3568,8 +3568,8 @@
     "broadcasts": 3
   },
   {
-    "streamer": "rizpyyt",
-    "display_name": "rizpyyt",
+    "streamer": "rizpy",
+    "display_name": "rizpy",
     "group": "Student",
     "stream_date": "2026-07-16T06:00:00",
     "event_day": "Day 2",
@@ -3616,8 +3616,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "s0pink",
-    "display_name": "s0pink",
+    "streamer": "sopink",
+    "display_name": "sopink",
     "group": "Student",
     "stream_date": "2026-07-16T06:00:00",
     "event_day": "Day 2",
@@ -5456,8 +5456,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "notbilzo",
-    "display_name": "notbilzo",
+    "streamer": "bilzo",
+    "display_name": "bilzo",
     "group": "Student",
     "stream_date": "2026-07-17T06:00:00",
     "event_day": "Day 3",
@@ -5680,8 +5680,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "rizpyyt",
-    "display_name": "rizpyyt",
+    "streamer": "rizpy",
+    "display_name": "rizpy",
     "group": "Student",
     "stream_date": "2026-07-17T06:00:00",
     "event_day": "Day 3",
@@ -5728,8 +5728,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "s0pink",
-    "display_name": "s0pink",
+    "streamer": "sopink",
+    "display_name": "sopink",
     "group": "Student",
     "stream_date": "2026-07-17T06:00:00",
     "event_day": "Day 3",
@@ -7552,8 +7552,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "notbilzo",
-    "display_name": "notbilzo",
+    "streamer": "bilzo",
+    "display_name": "bilzo",
     "group": "Student",
     "stream_date": "2026-07-18T06:00:00",
     "event_day": "Day 4",
@@ -7776,8 +7776,8 @@
     "broadcasts": 1
   },
   {
-    "streamer": "rizpyyt",
-    "display_name": "rizpyyt",
+    "streamer": "rizpy",
+    "display_name": "rizpy",
     "group": "Student",
     "stream_date": "2026-07-18T06:00:00",
     "event_day": "Day 4",
@@ -7824,8 +7824,8 @@
     "broadcasts": 0
   },
   {
-    "streamer": "s0pink",
-    "display_name": "s0pink",
+    "streamer": "sopink",
+    "display_name": "sopink",
     "group": "Student",
     "stream_date": "2026-07-18T06:00:00",
     "event_day": "Day 4",
@@ -9632,8 +9632,8 @@
     "broadcasts": 1
   },
   {
-    "streamer": "notbilzo",
-    "display_name": "notbilzo",
+    "streamer": "bilzo",
+    "display_name": "bilzo",
     "group": "Student",
     "stream_date": "2026-07-19T06:00:00",
     "event_day": "Day 5",
@@ -9840,8 +9840,8 @@
     "broadcasts": 2
   },
   {
-    "streamer": "rizpyyt",
-    "display_name": "rizpyyt",
+    "streamer": "rizpy",
+    "display_name": "rizpy",
     "group": "Student",
     "stream_date": "2026-07-19T06:00:00",
     "event_day": "Day 5",
@@ -9888,8 +9888,8 @@
     "broadcasts": 1
   },
   {
-    "streamer": "s0pink",
-    "display_name": "s0pink",
+    "streamer": "sopink",
+    "display_name": "sopink",
     "group": "Student",
     "stream_date": "2026-07-19T06:00:00",
     "event_day": "Day 5",

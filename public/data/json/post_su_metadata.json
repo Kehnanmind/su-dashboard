@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-08-31T17:37:00.624625+00:00",
+  "generated_at_utc": "2026-10-03T14:04:55.469082+00:00",
   "post_su_window": {
     "start": "2026-07-21T00:00:00",
-    "end_exclusive": "2026-08-31T00:00:00",
+    "end_exclusive": "2026-10-01T00:00:00",
     "inclusion_rule": "Streams starting before the end-exclusive cutoff are included in full.",
-    "data_end_exclusive": "2026-08-31T00:00:00",
-    "days_available": 41.0,
+    "data_end_exclusive": "2026-10-01T00:00:00",
+    "days_available": 72.0,
     "complete_data_window": true,
     "complete_30_day_window": true
   },

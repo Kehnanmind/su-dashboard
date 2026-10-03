@@ -26,6 +26,11 @@ function numberOf(row, ...keys) {
   return Number.isFinite(number) ? number : 0;
 }
 
+function mergeDefined(base, incoming) {
+  const definedEntries = Object.entries(incoming).filter(([, value]) => value !== null && value !== undefined && value !== "");
+  return { ...base, ...Object.fromEntries(definedEntries) };
+}
+
 function formatNumber(value, decimals = 0) {
   const number = Number(value);
   if (!Number.isFinite(number)) return "—";
@@ -391,7 +396,7 @@ function MultiSelectDropdown({
 
 function CustomRangePicker({ label, start, end, minDate, maxDate, onChange, onClear, showPeriodMarkers = false }) {
   const [open, setOpen] = useState(false);
-  const [viewDate, setViewDate] = useState(() => new Date(`${minDate}T00:00:00`));
+  const [viewDate, setViewDate] = useState(() => new Date(`${start || minDate}T00:00:00`));
   const [pendingStart, setPendingStart] = useState(start);
   const pickerRef = useRef(null);
 
@@ -431,8 +436,10 @@ function CustomRangePicker({ label, start, end, minDate, maxDate, onChange, onCl
     return day;
   });
   const monthLabel = viewDate.toLocaleDateString(undefined, { month: "long", year: "numeric" });
-  const canGoPrevious = viewDate > new Date(2026, 5, 1);
-  const canGoNext = viewDate < new Date(2026, 7, 1);
+  const minimumMonth = new Date(`${minDate.slice(0, 7)}-01T00:00:00`);
+  const maximumMonth = new Date(`${maxDate.slice(0, 7)}-01T00:00:00`);
+  const canGoPrevious = viewDate > minimumMonth;
+  const canGoNext = viewDate < maximumMonth;
 
   return (
     <div className="post-su-custom-range" ref={pickerRef}>
@@ -481,8 +488,8 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   const [sortDescending, setSortDescending] = useState(true);
   const [outcomeFilter, setOutcomeFilter] = useState("All");
   const [selectedStreamer, setSelectedStreamer] = useState(null);
-  const [metricRangeStart, setMetricRangeStart] = useState("2026-08-01");
-  const [metricRangeEnd, setMetricRangeEnd] = useState("2026-08-30");
+  const [metricRangeStart, setMetricRangeStart] = useState("2026-09-01");
+  const [metricRangeEnd, setMetricRangeEnd] = useState("2026-09-30");
   const [timelineRangeStart, setTimelineRangeStart] = useState("");
   const [timelineRangeEnd, setTimelineRangeEnd] = useState("");
   const rangeStart = timelineRangeStart;
@@ -491,9 +498,9 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
   const setRangeEnd = setTimelineRangeEnd;
   const earliestTimelineDate = "2026-06-01";
   const earliestPostSUDate = "2026-07-21";
-  const latestPostSUDate = "2026-08-30";
-  const defaultPostSUMetricStart = "2026-08-01";
-  const defaultPostSUMetricEnd = "2026-08-30";
+  const latestPostSUDate = "2026-09-30";
+  const defaultPostSUMetricStart = "2026-09-01";
+  const defaultPostSUMetricEnd = "2026-09-30";
   const postSUMetricStart = metricRangeStart || earliestPostSUDate;
   const postSUMetricEnd = metricRangeEnd || latestPostSUDate;
   const postSUMetricRangeLabel = `${formatRangeDate(postSUMetricStart)} - ${formatRangeDate(postSUMetricEnd)}`;
@@ -574,14 +581,14 @@ function PostSUStreamerBreakdownPage({ summary = [], duringSummary = [], streams
     for (const row of duringSummary) {
       const key = String(row?.streamer || row?.display_name || "");
       if (!key) continue;
-      byStreamer.set(key, { ...row });
+      byStreamer.set(key, mergeDefined(byStreamer.get(key) || {}, row));
     }
 
     for (const row of filteredSummary) {
       const key = String(row?.streamer || row?.display_name || "");
       if (!key) continue;
       const current = byStreamer.get(key) || {};
-      byStreamer.set(key, { ...current, ...row });
+      byStreamer.set(key, mergeDefined(current, row));
     }
 
     return [...byStreamer.values()];

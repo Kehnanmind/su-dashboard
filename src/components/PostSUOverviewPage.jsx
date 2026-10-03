@@ -130,6 +130,12 @@ function outcomeOf(row) {
   return "Stagnant";
 }
 
+function monthLabel(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Latest month";
+  return date.toLocaleDateString("en-US", { month: "long" });
+}
+
 function MultiSelectDropdown({
   label,
   options,
@@ -215,7 +221,7 @@ function MultiSelectDropdown({
   );
 }
 
-function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], metadata = null }) {
+function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [] }) {
   const [selectedOutcome, setSelectedOutcome] = useState(null);
   const [selectedGroups, setSelectedGroups] = useState([]);
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
@@ -284,6 +290,63 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
     );
   }, [summaryWithSizeTier, selectedGroups, selectedSizeTiers]);
 
+  const latestMonth = useMemo(() => {
+    const latestDate = daily.reduce((latest, row) => {
+      const date = String(row.calendar_date || row.date || "").slice(0, 10);
+      return date > latest ? date : latest;
+    }, "");
+
+    return latestDate ? latestDate.slice(0, 7) : "";
+  }, [daily]);
+
+  const outcomeSummary = useMemo(() => {
+    if (!latestMonth) return filteredSummary;
+
+    const latestMonthByStreamer = new Map();
+    for (const row of daily) {
+      const date = String(row.calendar_date || row.date || "").slice(0, 10);
+      if (!date.startsWith(latestMonth)) continue;
+
+      const streamerKey = String(row.streamer || row.display_name || "").toLowerCase();
+      if (!streamerKey) continue;
+
+      const aggregate = latestMonthByStreamer.get(streamerKey) || {
+        broadcasts: 0,
+        hours: 0,
+        watched: 0,
+      };
+      aggregate.broadcasts += numberOf(row, "broadcasts_started");
+      aggregate.hours += numberOf(row, "hours_streamed");
+      aggregate.watched += numberOf(row, "hours_watched");
+      latestMonthByStreamer.set(streamerKey, aggregate);
+    }
+
+    return filteredSummary.map((row) => {
+      const streamerKey = String(row.streamer || row.display_name || "").toLowerCase();
+      const aggregate = latestMonthByStreamer.get(streamerKey);
+      const baseline = Number(row.pre_june_average_viewers);
+      const averageViewers = aggregate?.hours > 0 ? aggregate.watched / aggregate.hours : 0;
+      const hasPostSUData = Boolean(aggregate?.broadcasts && aggregate.hours > 0);
+      const hasBaseline = Number.isFinite(baseline) && baseline > 0;
+      const growthPct = hasBaseline ? ((averageViewers - baseline) / baseline) * 100 : null;
+
+      let audienceResult = "Stagnant";
+      if (!hasPostSUData || !hasBaseline) audienceResult = "Undetermined";
+      else if (growthPct > 10) audienceResult = "Grew";
+      else if (growthPct < -10) audienceResult = "Declined";
+
+      return {
+        ...row,
+        has_post_su_data: hasPostSUData,
+        barely_streamed_post_su: hasPostSUData && (aggregate.broadcasts < 2 || aggregate.hours < 20),
+        post_su_total_hours_streamed: aggregate?.hours || 0,
+        post_su_average_viewers_weighted: averageViewers,
+        post_su_viewer_growth_pct: growthPct,
+        post_su_audience_result: audienceResult,
+      };
+    });
+  }, [daily, filteredSummary, latestMonth]);
+
   const activeSummary = useMemo(
     () => filteredSummary.filter((row) => row.has_post_su_data),
     [filteredSummary]
@@ -342,7 +405,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
   }, [daily, allowedStreamers]);
 
   const momentumCards = useMemo(() => {
-    const preferredWindowSize = 10;
+    const preferredWindowSize = 14;
     const windowsAvailable = Math.floor(trend.length / 2);
     const windowSize = Math.max(3, Math.min(preferredWindowSize, windowsAvailable));
     const hasWindows = windowSize >= 3 && trend.length >= windowSize * 2;
@@ -444,8 +507,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         });
       }
 
-      // Only the slide from the prior window to the recent window: first point is the prior average, last is the recent average.
-      return points.slice(-(windowSize + 1));
+      return points.slice(-14);
     }
 
     function momentumFor(metricKey) {
@@ -564,25 +626,21 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
 
   const outcomes = useMemo(() => Object.keys(OUTCOME_CONFIG).map((outcome) => ({
     outcome,
-    value: filteredSummary.filter((row) => outcomeOf(row) === outcome).length,
+    value: outcomeSummary.filter((row) => outcomeOf(row) === outcome).length,
     ...OUTCOME_CONFIG[outcome],
-  })), [filteredSummary]);
+  })), [outcomeSummary]);
 
   const outcomeStreamers = useMemo(() => {
     if (!selectedOutcome) return [];
-    return filteredSummary
+    return outcomeSummary
       .filter((row) => outcomeOf(row) === selectedOutcome)
       .sort((left, right) => numberOf(right, "post_su_viewer_growth_pct") - numberOf(left, "post_su_viewer_growth_pct"));
-  }, [selectedOutcome, filteredSummary]);
+  }, [selectedOutcome, outcomeSummary]);
 
-  const classificationWindow = metadata?.classification_window;
-  const postSUOutcomePeriod = classificationWindow
-    ? (() => {
-        const lastDate = new Date(`${String(classificationWindow.end_exclusive).slice(0, 10)}T00:00:00`);
-        lastDate.setDate(lastDate.getDate() - 1);
-        return `${formatDate(classificationWindow.start)} - ${formatDate(lastDate)}`;
-      })()
-    : "Aug 1 - Aug 30";
+  const latestMonthName = monthLabel(`${latestMonth}-01T00:00:00`);
+  const postSUOutcomePeriod = trend.length
+    ? `${formatDate(`${latestMonth}-01T00:00:00`)} - ${formatDate(trend[trend.length - 1].date)}`
+    : "Latest month";
 
   return (
     <section className="post-su-page">
@@ -591,26 +649,29 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
           <span className="post-su-kicker">Post-SU Analysis</span>
           <h2>Overview</h2>
         </div>
-        <div className="post-su-heading-filters">
-          <MultiSelectDropdown
-            label="Group"
-            options={groupOptions}
-            selected={selectedGroups}
-            onChange={(next) => {
-              setSelectedGroups(next);
-              setSelectedOutcome(null);
-            }}
-          />
-          <MultiSelectDropdown
-            label="Pre-SU streamer size"
-            options={sizeTierOptions}
-            selected={selectedSizeTiers}
-            onChange={(next) => {
-              setSelectedSizeTiers(next);
-              setSelectedOutcome(null);
-            }}
-            allLabel="All"
-          />
+        <div className="post-su-heading-actions">
+          <span className="post-su-last-updated">Last Updated 2026/10/01</span>
+          <div className="post-su-heading-filters">
+            <MultiSelectDropdown
+              label="Group"
+              options={groupOptions}
+              selected={selectedGroups}
+              onChange={(next) => {
+                setSelectedGroups(next);
+                setSelectedOutcome(null);
+              }}
+            />
+            <MultiSelectDropdown
+              label="Pre-SU streamer size"
+              options={sizeTierOptions}
+              selected={selectedSizeTiers}
+              onChange={(next) => {
+                setSelectedSizeTiers(next);
+                setSelectedOutcome(null);
+              }}
+              allLabel="All"
+            />
+          </div>
         </div>
       </header>
 
@@ -626,7 +687,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
         <div className="post-su-panel-heading">
           <div>
             <h3>Trajectory & momentum</h3>
-            <span>Last 10 days vs previous 10 days</span>
+            <span>Recent 14d vs prior 14d</span>
           </div>
         </div>
         <div className="post-su-momentum-grid">
@@ -653,11 +714,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
                       type="category"
                       interval={0}
                       ticks={card.sparkline.length > 1 ? [card.sparkline[0].date, card.sparkline[card.sparkline.length - 1].date] : []}
-                      tickFormatter={(value) =>
-                        value === card.sparkline[0]?.date
-                          ? `Prior ${card.windowSize}d`
-                          : `Recent ${card.windowSize}d`
-                      }
+                      tickFormatter={formatMonthDay}
                       tick={{ fill: "#A3ADB8", fontSize: 9 }}
                       axisLine={false}
                       tickLine={false}
@@ -700,7 +757,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
 
       <section className="post-su-grid">
         <article className="post-su-panel post-su-outcomes-panel">
-          <div className="post-su-panel-heading"><div><h3>Audience outcome</h3><span><strong>Post-SU</strong> period: {postSUOutcomePeriod} · Compared with June average viewers <span className="post-su-outcome-help" aria-label="How the audience outcome is calculated?" role="img" tabIndex="0">?<span className="post-su-outcome-tooltip" role="tooltip">July is excluded because hype around the event and botting inflated audience numbers. Outcomes use August 1-30 for a more representative <strong>Post-SU</strong> comparison.</span></span></span></div></div>
+          <div className="post-su-panel-heading"><div><h3>Audience outcome</h3><span><strong>Post-SU</strong> period: {postSUOutcomePeriod} · Compared with June average viewers <span className="post-su-outcome-help" aria-label="How the audience outcome is calculated?" role="img" tabIndex="0">?<span className="post-su-outcome-tooltip" role="tooltip">July is excluded because hype around the event and botting inflated audience numbers. Outcomes use {latestMonthName} for a more representative <strong>Post-SU</strong> comparison.</span></span></span></div></div>
           <div className="post-su-outcomes">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -760,7 +817,7 @@ function PostSUOverviewPage({ summary = [], duringSummary = [], daily = [], meta
             </div>
             <div className="post-su-drawer-columns">
               <span>Streamer</span>
-              <span>June vs August (%) Average Viewers</span>
+              <span>June vs {latestMonthName} (%) Average Viewers</span>
             </div>
             <div className="post-su-drawer-list">
               {outcomeStreamers.map((row) => {

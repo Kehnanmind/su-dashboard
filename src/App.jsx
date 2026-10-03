@@ -354,7 +354,6 @@ function App() {
   const [selectedGroups, setSelectedGroups] = useState([]);
   const [selectedSizeTiers, setSelectedSizeTiers] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
-  const [updatedAt, setUpdatedAt] = useState("");
   const [metric, setMetric] = useState("during_followers_gained");
   const [activeView, setActiveView] = useState("overview");
   const [search, setSearch] = useState("");
@@ -421,11 +420,6 @@ function App() {
           responses.map((response) => response.json())
         );
 
-        const lastModified =
-          responses[4].headers.get("last-modified") ||
-          responses[0].headers.get("last-modified") ||
-          "";
-
         const filteredSummary = (Array.isArray(summaryData) ? summaryData : []).filter(
           (row) => !EXCLUDED_GROUPS.has(row.group)
         );
@@ -448,19 +442,6 @@ function App() {
         setPostSUStreams(Array.isArray(postSUStreamsData) ? postSUStreamsData : []);
         setPostSUMetadata(postSUMetadataData || null);
         setPreSUStreams(Array.isArray(preSUStreamsData) ? preSUStreamsData.filter((row) => !EXCLUDED_GROUPS.has(row.group)) : []);
-        setUpdatedAt(
-          lastModified
-            ? new Date(lastModified).toLocaleString(undefined, {
-                timeZone: "America/Chicago",
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: true,
-              }) + " CT"
-            : ""
-        );
 
         const groups = GROUP_ORDER.filter((group) =>
           filteredSummary.some((row) => row.group === group)
@@ -834,7 +815,7 @@ function App() {
         <div className="sidebar-footer">
           Streamer University
           <br />
-          v1.0a
+          v1.0
         </div>
       </aside>
 
@@ -877,11 +858,7 @@ function App() {
           </div>
 
           <div className="header-right">
-            <span>
-              {updatedAt
-                ? `Last updated ${updatedAt}`
-                : "Last updated from generated JSON"}
-            </span>
+            <span>Last Updated 2026/10/01</span>
             <div className="status-pill">● Data loaded</div>
           </div>
         </header>

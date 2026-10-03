@@ -375,7 +375,7 @@
   },
   {
     "calendar_date": "2026-06-01T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.0166666666666666,
     "hours_watched": 17.283333333333335,
@@ -804,7 +804,7 @@
   },
   {
     "calendar_date": "2026-06-02T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.6833333333333333,
     "hours_watched": 10.933333333333334,
@@ -1717,7 +1717,7 @@
   },
   {
     "calendar_date": "2026-06-04T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 2,
     "hours_streamed": 0.5,
     "hours_watched": 8.583333333333334,
@@ -2168,7 +2168,7 @@
   },
   {
     "calendar_date": "2026-06-05T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 1.2333333333333334,
     "hours_watched": 37.0,
@@ -3103,7 +3103,7 @@
   },
   {
     "calendar_date": "2026-06-07T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 3.75,
     "hours_watched": 258.75,
@@ -4764,7 +4764,7 @@
   },
   {
     "calendar_date": "2026-06-10T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.0333333333333334,
     "hours_watched": 34.1,
@@ -5677,7 +5677,7 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 4.916666666666667,
     "hours_watched": 7050.5,
@@ -5743,7 +5743,7 @@
   },
   {
     "calendar_date": "2026-06-12T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.8333333333333334,
     "hours_watched": 10.833333333333334,
@@ -6293,7 +6293,7 @@
   },
   {
     "calendar_date": "2026-06-13T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 3.2,
     "hours_watched": 48.0,
@@ -6788,7 +6788,7 @@
   },
   {
     "calendar_date": "2026-06-14T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 5.366666666666666,
     "hours_watched": 96.6,
@@ -7283,7 +7283,7 @@
   },
   {
     "calendar_date": "2026-06-15T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 8.7,
     "hours_watched": 113.1,
@@ -8548,7 +8548,7 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 2.4833333333333334,
     "hours_watched": 54.63333333333333,
@@ -8570,7 +8570,7 @@
   },
   {
     "calendar_date": "2026-06-17T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 12.55,
     "hours_watched": 313.75,
@@ -9175,7 +9175,7 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.4833333333333334,
     "hours_watched": 59.333333333333336,
@@ -9197,7 +9197,7 @@
   },
   {
     "calendar_date": "2026-06-18T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 3.1333333333333333,
     "hours_watched": 62.66666666666666,
@@ -9802,7 +9802,7 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.6833333333333333,
     "hours_watched": 17.766666666666666,
@@ -9813,7 +9813,7 @@
   },
   {
     "calendar_date": "2026-06-19T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 5.183333333333334,
     "hours_watched": 108.85,
@@ -10341,7 +10341,7 @@
   },
   {
     "calendar_date": "2026-06-20T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 4.566666666666666,
     "hours_watched": 95.9,
@@ -10759,7 +10759,7 @@
   },
   {
     "calendar_date": "2026-06-21T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.1666666666666667,
     "hours_watched": 23.33333333333333,
@@ -11859,7 +11859,7 @@
   },
   {
     "calendar_date": "2026-06-23T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.7,
     "hours_watched": 11.9,
@@ -13080,7 +13080,7 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.95,
     "hours_watched": 52.65,
@@ -13091,7 +13091,7 @@
   },
   {
     "calendar_date": "2026-06-25T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 4.133333333333334,
     "hours_watched": 74.4,
@@ -13619,7 +13619,7 @@
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.6833333333333333,
     "hours_watched": 20.200000000000003,
@@ -13641,7 +13641,7 @@
   },
   {
     "calendar_date": "2026-06-26T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 4.9,
     "hours_watched": 161.7,
@@ -14158,7 +14158,7 @@
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.9166666666666666,
     "hours_watched": 13.75,
@@ -14169,7 +14169,7 @@
   },
   {
     "calendar_date": "2026-06-27T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 2.2666666666666666,
     "hours_watched": 61.2,
@@ -14609,7 +14609,7 @@
   },
   {
     "calendar_date": "2026-06-28T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 1.9666666666666666,
     "hours_watched": 173.0666666666667,
@@ -15148,7 +15148,7 @@
   },
   {
     "calendar_date": "2026-06-29T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.3833333333333333,
     "hours_watched": 24.9,
@@ -15665,7 +15665,7 @@
   },
   {
     "calendar_date": "2026-06-30T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.1166666666666667,
     "hours_watched": 25.683333333333334,
@@ -16171,7 +16171,7 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.0666666666666667,
     "hours_watched": 25.599999999999994,
@@ -16182,7 +16182,7 @@
   },
   {
     "calendar_date": "2026-07-01T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 4.35,
     "hours_watched": 65.25,
@@ -17579,7 +17579,7 @@
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 2.0166666666666666,
     "hours_watched": 244.01666666666668,
@@ -17645,7 +17645,7 @@
   },
   {
     "calendar_date": "2026-07-04T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 2,
     "hours_streamed": 8.0,
     "hours_watched": 273.0,
@@ -18063,7 +18063,7 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 1.1833333333333333,
     "hours_watched": 966.7833333333334,
@@ -18118,7 +18118,7 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.9166666666666667,
     "hours_watched": 49.833333333333336,
@@ -18129,7 +18129,7 @@
   },
   {
     "calendar_date": "2026-07-05T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 2.1333333333333333,
     "hours_watched": 36.266666666666666,
@@ -18987,7 +18987,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 6.35,
     "hours_watched": 2063.75,
@@ -19097,7 +19097,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 2,
     "hours_streamed": 4.05,
     "hours_watched": 193.65,
@@ -19130,7 +19130,7 @@
   },
   {
     "calendar_date": "2026-07-06T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 8.383333333333333,
     "hours_watched": 746.1166666666667,
@@ -19878,7 +19878,7 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 2.05,
     "hours_watched": 744.15,
@@ -19977,7 +19977,7 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 1.9166666666666667,
     "hours_watched": 124.58333333333331,
@@ -19999,7 +19999,7 @@
   },
   {
     "calendar_date": "2026-07-07T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 5.833333333333333,
     "hours_watched": 221.66666666666663,
@@ -20582,7 +20582,7 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.9333333333333333,
     "hours_watched": 38.26666666666667,
@@ -20615,7 +20615,7 @@
   },
   {
     "calendar_date": "2026-07-08T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 2.066666666666667,
     "hours_watched": 53.73333333333333,
@@ -21231,7 +21231,7 @@
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 2.183333333333333,
     "hours_watched": 1921.3333333333333,
@@ -21297,7 +21297,7 @@
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "broadcasts_started": 1,
     "hours_streamed": 0.75,
     "hours_watched": 36.0,
@@ -21308,7 +21308,7 @@
   },
   {
     "calendar_date": "2026-07-09T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 4.916666666666667,
     "hours_watched": 167.16666666666666,
@@ -22023,7 +22023,7 @@
   },
   {
     "calendar_date": "2026-07-10T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 12.016666666666667,
     "hours_watched": 492.6833333333333,
@@ -23068,7 +23068,7 @@
   },
   {
     "calendar_date": "2026-07-12T00:00:00",
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "broadcasts_started": 1,
     "hours_streamed": 2.716666666666667,
     "hours_watched": 3586.0,
@@ -23574,7 +23574,7 @@
   },
   {
     "calendar_date": "2026-07-13T00:00:00",
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "broadcasts_started": 1,
     "hours_streamed": 1.3666666666666667,
     "hours_watched": 51.93333333333333,

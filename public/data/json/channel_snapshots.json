@@ -1600,10 +1600,10 @@
     "group_y": "Student"
   },
   {
-    "streamer": "notbilzo",
+    "streamer": "bilzo",
     "snapshot_date": "2026-07-21T17:19:38",
     "timeframe_days": 30,
-    "url": "https://sullygnome.com/channel/notbilzo/30",
+    "url": "https://sullygnome.com/channel/bilzo/30",
     "total_followers": 346492.0,
     "rolling_average_viewers": 2715.0,
     "rolling_followers_gained": 321058.0,
@@ -1616,7 +1616,7 @@
     "group_x": "Student",
     "category": "student",
     "source_file": "sullygnome_channel_snapshots.csv",
-    "display_name": "notbilzo",
+    "display_name": "bilzo",
     "group_y": "Student"
   },
   {
@@ -1880,10 +1880,10 @@
     "group_y": "Student"
   },
   {
-    "streamer": "rizpyyt",
+    "streamer": "rizpy",
     "snapshot_date": "2026-07-21T17:20:54",
     "timeframe_days": 30,
-    "url": "https://sullygnome.com/channel/rizpyyt/30",
+    "url": "https://sullygnome.com/channel/rizpy/30",
     "total_followers": 32194.0,
     "rolling_average_viewers": 1352.0,
     "rolling_followers_gained": 20424.0,
@@ -1896,7 +1896,7 @@
     "group_x": "Student",
     "category": "student",
     "source_file": "sullygnome_channel_snapshots.csv",
-    "display_name": "rizpyyt",
+    "display_name": "rizpy",
     "group_y": "Student"
   },
   {
@@ -1940,10 +1940,10 @@
     "group_y": "Student"
   },
   {
-    "streamer": "s0pink",
+    "streamer": "sopink",
     "snapshot_date": "2026-07-21T17:21:05",
     "timeframe_days": 30,
-    "url": "https://sullygnome.com/channel/s0pink/30",
+    "url": "https://sullygnome.com/channel/sopink/30",
     "total_followers": 37540.0,
     "rolling_average_viewers": 156.0,
     "rolling_followers_gained": 27682.0,
@@ -1956,7 +1956,7 @@
     "group_x": "Student",
     "category": "student",
     "source_file": "sullygnome_channel_snapshots.csv",
-    "display_name": "s0pink",
+    "display_name": "sopink",
     "group_y": "Student"
   },
   {
